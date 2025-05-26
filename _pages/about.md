@@ -64,7 +64,7 @@ I’m currently preparing submissions to **AAAI**, **INFORMS**, and **NeurIPS wo
 - *2025.05*: 🛫 Our eVTOL incentive mechanism paper was submitted to the INFORMS Annual Meeting!
 - *2025.04*: 🤖 Launched EvoNet prototype and began submission to AAAI.
 - *2025.03*: 🧠 Causal modeling for retention accepted at ICEMGD.
-- *2024.11*: 🌍 Invited to the [**UN Sustainable Development Goals Dinner**](https://www.unaa.org.au/), Australia.
+- *2024.11*: 🌍 Invited to the **Sustainable Development Goals Dinner** in [UNAA](https://www.unaa.org.au/).
 
 ---
 
