@@ -68,7 +68,7 @@ I’m currently preparing submissions to **AAAI**, **INFORMS**, and **NeurIPS wo
 
 ---
 
-# 📝 Working papers
+# 📝 Working Papers
 
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">Preprint 2025</div><img src='images/evonet.png' alt="EvoNet" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
