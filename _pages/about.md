@@ -68,66 +68,61 @@ I’m currently preparing submissions to **AAAI**, **INFORMS**, and **NeurIPS wo
 
 ---
 
-<!-- 📝 Redesigned Publication Cards -->
-<h2 style="margin-top: 2rem;">📝 Publications</h2>
+# 📝 Publications
 
-<div style="display: flex; flex-direction: column; gap: 2rem;">
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">Preprint 2025</div><img src='images/evonet.png' alt="EvoNet" width="100%"></div></div>
+<div class='paper-box-text' markdown="1">
 
-  <!-- EvoNet Card -->
-  <div style="display: flex; flex-direction: row; gap: 1rem; border-radius: 16px; overflow: hidden; background: #f8f9fa; box-shadow: 0 4px 16px rgba(0,0,0,0.06);">
-    <img src="images/evonet.png" alt="EvoNet" style="width: 240px; object-fit: cover;">
-    <div style="padding: 1.2rem;">
-      <div style="font-size: 0.85rem; color: #6c757d;">Preprint 2025</div>
-      <h3 style="margin: 0.3rem 0 0.6rem;">EvoNet: A Neural Architecture for Expressive Structure Learning</h3>
-      <p><strong>Eliza Yiting Tang</strong> · <a href="https://github.com/elizatang007/EvoNet">GitHub</a></p>
-      <p>Activates structural paths dynamically via evolutionary path control.<br>Under review @AAAI 2026 & NeurIPS Causal Representation Workshop.</p>
-    </div>
-  </div>
+**EvoNet: A Neural Architecture for Expressive Structure Learning**  
+Eliza Yiting Tang  
+[GitHub](https://github.com/elizatang007/EvoNet)  
 
-  <!-- eVTOL Card -->
-  <div style="display: flex; flex-direction: row; gap: 1rem; border-radius: 16px; overflow: hidden; background: #f0fdf4; box-shadow: 0 4px 16px rgba(0,0,0,0.06);">
-    <img src="images/evtol.png" alt="eVTOL" style="width: 240px; object-fit: cover;">
-    <div style="padding: 1.2rem;">
-      <div style="font-size: 0.85rem; color: #6c757d;">INFORMS 2025</div>
-      <h3 style="margin: 0.3rem 0 0.6rem;">Designing Green eVTOL Adoption Mechanisms</h3>
-      <p><strong>Eliza Yiting Tang</strong></p>
-      <p>Explores spillover-driven incentive design for sustainable platforms.<br>Submitted to INFORMS · Expanded versions prepared for Marketing Science and Nature Cities.</p>
-    </div>
-  </div>
+A novel neural network design that activates structural paths dynamically via evolutionary path control.  
+Currently under review for inclusion in AAAI 2026 and the NeurIPS Causal Representation Workshop.
 
-  <!-- LLM Retention Card -->
-  <div style="display: flex; flex-direction: row; gap: 1rem; border-radius: 16px; overflow: hidden; background: #fef8f6; box-shadow: 0 4px 16px rgba(0,0,0,0.06);">
-    <img src="images/llmretention.png" alt="LLM Retention" style="width: 240px; object-fit: cover;">
-    <div style="padding: 1.2rem;">
-      <div style="font-size: 0.85rem; color: #6c757d;">Causal Modeling</div>
-      <h3 style="margin: 0.3rem 0 0.6rem;">Causal Modeling of Retention under LLM-based Interventions</h3>
-      <p><strong>Eliza Yiting Tang</strong></p>
-      <p>Builds a simulation framework for exposure timing impact.<br>Submitted to AAAI & ICML (CausalML Track).</p>
-    </div>
-  </div>
+</div></div>
 
-  <!-- Sustainable Pricing Card -->
-  <div style="display: flex; flex-direction: row; gap: 1rem; border-radius: 16px; overflow: hidden; background: #eef6ff; box-shadow: 0 4px 16px rgba(0,0,0,0.06);">
-    <img src="images/pricing.png" alt="Sustainable Pricing" style="width: 240px; object-fit: cover;">
-    <div style="padding: 1.2rem;">
-      <div style="font-size: 0.85rem; color: #6c757d;">Working Paper</div>
-      <h3 style="margin: 0.3rem 0 0.6rem;">Preference Externalities in Sustainable Product Pricing</h3>
-      <p><strong>Eliza Yiting Tang</strong></p>
-      <p>Studies fairness-efficiency tradeoffs in pricing strategies with social interdependence.<br>Draft available upon request.</p>
-    </div>
-  </div>
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">INFORMS 2025</div><img src='images/evtol.png' alt="eVTOL" width="100%"></div></div>
+<div class='paper-box-text' markdown="1">
 
-  <!-- AI Simulation Card -->
-  <div style="display: flex; flex-direction: row; gap: 1rem; border-radius: 16px; overflow: hidden; background: #fff9e8; box-shadow: 0 4px 16px rgba(0,0,0,0.06);">
-    <img src="images/simulation.png" alt="Simulation" style="width: 240px; object-fit: cover;">
-    <div style="padding: 1.2rem;">
-      <div style="font-size: 0.85rem; color: #6c757d;">Simulation Design</div>
-      <h3 style="margin: 0.3rem 0 0.6rem;">Simulating Timing Effects in AI Education</h3>
-      <p><strong>Eliza Yiting Tang</strong></p>
-      <p>Designs an interactive teaching platform for causal exposure effects.<br>Planned submission to EAAI@AAAI and PNAS Nexus.</p>
-    </div>
-  </div>
-</div>
+**Designing Green eVTOL Adoption Mechanisms under Preference Externalities**  
+Submitted to INFORMS Annual Meeting 2025  
+Extended versions are being prepared for submission to Marketing Science and *Nature Cities*.
+
+This work investigates sustainable mobility platform design through the lens of social spillovers and user coordination.
+
+</div></div>
+
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">Causal Modeling</div><img src='images/llmretention.png' alt="LLM Retention" width="100%"></div></div>
+<div class='paper-box-text' markdown="1">
+
+**Causal Modeling of Retention under LLM-based Interventions**  
+Eliza Yiting Tang  
+
+This paper builds a simulation framework to assess how algorithmic exposure timing influences user retention.  
+It is currently under submission to AAAI and ICML (CausalML track).
+
+</div></div>
+
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">Working Paper</div><img src='images/pricing.png' alt="Sustainable Pricing" width="100%"></div></div>
+<div class='paper-box-text' markdown="1">
+
+**Preference Externalities in Sustainable Product Pricing**  
+Working paper, draft available upon request.  
+
+This project examines dynamic pricing strategies under social interdependence, exploring fairness-efficiency tradeoffs in sustainability-focused platforms.
+
+</div></div>
+
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">Simulation Design</div><img src='images/simulation.png' alt="Simulation" width="100%"></div></div>
+<div class='paper-box-text' markdown="1">
+
+**Simulating Timing Effects in AI Education: A Design-Based Causal Approach**  
+Designed for upcoming submission to *EAAI@AAAI* and *PNAS Nexus*.  
+
+Presents an interactive simulation platform for teaching causal effects of delayed algorithm exposure in algorithmic education.
+
+</div></div>
 ---
 
 # 🎖 Honors and Awards
@@ -201,48 +196,4 @@ I’m currently preparing submissions to **AAAI**, **INFORMS**, and **NeurIPS wo
 - *2023.12 – 2024.01*, Meritco, AI Investment Research  
 - *2022.12 – 2023.01*, VMLY&R, Account Executive (Merck, J&J)
 
----
-# 🔥 News
-- *2025.05*: 🛫 Our eVTOL incentive mechanism paper was submitted to the INFORMS Annual Meeting!
-- *2025.04*: 🤖 Launched EvoNet prototype and began submission to AAAI.
-- *2025.03*: 🧠 Causal modeling for retention accepted at ICEMGD.
-- *2024.11*: 🌍 Invited to the **UN Sustainable Development Goals Dinner**, Australia.
-
----
-<!-- 💻 Internships (Styled with Links and Cards) -->
-<h2 style="margin-top: 2.5rem;">💻 Internships</h2>
-
-<div style="display: flex; flex-direction: column; gap: 1.5rem;">
-
-  <!-- Google Internship -->
-  <div style="display: flex; flex-direction: row; gap: 1rem; border-radius: 14px; background: #f8f9fa; box-shadow: 0 3px 10px rgba(0,0,0,0.05); overflow: hidden;">
-    <img src="images/google.png" alt="Google" style="width: 120px; object-fit: contain; background: white; padding: 1rem;">
-    <div style="padding: 1.2rem;">
-      <div style="font-size: 0.9rem; color: #6c757d;">Dec 2024 – Feb 2025</div>
-      <h3 style="margin: 0.3rem 0 0.6rem;">Data Analyst Intern @ <a href="https://www.google.com" target="_blank">Google</a> (Shanghai)</h3>
-      <p>Worked on usage analytics, retention metrics, and platform-level dashboards for AI-driven consumer products.</p>
-    </div>
-  </div>
-
-  <!-- Meritco Internship -->
-  <div style="display: flex; flex-direction: row; gap: 1rem; border-radius: 14px; background: #eef6f8; box-shadow: 0 3px 10px rgba(0,0,0,0.05); overflow: hidden;">
-    <img src="images/meritco.png" alt="Meritco" style="width: 120px; object-fit: contain; background: white; padding: 1rem;">
-    <div style="padding: 1.2rem;">
-      <div style="font-size: 0.9rem; color: #6c757d;">Dec 2023 – Jan 2024</div>
-      <h3 style="margin: 0.3rem 0 0.6rem;">AI Investment Research Intern @ <a href="https://www.meritco.com" target="_blank">Meritco</a></h3>
-      <p>Conducted market analysis on AI-driven startups and platform valuations. Produced reports for institutional investors on innovation pipelines.</p>
-    </div>
-  </div>
-
-  <!-- VMLY&R Internship -->
-  <div style="display: flex; flex-direction: row; gap: 1rem; border-radius: 14px; background: #fff8f2; box-shadow: 0 3px 10px rgba(0,0,0,0.05); overflow: hidden;">
-    <img src="images/vmlyr.png" alt="VMLY&R" style="width: 120px; object-fit: contain; background: white; padding: 1rem;">
-    <div style="padding: 1.2rem;">
-      <div style="font-size: 0.9rem; color: #6c757d;">Dec 2022 – Jan 2023</div>
-      <h3 style="margin: 0.3rem 0 0.6rem;">Account Executive Intern @ <a href="https://www.vmlyr.com" target="_blank">VMLY&R</a></h3>
-      <p>Managed campaigns for Merck & Johnson & Johnson across digital media. Coordinated cross-functional creative teams and client reporting.</p>
-    </div>
-  </div>
-
-</div>
 ---
