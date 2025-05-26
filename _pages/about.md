@@ -137,63 +137,23 @@ Presents an interactive simulation platform for teaching causal effects of delay
 
 ---
 
-<!-- 💬 Talks and Conferences (Redesigned Section) -->
+<!-- 💬 Talks and Conferences (Streamlined Timeline Format) -->
 <h2 style="margin-top: 2.5rem;">💬 Talks and Conferences</h2>
 
-<div style="display: flex; flex-wrap: wrap; gap: 1.5rem; justify-content: center;">
-
-  <!-- NeurIPS 2025 -->
-  <div style="flex: 1 1 300px; border-radius: 12px; padding: 1.2rem; background: #f8f9fa; box-shadow: 0 4px 12px rgba(0,0,0,0.06);">
-    <h4 style="margin-top: 0;">🧠 NeurIPS 2025 Workshop</h4>
-    <p style="margin: 0;">Presented research on LLM-driven retention modeling in CausalML track.</p>
-  </div>
-
-  <!-- Microsoft Reactor 2024 -->
-  <div style="flex: 1 1 300px; border-radius: 12px; padding: 1.2rem; background: #f0fdf4; box-shadow: 0 4px 12px rgba(0,0,0,0.06);">
-    <h4 style="margin-top: 0;">🚀 Microsoft Reactor (2024.10)</h4>
-    <p style="margin: 0;">Delivered a talk on AI-powered marketing strategies and user behavior insights.</p>
-  </div>
-
-  <!-- USYD Fair 2023 -->
-  <div style="flex: 1 1 300px; border-radius: 12px; padding: 1.2rem; background: #fff6f2; box-shadow: 0 4px 12px rgba(0,0,0,0.06);">
-    <h4 style="margin-top: 0;">🎓 USYD Research Fair (2023.11)</h4>
-    <p style="margin: 0;">Showcased work on ethical algorithm design and AI transparency in education platforms.</p>
-  </div>
-
-</div>
-
-<!-- 🎨 Project Cards from Talks -->
-<div style="display: flex; flex-direction: column; gap: 2rem; margin-top: 2rem;">
-
-  <!-- NFT Art Project -->
-  <div style="display: flex; flex-direction: row; gap: 1rem; border-radius: 16px; overflow: hidden; background: #f5f7ff; box-shadow: 0 4px 12px rgba(0,0,0,0.05);">
-    <img src="images/nft.png" alt="NFT" style="width: 240px; object-fit: cover;">
-    <div style="padding: 1.2rem;">
-      <div style="font-size: 0.85rem; color: #6c757d;">IAMCR 2023 (Lyon, France)</div>
-      <h3 style="margin: 0.3rem 0 0.6rem;">🤖 Personification in AI-generated NFT Art 🎨</h3>
-      <p><strong>Lead Author</strong></p>
-      <p>Used Face++ and CV to quantify human likeness in generative art. Developed a framework bridging AI perception and media communication.</p>
-    </div>
-  </div>
-
-  <!-- Stock Prediction Project -->
-  <div style="display: flex; flex-direction: row; gap: 1rem; border-radius: 16px; overflow: hidden; background: #fff9ec; box-shadow: 0 4px 12px rgba(0,0,0,0.05);">
-    <img src="images/stock.png" alt="Finance" style="width: 240px; object-fit: cover;">
-    <div style="padding: 1.2rem;">
-      <div style="font-size: 0.85rem; color: #6c757d;">ICEMGD 2024</div>
-      <h3 style="margin: 0.3rem 0 0.6rem;">📈 Deep Learning for Stock Movement Prediction</h3>
-      <p><strong>Team Project</strong></p>
-      <p>Built ConvLSTM and MiniAlexNet models for NYSE millisecond data. Led model design and achieved strong volatility-based predictive performance.</p>
-    </div>
-  </div>
-
-</div>
+<ul style="list-style: none; padding-left: 0; line-height: 1.8;">
+  <li><strong>🧠 NeurIPS 2025 Workshop</strong> — Presented research on LLM-driven retention modeling in CausalML track</li>
+  <li><strong>🚀 Microsoft Reactor (Oct 2024)</strong> — Delivered a talk on AI-powered marketing strategies and user behavior insights</li>
+  <li><strong>🎓 USYD Research Fair (Nov 2023)</strong> — Showcased work on AI ethics and algorithm transparency in education platforms</li>
+  <li><strong>🎨 IAMCR 2023 (Lyon, France)</strong> — Lead author, presented AI-generated NFT art personification framework</li>
+  <li><strong>📈 ICEMGD 2024</strong> — Presented ConvLSTM-based deep learning model for NYSE short-term stock prediction</li>
+</ul>
 
 ---
 
 # 💻 Internships
-- *2024.12 – 2025.02*, Google, Data Analyst Intern, Shanghai  
-- *2023.12 – 2024.01*, Meritco, AI Investment Research  
-- *2022.12 – 2023.01*, VMLY&R, Account Executive (Merck, J&J)
+- *2024.12 – 2025.02*, [Google](https://www.google.com), Data Analyst Intern, Shanghai  
+- *2023.12 – 2024.01*, [Meritco](https://www.meritco.com), AI Investment Research  
+- *2022.12 – 2023.01*, [VMLY&R](https://www.vmlyr.com), Account Executive ([Merck](https://www.merck.com), [Johnson & Johnson](https://www.jnj.com))
+
 
 ---
