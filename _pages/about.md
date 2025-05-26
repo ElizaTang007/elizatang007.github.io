@@ -60,6 +60,13 @@ I’m currently preparing submissions to **AAAI**, **INFORMS**, and **NeurIPS wo
 </div>
 
 ---
+# 🔥 News
+- *2025.05*: 🛫 Our eVTOL incentive mechanism paper was submitted to the INFORMS Annual Meeting!
+- *2025.04*: 🤖 Launched EvoNet prototype and began submission to AAAI.
+- *2025.03*: 🧠 Causal modeling for retention accepted at ICEMGD.
+- *2024.11*: 🌍 Invited to the **UN Sustainable Development Goals Dinner**, Australia.
+
+---
 
 <!-- 📝 Redesigned Publication Cards -->
 <h2 style="margin-top: 2rem;">📝 Publications</h2>
@@ -201,4 +208,41 @@ I’m currently preparing submissions to **AAAI**, **INFORMS**, and **NeurIPS wo
 - *2025.03*: 🧠 Causal modeling for retention accepted at ICEMGD.
 - *2024.11*: 🌍 Invited to the **UN Sustainable Development Goals Dinner**, Australia.
 
+---
+<!-- 💻 Internships (Styled with Links and Cards) -->
+<h2 style="margin-top: 2.5rem;">💻 Internships</h2>
+
+<div style="display: flex; flex-direction: column; gap: 1.5rem;">
+
+  <!-- Google Internship -->
+  <div style="display: flex; flex-direction: row; gap: 1rem; border-radius: 14px; background: #f8f9fa; box-shadow: 0 3px 10px rgba(0,0,0,0.05); overflow: hidden;">
+    <img src="images/google.png" alt="Google" style="width: 120px; object-fit: contain; background: white; padding: 1rem;">
+    <div style="padding: 1.2rem;">
+      <div style="font-size: 0.9rem; color: #6c757d;">Dec 2024 – Feb 2025</div>
+      <h3 style="margin: 0.3rem 0 0.6rem;">Data Analyst Intern @ <a href="https://www.google.com" target="_blank">Google</a> (Shanghai)</h3>
+      <p>Worked on usage analytics, retention metrics, and platform-level dashboards for AI-driven consumer products.</p>
+    </div>
+  </div>
+
+  <!-- Meritco Internship -->
+  <div style="display: flex; flex-direction: row; gap: 1rem; border-radius: 14px; background: #eef6f8; box-shadow: 0 3px 10px rgba(0,0,0,0.05); overflow: hidden;">
+    <img src="images/meritco.png" alt="Meritco" style="width: 120px; object-fit: contain; background: white; padding: 1rem;">
+    <div style="padding: 1.2rem;">
+      <div style="font-size: 0.9rem; color: #6c757d;">Dec 2023 – Jan 2024</div>
+      <h3 style="margin: 0.3rem 0 0.6rem;">AI Investment Research Intern @ <a href="https://www.meritco.com" target="_blank">Meritco</a></h3>
+      <p>Conducted market analysis on AI-driven startups and platform valuations. Produced reports for institutional investors on innovation pipelines.</p>
+    </div>
+  </div>
+
+  <!-- VMLY&R Internship -->
+  <div style="display: flex; flex-direction: row; gap: 1rem; border-radius: 14px; background: #fff8f2; box-shadow: 0 3px 10px rgba(0,0,0,0.05); overflow: hidden;">
+    <img src="images/vmlyr.png" alt="VMLY&R" style="width: 120px; object-fit: contain; background: white; padding: 1rem;">
+    <div style="padding: 1.2rem;">
+      <div style="font-size: 0.9rem; color: #6c757d;">Dec 2022 – Jan 2023</div>
+      <h3 style="margin: 0.3rem 0 0.6rem;">Account Executive Intern @ <a href="https://www.vmlyr.com" target="_blank">VMLY&R</a></h3>
+      <p>Managed campaigns for Merck & Johnson & Johnson across digital media. Coordinated cross-functional creative teams and client reporting.</p>
+    </div>
+  </div>
+
+</div>
 ---
