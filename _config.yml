@@ -24,7 +24,7 @@ author:
   name             : "Eliza Yiting Tang"
   avatar           : "images/profile.png"  # 上传头像命名为 profile.jpg
   bio              : "University of Sydney"
-  location         : "Sydney, Australia & Shanghai, China"
+  location         : "Sydney & Shanghai"
   employer         :
   pubmed           : 
   googlescholar    : "https://scholar.google.com/citations?user=YOUR_GOOGLE_SCHOLAR_ID"
@@ -37,13 +37,13 @@ author:
   flickr           :
   facebook         :
   foursquare       :
-  github           : # e.g., "YITING(ELIZA)TANG"
+  github           : Elizatang007
   google_plus      :
   keybase          :
-  instagram        :
+  instagram        :"elizatang_007"
   impactstory      : # e.g., "https://profiles.impactstory.org/u/xxxx-xxxx-xxxx-xxxx"
   lastfm           :
-  linkedin         : # e.g., "linkedin username"
+  linkedin         : "YITING(ELIZA)TANG"
   dblp             : # e.g., "https://dblp.org/pid/xx/xxxx.html"
   orcid            : # e.g., "https://orcid.org/xxxx"
   pinterest        :
