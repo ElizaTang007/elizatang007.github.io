@@ -126,7 +126,67 @@ Presents an interactive simulation platform for teaching causal effects of delay
 </div></div>
 
 ---
+<!-- 📝 Redesigned Publication Cards -->
+<h2 style="margin-top: 2rem;">📝 Publications</h2>
 
+<div style="display: flex; flex-direction: column; gap: 2rem;">
+
+  <!-- EvoNet Card -->
+  <div style="display: flex; flex-direction: row; gap: 1rem; border-radius: 16px; overflow: hidden; background: #f8f9fa; box-shadow: 0 4px 16px rgba(0,0,0,0.06);">
+    <img src="images/evonet.png" alt="EvoNet" style="width: 240px; object-fit: cover;">
+    <div style="padding: 1.2rem;">
+      <div style="font-size: 0.85rem; color: #6c757d;">Preprint 2025</div>
+      <h3 style="margin: 0.3rem 0 0.6rem;">EvoNet: A Neural Architecture for Expressive Structure Learning</h3>
+      <p><strong>Eliza Yiting Tang</strong> · <a href="https://github.com/elizatang007/EvoNet">GitHub</a></p>
+      <p>Activates structural paths dynamically via evolutionary path control.<br>Under review @AAAI 2026 & NeurIPS Causal Representation Workshop.</p>
+    </div>
+  </div>
+
+  <!-- eVTOL Card -->
+  <div style="display: flex; flex-direction: row; gap: 1rem; border-radius: 16px; overflow: hidden; background: #f0fdf4; box-shadow: 0 4px 16px rgba(0,0,0,0.06);">
+    <img src="images/evtol.png" alt="eVTOL" style="width: 240px; object-fit: cover;">
+    <div style="padding: 1.2rem;">
+      <div style="font-size: 0.85rem; color: #6c757d;">INFORMS 2025</div>
+      <h3 style="margin: 0.3rem 0 0.6rem;">Designing Green eVTOL Adoption Mechanisms</h3>
+      <p><strong>Eliza Yiting Tang</strong></p>
+      <p>Explores spillover-driven incentive design for sustainable platforms.<br>Submitted to INFORMS · Expanded versions prepared for Marketing Science and Nature Cities.</p>
+    </div>
+  </div>
+
+  <!-- LLM Retention Card -->
+  <div style="display: flex; flex-direction: row; gap: 1rem; border-radius: 16px; overflow: hidden; background: #fef8f6; box-shadow: 0 4px 16px rgba(0,0,0,0.06);">
+    <img src="images/llmretention.png" alt="LLM Retention" style="width: 240px; object-fit: cover;">
+    <div style="padding: 1.2rem;">
+      <div style="font-size: 0.85rem; color: #6c757d;">Causal Modeling</div>
+      <h3 style="margin: 0.3rem 0 0.6rem;">Causal Modeling of Retention under LLM-based Interventions</h3>
+      <p><strong>Eliza Yiting Tang</strong></p>
+      <p>Builds a simulation framework for exposure timing impact.<br>Submitted to AAAI & ICML (CausalML Track).</p>
+    </div>
+  </div>
+
+  <!-- Sustainable Pricing Card -->
+  <div style="display: flex; flex-direction: row; gap: 1rem; border-radius: 16px; overflow: hidden; background: #eef6ff; box-shadow: 0 4px 16px rgba(0,0,0,0.06);">
+    <img src="images/pricing.png" alt="Sustainable Pricing" style="width: 240px; object-fit: cover;">
+    <div style="padding: 1.2rem;">
+      <div style="font-size: 0.85rem; color: #6c757d;">Working Paper</div>
+      <h3 style="margin: 0.3rem 0 0.6rem;">Preference Externalities in Sustainable Product Pricing</h3>
+      <p><strong>Eliza Yiting Tang</strong></p>
+      <p>Studies fairness-efficiency tradeoffs in pricing strategies with social interdependence.<br>Draft available upon request.</p>
+    </div>
+  </div>
+
+  <!-- AI Simulation Card -->
+  <div style="display: flex; flex-direction: row; gap: 1rem; border-radius: 16px; overflow: hidden; background: #fff9e8; box-shadow: 0 4px 16px rgba(0,0,0,0.06);">
+    <img src="images/simulation.png" alt="Simulation" style="width: 240px; object-fit: cover;">
+    <div style="padding: 1.2rem;">
+      <div style="font-size: 0.85rem; color: #6c757d;">Simulation Design</div>
+      <h3 style="margin: 0.3rem 0 0.6rem;">Simulating Timing Effects in AI Education</h3>
+      <p><strong>Eliza Yiting Tang</strong></p>
+      <p>Designs an interactive teaching platform for causal exposure effects.<br>Planned submission to EAAI@AAAI and PNAS Nexus.</p>
+    </div>
+  </div>
+</div>
+---
 
 # 🎖 Honors and Awards
 - *2024.12* Second Prize, China NLP Innovation Competition (Quant Text Modeling)
