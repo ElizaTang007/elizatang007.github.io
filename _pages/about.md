@@ -68,7 +68,7 @@ I’m currently preparing submissions to **AAAI**, **INFORMS**, and **NeurIPS wo
 
 ---
 
-# 📝 Publications
+# 📝 Working papers
 
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">Preprint 2025</div><img src='images/evonet.png' alt="EvoNet" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
@@ -84,6 +84,17 @@ Currently under review for inclusion in AAAI 2026 and the NeurIPS Causal Represe
 
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">INFORMS 2025</div><img src='images/evtol.png' alt="eVTOL" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
+
+<!-- ECMT3997 Working Paper Card -->
+<div style="display: flex; flex-direction: row; gap: 1rem; border-radius: 16px; overflow: hidden; background: #f0f4ff; box-shadow: 0 4px 16px rgba(0,0,0,0.06);">
+  <img src="images/ecmt3997.png" alt="Returns to Education" style="width: 240px; object-fit: cover;">
+  <div style="padding: 1.2rem;">
+    <div style="font-size: 0.85rem; color: #6c757d;">📍 University of Sydney · June 2025</div>
+    <h3 style="margin: 0.3rem 0 0.6rem;">🎓 Returns to Education: A Causal Analysis Using IV</h3>
+    <p><strong>ECMT3997 Honours Thesis</strong><br>Estimates causal returns to schooling using proximity-based instruments. Includes 2SLS identification, LATE interpretation, and robustness checks using Australian education data.</p>
+    <p><a href="/assets/ecmt3997_thesis.pdf">View Thesis</a></p>
+  </div>
+</div>
 
 **Designing Green eVTOL Adoption Mechanisms under Preference Externalities**  
 Submitted to INFORMS Annual Meeting 2025  
