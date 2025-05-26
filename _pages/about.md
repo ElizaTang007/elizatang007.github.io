@@ -10,15 +10,19 @@ redirect_from:
 
 <span class='anchor' id='about-me'></span>
 
-I’m **Eliza Yiting Tang**, a final-year undergraduate at the University of Sydney, majoring in **Econometrics and Software Development**. My research lies at the intersection of **quantitative marketing**, **algorithm design**, and **urban air mobility (eVTOL)**. I am passionate about understanding how timing and structure of algorithmic exposure affects user behavior, retention, and societal adoption.
+I’m **Eliza Yiting Tang**, an undergraduate at the University of Sydney majoring in **Econometrics and Software Development**, currently applying for PhD programs in **Quantitative Marketing**, **Information Systems**, and **Algorithmic Behavioral Modeling**.
 
-I have authored several working papers on:
-- Causal modeling of LLM-based user retention
-- Expressive neural network architecture (EvoNet)
-- Green platform adoption under preference externalities
-- AI education and timing-based simulation experiments
+My research explores how individuals learn and respond to algorithmic recommendations over time, with applications in both **digital platforms** and **sustainable mobility ecosystems**. I am particularly interested in **preference externalities**, **delayed exposure**, and **causal learning** mechanisms that shape long-term platform behavior.
 
-I am also the co-founder of **YITA AVIATION**, where I lead efforts to design scalable eVTOL systems for future cities.
+I’ve independently led several working papers that focus on:
+- **Preference Externalities in Sustainable Product Pricing**
+- **Causal Modeling of Retention under LLM-based Interventions**
+- **EvoNet**: An expressive neural architecture for adaptive path control
+- **Adoption Mechanism Design for Green eVTOL Platforms**
+
+Beyond research, I am the co-founder of **YITA AVIATION**, a startup advancing urban air mobility technologies. I also actively participate in sustainability dialogues and was invited to the **UN Sustainable Development Goals Dinner (Australia, Nov 2024)**.
+
+I’m currently preparing submissions to **AAAI**, **INFORMS**, and **NeurIPS workshops**, and welcome collaborations in **user modeling**, **algorithmic experimentation**, and **platform incentive design**.
 
 ---
 
@@ -26,6 +30,7 @@ I am also the co-founder of **YITA AVIATION**, where I lead efforts to design sc
 - *2025.05*: 🛫 Our eVTOL incentive mechanism paper was submitted to the INFORMS Annual Meeting!
 - *2025.04*: 🤖 Launched EvoNet prototype and began submission to AAAI.
 - *2025.03*: 🧠 Causal modeling for retention accepted at ICEMGD.
+- *2024.11*: 🌍 Invited to the **UN Sustainable Development Goals Dinner**, Australia.
 
 ---
 
