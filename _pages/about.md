@@ -22,7 +22,42 @@ I’ve independently led several working papers that focus on:
 
 I co-founded [**YITA AVIATION**](https://yita-aviation.com), a research-driven startup shaping the future of urban air mobility (UAM) by integrating eVTOL system design, algorithmic platform modeling, and policy simulation. Our work engages with academic institutions and regulatory think tanks to build scalable mobility solutions rooted in economic and infrastructural realism.
 
-I’m currently preparing submissions to **AAAI**, **INFORMS**, and **NeurIPS workshops**, and welcome collaborations in **user modeling**, **algorithmic experimentation**, and **platform incentive design**.
+I’m currently preparing submissions to **AAAI**, **INFORMS**, and **NeurIPS workshops**, and welcome collaborations in **user modeling**, **algorithmic experimentation**, and **platform incentive design**.📄 [View My CV](/assets/CV_Yiting_Tang.pdf)
+
+---
+<!-- 🔷 Paste this HTML block into your about.md or index.html if your theme supports raw HTML rendering -->
+
+<div style="display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center;">
+  <!-- Quant Researcher Card -->
+  <div style="flex: 1 1 300px; border-radius: 12px; padding: 1.5rem; background: #f8f9fa; box-shadow: 0 4px 12px rgba(0,0,0,0.05);">
+    <h3 style="margin-top: 0;">🧠 Quant Researcher</h3>
+    <ul style="padding-left: 1.2rem; margin-bottom: 0.5rem;">
+      <li>Causal inference · Behavioral modeling · Platform design</li>
+      <li>📄 Papers @AAAI · NeurIPS · INFORMS</li>
+      <li>💼 Data analyst @Google · RA @Penn State</li>
+    </ul>
+  </div>
+
+  <!-- Sustainability Strategist Card -->
+  <div style="flex: 1 1 300px; border-radius: 12px; padding: 1.5rem; background: #f0fdf4; box-shadow: 0 4px 12px rgba(0,0,0,0.05);">
+    <h3 style="margin-top: 0;">🌿 Sustainability Strategist</h3>
+    <ul style="padding-left: 1.2rem; margin-bottom: 0.5rem;">
+      <li>Green incentives · ESG mechanisms · Platform policy</li>
+      <li>🛠 Projects in eVTOL adoption · Sustainable pricing</li>
+      <li>🌍 SDG @UN AU 2024 · Presenter @IAMCR</li>
+    </ul>
+  </div>
+
+  <!-- UAM Entrepreneur Card -->
+  <div style="flex: 1 1 300px; border-radius: 12px; padding: 1.5rem; background: #fef9f3; box-shadow: 0 4px 12px rgba(0,0,0,0.05);">
+    <h3 style="margin-top: 0;">🚀 UAM Entrepreneur</h3>
+    <ul style="padding-left: 1.2rem; margin-bottom: 0.5rem;">
+      <li>Co-founder @YITA AVIATION · eVTOL platform design</li>
+      <li>🛫 Builds low-altitude mobility infrastructure</li>
+      <li>🔗 Tech-policy strategist · Urban air innovator</li>
+    </ul>
+  </div>
+</div>
 
 ---
 
@@ -91,40 +126,7 @@ Presents an interactive simulation platform for teaching causal effects of delay
 </div></div>
 
 ---
----
-# 🎓 Research Experience
 
-<div class='paper-box'><div class='paper-box-image'><div><img src='images/ethics.png' alt="AI Ethics" width="100%"></div></div>
-<div class='paper-box-text' markdown="1">
-
-**AI Ethics and Algorithmic Control**  
-*Research Assistant, Penn State University (2022–2023)*  
-Designed user-control experiments across job, news, and shopping platforms. Conducted IRB prep, data collection (MTurk & Qualtrics), and causal analysis in Python/Stata.  
-Explored how algorithmic transparency impacts trust, autonomy, and decision-making.
-
-</div></div>
-
-<div class='paper-box'><div class='paper-box-image'><div><img src='images/nft.png' alt="NFT" width="100%"></div></div>
-<div class='paper-box-text' markdown="1">
-
-**AI Communication and Personification in NFTs**  
-*Lead Author, IAMCR Presentation (2023)*  
-Used Face++ and computer vision to study human likeness in AI-generated NFT art.  
-Presented at IAMCR Lyon (France), bridging tech and media studies.
-
-</div></div>
-
-<div class='paper-box'><div class='paper-box-image'><div><img src='images/stock.png' alt="Finance DL" width="100%"></div></div>
-<div class='paper-box-text' markdown="1">
-
-**Deep Learning for High-Frequency Financial Data**  
-*NYU Collaboration (2024)*  
-Trained VGG11, ConvLSTM on NYSE millisecond-level quotes to predict short-term price movement.  
-Accepted at ICEMGD 2024. I led model development and training.
-
-</div></div>
-
----
 
 # 🎖 Honors and Awards
 - *2024.12* Second Prize, China NLP Innovation Competition (Quant Text Modeling)
@@ -138,11 +140,30 @@ Accepted at ICEMGD 2024. I led model development and training.
 
 ---
 
-# 💬 Talks and Workshops
+# 💬 Talks and Conferences
 - *2025.12*, NeurIPS 2025 Workshop
 - *2024.10*, Microsoft Reactor: AI Marketing Applications
 - *2023.11*, USYD Research Fair: AI Ethics and Recommendation Systems
+  
+<div class='paper-box'><div class='paper-box-image'><div><img src='images/nft.png' alt="NFT" width="100%"></div></div>
+<div class='paper-box-text' markdown="1">
 
+**🤖Personification and Communication in AI-generated NFT Art🎨**  
+*Lead Author, IAMCR 2023 (Lyon, France)*  
+Used computer vision and Face++ to quantify human likeness in generative art.  
+Bridged theories from media communication and AI perception, and proposed a framework for personification intensity.
+
+</div></div>
+
+<div class='paper-box'><div class='paper-box-image'><div><img src='images/stock.png' alt="Finance" width="100%"></div></div>
+<div class='paper-box-text' markdown="1">
+
+**🤖Deep Learning for Short-Term Stock Movement Prediction📈**  
+*Team Project, ICEMGD 2024 Accepted*  
+Built ConvLSTM and MiniAlexNet models for NYSE millisecond-level trade data.  
+I led model architecture and training, achieving robust results across volatility intervals.
+
+</div></div>
 ---
 
 # 💻 Internships
