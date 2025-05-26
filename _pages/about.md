@@ -85,30 +85,23 @@ Currently under review for inclusion in AAAI 2026 and the NeurIPS Causal Represe
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">INFORMS 2025</div><img src='images/evtol.png' alt="eVTOL" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
-<div class='paper-box'>
-  <div class='paper-box-image'>
-    <div>
-      <div class="badge">Working Paper</div>
-      <img src='images/ecmt3997.png' alt="Returns to Education" width="100%">
-    </div>
-  </div>
-  <div class='paper-box-text' markdown="1">
+**Designing Green eVTOL Adoption Mechanisms under Preference Externalities**  
+Submitted to INFORMS Annual Meeting 2025  
+Extended versions are being prepared for submission to Marketing Science and *Nature Cities*.  
+
+This work investigates sustainable mobility platform design through the lens of social spillovers and user coordination.
+
+</div></div>
+
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">Working Paper</div><img src='images/ecmt3997.png' alt="Returns to Education" width="100%"></div></div>
+<div class='paper-box-text' markdown="1">
 
 **Returns to Education: A Causal Analysis Using Instrumental Variables**  
 Eliza Yiting Tang  
-[Thesis PDF](assets/ecmt3997_thesis.pdf)
+[Thesis PDF](assets/ecmt3997_thesis.pdf)  
 
 This honours thesis applies the Card (1993) framework using proximity to college as an instrument to estimate the causal return to schooling.  
 Implements 2SLS estimation, interprets LATE, and assesses instrument strength using Australian microdata.
-
-  </div>
-</div>
-
-**Designing Green eVTOL Adoption Mechanisms under Preference Externalities**  
-Submitted to INFORMS Annual Meeting 2025  
-Extended versions are being prepared for submission to Marketing Science and *Nature Cities*.
-
-This work investigates sustainable mobility platform design through the lens of social spillovers and user coordination.
 
 </div></div>
 
@@ -142,6 +135,7 @@ Designed for upcoming submission to *EAAI@AAAI* and *PNAS Nexus*.
 Presents an interactive simulation platform for teaching causal effects of delayed algorithm exposure in algorithmic education.
 
 </div></div>
+
 ---
 
 # 🎖 Honors and Awards
