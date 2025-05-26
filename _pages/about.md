@@ -61,71 +61,6 @@ I’m currently preparing submissions to **AAAI**, **INFORMS**, and **NeurIPS wo
 
 ---
 
-# 🔥 News
-- *2025.05*: 🛫 Our eVTOL incentive mechanism paper was submitted to the INFORMS Annual Meeting!
-- *2025.04*: 🤖 Launched EvoNet prototype and began submission to AAAI.
-- *2025.03*: 🧠 Causal modeling for retention accepted at ICEMGD.
-- *2024.11*: 🌍 Invited to the **UN Sustainable Development Goals Dinner**, Australia.
-
----
-
-# 📝 Publications
-
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">Preprint 2025</div><img src='images/evonet.png' alt="EvoNet" width="100%"></div></div>
-<div class='paper-box-text' markdown="1">
-
-**EvoNet: A Neural Architecture for Expressive Structure Learning**  
-Eliza Yiting Tang  
-[GitHub](https://github.com/elizatang007/EvoNet)  
-
-A novel neural network design that activates structural paths dynamically via evolutionary path control.  
-Currently under review for inclusion in AAAI 2026 and the NeurIPS Causal Representation Workshop.
-
-</div></div>
-
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">INFORMS 2025</div><img src='images/evtol.png' alt="eVTOL" width="100%"></div></div>
-<div class='paper-box-text' markdown="1">
-
-**Designing Green eVTOL Adoption Mechanisms under Preference Externalities**  
-Submitted to INFORMS Annual Meeting 2025  
-Extended versions are being prepared for submission to Marketing Science and *Nature Cities*.
-
-This work investigates sustainable mobility platform design through the lens of social spillovers and user coordination.
-
-</div></div>
-
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">Causal Modeling</div><img src='images/llmretention.png' alt="LLM Retention" width="100%"></div></div>
-<div class='paper-box-text' markdown="1">
-
-**Causal Modeling of Retention under LLM-based Interventions**  
-Eliza Yiting Tang  
-
-This paper builds a simulation framework to assess how algorithmic exposure timing influences user retention.  
-It is currently under submission to AAAI and ICML (CausalML track).
-
-</div></div>
-
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">Working Paper</div><img src='images/pricing.png' alt="Sustainable Pricing" width="100%"></div></div>
-<div class='paper-box-text' markdown="1">
-
-**Preference Externalities in Sustainable Product Pricing**  
-Working paper, draft available upon request.  
-
-This project examines dynamic pricing strategies under social interdependence, exploring fairness-efficiency tradeoffs in sustainability-focused platforms.
-
-</div></div>
-
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">Simulation Design</div><img src='images/simulation.png' alt="Simulation" width="100%"></div></div>
-<div class='paper-box-text' markdown="1">
-
-**Simulating Timing Effects in AI Education: A Design-Based Causal Approach**  
-Designed for upcoming submission to *EAAI@AAAI* and *PNAS Nexus*.  
-
-Presents an interactive simulation platform for teaching causal effects of delayed algorithm exposure in algorithmic education.
-
-</div></div>
-
----
 <!-- 📝 Redesigned Publication Cards -->
 <h2 style="margin-top: 2rem;">📝 Publications</h2>
 
@@ -200,35 +135,70 @@ Presents an interactive simulation platform for teaching causal effects of delay
 
 ---
 
-# 💬 Talks and Conferences
-- *2025.12*, NeurIPS 2025 Workshop
-- *2024.10*, Microsoft Reactor: AI Marketing Applications
-- *2023.11*, USYD Research Fair: AI Ethics and Recommendation Systems
-  
-<div class='paper-box'><div class='paper-box-image'><div><img src='images/nft.png' alt="NFT" width="100%"></div></div>
-<div class='paper-box-text' markdown="1">
+<!-- 💬 Talks and Conferences (Redesigned Section) -->
+<h2 style="margin-top: 2.5rem;">💬 Talks and Conferences</h2>
 
-**🤖Personification and Communication in AI-generated NFT Art🎨**  
-*Lead Author, IAMCR 2023 (Lyon, France)*  
-Used computer vision and Face++ to quantify human likeness in generative art.  
-Bridged theories from media communication and AI perception, and proposed a framework for personification intensity.
+<div style="display: flex; flex-wrap: wrap; gap: 1.5rem; justify-content: center;">
 
-</div></div>
+  <!-- NeurIPS 2025 -->
+  <div style="flex: 1 1 300px; border-radius: 12px; padding: 1.2rem; background: #f8f9fa; box-shadow: 0 4px 12px rgba(0,0,0,0.06);">
+    <h4 style="margin-top: 0;">🧠 NeurIPS 2025 Workshop</h4>
+    <p style="margin: 0;">Presented research on LLM-driven retention modeling in CausalML track.</p>
+  </div>
 
-<div class='paper-box'><div class='paper-box-image'><div><img src='images/stock.png' alt="Finance" width="100%"></div></div>
-<div class='paper-box-text' markdown="1">
+  <!-- Microsoft Reactor 2024 -->
+  <div style="flex: 1 1 300px; border-radius: 12px; padding: 1.2rem; background: #f0fdf4; box-shadow: 0 4px 12px rgba(0,0,0,0.06);">
+    <h4 style="margin-top: 0;">🚀 Microsoft Reactor (2024.10)</h4>
+    <p style="margin: 0;">Delivered a talk on AI-powered marketing strategies and user behavior insights.</p>
+  </div>
 
-**🤖Deep Learning for Short-Term Stock Movement Prediction📈**  
-*Team Project, ICEMGD 2024 Accepted*  
-Built ConvLSTM and MiniAlexNet models for NYSE millisecond-level trade data.  
-I led model architecture and training, achieving robust results across volatility intervals.
+  <!-- USYD Fair 2023 -->
+  <div style="flex: 1 1 300px; border-radius: 12px; padding: 1.2rem; background: #fff6f2; box-shadow: 0 4px 12px rgba(0,0,0,0.06);">
+    <h4 style="margin-top: 0;">🎓 USYD Research Fair (2023.11)</h4>
+    <p style="margin: 0;">Showcased work on ethical algorithm design and AI transparency in education platforms.</p>
+  </div>
 
-</div></div>
+</div>
+
+<!-- 🎨 Project Cards from Talks -->
+<div style="display: flex; flex-direction: column; gap: 2rem; margin-top: 2rem;">
+
+  <!-- NFT Art Project -->
+  <div style="display: flex; flex-direction: row; gap: 1rem; border-radius: 16px; overflow: hidden; background: #f5f7ff; box-shadow: 0 4px 12px rgba(0,0,0,0.05);">
+    <img src="images/nft.png" alt="NFT" style="width: 240px; object-fit: cover;">
+    <div style="padding: 1.2rem;">
+      <div style="font-size: 0.85rem; color: #6c757d;">IAMCR 2023 (Lyon, France)</div>
+      <h3 style="margin: 0.3rem 0 0.6rem;">🤖 Personification in AI-generated NFT Art 🎨</h3>
+      <p><strong>Lead Author</strong></p>
+      <p>Used Face++ and CV to quantify human likeness in generative art. Developed a framework bridging AI perception and media communication.</p>
+    </div>
+  </div>
+
+  <!-- Stock Prediction Project -->
+  <div style="display: flex; flex-direction: row; gap: 1rem; border-radius: 16px; overflow: hidden; background: #fff9ec; box-shadow: 0 4px 12px rgba(0,0,0,0.05);">
+    <img src="images/stock.png" alt="Finance" style="width: 240px; object-fit: cover;">
+    <div style="padding: 1.2rem;">
+      <div style="font-size: 0.85rem; color: #6c757d;">ICEMGD 2024</div>
+      <h3 style="margin: 0.3rem 0 0.6rem;">📈 Deep Learning for Stock Movement Prediction</h3>
+      <p><strong>Team Project</strong></p>
+      <p>Built ConvLSTM and MiniAlexNet models for NYSE millisecond data. Led model design and achieved strong volatility-based predictive performance.</p>
+    </div>
+  </div>
+
+</div>
+
 ---
 
 # 💻 Internships
 - *2024.12 – 2025.02*, Google, Data Analyst Intern, Shanghai  
 - *2023.12 – 2024.01*, Meritco, AI Investment Research  
 - *2022.12 – 2023.01*, VMLY&R, Account Executive (Merck, J&J)
+
+---
+# 🔥 News
+- *2025.05*: 🛫 Our eVTOL incentive mechanism paper was submitted to the INFORMS Annual Meeting!
+- *2025.04*: 🤖 Launched EvoNet prototype and began submission to AAAI.
+- *2025.03*: 🧠 Causal modeling for retention accepted at ICEMGD.
+- *2024.11*: 🌍 Invited to the **UN Sustainable Development Goals Dinner**, Australia.
 
 ---
