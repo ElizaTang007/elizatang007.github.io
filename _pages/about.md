@@ -137,16 +137,42 @@ Presents an interactive simulation platform for teaching causal effects of delay
 
 ---
 
-<!-- 💬 Talks and Conferences (Streamlined Timeline Format) -->
+<!-- 💬 Talks and Conferences (Refined + Visual) -->
 <h2 style="margin-top: 2.5rem;">💬 Talks and Conferences</h2>
 
+<!-- Text Timeline Section -->
 <ul style="list-style: none; padding-left: 0; line-height: 1.8;">
-  <li><strong>🧠 NeurIPS 2025 Workshop</strong> — Presented research on LLM-driven retention modeling in CausalML track</li>
-  <li><strong>🚀 Microsoft Reactor (Oct 2024)</strong> — Delivered a talk on AI-powered marketing strategies and user behavior insights</li>
-  <li><strong>🎓 USYD Research Fair (Nov 2023)</strong> — Showcased work on AI ethics and algorithm transparency in education platforms</li>
-  <li><strong>🎨 IAMCR 2023 (Lyon, France)</strong> — Lead author, presented AI-generated NFT art personification framework</li>
-  <li><strong>📈 ICEMGD 2024</strong> — Presented ConvLSTM-based deep learning model for NYSE short-term stock prediction</li>
+  <li><strong>Dec 2025 · NeurIPS Workshop</strong><br>🧠 Presented retention modeling framework under LLM interventions (CausalML Track)</li>
+  <li><strong>Oct 2024 · Microsoft Reactor</strong><br>🚀 Gave invited talk on AI-powered marketing and consumer behavior</li>
+  <li><strong>Nov 2023 · USYD Research Fair</strong><br>🎓 Showcased work on algorithm ethics and transparency in education platforms</li>
 </ul>
+
+<!-- Project Visual Showcase -->
+<div style="display: flex; flex-direction: column; gap: 2rem; margin-top: 2rem;">
+
+  <!-- IAMCR Card -->
+  <div style="display: flex; flex-direction: row; gap: 1rem; border-radius: 16px; overflow: hidden; background: #f5f7ff; box-shadow: 0 4px 12px rgba(0,0,0,0.05);">
+    <img src="images/nft.png" alt="NFT" style="width: 240px; object-fit: cover;">
+    <div style="padding: 1.2rem;">
+      <div style="font-size: 0.85rem; color: #6c757d;">📍 Lyon, France · Jul 2023</div>
+      <h3 style="margin: 0.3rem 0 0.6rem;">🎨 AI-generated NFT Personification</h3>
+      <p><strong>IAMCR 2023 · Lead Author</strong><br>Used Face++ and computer vision to quantify human likeness in generative art. Developed a communication-perception framework.</p>
+      <p><a href="/assets/nft_paper.pdf">View Paper</a></p>
+    </div>
+  </div>
+
+  <!-- ICEMGD Card -->
+  <div style="display: flex; flex-direction: row; gap: 1rem; border-radius: 16px; overflow: hidden; background: #fff9ec; box-shadow: 0 4px 12px rgba(0,0,0,0.05);">
+    <img src="images/stock.png" alt="Finance" style="width: 240px; object-fit: cover;">
+    <div style="padding: 1.2rem;">
+      <div style="font-size: 0.85rem; color: #6c757d;">📍 Shanghai · Mar 2024</div>
+      <h3 style="margin: 0.3rem 0 0.6rem;">📈 Deep Learning for High-Frequency Stock Prediction</h3>
+      <p><strong>ICEMGD 2024 · Team Project</strong><br>Built ConvLSTM & MiniAlexNet models for NYSE millisecond data. Achieved robust predictive performance across volatility bands.</p>
+      <p><a href="/assets/stock_paper.pdf">View Paper</a></p>
+    </div>
+  </div>
+
+</div>
 
 ---
 
