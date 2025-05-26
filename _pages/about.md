@@ -151,9 +151,9 @@ Presents an interactive simulation platform for teaching causal effects of delay
 ---
 
 # 💻 Internships
-- *2024.12 – 2025.02*, [Google](https://www.google.com), Data Analyst Intern, Shanghai  
-- *2023.12 – 2024.01*, [Meritco](https://www.meritco.com), AI Investment Research  
-- *2022.12 – 2023.01*, [VMLY&R](https://www.vmlyr.com), Account Executive ([Merck](https://www.merck.com), [Johnson & Johnson](https://www.jnj.com))
+- *2024.12 – 2025.02*, Google, Data Analyst Intern
+- *2023.12 – 2024.01*, [Meritco](https://www.linkedin.com/company/meritco-services/), AI Investment Research Intern 
+- *2022.12 – 2023.01*, [VMLY&R](https://www.vmlyr.com), Account Executive Intern([Merck](https://www.merckgroup.com/en), [Johnson & Johnson](https://www.jnj.com))
 
 
 ---
