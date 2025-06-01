@@ -70,71 +70,46 @@ I’m currently preparing submissions to **AAAI**, **INFORMS**, and **NeurIPS wo
 
 # 📝 Publications
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">Preprint 2025</div><img src='images/evonet.png' alt="EvoNet" width="100%"></div></div>
-<div class='paper-box-text' markdown="1">
+▪ **The Time Value of Algorithmic Recommendation: Modeling Delayed Effects in Consumer Learning**  
+📌 Under Review: *Computers & Education: Artificial Intelligence* (中科院一区, IF ~5.6)  
+📥 SSRN Preprint: [link] 🧠 Keywords: Quant Marketing · User Learning · Platform Algorithms  
 
-**EvoNet: A Neural Architecture for Expressive Structure Learning**  
-Eliza Yiting Tang  
-[GitHub](https://github.com/elizatang007/EvoNet)  
+A structural model capturing user learning with delayed feedback and personalized exposure. Simulated on real-world-like recommendation patterns to estimate long-run conversion impact.
 
-A novel neural network design that activates structural paths dynamically via evolutionary path control.  
-Currently under review for inclusion in AAAI 2026 and the NeurIPS Causal Representation Workshop.
+▪ **Designing Incentive-Compatible Mechanisms for Green eVTOL Adoption under Preference Externalities**  
+📌 Under Review: *Technological Forecasting & Social Change* (中科院一区, IF ~10.88)  
+📥 SSRN Preprint: [link] 🧠 Keywords: Platform Strategy · Incentive Design · Green Mobility  
+🎤 Accepted Abstract: INFORMS Annual Meeting 2025 (San Francisco)  
 
-</div></div>
+Proposes a platform-level mechanism that internalizes user preference externalities. Builds a hybrid simulation-analytic model calibrated to stated preference data.
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">INFORMS 2025</div><img src='images/evtol.png' alt="eVTOL" width="100%"></div></div>
-<div class='paper-box-text' markdown="1">
+▪ **EvoNet: A Neural Architecture for Structural Expressivity in Recommendation Systems**  
+📌 Submitted: AAAI-26 Student Abstract + Poster Track  
+📥 arXiv Preprint: [link] 🧠 Keywords: Neural Modeling · Structural Adaptation · AI for Marketing  
 
-**Designing Green eVTOL Adoption Mechanisms under Preference Externalities**  
-Submitted to INFORMS Annual Meeting 2025  
-Extended versions are being prepared for submission to Marketing Science and *Nature Cities*.  
+Proposes a task-adaptive neural model that dynamically activates expressivity paths in layered recommendation environments. Inspired by genetic expression and transformer design.
 
-This work investigates sustainable mobility platform design through the lens of social spillovers and user coordination.
+▪ **Returns to Education: A Causal Analysis Using Instrumental Variables**  
+📎 Honours Thesis: University of Sydney, ECMT3997  
+📄 PDF: [Download](assets/ecmt3997_thesis.pdf) 🧠 Keywords: IV Estimation · LATE · Education Economics  
 
-</div></div>
+Applies the Card (1993) framework using proximity to college as an instrument. Implements 2SLS estimation, interprets LATE, and assesses instrument strength using Australian microdata.
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">Working Paper</div><img src='images/ecmt3997.png' alt="Returns to Education" width="100%"></div></div>
-<div class='paper-box-text' markdown="1">
+---
 
-**Returns to Education: A Causal Analysis Using Instrumental Variables**  
-Eliza Yiting Tang  
-[Thesis PDF](assets/ecmt3997_thesis.pdf)  
+## ⚒️ Working Papers / Under Development
 
-This honours thesis applies the Card (1993) framework using proximity to college as an instrument to estimate the causal return to schooling.  
-Implements 2SLS estimation, interprets LATE, and assesses instrument strength using Australian microdata.
+▪ **AI and User Retention: A Causal Modeling Approach Using Longitudinal Platform Data**  
+📝 Target: *Journal of Marketing Research* or *Quantitative Marketing and Economics*  
+🎯 Expected Submission: January 2026  
 
-</div></div>
+Uses dynamic panel methods and experimental variation to estimate the causal effect of recommendation intensity on user stickiness over time.
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">Causal Modeling</div><img src='images/llmretention.png' alt="LLM Retention" width="100%"></div></div>
-<div class='paper-box-text' markdown="1">
+▪ **Algorithmic Externalities in Multi-Sided Platforms: Insights from Urban Air Mobility Pilots**  
+📝 Target: *Nature Cities* (IF ~13+)  
+🎯 Expected Submission: February 2026  
 
-**Causal Modeling of Retention under LLM-based Interventions**  
-Eliza Yiting Tang  
-
-This paper builds a simulation framework to assess how algorithmic exposure timing influences user retention.  
-It is currently under submission to AAAI and ICML (CausalML track).
-
-</div></div>
-
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">Working Paper</div><img src='images/pricing.png' alt="Sustainable Pricing" width="100%"></div></div>
-<div class='paper-box-text' markdown="1">
-
-**Preference Externalities in Sustainable Product Pricing**  
-Working paper, draft available upon request.  
-
-This project examines dynamic pricing strategies under social interdependence, exploring fairness-efficiency tradeoffs in sustainability-focused platforms.
-
-</div></div>
-
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">Simulation Design</div><img src='images/simulation.png' alt="Simulation" width="100%"></div></div>
-<div class='paper-box-text' markdown="1">
-
-**Simulating Timing Effects in AI Education: A Design-Based Causal Approach**  
-Designed for upcoming submission to *EAAI@AAAI* and *PNAS Nexus*.  
-
-Presents an interactive simulation platform for teaching causal effects of delayed algorithm exposure in algorithmic education.
-
-</div></div>
+Mixed-method research combining spatial diffusion models, stated preference simulations, and public mobility data to assess AI’s impact on adoption timing.
 
 ---
 
