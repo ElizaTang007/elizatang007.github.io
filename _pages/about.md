@@ -118,6 +118,7 @@ Eliza Yiting Tang
 Applies the Card (1993) framework using proximity to college as an instrument. Implements 2SLS estimation, interprets LATE, and assesses instrument strength using Australian microdata.
 
 </div></div>
+
 ---
 <div class='paper-box'>
   <div class='paper-box-image'>
