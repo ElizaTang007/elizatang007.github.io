@@ -159,7 +159,6 @@ Mixed-method research combining spatial diffusion models, stated preference simu
 
 <!-- Text Timeline Section -->
 <ul style="list-style: none; padding-left: 0; line-height: 1.8;">
-  <li><strong>Dec 2025 · NeurIPS Workshop</strong><br>🧠 Presented retention modeling framework under LLM interventions (CausalML Track)</li>
   <li><strong>Oct 2024 · Microsoft Reactor</strong><br>🚀 Gave invited talk on AI-powered marketing and consumer behavior</li>
   <li><strong>Nov 2023 · USYD Research Fair</strong><br>🎓 Showcased work on algorithm ethics and transparency in education platforms</li>
 </ul> 
