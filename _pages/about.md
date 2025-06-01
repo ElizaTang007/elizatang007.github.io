@@ -107,7 +107,7 @@ Proposes a task-adaptive neural model that dynamically activates expressivity pa
 
 </div></div>
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">Honours Thesis</div><img src='images/ecmt3997.png' alt="Returns to Education" width="100%"></div></div>
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">Undergraduate Thesis</div><img src='images/ecmt3997.png' alt="Returns to Education" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
 **Returns to Education: A Causal Analysis Using Instrumental Variables**  
