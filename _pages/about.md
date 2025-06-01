@@ -167,6 +167,29 @@ Target: *Nature Cities* (IF ~13+)
 Mixed-method research combining spatial diffusion models, stated preference simulations, and public mobility data to assess AI’s impact on adoption timing.
 
 </div></div>
+---
+<table>
+<tr>
+<td width="60%">
+  
+<h3 style="margin-bottom:0px;">White Paper · Founder Project</h3>
+<h1><strong>Mindphone: Designing Human-AI Identity Mechanisms for Value-Aligned Platform Evolution</strong></h1>
+<p><strong>Eliza Yiting Tang</strong></p>
+
+<p><strong>📄 White Paper Draft:</strong> <a href="#">Link to PDF or GitHub Repo</a></p>
+<p><strong>🧠 Keywords:</strong> Mentity Design · Symbiotic AI · Algorithmic Memory · Platform Evolution</p>
+
+<p>A founder-driven white paper proposing <em>Mindphone</em> — a value-aligned AI identity agent that co-evolves with user preferences across platforms. The framework integrates causal modeling, preference trajectory learning, and long-term platform alignment.</p>
+
+<p><em>Originally envisioned as a startup concept</em>, <strong>Mindphone</strong> offers a new direction for human-centric platform algorithm design. Currently in development as both a research proposal and venture prototype.</p>
+
+</td>
+<td width="40%" align="center">
+  <img src="mindphone.png" width="220px">
+</td>
+</tr>
+</table>
+
 
 # 📖 Educations
 - *2023 – 2026*, **BA in Econometrics and Software Development**, University of Sydney
