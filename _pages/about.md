@@ -87,7 +87,7 @@ A structural model capturing user learning with delayed feedback and personalize
 
 **Designing Incentive-Compatible Mechanisms for Green eVTOL Adoption under Preference Externalities**  
 Eliza Yiting Tang  
-📌 Under Review: *Technological Forecasting & Social Change* (IF ~10.88)  
+📌 Under Review: *Technological Forecasting & Social Change* (IF ~12.9)  
 📥 SSRN Preprint: [link] 🧠 Keywords: Platform Strategy · Incentive Design · Green Mobility  
 🎤 Accepted Abstract: INFORMS Annual Meeting 2025 (San Francisco)  
 
@@ -146,12 +146,6 @@ Target: *Nature Cities* (IF ~13+)
 Mixed-method research combining spatial diffusion models, stated preference simulations, and public mobility data to assess AI’s impact on adoption timing.
 
 </div></div>
-
----
-
-# 🎖 Honors and Awards
-- *2024.12* Second Prize, China NLP Innovation Competition (Quant Text Modeling)
-- *2023.07* IAMCR Presentation, Lyon, France – AI x NFT Personification
 
 ---
 
