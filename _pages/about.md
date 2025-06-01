@@ -150,8 +150,7 @@ Mixed-method research combining spatial diffusion models, stated preference simu
 ---
 
 # 📖 Educations
-- *Jul 2025*, **Harvard University**, Cambridge, USA  
-- *2023 – 2026 (expected)*, **BA in Econometrics and Software Development**, University of Sydney
+- *2023 – 2026*, **BA in Econometrics and Software Development**, University of Sydney
 
 ---
 
