@@ -148,7 +148,26 @@ Mixed-method research combining spatial diffusion models, stated preference simu
 </div></div>
 
 ---
+<div class='paper-box'>
+  <div class='paper-box-image'>
+    <div><div class="badge">White Paper · Founder Project</div>
+      <img src='images/mindphone.png' alt="Mindphone" width="100%">
+    </div>
+  </div>
+  <div class='paper-box-text' markdown="1">
 
+**Mindphone: Designing Human-AI Identity Mechanisms for Value-Aligned Platform Evolution**  
+Eliza Yiting Tang  
+📥 White Paper Draft: [Link to PDF or GitHub Repo]  
+🧠 Keywords: Identity Design · Symbiotic AI · Algorithmic Memory · Platform Evolution  
+
+A founder-driven white paper proposing *Mindphone* — a value-aligned AI identity agent that co-evolves with user preferences across platforms. The framework integrates causal modeling, preference trajectory learning, and long-term platform alignment.  
+
+Originally envisioned as a startup concept, *Mindphone* offers a new direction for human-centric platform algorithm design. Currently in development as both a research proposal and venture prototype.
+
+  </div>
+</div>
+---
 # 📖 Educations
 - *2023 – 2026*, **BA in Econometrics and Software Development**, University of Sydney
 
