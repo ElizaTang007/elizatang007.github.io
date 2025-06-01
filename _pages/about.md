@@ -216,5 +216,4 @@ Mixed-method research combining spatial diffusion models, stated preference simu
 - *2023.12 – 2024.01*, [Meritco](https://www.linkedin.com/company/meritco-services/), AI Investment Research Intern 
 - *2022.12 – 2023.01*, [VMLY&R](https://www.vmlyr.com), Account Executive Intern([Merck](https://www.merckgroup.com/en), [Johnson & Johnson](https://www.jnj.com))
 
-
 ---
