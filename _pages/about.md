@@ -122,7 +122,7 @@ Applies the Card (1993) framework using proximity to college as an instrument. I
 ---
 <div class='paper-box'>
   <div class='paper-box-image'>
-    <div><div class="badge">White Paper · Founder Project</div>
+    <div><div class="badge">White Paper</div>
       <img src='images/mindphone.png' alt="Mindphone" width="100%">
     </div>
   </div>
