@@ -199,7 +199,6 @@ Mixed-method research combining spatial diffusion models, stated preference simu
 ---
 # 🚀 Entrepreneurship
 
----
 <!-- Mindphone -->
 <div class='paper-box' style="display: flex; align-items: center; margin-bottom: 2em;">
   <div class='paper-box-image' style="flex: 1; padding-right: 2em;">
@@ -229,26 +228,13 @@ Originally conceived as a startup concept, *Mindphone* bridges research and vent
 <div class='paper-box' style="display: flex; align-items: center;">
   <div class='paper-box-text' style="flex: 1; padding-right: 2em;" markdown="1">
 
----
-
-<div class='paper-box'>
-  <div class='paper-box-text' style="float:left; width:50%; margin-right:5%;" markdown="1">
-
 ### **YITA Aviation: Building the Future of Personal Flight**  
 *Co-Founder & Strategy Lead (2024–Present)*  
 🛫 [YITA Aviation GitHub](https://github.com/elizatang007/YITA-Aviation)  
-🔬 Keywords: Urban Air Mobility · Green eVTOL · Platform Strategy · Low-Altitude Economy  
+🔬 **Keywords**: Urban Air Mobility · Green eVTOL · Platform Strategy · Low-Altitude Economy  
 
 An early-stage eVTOL startup dedicated to democratizing low-altitude aerial mobility.  
 We design infrastructure platforms, flight scheduling systems, and regulatory pathways to make general-purpose flying vehicles as accessible and scalable as modern cars.  
-Ongoing focus includes AI-based route optimization and international smart city integration.
+Ongoing focus includes AI-based
 
-  </div>
-  <div class='paper-box-image' style="float:right; width:40%;">
-    <div>
-      <div class="badge">Startup</div>
-      <img src='images/yita.png' alt="YITA Aviation" width="100%">
-    </div>
-  </div>
-</div>
 ---
