@@ -198,7 +198,7 @@ Mixed-method research combining spatial diffusion models, stated preference simu
 
 ---
 # 🚀 Entrepreneurship
-
+---
 <div class='paper-box'>
   <div class='paper-box-image' style="float:left; width:45%; margin-right:5%;">
     <div>
