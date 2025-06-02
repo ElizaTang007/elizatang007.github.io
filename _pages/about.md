@@ -208,7 +208,6 @@ Mixed-method research combining spatial diffusion models, stated preference simu
   <div class='paper-box-text' markdown="1">
 
 **Mindphone: Designing Human-AI Identity Mechanisms for Value-Aligned Platform Evolution**  
-*Founder & Principal Researcher (2025–Present)*  
 📥 [White Paper Preview](https://github.com/elizatang007/Mindphone)  
 🧠 Keywords: Identity Design · Symbiotic AI · Algorithmic Memory · Platform Evolution  
 
@@ -223,7 +222,7 @@ Currently under development as both a **PhD research proposal** and **venture pr
 
 ---
 
-- *2024.06 – Present*, [YITA Aviation](https://github.com/elizatang007/YITA-Aviation), Co-Founder & Strategy Lead  
+- *2024.12 – Present*, [YITA Aviation](https://github.com/elizatang007/YITA-Aviation), Co-Founder 
   Building an AI-powered eVTOL ecosystem to make personal aerial vehicles as accessible as cars.  
   Leading platform design, smart infrastructure, and international regulatory strategy for next-generation low-altitude mobility.
 ---
