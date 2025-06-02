@@ -199,8 +199,7 @@ Mixed-method research combining spatial diffusion models, stated preference simu
 ---
 # 🚀 Entrepreneurship
 
-<!-- Mindphone: Image Left, Text Right -->
-- <div class='paper-box'>
+<div class='paper-box'>
   <div class='paper-box-image' style="float:left; width:45%; margin-right:5%;">
     <div>
       <div class="badge">White Paper</div>
@@ -209,7 +208,7 @@ Mixed-method research combining spatial diffusion models, stated preference simu
   </div>
   <div class='paper-box-text' style="overflow:hidden" markdown="1">
 
-**Mindphone: Designing Human-AI Identity Mechanisms for Value-Aligned Platform Evolution**  
+### **Mindphone: Designing Human-AI Identity Mechanisms for Value-Aligned Platform Evolution**  
 *Founder & Principal Researcher (2025–Present)*  
 📥 [White Paper Preview](https://github.com/elizatang007/Mindphone)  
 🧠 Keywords: Identity Design · Symbiotic AI · Algorithmic Memory · Platform Evolution  
@@ -224,11 +223,10 @@ Originally conceived as a startup concept, *Mindphone* bridges research and vent
 
 ---
 
-<!-- YITA Aviation: Text Left, Image Right -->
-- <div class='paper-box'>
+<div class='paper-box'>
   <div class='paper-box-text' style="float:left; width:50%; margin-right:5%;" markdown="1">
 
-**YITA Aviation: Building the Future of Personal Flight**  
+### **YITA Aviation: Building the Future of Personal Flight**  
 *Co-Founder & Strategy Lead (2024–Present)*  
 🛫 [YITA Aviation GitHub](https://github.com/elizatang007/YITA-Aviation)  
 🔬 Keywords: Urban Air Mobility · Green eVTOL · Platform Strategy · Low-Altitude Economy  
