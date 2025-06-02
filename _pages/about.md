@@ -198,20 +198,22 @@ Mixed-method research combining spatial diffusion models, stated preference simu
 
 ---
 # 🚀 Entrepreneurship
+
 ---
-<div class='paper-box'>
-  <div class='paper-box-image' style="float:left; width:45%; margin-right:5%;">
+<!-- Mindphone -->
+<div class='paper-box' style="display: flex; align-items: center; margin-bottom: 2em;">
+  <div class='paper-box-image' style="flex: 1; padding-right: 2em;">
     <div>
       <div class="badge">White Paper</div>
       <img src='images/mindphone.png' alt="Mindphone" width="100%">
     </div>
   </div>
-  <div class='paper-box-text' style="overflow:hidden" markdown="1">
+  <div class='paper-box-text' style="flex: 1;" markdown="1">
 
 ### **Mindphone: Designing Human-AI Identity Mechanisms for Value-Aligned Platform Evolution**  
 *Founder & Principal Researcher (2025–Present)*  
 📥 [White Paper Preview](https://github.com/elizatang007/Mindphone)  
-🧠 Keywords: Identity Design · Symbiotic AI · Algorithmic Memory · Platform Evolution  
+🧠 **Keywords**: Identity Design · Symbiotic AI · Algorithmic Memory · Platform Evolution  
 
 A founder-driven initiative proposing **Mindphone** — a value-aligned identity agent that co-evolves with user preferences across digital platforms.  
 The system integrates causal modeling, preference trajectory learning, and structural simulation to support long-term human–algorithm alignment.  
@@ -220,6 +222,12 @@ Originally conceived as a startup concept, *Mindphone* bridges research and vent
 
   </div>
 </div>
+
+---
+
+<!-- YITA Aviation -->
+<div class='paper-box' style="display: flex; align-items: center;">
+  <div class='paper-box-text' style="flex: 1; padding-right: 2em;" markdown="1">
 
 ---
 
