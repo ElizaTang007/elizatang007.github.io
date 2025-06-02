@@ -189,6 +189,7 @@ Mixed-method research combining spatial diffusion models, stated preference simu
 
 # 📖 Educations
 - *2023 – 2026*, **BA in Econometrics and Software Development**, University of Sydney
+  
 ---
 # 💻 Internships
 - *2024.12 – 2025.02*, Google, Data Analyst Intern
@@ -198,31 +199,50 @@ Mixed-method research combining spatial diffusion models, stated preference simu
 ---
 # 🚀 Entrepreneurship
 
+<!-- Mindphone: Image Left, Text Right -->
 - <div class='paper-box'>
-  <div class='paper-box-image'>
+  <div class='paper-box-image' style="float:left; width:45%; margin-right:5%;">
     <div>
       <div class="badge">White Paper</div>
       <img src='images/mindphone.png' alt="Mindphone" width="100%">
     </div>
   </div>
-  <div class='paper-box-text' markdown="1">
+  <div class='paper-box-text' style="overflow:hidden" markdown="1">
 
 **Mindphone: Designing Human-AI Identity Mechanisms for Value-Aligned Platform Evolution**  
+*Founder & Principal Researcher (2025–Present)*  
 📥 [White Paper Preview](https://github.com/elizatang007/Mindphone)  
 🧠 Keywords: Identity Design · Symbiotic AI · Algorithmic Memory · Platform Evolution  
 
 A founder-driven initiative proposing **Mindphone** — a value-aligned identity agent that co-evolves with user preferences across digital platforms.  
 The system integrates causal modeling, preference trajectory learning, and structural simulation to support long-term human–algorithm alignment.  
 
-Originally conceived as a startup concept, *Mindphone* bridges research and venture design, laying the foundation for future human-centric platforms.  
-Currently under development as both a **PhD research proposal** and **venture prototype**.
+Originally conceived as a startup concept, *Mindphone* bridges research and venture design, laying the foundation for future human-centric platforms.
 
   </div>
 </div>
 
 ---
 
-- *2024.12 – Present*, [YITA Aviation](https://github.com/elizatang007/YITA-Aviation), Co-Founder 
-  Building an AI-powered eVTOL ecosystem to make personal aerial vehicles as accessible as cars.  
-  Leading platform design, smart infrastructure, and international regulatory strategy for next-generation low-altitude mobility.
+<!-- YITA Aviation: Text Left, Image Right -->
+- <div class='paper-box'>
+  <div class='paper-box-text' style="float:left; width:50%; margin-right:5%;" markdown="1">
+
+**YITA Aviation: Building the Future of Personal Flight**  
+*Co-Founder & Strategy Lead (2024–Present)*  
+🛫 [YITA Aviation GitHub](https://github.com/elizatang007/YITA-Aviation)  
+🔬 Keywords: Urban Air Mobility · Green eVTOL · Platform Strategy · Low-Altitude Economy  
+
+An early-stage eVTOL startup dedicated to democratizing low-altitude aerial mobility.  
+We design infrastructure platforms, flight scheduling systems, and regulatory pathways to make general-purpose flying vehicles as accessible and scalable as modern cars.  
+Ongoing focus includes AI-based route optimization and international smart city integration.
+
+  </div>
+  <div class='paper-box-image' style="float:right; width:40%;">
+    <div>
+      <div class="badge">Startup</div>
+      <img src='images/yita.png' alt="YITA Aviation" width="100%">
+    </div>
+  </div>
+</div>
 ---
