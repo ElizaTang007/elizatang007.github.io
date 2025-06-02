@@ -120,27 +120,6 @@ Applies the Card (1993) framework using proximity to college as an instrument. I
 </div></div>
 
 ---
-<div class='paper-box'>
-  <div class='paper-box-image'>
-    <div><div class="badge">White Paper</div>
-      <img src='images/mindphone.png' alt="Mindphone" width="100%">
-    </div>
-  </div>
-  <div class='paper-box-text' markdown="1">
-
-**Mindphone: Designing Human-AI Identity Mechanisms for Value-Aligned Platform Evolution**  
-Eliza Yiting Tang  
-📥 White Paper Draft: [Link to PDF or GitHub Repo]  
-🧠 Keywords: Identity Design · Symbiotic AI · Algorithmic Memory · Platform Evolution  
-
-A founder-driven white paper proposing *Mindphone* — a value-aligned AI identity agent that co-evolves with user preferences across platforms. The framework integrates causal modeling, preference trajectory learning, and long-term platform alignment.  
-
-Originally envisioned as a startup concept, *Mindphone* offers a new direction for human-centric platform algorithm design. Currently in development as both a research proposal and venture prototype.
-
-  </div>
-</div>
-
----
 
 ## ⚒️ Working Papers / Under Development
 
@@ -167,11 +146,6 @@ Target: *Nature Cities* (IF ~13+)
 Mixed-method research combining spatial diffusion models, stated preference simulations, and public mobility data to assess AI’s impact on adoption timing.
 
 </div></div>
-
----
-
-# 📖 Educations
-- *2023 – 2026*, **BA in Econometrics and Software Development**, University of Sydney
 
 ---
 
@@ -213,9 +187,43 @@ Mixed-method research combining spatial diffusion models, stated preference simu
 
 ---
 
+# 📖 Educations
+- *2023 – 2026*, **BA in Econometrics and Software Development**, University of Sydney
+---
 # 💻 Internships
 - *2024.12 – 2025.02*, Google, Data Analyst Intern
 - *2023.12 – 2024.01*, [Meritco](https://www.linkedin.com/company/meritco-services/), AI Investment Research Intern 
 - *2022.12 – 2023.01*, [VMLY&R](https://www.vmlyr.com), Account Executive Intern([Merck](https://www.merckgroup.com/en), [Johnson & Johnson](https://www.jnj.com))
 
+---
+# 🚀 Entrepreneurship
+
+- <div class='paper-box'>
+  <div class='paper-box-image'>
+    <div>
+      <div class="badge">White Paper</div>
+      <img src='images/mindphone.png' alt="Mindphone" width="100%">
+    </div>
+  </div>
+  <div class='paper-box-text' markdown="1">
+
+**Mindphone: Designing Human-AI Identity Mechanisms for Value-Aligned Platform Evolution**  
+*Founder & Principal Researcher (2025–Present)*  
+📥 [White Paper Preview](https://github.com/elizatang007/Mindphone)  
+🧠 Keywords: Identity Design · Symbiotic AI · Algorithmic Memory · Platform Evolution  
+
+A founder-driven initiative proposing **Mindphone** — a value-aligned identity agent that co-evolves with user preferences across digital platforms.  
+The system integrates causal modeling, preference trajectory learning, and structural simulation to support long-term human–algorithm alignment.  
+
+Originally conceived as a startup concept, *Mindphone* bridges research and venture design, laying the foundation for future human-centric platforms.  
+Currently under development as both a **PhD research proposal** and **venture prototype**.
+
+  </div>
+</div>
+
+---
+
+- *2024.06 – Present*, [YITA Aviation](https://github.com/elizatang007/YITA-Aviation), Co-Founder & Strategy Lead  
+  Building an AI-powered eVTOL ecosystem to make personal aerial vehicles as accessible as cars.  
+  Leading platform design, smart infrastructure, and international regulatory strategy for next-generation low-altitude mobility.
 ---
