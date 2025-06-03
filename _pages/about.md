@@ -20,9 +20,9 @@ I’ve independently led several working papers that focus on:
 - **EvoNet**: An expressive neural architecture for adaptive path control
 - **Adoption Mechanism Design for Green eVTOL Platforms**
 
-I co-founded [**YITA AVIATION**](https://yita-aviation.com), a research-driven startup shaping the future of urban air mobility (UAM) by integrating eVTOL system design, algorithmic platform modeling, and policy simulation. Our work engages with academic institutions and regulatory think tanks to build scalable mobility solutions rooted in economic and infrastructural realism.
+I co-founded [**YITA AVIATION**](https://elizatang007.github.io/YITA-Aviation-Site/), a research-driven startup shaping the future of urban air mobility (UAM) by integrating eVTOL system design, algorithmic platform modeling, and policy simulation. Our work engages with academic institutions and regulatory think tanks to build scalable mobility solutions rooted in economic and infrastructural realism.
 
-I’m currently preparing submissions to **AAAI**, **INFORMS**, and **NeurIPS workshops**, and welcome collaborations in **user modeling**, **algorithmic experimentation**, and **platform incentive design**.📄 [View My CV](/assets/CV_Yiting_Tang.pdf)
+I’m currently preparing submissions to **AAAI**, **INFORMS**, and **NeurIPS workshops**, and welcome collaborations in **user modeling**, **algorithmic experimentation**, and **platform incentive design**.📄 [View My CV](https://elizatang007.github.io/Eliza_Tang_CV.pdf)
 
 ---
 <!-- 🔷 Paste this HTML block into your about.md or index.html if your theme supports raw HTML rendering -->
