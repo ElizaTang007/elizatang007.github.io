@@ -135,7 +135,7 @@ Uses dynamic panel methods and experimental variation to estimate the causal eff
 
 </div></div>
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">Urban Platform Study</div><img src='images/simulation.png' alt="UAM Externalities" width="100%"></div></div>
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">Urban Platform Study</div><img src='images/UPS.png' alt="UAM Externalities" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
 **Algorithmic Externalities in Multi-Sided Platforms: Insights from Urban Air Mobility Pilots**  
