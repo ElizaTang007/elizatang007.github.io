@@ -114,7 +114,7 @@ Proposes a task-adaptive neural model that dynamically activates expressivity pa
 **Returns to Education: A Causal Analysis Using Instrumental Variables**  
 Eliza Yiting Tang  
 📎 ECMT3997 Thesis, University of Sydney  
-📄 PDF: [Download](assets/ecmt3997_thesis.pdf) 🧠 Keywords: IV Estimation · LATE · Education Economics  
+📄 PDF: [View](assets/ecmt3997.pdf) 🧠 Keywords: IV Estimation · LATE · Education Economics  
 
 Applies the Card (1993) framework using proximity to college as an instrument. Implements 2SLS estimation, interprets LATE, and assesses instrument strength using Australian microdata.
 
