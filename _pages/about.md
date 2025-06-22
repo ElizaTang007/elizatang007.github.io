@@ -102,7 +102,7 @@ Applies the Card (1993) framework using proximity to college as an instrument. I
 <!-- INFORMS LLM Card -->
 <div style="display: flex; flex-direction: row; gap: 1rem; border-radius: 16px; overflow: hidden; background: #f0f9ff; box-shadow: 0 4px 12px rgba(0,0,0,0.05);">
   <div style="padding: 1.2rem;">
-    <div style="font-size: 0.85rem; color: #6c757d;">📍 Atlanta, Georgia, USA · Oct, 2025</div>
+    <div style="font-size: 0.85rem; color: #6c757d;">📍 Atlanta, Georgia, USA ·  Upcoming Oct, 2025</div>
     <h3 style="margin: 0.3rem 0 0.6rem;">🧠 Causal Modeling of User Retention with Large Language Models</h3>
     <p><strong>INFORMS Annual Meeting 2025</strong> · Independent Author<br>
     Developed a unified causal inference framework integrating psychological features extracted by LLMs from user-generated texts (reviews, browsing history) into heterogeneous treatment effect estimation for user retention analysis.</p>
