@@ -120,13 +120,17 @@ Applies the Card (1993) framework using proximity to college as an instrument. I
   </div>
 
   <!-- IAMCR Card -->
-  <div style="display: flex; flex-direction: row; gap: 1rem; border-radius: 16px; overflow: hidden; background: #f5f7ff; box-shadow: 0 4px 12px rgba(0,0,0,0.05);">
-    <div style="padding: 1.2rem;">
-      <div style="font-size: 0.85rem; color: #6c757d;">📍 Lyon, France · Jul 2023</div>
-      <h3 style="margin: 0.3rem 0 0.6rem;">🎨 AI-generated NFT Personification</h3>
-      <p><strong><a href="https://iamcr.org" target="_blank">IAMCR 2023</a></strong> · Independent Author<br>Used Face++ and computer vision to quantify human likeness in generative art. Developed a communication-perception framework.</p>
-    </div>
+<div style="display: flex; flex-direction: row; gap: 1rem; border-radius: 16px; overflow: hidden; background: #f5f7ff; box-shadow: 0 4px 12px rgba(0,0,0,0.05);">
+  <div style="padding: 1.2rem;">
+    <div style="font-size: 0.85rem; color: #6c757d;">📍 Lyon, France · Jul 2023</div>
+    <h3 style="margin: 0.3rem 0 0.6rem;">🎨 Examining the Communication Effectiveness of AI Art Personification</h3>
+    <p>
+      <strong><a href="https://iamcr.org" target="_blank">IAMCR 2023</a></strong> · Independent Author<br>
+      Used Face++ and computer vision to quantify human likeness in generative art. Developed a communication-perception framework.<br>
+      <a href="https://elizatang007.github.io/Examining%20the%20Communication%20Effectiveness%20of%20Artificial%20Intelligence%20Art%20Personification.pdf" target="_blank">View</a>
+    </p>
   </div>
+</div>
 
 
 </div>
