@@ -67,6 +67,7 @@ I am actively developing several empirical research projects involving **causal 
 - *2025.03*: ✈️ Invited to the **Avalon International Airshow**, to explore **Urban Air Mobility (UAM)** platform.
 - *2024.11*: 🌍 Invited to the **Sustainable Development Goals Dinner** in [UNAA](https://www.unaa.org.au/).
 - *2024.03*: 🧠 Causal modeling for retention accepted at ICEMGD.
+  
 ---
 
 # 📝 Publications
