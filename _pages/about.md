@@ -63,7 +63,7 @@ I am actively developing several empirical research projects involving **causal 
 
 ---
 # 🔥 News
-- *2025.05*: 📢 Submitted our paper on LLM-powered causal modeling for user retention to INFORMS 2025!
+- *2025.05*: 📢 Submitted paper on LLM-powered causal modeling for user retention to INFORMS 2025!
 - *2025.03*: ✈️ Invited to the **Avalon International Airshow**, to explore **Urban Air Mobility (UAM)** platform.
 - *2024.11*: 🌍 Invited to the **Sustainable Development Goals Dinner** in [UNAA](https://www.unaa.org.au/).
 - *2024.03*: 🧠 Causal modeling for retention accepted at ICEMGD.
