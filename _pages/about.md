@@ -10,19 +10,21 @@ redirect_from:
 
 <span class='anchor' id='about-me'></span>
 
-I’m **Eliza Yiting Tang**, an undergraduate at the University of Sydney majoring in **Econometrics and Software Development**, currently applying for PhD programs in **Quantitative Marketing**, **Information Systems**, and **Algorithmic Behavioral Modeling**.
+I’m **Eliza Yiting Tang**, an undergraduate at the University of Sydney majoring in **Econometrics and Software Development**, currently applying for PhD programs in **Quantitative Marketing**, **Digital Platform Research**, and **Algorithmic Behavioral Modeling**.
 
-My research explores how individuals learn and respond to algorithmic recommendations over time, with applications in both **digital platforms** and **sustainable mobility ecosystems**. I am particularly interested in **preference externalities**, **delayed exposure**, and **causal learning** mechanisms that shape long-term platform behavior.
+My research explores how **user preferences and platform behaviors co-evolve** through social information, algorithmic interventions, and policy incentives. I focus on **preference externalities** — where individuals adjust their decisions based on peer behavior and platform signals — and seek to **causally identify** these mechanisms using a combination of *quasi-experimental designs*, *causal machine learning*, and *structural behavioral models*.
 
-I’ve independently led several working papers that focus on:
-- **Preference Externalities in Sustainable Product Pricing**
-- **Causal Modeling of Retention under LLM-based Interventions**
-- **EvoNet**: An expressive neural architecture for adaptive path control
-- **Adoption Mechanism Design for Green eVTOL Platforms**
+Currently, I am independently developing several empirical projects:
 
-I co-founded [**YITA AVIATION**](https://elizatang007.github.io/YITA-Aviation-Site/), a research-driven startup shaping the future of urban air mobility (UAM) by integrating eVTOL system design, algorithmic platform modeling, and policy simulation. Our work engages with academic institutions and regulatory think tanks to build scalable mobility solutions rooted in economic and infrastructural realism.
+- **Modeling preference externalities and willingness-to-pay shifts under social information cues on digital platforms**
+- **Causal evaluation of user retention interventions influenced by regulatory and policy shocks**
+- **Designing expressive neural architectures (EvoNet) to capture adaptive user behavior pathways under heterogeneous learning dynamics**
+- **Simulating platform adoption in emerging markets such as Urban Air Mobility (eVTOL), focusing on identity formation and incentive design**
 
-I’m currently preparing submissions to **AAAI**, **INFORMS**, and **NeurIPS workshops**, and welcome collaborations in **user modeling**, **algorithmic experimentation**, and **platform incentive design**.📄 [View My CV](https://elizatang007.github.io/Eliza_Tang_CV.pdf)
+
+I co-founded [**YITA AVIATION**](https://baike.baidu.com/item/%E4%B8%8A%E6%B5%B7%E4%BE%9D%E5%A1%94%E6%99%BA%E8%A1%8C%E8%88%AA%E7%A9%BA%E7%A7%91%E6%8A%80%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8/65248006), a startup startup integrating algorithmic platform modeling, system design, and simulation to explore scalable mobility solutions in the Urban Air Mobility (UAM) sector.
+
+I’m currently preparing submissions to **AAAI**, **INFORMS**, and **NeurIPS workshops**, and welcome collaborations in **causal inference**, **user modeling**, **algorithmic policy design**, and **platform experimentation**.📄 [View My CV](https://elizatang007.github.io/Eliza_Tang_CV.pdf)
 
 ---
 <!-- 🔷 Paste this HTML block into your about.md or index.html if your theme supports raw HTML rendering -->
