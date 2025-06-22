@@ -24,7 +24,7 @@ Currently, I am independently developing several empirical projects:
 
 I co-founded [**YITA AVIATION**](https://baike.baidu.com/item/%E4%B8%8A%E6%B5%B7%E4%BE%9D%E5%A1%94%E6%99%BA%E8%A1%8C%E8%88%AA%E7%A9%BA%E7%A7%91%E6%8A%80%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8/65248006), a startup startup integrating algorithmic platform modeling, system design, and simulation to explore scalable mobility solutions in the Urban Air Mobility (UAM) sector.
 
-I’m currently preparing submissions to **AAAI**, **INFORMS**, and **NeurIPS workshops**, and welcome collaborations in **causal inference**, **user modeling**, **algorithmic policy design**, and **platform experimentation**.📄 [View My CV](https://elizatang007.github.io/Eliza_Tang_CV.pdf)
+I am actively developing several empirical research projects involving **causal inference**, **user modeling**, **algorithmic policy design**, and **platform experimentation**, and I am eager to contribute to ongoing research collaborations in these areas..📄 [View My CV](https://elizatang007.github.io/Eliza_Tang_CV.pdf)
 
 ---
 <!-- 🔷 Paste this HTML block into your about.md or index.html if your theme supports raw HTML rendering -->
