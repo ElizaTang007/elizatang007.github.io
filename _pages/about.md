@@ -169,7 +169,6 @@ Mixed-method research combining spatial diffusion models, stated preference simu
       <div style="font-size: 0.85rem; color: #6c757d;">📍 Lyon, France · Jul 2023</div>
       <h3 style="margin: 0.3rem 0 0.6rem;">🎨 AI-generated NFT Personification</h3>
       <p><strong><a href="https://iamcr.org" target="_blank">IAMCR 2023</a></strong> · Independent Author<br>Used Face++ and computer vision to quantify human likeness in generative art. Developed a communication-perception framework.</p>
-      <p><a href="/assets/nft_paper.pdf">View Paper</a></p>
     </div>
   </div>
 
@@ -179,7 +178,6 @@ Mixed-method research combining spatial diffusion models, stated preference simu
       <div style="font-size: 0.85rem; color: #6c757d;">📍 Edinburgh, UK · June 2024</div>
       <h3 style="margin: 0.3rem 0 0.6rem;">📈 Deep Learning for High-Frequency Stock Prediction</h3>
       <p><strong><a href="https://www.icemgd.org/index.html" target="_blank">ICEMGD 2024</a></strong> · Independent Author<br>Built ConvLSTM & MiniAlexNet models for NYSE millisecond data. Achieved robust predictive performance across volatility bands.</p>
-      <p><a href="/assets/stock_paper.pdf">View Paper</a></p>
     </div>
   </div>
 
