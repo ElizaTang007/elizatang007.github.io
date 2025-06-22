@@ -165,7 +165,6 @@ Mixed-method research combining spatial diffusion models, stated preference simu
 
   <!-- IAMCR Card -->
   <div style="display: flex; flex-direction: row; gap: 1rem; border-radius: 16px; overflow: hidden; background: #f5f7ff; box-shadow: 0 4px 12px rgba(0,0,0,0.05);">
-    <img src="images/nft.png" alt="NFT" style="width: 240px; object-fit: cover;">
     <div style="padding: 1.2rem;">
       <div style="font-size: 0.85rem; color: #6c757d;">📍 Lyon, France · Jul 2023</div>
       <h3 style="margin: 0.3rem 0 0.6rem;">🎨 AI-generated NFT Personification</h3>
@@ -176,7 +175,6 @@ Mixed-method research combining spatial diffusion models, stated preference simu
 
   <!-- ICEMGD Card -->
   <div style="display: flex; flex-direction: row; gap: 1rem; border-radius: 16px; overflow: hidden; background: #fff9ec; box-shadow: 0 4px 12px rgba(0,0,0,0.05);">
-    <img src="images/stock.png" alt="Finance" style="width: 240px; object-fit: cover;">
     <div style="padding: 1.2rem;">
       <div style="font-size: 0.85rem; color: #6c757d;">📍 Edinburgh, UK · June 2024</div>
       <h3 style="margin: 0.3rem 0 0.6rem;">📈 Deep Learning for High-Frequency Stock Prediction</h3>
