@@ -70,44 +70,11 @@ I am actively developing several empirical research projects involving **causal 
   
 ---
 
-# 📝 Publications
+---
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">Under Review · C&E: AI</div><img src='images/eduai.png' alt="Time Value Recommendation" width="100%"></div></div>
-<div class='paper-box-text' markdown="1">
+## ⚒️ Under Development
 
-**The Time Value of Algorithmic Recommendation: Modeling Delayed Effects in Consumer Learning**  
-Eliza Yiting Tang  
-📌 Under Review: *Computers & Education: Artificial Intelligence* (IF ~5.6)  
-📥 SSRN Preprint: [link] 🧠 Keywords: Quant Marketing · User Learning · Platform Algorithms  
 
-A structural model capturing user learning with delayed feedback and personalized exposure. Simulated on real-world-like recommendation patterns to estimate long-run conversion impact.
-
-</div></div>
-
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">Under Review · TFSC</div><img src='images/evtol.png' alt="eVTOL Mechanism Design" width="100%"></div></div>
-<div class='paper-box-text' markdown="1">
-
-**Designing Incentive-Compatible Mechanisms for Green eVTOL Adoption under Preference Externalities**  
-Eliza Yiting Tang  
-📌 Under Review: *Technological Forecasting & Social Change* (IF ~12.9)  
-📥 SSRN Preprint: [link] 🧠 Keywords: Platform Strategy · Incentive Design · Green Mobility  
-🎤 Accepted Abstract: INFORMS Annual Meeting 2025 (San Francisco)  
-
-Proposes a platform-level mechanism that internalizes user preference externalities. Builds a hybrid simulation-analytic model calibrated to stated preference data.
-
-</div></div>
-
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">Submitted · AAAI-26</div><img src='images/evonet.png' alt="EvoNet" width="100%"></div></div>
-<div class='paper-box-text' markdown="1">
-
-**EvoNet: A Neural Architecture for Structural Expressivity in Recommendation Systems**  
-Eliza Yiting Tang  
-📌 Submitted: AAAI-26 Student Abstract + Poster Track  
-📥 arXiv Preprint: [link] 🧠 Keywords: Neural Modeling · Structural Adaptation · AI for Marketing  
-
-Proposes a task-adaptive neural model that dynamically activates expressivity paths in layered recommendation environments. Inspired by genetic expression and transformer design.
-
-</div></div>
 
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">Undergraduate Thesis</div><img src='images/ecmt3997.png' alt="Returns to Education" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
@@ -121,33 +88,6 @@ Applies the Card (1993) framework using proximity to college as an instrument. I
 
 </div></div>
 
----
-
-## ⚒️ Working Papers / Under Development
-
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">Causal Modeling</div><img src='images/llmretention.png' alt="LLM Retention" width="100%"></div></div>
-<div class='paper-box-text' markdown="1">
-
-**AI and User Retention: A Causal Modeling Approach Using Longitudinal Platform Data**  
-Target: *Journal of Marketing Research* or *Quantitative Marketing and Economics*  
-🎯 Expected Submission: January 2026  
-🧠 Keywords: Panel Methods · Algorithm Exposure · Retention Dynamics  
-
-Uses dynamic panel methods and experimental variation to estimate the causal effect of recommendation intensity on user stickiness over time.
-
-</div></div>
-
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">Urban Platform Study</div><img src='images/UPS.png' alt="UAM Externalities" width="100%"></div></div>
-<div class='paper-box-text' markdown="1">
-
-**Algorithmic Externalities in Multi-Sided Platforms: Insights from Urban Air Mobility Pilots**  
-Target: *Nature Cities* (IF ~13+)  
-🎯 Expected Submission: February 2026  
-🧠 Keywords: Platform Externalities · Spatial Diffusion · Urban Mobility  
-
-Mixed-method research combining spatial diffusion models, stated preference simulations, and public mobility data to assess AI’s impact on adoption timing.
-
-</div></div>
 
 ---
 
@@ -155,13 +95,29 @@ Mixed-method research combining spatial diffusion models, stated preference simu
 <h2 style="margin-top: 2.5rem;">💬 Talks and Conferences</h2>
 
 <!-- Text Timeline Section -->
-<ul style="list-style: none; padding-left: 0; line-height: 1.8;">
-  <li><strong>Oct 2024 · Microsoft Reactor</strong><br>🚀 Gave invited talk on AI-powered marketing and consumer behavior</li>
-  <li><strong>Nov 2023 · USYD Research Fair</strong><br>🎓 Showcased work on algorithm ethics and transparency in education platforms</li>
-</ul> 
-
+ 
 <!-- Project Visual Showcase -->
 <div style="display: flex; flex-direction: column; gap: 2rem; margin-top: 2rem;">
+  
+<!-- INFORMS LLM Card -->
+<div style="display: flex; flex-direction: row; gap: 1rem; border-radius: 16px; overflow: hidden; background: #f0f9ff; box-shadow: 0 4px 12px rgba(0,0,0,0.05);">
+  <div style="padding: 1.2rem;">
+    <div style="font-size: 0.85rem; color: #6c757d;">📍 Atlanta, Georgia, USA · Oct, 2025</div>
+    <h3 style="margin: 0.3rem 0 0.6rem;">🧠 Causal Modeling of User Retention with Large Language Models</h3>
+    <p><strong>INFORMS Annual Meeting 2025</strong> · Independent Author<br>
+    Developed a unified causal inference framework integrating psychological features extracted by LLMs from user-generated texts (reviews, browsing history) into heterogeneous treatment effect estimation for user retention analysis.</p>
+    <p>Applied causal forests and doubly robust estimation to quantify individual-level response heterogeneity, providing actionable insights for personalized marketing interventions. Demonstrated improved predictive performance using real-world e-commerce data.</p>
+  </div>
+  
+</div>
+  <!-- ICEMGD Card -->
+  <div style="display: flex; flex-direction: row; gap: 1rem; border-radius: 16px; overflow: hidden; background: #fff9ec; box-shadow: 0 4px 12px rgba(0,0,0,0.05);">
+    <div style="padding: 1.2rem;">
+      <div style="font-size: 0.85rem; color: #6c757d;">📍 Edinburgh, UK · June 2024</div>
+      <h3 style="margin: 0.3rem 0 0.6rem;">📈 Deep Learning for High-Frequency Stock Prediction</h3>
+      <p><strong><a href="https://www.icemgd.org/index.html" target="_blank">ICEMGD 2024</a></strong> · Independent Author<br>Built ConvLSTM & MiniAlexNet models for NYSE millisecond data. Achieved robust predictive performance across volatility bands.</p>
+    </div>
+  </div>
 
   <!-- IAMCR Card -->
   <div style="display: flex; flex-direction: row; gap: 1rem; border-radius: 16px; overflow: hidden; background: #f5f7ff; box-shadow: 0 4px 12px rgba(0,0,0,0.05);">
@@ -172,16 +128,10 @@ Mixed-method research combining spatial diffusion models, stated preference simu
     </div>
   </div>
 
-  <!-- ICEMGD Card -->
-  <div style="display: flex; flex-direction: row; gap: 1rem; border-radius: 16px; overflow: hidden; background: #fff9ec; box-shadow: 0 4px 12px rgba(0,0,0,0.05);">
-    <div style="padding: 1.2rem;">
-      <div style="font-size: 0.85rem; color: #6c757d;">📍 Edinburgh, UK · June 2024</div>
-      <h3 style="margin: 0.3rem 0 0.6rem;">📈 Deep Learning for High-Frequency Stock Prediction</h3>
-      <p><strong><a href="https://www.icemgd.org/index.html" target="_blank">ICEMGD 2024</a></strong> · Independent Author<br>Built ConvLSTM & MiniAlexNet models for NYSE millisecond data. Achieved robust predictive performance across volatility bands.</p>
-    </div>
-  </div>
 
 </div>
+
+
 
 ---
 
