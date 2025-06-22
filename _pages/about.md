@@ -35,7 +35,7 @@ I am actively developing several empirical research projects involving **causal 
     <h3 style="margin-top: 0;">🧠 Quant Researcher</h3>
     <ul style="padding-left: 1.2rem; margin-bottom: 0.5rem;">
       <li>Causal inference · Behavioral modeling · Platform design</li>
-      <li>📄 Papers @AAAI · NeurIPS · INFORMS</li>
+      <li>🎯 Ongoing research on digital platforms</li>
       <li>💼 Data analyst @Google · RA @Penn State</li>
     </ul>
   </div>
