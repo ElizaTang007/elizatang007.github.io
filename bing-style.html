@@ -12,22 +12,37 @@
       --bg:#000814;
       --bg2:#001d3d;
       --fg:#0ea5e9;
+      --violet:#6366f1;
       --text:#0f172a;
       --text-on-dark:rgba(255,255,255,.92);
+      --mx:50%;
+      --my:50%;
     }
     *{box-sizing:border-box}
     html,body{margin:0;padding:0}
     body{font-family:"Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; color:var(--text-on-dark); background: radial-gradient(1200px 800px at 10% 90%, rgba(14,165,233,.12), transparent 60%), radial-gradient(1000px 700px at 90% 10%, rgba(99,102,241,.10), transparent 60%), linear-gradient(180deg, var(--bg), var(--bg2));}
 
+    /* Dynamic tech orbs background (blueyard-like) */
+    .orbs{position:fixed; inset:0; z-index:-1; overflow:hidden; pointer-events:none}
+    .orb{position:absolute; width:42vw; height:42vw; border-radius:50%; filter:blur(50px); opacity:.18; background:radial-gradient(circle at 30% 30%, rgba(14,165,233,.9), rgba(14,165,233,0) 60%); mix-blend-mode:screen; animation:float 28s ease-in-out infinite;}
+    .orb.v2{width:36vw; height:36vw; background:radial-gradient(circle at 60% 60%, rgba(99,102,241,.9), rgba(99,102,241,0) 60%); animation-duration:34s}
+    .orb.v3{width:50vw; height:50vw; background:radial-gradient(circle at 40% 40%, rgba(56,189,248,.8), rgba(56,189,248,0) 60%); animation-duration:40s}
+    @keyframes float{0%,100%{transform:translate(0,0)}50%{transform:translate(4vw,-3vw)}}
+
+    /* subtle mouse spotlight */
+    .mouse-spot{position:fixed; inset:0; pointer-events:none; background:radial-gradient(600px 600px at var(--mx) var(--my), rgba(255,255,255,.10), transparent 60%)}
+
     /* Top Nav */
     .nav{position:sticky; top:0; z-index:50; backdrop-filter:saturate(140%) blur(12px); -webkit-backdrop-filter:saturate(140%) blur(12px); border-bottom:1px solid rgba(255,255,255,.15);}
-    .nav-inner{max-width:1100px; margin:0 auto; padding:.9rem 1rem; display:flex; align-items:center; justify-content:space-between}
+    .nav-inner{max-width:1140px; margin:0 auto; padding:.9rem 1rem; display:flex; align-items:center; justify-content:space-between}
     .brand{font-weight:800; letter-spacing:.5px}
-    .links a{color:var(--text-on-dark); text-decoration:none; margin-left:1rem; opacity:.85}
+    .links a{color:var(--text-on-dark); text-decoration:none; margin-left:1rem; opacity:.85; position:relative}
     .links a:hover{opacity:1}
+    .links a::after{content:""; position:absolute; left:0; right:0; bottom:-6px; height:2px; background:linear-gradient(90deg, rgba(14,165,233,.8), rgba(99,102,241,.8)); transform:scaleX(0); transform-origin:left; transition:transform .25s ease}
+    .links a:hover::after{transform:scaleX(1)}
 
     /* Hero */
-    .hero{max-width:1100px; margin:0 auto; padding:5rem 1rem 3rem 1rem; display:grid; grid-template-columns: 260px 1fr; gap:2rem; align-items:center}
+    .hero{max-width:1140px; margin:0 auto; padding:5rem 1rem 3rem 1rem; display:grid; grid-template-columns: 260px 1fr; gap:2rem; align-items:center}
     .avatar{width:240px; height:240px; border-radius:50%; overflow:hidden; box-shadow:0 20px 60px rgba(0,0,0,.45), 0 0 0 1px rgba(255,255,255,.12) inset}
     .avatar img{width:100%; height:100%; object-fit:cover}
     .hero h1{margin:0 0 .6rem 0; font-size:44px; line-height:1.05}
@@ -35,19 +50,23 @@
     .meta{margin-top:1rem; display:flex; gap:1rem; flex-wrap:wrap; opacity:.85}
 
     /* Sections */
-    section{max-width:1100px; margin:0 auto; padding:2.5rem 1rem;}
+    section{max-width:1140px; margin:0 auto; padding:2.5rem 1rem;}
     section h2{font-size:28px; margin:0 0 .8rem 0}
     .grid{display:grid; grid-template-columns: repeat(auto-fit, minmax(260px,1fr)); gap:1rem}
-    .card{background: rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.12); border-radius:16px; padding:1rem 1.1rem; box-shadow:0 10px 30px rgba(0,0,0,.25);}
+    .card{background: rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.12); border-radius:16px; padding:1rem 1.1rem; box-shadow:0 10px 30px rgba(0,0,0,.25); opacity:0; transform:translateY(16px); transition:opacity .6s ease, transform .6s ease}
+    .card.is-visible{opacity:1; transform:translateY(0)}
     .card h3{margin:.2rem 0 .5rem 0; font-size:18px}
     .card p{margin:0; opacity:.9; line-height:1.6}
+    .list{display:grid; gap:.6rem}
+    .list .item{background: rgba(255,255,255,.05); border:1px solid rgba(255,255,255,.12); border-radius:12px; padding:.8rem 1rem; opacity:0; transform:translateY(12px); transition:opacity .5s ease, transform .5s ease}
+    .list .item.is-visible{opacity:1; transform:translateY(0)}
 
     /* Subscribe */
     .subscribe{max-width:900px; text-align:center}
     .sub-box{margin-top:1rem; display:flex; gap:.6rem; justify-content:center}
     .sub-box input{width:280px; padding:.75rem .9rem; border-radius:10px; border:1px solid rgba(255,255,255,.25); background:rgba(0,0,0,.25); color:var(--text-on-dark)}
     .sub-box button{padding:.78rem 1.1rem; border-radius:10px; border:1px solid rgba(255,255,255,.25); background:linear-gradient(135deg, rgba(14,165,233,.9), rgba(99,102,241,.85)); color:white; cursor:pointer}
-    .footer{max-width:1100px; margin:0 auto; padding:3rem 1rem 4rem 1rem; opacity:.7; text-align:center}
+    .footer{max-width:1140px; margin:0 auto; padding:3rem 1rem 4rem 1rem; opacity:.7; text-align:center}
 
     @media (max-width: 860px){
       .hero{grid-template-columns:1fr; text-align:center}
@@ -57,6 +76,13 @@
   </style>
 </head>
 <body>
+  <div class="orbs">
+    <div class="orb" style="top:55%; left:-12%"></div>
+    <div class="orb v2" style="top:-8%; right:-14%"></div>
+    <div class="orb v3" style="bottom:-20%; left:30%"></div>
+  </div>
+  <div class="mouse-spot"></div>
+
   <header class="nav">
     <div class="nav-inner">
       <div class="brand">Eliza Tang</div>
@@ -64,6 +90,9 @@
         <a href="#about">About</a>
         <a href="#research">Research</a>
         <a href="#projects">Projects</a>
+        <a href="#news">News</a>
+        <a href="#talks">Talks</a>
+        <a href="#edu">Educations</a>
         <a href="#contact">Contact</a>
       </nav>
     </div>
@@ -73,42 +102,81 @@
     <section class="hero" id="about">
       <div class="avatar"><img src="images/profile.png" alt="Eliza avatar" /></div>
       <div>
-        <h1>Eliza Tang</h1>
-        <p>计算机科学与技术 · 香港大学</p>
-        <p>专注于人工智能、机器学习与数据科学，探索前沿技术以创造有价值的创新解决方案。</p>
+        <h1>Eliza Yiting Tang</h1>
+        <p>University of Sydney · Econometrics & Software Development</p>
+        <p>PhD Applicant in Quantitative Marketing, Digital Platform Research, Algorithmic Behavioral Modeling.</p>
         <div class="meta">
           <span>🤖 AI & ML</span>
           <span>📊 Data Science</span>
           <span>💬 NLP</span>
           <span>👁️ Computer Vision</span>
+          <span>🛫 UAM / eVTOL</span>
+          <span>🌿 ESG</span>
         </div>
       </div>
     </section>
 
     <section id="research">
       <h2>Research Interests</h2>
-      <div class="grid">
-        <div class="card">
-          <h3>自然语言处理</h3>
-          <p>语言模型、文本表示学习与下游任务，关注可解释性与稳健性。</p>
-        </div>
-        <div class="card">
-          <h3>计算机视觉</h3>
-          <p>多模态理解、视觉识别与生成建模，强调真实世界可用性。</p>
-        </div>
-        <div class="card">
-          <h3>深度学习</h3>
-          <p>神经网络架构与优化方法，性能与效率的共同提升。</p>
-        </div>
+      <div class="grid reveal">
+        <div class="card"><h3>Preference Externalities</h3><p>建模用户在社交线索影响下的偏好外部性与支付意愿迁移。</p></div>
+        <div class="card"><h3>Retention Causality</h3><p>在监管/政策冲击下，评估留存干预的因果效果与异质性。</p></div>
+        <div class="card"><h3>EvoNet for Behavior</h3><p>可表达的神经结构捕捉异质学习动态下的适应性行为路径。</p></div>
+        <div class="card"><h3>UAM Adoption</h3><p>新兴市场平台采纳（eVTOL）：身份形成与激励设计。</p></div>
       </div>
     </section>
 
     <section id="projects">
-      <h2>Selected Works</h2>
-      <div class="grid">
-        <div class="card"><h3>学术论文</h3><p>围绕 AI 技术的研究与应用，持续产出与合作。</p></div>
-        <div class="card"><h3>开源项目</h3><p>参与并维护多个开源项目，推动社区共建。</p></div>
-        <div class="card"><h3>竞赛与奖项</h3><p>在多项 AI 竞赛中取得优异成绩。</p></div>
+      <h2>Highlights</h2>
+      <div class="grid reveal">
+        <div class="card"><h3>🧠 Quant Researcher</h3><p>Causal inference · Behavioral modeling · Platform design<br/>🎯 Ongoing research on digital platforms<br/>💼 Data analyst @Google · RA @Penn State</p></div>
+        <div class="card"><h3>🌿 Sustainability Strategist</h3><p>Green incentives · ESG mechanisms · Platform policy<br/>🛠 eVTOL adoption · Sustainable pricing<br/>🌍 SDG @UN AU 2024 · Presenter @IAMCR</p></div>
+        <div class="card"><h3>🚀 UAM Entrepreneur</h3><p>Co-founder @YITA AVIATION · eVTOL platform design<br/>🛫 低空出行基础设施 · Tech-policy · Urban air innovator</p></div>
+      </div>
+    </section>
+
+    <section id="news">
+      <h2>News</h2>
+      <div class="list reveal">
+        <div class="item">2025.05 · 📢 Submitted paper on LLM-powered causal modeling for user retention to INFORMS 2025.</div>
+        <div class="item">2025.03 · ✈️ Invited to Avalon International Airshow to explore UAM platform.</div>
+        <div class="item">2024.11 · 🌍 Invited to the Sustainable Development Goals Dinner in UNAA.</div>
+        <div class="item">2024.03 · 🧠 Causal modeling for retention accepted at ICEMGD.</div>
+      </div>
+    </section>
+
+    <section id="dev">
+      <h2>Under Development</h2>
+      <div class="grid reveal">
+        <div class="card">
+          <h3>Returns to Education — A Causal Analysis Using IV</h3>
+          <p>ECMT3997 Thesis, University of Sydney · PDF: <a href="ecmt3997.pdf" style="color:#7dd3fc">View</a></p>
+          <p>Card (1993) 框架；以距大学远近为工具变量，实施 2SLS 并解析 LATE 与工具变量强度（澳洲微观数据）。</p>
+          <p>Keywords: IV · LATE · Education Economics</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="talks">
+      <h2>Talks & Conferences</h2>
+      <div class="list reveal">
+        <div class="item">📍 Atlanta, USA · Oct 2025 — INFORMS 2025 · Causal Modeling of User Retention with LLMs（独立作者）</div>
+        <div class="item">📍 Edinburgh, UK · Jun 2024 — ICEMGD 2024 · Deep Learning for High-Frequency Stock Prediction</div>
+        <div class="item">📍 Lyon, France · Jul 2023 — IAMCR 2023 · Examining the Communication Effectiveness of AI Art Personification</div>
+      </div>
+    </section>
+
+    <section id="edu">
+      <h2>Educations</h2>
+      <div class="list reveal">
+        <div class="item">2023–2026 · BA in Econometrics and Software Development · University of Sydney</div>
+      </div>
+
+      <h2 style="margin-top:1.6rem">Internships</h2>
+      <div class="list reveal">
+        <div class="item">2024.12–2025.02 · Google · Data Analyst Intern</div>
+        <div class="item">2023.12–2024.01 · Meritco · AI Investment Research Intern</div>
+        <div class="item">2022.12–2023.01 · VMLY&R · Account Executive Intern (Merck, J&J)</div>
       </div>
     </section>
 
@@ -124,5 +192,71 @@
 
     <footer class="footer">© 2025 Eliza Tang. All rights reserved.</footer>
   </main>
+
+  <canvas id="particles" style="position:fixed; inset:0; z-index:-1; pointer-events:none"></canvas>
+
+  <script>
+    // Mouse spotlight
+    window.addEventListener('mousemove', (e)=>{
+      document.documentElement.style.setProperty('--mx', e.clientX + 'px');
+      document.documentElement.style.setProperty('--my', e.clientY + 'px');
+    });
+
+    // Scroll reveal
+    const observer = new IntersectionObserver((entries)=>{
+      entries.forEach(entry=>{
+        if(entry.isIntersecting){
+          entry.target.querySelectorAll('.card, .item').forEach((el,i)=>{
+            setTimeout(()=>el.classList.add('is-visible'), i*70);
+          });
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {threshold:.15});
+    document.querySelectorAll('.reveal, .list').forEach(el=>observer.observe(el));
+
+    // Lightweight particles
+    const canvas = document.getElementById('particles');
+    const ctx = canvas.getContext('2d');
+    let w,h, dpr;
+    const particles = [];
+    function resize(){
+      dpr = Math.min(window.devicePixelRatio || 1, 2);
+      w = canvas.width = Math.floor(innerWidth * dpr);
+      h = canvas.height = Math.floor(innerHeight * dpr);
+      canvas.style.width = innerWidth + 'px';
+      canvas.style.height = innerHeight + 'px';
+    }
+    function spawn(n=60){
+      particles.length = 0;
+      for(let i=0;i<n;i++){
+        particles.push({
+          x: Math.random()*w,
+          y: Math.random()*h,
+          r: Math.random()*2*dpr + .5,
+          a: Math.random()*Math.PI*2,
+          s: .2 + Math.random()* .6
+        });
+      }
+    }
+    function tick(t){
+      ctx.clearRect(0,0,w,h);
+      for(const p of particles){
+        p.x += Math.cos(p.a)*p.s;
+        p.y += Math.sin(p.a)*p.s;
+        if(p.x<0) p.x=w; if(p.x>w) p.x=0; if(p.y<0) p.y=h; if(p.y>h) p.y=0;
+        ctx.beginPath();
+        const g = ctx.createRadialGradient(p.x,p.y,0,p.x,p.y,p.r*3);
+        g.addColorStop(0, 'rgba(125,211,252,.35)');
+        g.addColorStop(1, 'rgba(125,211,252,0)');
+        ctx.fillStyle = g;
+        ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
+        ctx.fill();
+      }
+      requestAnimationFrame(tick);
+    }
+    resize(); spawn(); tick();
+    addEventListener('resize', ()=>{resize(); spawn();});
+  </script>
 </body>
 </html> 
