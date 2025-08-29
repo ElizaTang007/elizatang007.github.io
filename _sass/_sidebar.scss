@@ -14,7 +14,7 @@
   margin-bottom: 1em;
 
   @include breakpoint($large) {
-    @include span(2 of 12);
+    @include span(3 of 12); /* widen sidebar for better presence */
     opacity: 1;
     -webkit-transition: opacity 0.2s ease-in-out;
             transition: opacity 0.2s ease-in-out;
@@ -92,7 +92,7 @@
   }
 
   img {
-    max-width: 175px;
+    max-width: 190px; /* slightly larger portrait in widened sidebar */
     min-width: 75px;
     border-radius: 50%;
 
@@ -106,7 +106,7 @@
 .author__content {
   display: table-cell;
   vertical-align: top;
-  padding-left: 10px;
+  padding-left: 12px;
   min-width: 120px;
   // padding-right: 25px;
   line-height: 1;
@@ -123,8 +123,8 @@
   margin: 0;
 
   @include breakpoint($large) {
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin-top: 12px;
+    margin-bottom: 12px;
   }
 }
 
@@ -140,8 +140,8 @@
   margin: 0;
 
   @include breakpoint($large) {
-    margin-top: 10px;
-    margin-bottom: 20px;
+    margin-top: 12px;
+    margin-bottom: 22px;
   }
 }
 
