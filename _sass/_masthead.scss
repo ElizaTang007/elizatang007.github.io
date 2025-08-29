@@ -71,7 +71,29 @@
   color: $masthead-link-color;
   padding: .35em .6em;
   border-radius: 8px;
+  position: relative;
   transition: background-color .25s ease, color .25s ease, box-shadow .25s ease;
+}
+
+/* underline slide-in */
+.masthead .site-nav .page-link::after,
+.masthead .masthead__menu-item a::after {
+  content: '';
+  position: absolute;
+  left: .6em;
+  right: .6em;
+  bottom: .15em;
+  height: 2px;
+  background: linear-gradient(90deg, rgba(0,200,255,.6), rgba(120,119,255,.6));
+  border-radius: 2px;
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform .25s ease;
+}
+
+.masthead .site-nav .page-link:hover::after,
+.masthead .masthead__menu-item a:hover::after {
+  transform: scaleX(1);
 }
 
 .masthead .site-nav .page-link:hover,
