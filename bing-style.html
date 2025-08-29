@@ -31,17 +31,24 @@
     .links a:hover::after{transform:scaleX(1)}
     .lang-toggle{margin-left:1rem; padding:.4rem .6rem; border:1px solid rgba(255,255,255,.25); border-radius:10px; background:rgba(0,0,0,.25); color:#fff; cursor:pointer}
 
-    .hero{max-width:1140px; margin:0 auto; padding:5rem 1rem 3rem 1rem; display:grid; grid-template-columns: 260px 1fr; gap:2rem; align-items:center}
+    /* Full-screen sections */
+    section{min-height:100vh; display:flex; flex-direction:column; justify-content:center; padding:0 1rem; position:relative}
+    .section-inner{max-width:1140px; margin:0 auto; width:100%}
+
+    .hero{min-height:100vh; display:flex; flex-direction:column; justify-content:center; padding:0 1rem}
+    .hero-inner{max-width:1140px; margin:0 auto; display:grid; grid-template-columns: 260px 1fr; gap:2rem; align-items:center}
     .avatar{width:240px; height:240px; border-radius:50%; overflow:hidden; box-shadow:0 20px 60px rgba(0,0,0,.45), 0 0 0 1px rgba(255,255,255,.12) inset}
     .avatar img{width:100%; height:100%; object-fit:cover}
     .hero h1{margin:0 0 .6rem 0; font-size:44px; line-height:1.05}
     .hero p{margin:.25rem 0; opacity:.9}
     .meta{margin-top:1rem; display:flex; gap:1rem; flex-wrap:wrap; opacity:.85}
+    .cv-btn{margin-top:1.5rem; display:inline-flex; align-items:center; gap:.5rem; padding:.8rem 1.2rem; background:linear-gradient(135deg, rgba(14,165,233,.9), rgba(99,102,241,.85)); border:1px solid rgba(255,255,255,.25); border-radius:12px; color:white; text-decoration:none; font-weight:500; transition:all .25s ease}
+    .cv-btn:hover{transform:translateY(-2px); box-shadow:0 8px 25px rgba(14,165,233,.3)}
 
-    section{max-width:1140px; margin:0 auto; padding:2.5rem 1rem;}
-    section h2{font-size:28px; margin:0 0 .8rem 0}
+    section h2{font-size:28px; margin:0 0 1.2rem 0}
     .grid{display:grid; grid-template-columns: repeat(auto-fit, minmax(260px,1fr)); gap:1rem}
-    .card{background: rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.12); border-radius:16px; padding:1rem 1.1rem; box-shadow:0 10px 30px rgba(0,0,0,.25); opacity:0; transform:translateY(16px); transition:opacity .6s ease, transform .6s ease}
+    .card{background: rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.12); border-radius:16px; padding:1rem 1.1rem; box-shadow:0 10px 30px rgba(0,0,0,.25); opacity:0; transform:translateY(16px); transition:opacity .6s ease, transform .6s ease; cursor:pointer}
+    .card:hover{transform:translateY(-4px); box-shadow:0 15px 40px rgba(0,0,0,.35); border-color:rgba(14,165,233,.3)}
     .card.is-visible{opacity:1; transform:translateY(0)}
     .card h3{margin:.2rem 0 .5rem 0; font-size:18px}
     .card p{margin:0; opacity:.9; line-height:1.6}
@@ -49,13 +56,24 @@
     .list .item{background: rgba(255,255,255,.05); border:1px solid rgba(255,255,255,.12); border-radius:12px; padding:.8rem 1rem; opacity:0; transform:translateY(12px); transition:opacity .5s ease, transform .5s ease}
     .list .item.is-visible{opacity:1; transform:translateY(0)}
 
-    .subscribe{max-width:900px; text-align:center}
+    .subscribe{max-width:900px; text-align:center; margin:0 auto}
     .sub-box{margin-top:1rem; display:flex; gap:.6rem; justify-content:center}
     .sub-box input{width:280px; padding:.75rem .9rem; border-radius:10px; border:1px solid rgba(255,255,255,.25); background:rgba(0,0,0,.25); color:var(--text-on-dark)}
     .sub-box button{padding:.78rem 1.1rem; border-radius:10px; border:1px solid rgba(255,255,255,.25); background:linear-gradient(135deg, rgba(14,165,233,.9), rgba(99,102,241,.85)); color:white; cursor:pointer}
     .footer{max-width:1140px; margin:0 auto; padding:3rem 1rem 4rem 1rem; opacity:.7; text-align:center}
 
-    @media (max-width: 860px){ .hero{grid-template-columns:1fr; text-align:center} .avatar{margin:0 auto} .meta{justify-content:center} .links a{margin-left:.8rem} }
+    /* Scroll indicator */
+    .scroll-indicator{position:fixed; right:2rem; top:50%; transform:translateY(-50%); z-index:40; display:flex; flex-direction:column; gap:.5rem}
+    .scroll-dot{width:8px; height:8px; border-radius:50%; background:rgba(255,255,255,.3); transition:all .25s ease; cursor:pointer}
+    .scroll-dot.active{background:rgba(14,165,233,.8); transform:scale(1.3)}
+
+    @media (max-width: 860px){ 
+      .hero-inner{grid-template-columns:1fr; text-align:center} 
+      .avatar{margin:0 auto} 
+      .meta{justify-content:center} 
+      .links a{margin-left:.8rem}
+      .scroll-indicator{right:1rem}
+    }
   </style>
 </head>
 <body>
@@ -78,57 +96,79 @@
     </div>
   </header>
 
+  <div class="scroll-indicator" id="scrollIndicator"></div>
+
   <main>
     <section class="hero" id="about">
-      <div class="avatar"><img src="images/profile.png" alt="Eliza avatar" /></div>
-      <div>
-        <h1 data-i18n="hero.name">Eliza Yiting Tang</h1>
-        <p data-i18n="hero.subtitle">University of Sydney · Econometrics & Software Development</p>
-        <p data-i18n="hero.pitch">PhD applicant in Quantitative Marketing, Digital Platform Research, and Algorithmic Behavioral Modeling.</p>
-        <div class="meta" id="metaTags"></div>
+      <div class="hero-inner">
+        <div class="avatar"><img src="images/profile.png" alt="Eliza avatar" /></div>
+        <div>
+          <h1 data-i18n="hero.name">Eliza Yiting Tang</h1>
+          <p data-i18n="hero.subtitle">University of Sydney · Econometrics & Software Development</p>
+          <p data-i18n="hero.pitch">PhD applicant in Quantitative Marketing, Digital Platform Research, and Algorithmic Behavioral Modeling.</p>
+          <div class="meta" id="metaTags"></div>
+          <a href="Eliza_Tang_CV.pdf" class="cv-btn" download>
+            <svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/><path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"/></svg>
+            <span data-i18n="hero.cv">Download CV</span>
+          </a>
+        </div>
       </div>
     </section>
 
     <section id="research">
-      <h2 data-i18n="research.title">Research Interests</h2>
-      <div class="grid reveal" id="researchGrid"></div>
+      <div class="section-inner">
+        <h2 data-i18n="research.title">Research Interests</h2>
+        <div class="grid reveal" id="researchGrid"></div>
+      </div>
     </section>
 
     <section id="highlights">
-      <h2 data-i18n="highlights.title">Highlights</h2>
-      <div class="grid reveal" id="highlightsGrid"></div>
+      <div class="section-inner">
+        <h2 data-i18n="highlights.title">Highlights</h2>
+        <div class="grid reveal" id="highlightsGrid"></div>
+      </div>
     </section>
 
     <section id="news">
-      <h2 data-i18n="news.title">News</h2>
-      <div class="list reveal" id="newsList"></div>
+      <div class="section-inner">
+        <h2 data-i18n="news.title">News</h2>
+        <div class="list reveal" id="newsList"></div>
+      </div>
     </section>
 
     <section id="dev">
-      <h2 data-i18n="dev.title">Under Development</h2>
-      <div class="grid reveal" id="devGrid"></div>
+      <div class="section-inner">
+        <h2 data-i18n="dev.title">Under Development</h2>
+        <div class="grid reveal" id="devGrid"></div>
+      </div>
     </section>
 
     <section id="talks">
-      <h2 data-i18n="talks.title">Talks & Conferences</h2>
-      <div class="list reveal" id="talksList"></div>
+      <div class="section-inner">
+        <h2 data-i18n="talks.title">Talks & Conferences</h2>
+        <div class="list reveal" id="talksList"></div>
+      </div>
     </section>
 
     <section id="edu">
-      <h2 data-i18n="edu.title">Education</h2>
-      <div class="list reveal" id="eduList"></div>
-      <h2 style="margin-top:1.6rem" data-i18n="intern.title">Internships</h2>
-      <div class="list reveal" id="internList"></div>
+      <div class="section-inner">
+        <h2 data-i18n="edu.title">Education</h2>
+        <div class="list reveal" id="eduList"></div>
+        <h2 style="margin-top:1.6rem" data-i18n="intern.title">Internships</h2>
+        <div class="list reveal" id="internList"></div>
+      </div>
     </section>
 
     <section class="subscribe" id="contact">
-      <h2 data-i18n="contact.title">Stay in touch</h2>
-      <p data-i18n="contact.desc">Interested in my research? Subscribe or email me.</p>
-      <div class="sub-box">
-        <input type="email" placeholder="Email Address" />
-        <button type="button" id="subBtn" data-i18n="contact.btn">Subscribe</button>
+      <div class="section-inner">
+        <h2 data-i18n="contact.title">Stay in touch</h2>
+        <p data-i18n="contact.desc">Interested in my research? Subscribe or email me.</p>
+        <div class="sub-box">
+          <input type="email" placeholder="Email Address" />
+          <button type="button" id="subBtn" data-i18n="contact.btn">Subscribe</button>
+        </div>
+        <p style="margin-top:.8rem;opacity:.8" id="emailLine"></p>
       </div>
-      <p style="margin-top:.8rem;opacity:.8" id="emailLine"></p>
     </section>
 
     <footer class="footer" id="footerText">© 2025 Eliza Tang. All rights reserved.</footer>
@@ -149,6 +189,59 @@
     function spawn(n=60){ particles.length=0; for(let i=0;i<n;i++){ particles.push({ x:Math.random()*w, y:Math.random()*h, r:Math.random()*2*dpr+.5, a:Math.random()*Math.PI*2, s:.2+Math.random()*.6 }); } }
     function tick(){ ctx.clearRect(0,0,w,h); for(const p of particles){ p.x+=Math.cos(p.a)*p.s; p.y+=Math.sin(p.a)*p.s; if(p.x<0)p.x=w; if(p.x>w)p.x=0; if(p.y<0)p.y=h; if(p.y>h)p.y=0; ctx.beginPath(); const g=ctx.createRadialGradient(p.x,p.y,0,p.x,p.y,p.r*3); g.addColorStop(0,'rgba(125,211,252,.35)'); g.addColorStop(1,'rgba(125,211,252,0)'); ctx.fillStyle=g; ctx.arc(p.x,p.y,p.r,0,Math.PI*2); ctx.fill(); } requestAnimationFrame(tick); }
 
+    // Scroll indicator
+    const sections = document.querySelectorAll('section');
+    const scrollIndicator = document.getElementById('scrollIndicator');
+    sections.forEach((_, i) => {
+      const dot = document.createElement('div');
+      dot.className = 'scroll-dot';
+      dot.addEventListener('click', () => sections[i].scrollIntoView({behavior: 'smooth'}));
+      scrollIndicator.appendChild(dot);
+    });
+
+    // Update scroll indicator
+    function updateScrollIndicator() {
+      const dots = document.querySelectorAll('.scroll-dot');
+      const scrollPos = window.scrollY + window.innerHeight / 2;
+      sections.forEach((section, i) => {
+        const rect = section.getBoundingClientRect();
+        if (rect.top <= window.innerHeight / 2 && rect.bottom >= window.innerHeight / 2) {
+          dots.forEach(d => d.classList.remove('active'));
+          dots[i]?.classList.add('active');
+        }
+      });
+    }
+
+    // Smooth scroll for nav links
+    document.querySelectorAll('a[href^="#"]').forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const target = document.querySelector(link.getAttribute('href'));
+        if (target) target.scrollIntoView({behavior: 'smooth'});
+      });
+    });
+
+    // Card click handlers
+    function addCardHandlers() {
+      document.querySelectorAll('.card').forEach(card => {
+        card.addEventListener('click', () => {
+          // Add your detail page links here
+          const title = card.querySelector('h3')?.textContent;
+          if (title?.includes('Preference Externalities')) {
+            window.open('research/preference-externalities.html', '_blank');
+          } else if (title?.includes('Retention Causality')) {
+            window.open('research/retention-causality.html', '_blank');
+          } else if (title?.includes('EvoNet')) {
+            window.open('research/evonet-behavior.html', '_blank');
+          } else if (title?.includes('UAM Adoption')) {
+            window.open('research/uam-adoption.html', '_blank');
+          } else if (title?.includes('Returns to Education')) {
+            window.open('ecmt3997.pdf', '_blank');
+          }
+        });
+      });
+    }
+
     // i18n content
     const i18n = {
       en: {
@@ -158,7 +251,8 @@
           name:'Eliza Yiting Tang',
           subtitle:'University of Sydney · Econometrics & Software Development',
           pitch:'PhD applicant in Quantitative Marketing, Digital Platform Research, and Algorithmic Behavioral Modeling.',
-          tags:['AI & ML','Data Science','NLP','Computer Vision','UAM / eVTOL','ESG']
+          tags:['AI & ML','Data Science','NLP','Computer Vision','UAM / eVTOL','ESG'],
+          cv:'Download CV'
         },
         research: { title:'Research Interests', items:[
           {t:'Preference Externalities', d:'Modeling willingness-to-pay shifts under social information on digital platforms.'},
@@ -201,7 +295,8 @@
           name:'唐一霆（Eliza Yiting Tang）',
           subtitle:'悉尼大学 · 计量经济学与软件开发',
           pitch:'博士申请方向：量化营销、数字平台研究、算法行为建模。',
-          tags:['人工智能','数据科学','自然语言处理','计算机视觉','UAM / eVTOL','ESG']
+          tags:['人工智能','数据科学','自然语言处理','计算机视觉','UAM / eVTOL','ESG'],
+          cv:'下载简历'
         },
         research: { title:'研究兴趣', items:[
           {t:'偏好外部性', d:'在数字平台的社会信息线索下，建模支付意愿迁移与行为调整。'},
@@ -277,8 +372,9 @@
       document.getElementById('emailLine').innerHTML = t.contact.email;
       document.getElementById('footerText').innerHTML = t.footer;
 
-      // hook up reveal
+      // hook up reveal & card handlers
       document.querySelectorAll('.reveal, .list').forEach(el=>observer.observe(el));
+      setTimeout(addCardHandlers, 100);
       // button text
       document.getElementById('langToggle').textContent = lang === 'en' ? '中文' : 'EN';
     }
@@ -286,7 +382,10 @@
     document.getElementById('langToggle').addEventListener('click', ()=>{ lang = (lang === 'en') ? 'zh' : 'en'; render(); });
 
     // init
-    resize(); spawn(); tick(); addEventListener('resize', ()=>{resize(); spawn();}); render();
+    resize(); spawn(); tick(); addEventListener('resize', ()=>{resize(); spawn();}); 
+    window.addEventListener('scroll', updateScrollIndicator);
+    render();
+    updateScrollIndicator();
   </script>
 </body>
 </html> 
