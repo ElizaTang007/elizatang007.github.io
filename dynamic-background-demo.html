@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>动态背景演示 - Dynamic Background Demo</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            color: #333;
+        }
+        
+        .demo-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .demo-section {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 30px;
+            margin: 20px 0;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .demo-title {
+            color: #667eea;
+            margin-bottom: 20px;
+            font-size: 2em;
+        }
+        
+        .controls {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .control-group {
+            background: rgba(102, 126, 234, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px solid rgba(102, 126, 234, 0.2);
+        }
+        
+        .control-group h3 {
+            margin-top: 0;
+            color: #667eea;
+        }
+        
+        label {
+            display: block;
+            margin: 10px 0 5px;
+            font-weight: 500;
+        }
+        
+        input[type="range"], input[type="number"], input[type="color"] {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+        
+        button {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            margin: 5px;
+        }
+        
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+        }
+        
+        .preset-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 20px 0;
+        }
+        
+        .preset-buttons button {
+            background: rgba(102, 126, 234, 0.2);
+            color: #667eea;
+            border: 2px solid #667eea;
+        }
+        
+        .preset-buttons button:hover {
+            background: #667eea;
+            color: white;
+        }
+        
+        .code-example {
+            background: #f8f9fa;
+            border: 1px solid #e9ecef;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 15px 0;
+            font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+            font-size: 14px;
+            overflow-x: auto;
+        }
+        
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .feature-card {
+            background: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px solid rgba(102, 126, 234, 0.2);
+            text-align: center;
+        }
+        
+        .feature-icon {
+            font-size: 3em;
+            color: #667eea;
+            margin-bottom: 15px;
+        }
+        
+        @media (max-width: 768px) {
+            .controls {
+                grid-template-columns: 1fr;
+            }
+            
+            .demo-section {
+                padding: 20px;
+                margin: 10px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="demo-container">
+        <div class="demo-section">
+            <h1 class="demo-title">🎨 动态背景演示</h1>
+            <p>这个演示页面展示了动态背景系统的各种功能和配置选项。你可以实时调整参数来查看效果变化。</p>
+        </div>
+
+        <div class="demo-section">
+            <h2>⚙️ 实时配置</h2>
+            <p>使用下面的控制器来实时调整动态背景的效果：</p>
+            
+            <div class="controls">
+                <div class="control-group">
+                    <h3>粒子设置</h3>
+                    <label>粒子数量: <span id="particleCount">50</span></label>
+                    <input type="range" id="particleCountSlider" min="10" max="200" value="50">
+                    
+                    <label>最小尺寸: <span id="minSize">1</span>px</label>
+                    <input type="range" id="minSizeSlider" min="1" max="8" value="1">
+                    
+                    <label>最大尺寸: <span id="maxSize">4</span>px</label>
+                    <input type="range" id="maxSizeSlider" min="2" max="12" value="4">
+                    
+                    <label>透明度: <span id="opacity">0.15</span></label>
+                    <input type="range" id="opacitySlider" min="0.05" max="0.5" step="0.05" value="0.15">
+                </div>
+                
+                <div class="control-group">
+                    <h3>动画设置</h3>
+                    <label>渐变变化速度: <span id="gradientSpeed">20</span>s</label>
+                    <input type="range" id="gradientSpeedSlider" min="5" max="60" value="20">
+                    
+                    <label>径向变化速度: <span id="radialSpeed">15</span>s</label>
+                    <input type="range" id="radialSpeedSlider" min="5" max="60" value="15">
+                    
+                    <label>粒子浮动速度: <span id="floatSpeed">6</span>s</label>
+                    <input type="range" id="floatSpeedSlider" min="2" max="15" value="6">
+                    
+                    <label>移动速度: <span id="movementSpeed">0.5</span></label>
+                    <input type="range" id="movementSpeedSlider" min="0.1" max="2" step="0.1" value="0.5">
+                </div>
+                
+                <div class="control-group">
+                    <h3>背景颜色</h3>
+                    <label>渐变开始颜色</label>
+                    <input type="color" id="startColor" value="#667eea">
+                    
+                    <label>渐变结束颜色</label>
+                    <input type="color" id="endColor" value="#764ba2">
+                    
+                    <button onclick="applyCustomColors()">应用颜色</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="demo-section">
+            <h2>🎯 预设主题</h2>
+            <p>点击下面的按钮来应用预设的主题配置：</p>
+            
+            <div class="preset-buttons">
+                <button onclick="applyPreset('default')">默认主题</button>
+                <button onclick="applyPreset('sunset')">日落主题</button>
+                <button onclick="applyPreset('ocean')">海洋主题</button>
+                <button onclick="applyPreset('forest')">森林主题</button>
+                <button onclick="applyPreset('cosmic')">宇宙主题</button>
+                <button onclick="applyPreset('minimal')">极简主题</button>
+            </div>
+        </div>
+
+        <div class="demo-section">
+            <h2>🚀 功能特性</h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">✨</div>
+                    <h3>浮动粒子</h3>
+                    <p>50个优雅的浮动粒子，带有发光效果和平滑动画</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎨</div>
+                    <h3>渐变背景</h3>
+                    <p>动态的渐变背景，支持多种颜色组合和动画效果</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💎</div>
+                    <h3>毛玻璃效果</h3>
+                    <p>现代化的毛玻璃效果，提升视觉层次和现代感</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📱</div>
+                    <h3>响应式设计</h3>
+                    <p>完全响应式，适配所有设备和屏幕尺寸</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>性能优化</h3>
+                    <p>智能的性能优化，包括页面隐藏时暂停动画</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">♿</div>
+                    <h3>无障碍支持</h3>
+                    <p>尊重用户的减少动画偏好设置和主题偏好</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="demo-section">
+            <h2>💻 代码示例</h2>
+            <p>以下是如何在代码中使用动态背景系统的示例：</p>
+            
+            <div class="code-example">
+// 更新粒子数量
+updateDynamicBackgroundConfig({
+  particles: { count: 100 }
+});
+
+// 更改背景颜色
+updateDynamicBackgroundConfig({
+  background: {
+    primaryGradient: {
+      start: '#ff6b6b',
+      end: '#4ecdc4'
+    }
+  }
+});
+
+// 调整动画速度
+updateDynamicBackgroundConfig({
+  animations: {
+    gradientShift: { duration: 10 }
+  }
+});
+            </div>
+        </div>
+
+        <div class="demo-section">
+            <h2>📚 更多信息</h2>
+            <p>查看 <code>DYNAMIC_BACKGROUND_README.md</code> 文件获取完整的使用说明和配置选项。</p>
+            <p>这个动态背景系统完全开源，你可以自由修改和定制以满足你的需求。</p>
+        </div>
+    </div>
+
+    <script src="assets/js/dynamic-background-config.js"></script>
+    <script src="assets/js/dynamic-background.js"></script>
+    <script>
+        // 等待动态背景加载完成
+        document.addEventListener('DOMContentLoaded', function() {
+            // 设置控制器事件
+            setupControllers();
+        });
+
+        function setupControllers() {
+            // 粒子数量
+            document.getElementById('particleCountSlider').addEventListener('input', function(e) {
+                const value = e.target.value;
+                document.getElementById('particleCount').textContent = value;
+                updateDynamicBackgroundConfig({
+                    particles: { count: parseInt(value) }
+                });
+            });
+
+            // 最小尺寸
+            document.getElementById('minSizeSlider').addEventListener('input', function(e) {
+                const value = e.target.value;
+                document.getElementById('minSize').textContent = value;
+                updateDynamicBackgroundConfig({
+                    particles: { minSize: parseInt(value) }
+                });
+            });
+
+            // 最大尺寸
+            document.getElementById('maxSizeSlider').addEventListener('input', function(e) {
+                const value = e.target.value;
+                document.getElementById('maxSize').textContent = value;
+                updateDynamicBackgroundConfig({
+                    particles: { maxSize: parseInt(value) }
+                });
+            });
+
+            // 透明度
+            document.getElementById('opacitySlider').addEventListener('input', function(e) {
+                const value = parseFloat(e.target.value);
+                document.getElementById('opacity').textContent = value.toFixed(2);
+                updateDynamicBackgroundConfig({
+                    particles: { opacity: value }
+                });
+            });
+
+            // 渐变速度
+            document.getElementById('gradientSpeedSlider').addEventListener('input', function(e) {
+                const value = parseInt(e.target.value);
+                document.getElementById('gradientSpeed').textContent = value;
+                updateDynamicBackgroundConfig({
+                    animations: { gradientShift: { duration: value } }
+                });
+            });
+
+            // 径向速度
+            document.getElementById('radialSpeedSlider').addEventListener('input', function(e) {
+                const value = parseInt(e.target.value);
+                document.getElementById('radialSpeed').textContent = value;
+                updateDynamicBackgroundConfig({
+                    animations: { radialShift: { duration: value } }
+                });
+            });
+
+            // 浮动速度
+            document.getElementById('floatSpeedSlider').addEventListener('input', function(e) {
+                const value = parseInt(e.target.value);
+                document.getElementById('floatSpeed').textContent = value;
+                updateDynamicBackgroundConfig({
+                    animations: { particleFloat: { duration: value } }
+                });
+            });
+
+            // 移动速度
+            document.getElementById('movementSpeedSlider').addEventListener('input', function(e) {
+                const value = parseFloat(e.target.value);
+                document.getElementById('movementSpeed').textContent = value.toFixed(1);
+                updateDynamicBackgroundConfig({
+                    particles: { movementSpeed: value }
+                });
+            });
+        }
+
+        function applyCustomColors() {
+            const startColor = document.getElementById('startColor').value;
+            const endColor = document.getElementById('endColor').value;
+            
+            updateDynamicBackgroundConfig({
+                background: {
+                    primaryGradient: {
+                        start: startColor,
+                        end: endColor
+                    }
+                }
+            });
+        }
+
+        function applyPreset(preset) {
+            const presets = {
+                default: {
+                    background: {
+                        primaryGradient: { start: '#667eea', end: '#764ba2' }
+                    },
+                    particles: { count: 50, maxSize: 4 }
+                },
+                sunset: {
+                    background: {
+                        primaryGradient: { start: '#ff6b6b', end: '#feca57' }
+                    },
+                    particles: { count: 80, maxSize: 6 }
+                },
+                ocean: {
+                    background: {
+                        primaryGradient: { start: '#4ecdc4', end: '#44a08d' }
+                    },
+                    particles: { count: 60, maxSize: 3 }
+                },
+                forest: {
+                    background: {
+                        primaryGradient: { start: '#56ab2f', end: '#a8e6cf' }
+                    },
+                    particles: { count: 40, maxSize: 5 }
+                },
+                cosmic: {
+                    background: {
+                        primaryGradient: { start: '#1a1a2e', end: '#16213e' }
+                    },
+                    particles: { count: 100, maxSize: 2 }
+                },
+                minimal: {
+                    background: {
+                        primaryGradient: { start: '#f8f9fa', end: '#e9ecef' }
+                    },
+                    particles: { count: 20, maxSize: 1 }
+                }
+            };
+
+            if (presets[preset]) {
+                updateDynamicBackgroundConfig(presets[preset]);
+                
+                // 更新控制器显示
+                if (presets[preset].particles) {
+                    if (presets[preset].particles.count) {
+                        document.getElementById('particleCountSlider').value = presets[preset].particles.count;
+                        document.getElementById('particleCount').textContent = presets[preset].particles.count;
+                    }
+                    if (presets[preset].particles.maxSize) {
+                        document.getElementById('maxSizeSlider').value = presets[preset].particles.maxSize;
+                        document.getElementById('maxSize').textContent = presets[preset].particles.maxSize;
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+</html> 

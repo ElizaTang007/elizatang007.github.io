@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>动态背景预览 - Dynamic Background Preview</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        /* Dynamic Background Styles */
+        .dynamic-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .dynamic-background::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+            animation: gradientShift 20s ease-in-out infinite;
+        }
+
+        .dynamic-background::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.3) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 20%, rgba(255, 119, 198, 0.3) 0%, transparent 50%),
+                        radial-gradient(circle at 40% 40%, rgba(120, 219, 255, 0.2) 0%, transparent 50%);
+            animation: radialShift 15s ease-in-out infinite;
+        }
+
+        .particles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .particle {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 50%;
+            pointer-events: none;
+            animation: float 6s ease-in-out infinite;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+        }
+
+        .particle::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 100%;
+            height: 100%;
+            background: inherit;
+            border-radius: inherit;
+            transform: translate(-50%, -50%);
+            filter: blur(1px);
+        }
+
+        .particle::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            animation: glow 4s ease-in-out infinite;
+        }
+
+        @keyframes gradientShift {
+            0%, 100% {
+                transform: scale(1) rotate(0deg);
+                opacity: 0.1;
+            }
+            50% {
+                transform: scale(1.1) rotate(180deg);
+                opacity: 0.2;
+            }
+        }
+
+        @keyframes radialShift {
+            0%, 100% {
+                transform: scale(1) rotate(0deg);
+                opacity: 0.3;
+            }
+            50% {
+                transform: scale(1.2) rotate(90deg);
+                opacity: 0.5;
+            }
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px) translateX(0px) scale(1);
+                opacity: 0.3;
+            }
+            25% {
+                transform: translateY(-20px) translateX(10px) scale(1.1);
+                opacity: 0.6;
+            }
+            50% {
+                transform: translateY(-40px) translateX(-5px) scale(0.9);
+                opacity: 0.8;
+            }
+            75% {
+                transform: translateY(-20px) translateX(-15px) scale(1.05);
+                opacity: 0.5;
+            }
+        }
+
+        @keyframes glow {
+            0%, 100% {
+                opacity: 0.1;
+                transform: translate(-50%, -50%) scale(1);
+            }
+            50% {
+                opacity: 0.3;
+                transform: translate(-50%, -50%) scale(1.2);
+            }
+        }
+
+        /* Content Styles */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .header {
+            text-align: center;
+            margin: 40px 0;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .header h1 {
+            font-size: 3.5em;
+            color: white;
+            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            margin-bottom: 20px;
+            font-weight: 300;
+        }
+
+        .header p {
+            font-size: 1.3em;
+            color: rgba(255, 255, 255, 0.9);
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .content-section {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px;
+            margin: 30px 0;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .content-section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.15);
+        }
+
+        .content-section h2 {
+            color: #667eea;
+            font-size: 2.2em;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .content-section p {
+            font-size: 1.1em;
+            line-height: 1.8;
+            color: #555;
+            margin-bottom: 15px;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .feature-card {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 30px;
+            border-radius: 15px;
+            border: 1px solid rgba(102, 126, 234, 0.2);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.2);
+        }
+
+        .feature-icon {
+            font-size: 4em;
+            color: #667eea;
+            margin-bottom: 20px;
+        }
+
+        .feature-card h3 {
+            color: #667eea;
+            font-size: 1.5em;
+            margin-bottom: 15px;
+        }
+
+        .cta-section {
+            text-align: center;
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+            border: 2px solid rgba(102, 126, 234, 0.3);
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-decoration: none;
+            padding: 15px 40px;
+            border-radius: 50px;
+            font-size: 1.2em;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(102, 126, 234, 0.4);
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2.5em;
+            }
+            
+            .content-section {
+                padding: 25px;
+                margin: 20px 0;
+            }
+            
+            .feature-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+        }
+
+        /* Dark mode support */
+        @media (prefers-color-scheme: dark) {
+            .dynamic-background {
+                background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            }
+            
+            .content-section {
+                background: rgba(26, 26, 46, 0.95);
+                border-color: rgba(255, 255, 255, 0.1);
+            }
+            
+            .content-section h2 {
+                color: #4ecdc4;
+            }
+            
+            .content-section p {
+                color: #e0e0e0;
+            }
+            
+            .feature-card {
+                background: rgba(26, 26, 46, 0.9);
+                border-color: rgba(255, 255, 255, 0.1);
+            }
+            
+            .feature-card h3 {
+                color: #4ecdc4;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Dynamic Background -->
+    <div class="dynamic-background">
+        <div class="particles" id="particles"></div>
+    </div>
+
+    <!-- Content -->
+    <div class="container">
+        <div class="header">
+            <h1>✨ 动态背景系统</h1>
+            <p>为你的网站增添现代感和视觉吸引力</p>
+        </div>
+
+        <div class="content-section">
+            <h2>🎨 主要特性</h2>
+            <p>这个动态背景系统为你的网站带来了全新的视觉体验，包括浮动的粒子效果、动态渐变背景和现代化的毛玻璃效果。</p>
+            
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">✨</div>
+                    <h3>浮动粒子</h3>
+                    <p>50个优雅的浮动粒子，带有发光效果和平滑动画，为背景增添动态感</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🎨</div>
+                    <h3>渐变背景</h3>
+                    <p>动态的蓝紫色渐变背景，支持多种颜色组合和动画效果</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">💎</div>
+                    <h3>毛玻璃效果</h3>
+                    <p>现代化的毛玻璃效果，提升视觉层次和现代感</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h2>🚀 技术优势</h2>
+            <p>系统采用最新的Web技术，确保在各种设备上都能提供流畅的体验。</p>
+            
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">📱</div>
+                    <h3>响应式设计</h3>
+                    <p>完全响应式，自动适配所有设备和屏幕尺寸</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>性能优化</h3>
+                    <p>智能的性能优化，包括页面隐藏时暂停动画</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">♿</div>
+                    <h3>无障碍支持</h3>
+                    <p>尊重用户的减少动画偏好设置和主题偏好</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-section cta-section">
+            <h2>🎯 立即体验</h2>
+            <p>这个动态背景系统已经完全集成到你的网站中。刷新页面即可看到效果！</p>
+            <a href="dynamic-background-demo.html" class="cta-button">查看完整演示</a>
+        </div>
+    </div>
+
+    <script>
+        // 创建粒子效果
+        function createParticles() {
+            const particlesContainer = document.getElementById('particles');
+            const particleCount = 50;
+            
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                
+                // 随机属性
+                const size = Math.random() * 4 + 1;
+                const x = Math.random() * window.innerWidth;
+                const y = Math.random() * window.innerHeight;
+                const delay = Math.random() * 6;
+                const duration = 6 + Math.random() * 4;
+                
+                particle.style.cssText = `
+                    width: ${size}px;
+                    height: ${size}px;
+                    left: ${x}px;
+                    top: ${y}px;
+                    animation-delay: -${delay}s;
+                    animation-duration: ${duration}s;
+                `;
+                
+                particlesContainer.appendChild(particle);
+            }
+        }
+
+        // 页面加载完成后创建粒子
+        document.addEventListener('DOMContentLoaded', createParticles);
+
+        // 窗口大小改变时重新定位粒子
+        window.addEventListener('resize', () => {
+            const particles = document.querySelectorAll('.particle');
+            particles.forEach(particle => {
+                const x = Math.random() * window.innerWidth;
+                const y = Math.random() * window.innerHeight;
+                particle.style.left = `${x}px`;
+                particle.style.top = `${y}px`;
+            });
+        });
+
+        // 添加鼠标移动效果
+        document.addEventListener('mousemove', (e) => {
+            const particles = document.querySelectorAll('.particle');
+            const mouseX = e.clientX;
+            const mouseY = e.clientY;
+            
+            particles.forEach((particle, index) => {
+                const rect = particle.getBoundingClientRect();
+                const particleX = rect.left + rect.width / 2;
+                const particleY = rect.top + rect.height / 2;
+                
+                const deltaX = mouseX - particleX;
+                const deltaY = mouseY - particleY;
+                const distance = Math.sqrt(deltaX * deltaX + deltaY * deltaY);
+                
+                if (distance < 100) {
+                    const force = (100 - distance) / 100;
+                    const moveX = deltaX * force * 0.02;
+                    const moveY = deltaY * force * 0.02;
+                    
+                    particle.style.transform = `translate(${moveX}px, ${moveY}px)`;
+                }
+            });
+        });
+    </script>
+</body>
+</html> 
