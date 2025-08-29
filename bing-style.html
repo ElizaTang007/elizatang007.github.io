@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Eliza Tang — 主页（Bing-Style 预览）</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#000814;
+      --bg2:#001d3d;
+      --fg:#0ea5e9;
+      --text:#0f172a;
+      --text-on-dark:rgba(255,255,255,.92);
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0}
+    body{font-family:"Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; color:var(--text-on-dark); background: radial-gradient(1200px 800px at 10% 90%, rgba(14,165,233,.12), transparent 60%), radial-gradient(1000px 700px at 90% 10%, rgba(99,102,241,.10), transparent 60%), linear-gradient(180deg, var(--bg), var(--bg2));}
+
+    /* Top Nav */
+    .nav{position:sticky; top:0; z-index:50; backdrop-filter:saturate(140%) blur(12px); -webkit-backdrop-filter:saturate(140%) blur(12px); border-bottom:1px solid rgba(255,255,255,.15);}
+    .nav-inner{max-width:1100px; margin:0 auto; padding:.9rem 1rem; display:flex; align-items:center; justify-content:space-between}
+    .brand{font-weight:800; letter-spacing:.5px}
+    .links a{color:var(--text-on-dark); text-decoration:none; margin-left:1rem; opacity:.85}
+    .links a:hover{opacity:1}
+
+    /* Hero */
+    .hero{max-width:1100px; margin:0 auto; padding:5rem 1rem 3rem 1rem; display:grid; grid-template-columns: 260px 1fr; gap:2rem; align-items:center}
+    .avatar{width:240px; height:240px; border-radius:50%; overflow:hidden; box-shadow:0 20px 60px rgba(0,0,0,.45), 0 0 0 1px rgba(255,255,255,.12) inset}
+    .avatar img{width:100%; height:100%; object-fit:cover}
+    .hero h1{margin:0 0 .6rem 0; font-size:44px; line-height:1.05}
+    .hero p{margin:.25rem 0; opacity:.9}
+    .meta{margin-top:1rem; display:flex; gap:1rem; flex-wrap:wrap; opacity:.85}
+
+    /* Sections */
+    section{max-width:1100px; margin:0 auto; padding:2.5rem 1rem;}
+    section h2{font-size:28px; margin:0 0 .8rem 0}
+    .grid{display:grid; grid-template-columns: repeat(auto-fit, minmax(260px,1fr)); gap:1rem}
+    .card{background: rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.12); border-radius:16px; padding:1rem 1.1rem; box-shadow:0 10px 30px rgba(0,0,0,.25);}
+    .card h3{margin:.2rem 0 .5rem 0; font-size:18px}
+    .card p{margin:0; opacity:.9; line-height:1.6}
+
+    /* Subscribe */
+    .subscribe{max-width:900px; text-align:center}
+    .sub-box{margin-top:1rem; display:flex; gap:.6rem; justify-content:center}
+    .sub-box input{width:280px; padding:.75rem .9rem; border-radius:10px; border:1px solid rgba(255,255,255,.25); background:rgba(0,0,0,.25); color:var(--text-on-dark)}
+    .sub-box button{padding:.78rem 1.1rem; border-radius:10px; border:1px solid rgba(255,255,255,.25); background:linear-gradient(135deg, rgba(14,165,233,.9), rgba(99,102,241,.85)); color:white; cursor:pointer}
+    .footer{max-width:1100px; margin:0 auto; padding:3rem 1rem 4rem 1rem; opacity:.7; text-align:center}
+
+    @media (max-width: 860px){
+      .hero{grid-template-columns:1fr; text-align:center}
+      .avatar{margin:0 auto}
+      .meta{justify-content:center}
+    }
+  </style>
+</head>
+<body>
+  <header class="nav">
+    <div class="nav-inner">
+      <div class="brand">Eliza Tang</div>
+      <nav class="links">
+        <a href="#about">About</a>
+        <a href="#research">Research</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="about">
+      <div class="avatar"><img src="images/profile.png" alt="Eliza avatar" /></div>
+      <div>
+        <h1>Eliza Tang</h1>
+        <p>计算机科学与技术 · 香港大学</p>
+        <p>专注于人工智能、机器学习与数据科学，探索前沿技术以创造有价值的创新解决方案。</p>
+        <div class="meta">
+          <span>🤖 AI & ML</span>
+          <span>📊 Data Science</span>
+          <span>💬 NLP</span>
+          <span>👁️ Computer Vision</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="research">
+      <h2>Research Interests</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>自然语言处理</h3>
+          <p>语言模型、文本表示学习与下游任务，关注可解释性与稳健性。</p>
+        </div>
+        <div class="card">
+          <h3>计算机视觉</h3>
+          <p>多模态理解、视觉识别与生成建模，强调真实世界可用性。</p>
+        </div>
+        <div class="card">
+          <h3>深度学习</h3>
+          <p>神经网络架构与优化方法，性能与效率的共同提升。</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <h2>Selected Works</h2>
+      <div class="grid">
+        <div class="card"><h3>学术论文</h3><p>围绕 AI 技术的研究与应用，持续产出与合作。</p></div>
+        <div class="card"><h3>开源项目</h3><p>参与并维护多个开源项目，推动社区共建。</p></div>
+        <div class="card"><h3>竞赛与奖项</h3><p>在多项 AI 竞赛中取得优异成绩。</p></div>
+      </div>
+    </section>
+
+    <section class="subscribe" id="contact">
+      <h2>Stay in touch</h2>
+      <p>对我的研究与项目感兴趣？欢迎订阅更新或邮件联系。</p>
+      <div class="sub-box">
+        <input type="email" placeholder="Email Address" />
+        <button type="button" onclick="alert('感谢关注！您也可直接发邮件给我。')">Subscribe</button>
+      </div>
+      <p style="margin-top:.8rem;opacity:.8">或直接发送邮件：<a href="mailto:eliza@example.com" style="color:#7dd3fc">eliza@example.com</a></p>
+    </section>
+
+    <footer class="footer">© 2025 Eliza Tang. All rights reserved.</footer>
+  </main>
+</body>
+</html> 
