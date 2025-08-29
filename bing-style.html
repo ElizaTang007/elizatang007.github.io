@@ -54,7 +54,7 @@
     .typewriter{overflow:hidden; border-right:2px solid #0ea5e9; white-space:nowrap; animation:typing 3s steps(40, end), blink-caret .75s step-end 4, hide-cursor 0s 3s forwards}
     @keyframes typing{from{width:0}to{width:100%}}
     @keyframes blink-caret{from,to{border-color:transparent}50%{border-color:#0ea5e9}}
-    @keyframes hide-caret{to{border-color:transparent}}
+    @keyframes hide-cursor{to{border-color:transparent; border-right:none}}
 
     section h2{font-size:28px; margin:0 0 1.2rem 0; font-family:'Orbitron', monospace; font-weight:600}
     .grid{display:grid; grid-template-columns: repeat(auto-fit, minmax(260px,1fr)); gap:1rem}
@@ -274,27 +274,33 @@
       scrollIndicator.appendChild(dot);
     });
 
-    // Enhanced scroll indicator with smooth transitions
+    // Enhanced scroll indicator with stable detection
     function updateScrollIndicator() {
       const dots = document.querySelectorAll('.scroll-dot');
-      const scrollPos = window.scrollY + window.innerHeight / 2;
+      const scrollPos = window.scrollY;
+      const windowHeight = window.innerHeight;
       let activeIndex = 0;
       
       sections.forEach((section, i) => {
         const rect = section.getBoundingClientRect();
-        const sectionCenter = rect.top + rect.height / 2;
-        const distance = Math.abs(scrollPos - sectionCenter);
+        const sectionTop = rect.top;
+        const sectionBottom = rect.bottom;
         
-        if (distance < window.innerHeight / 3) {
+        // More stable detection: section is active if it's more than 50% visible
+        if (sectionTop < windowHeight * 0.5 && sectionBottom > windowHeight * 0.5) {
           activeIndex = i;
         }
       });
       
       dots.forEach((dot, i) => {
-        dot.classList.toggle('active', i === activeIndex);
-        if (i === activeIndex) {
-          dot.style.transform = `scale(${1.4 + Math.sin(Date.now() * 0.003) * 0.1})`;
-        } else {
+        const wasActive = dot.classList.contains('active');
+        const isActive = i === activeIndex;
+        
+        if (isActive && !wasActive) {
+          dot.classList.add('active');
+          dot.style.transform = 'scale(1.4)';
+        } else if (!isActive && wasActive) {
+          dot.classList.remove('active');
           dot.style.transform = 'scale(1)';
         }
       });
