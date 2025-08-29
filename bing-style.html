@@ -31,9 +31,11 @@
     .links a:hover::after{transform:scaleX(1)}
     .lang-toggle{margin-left:1rem; padding:.4rem .6rem; border:1px solid rgba(255,255,255,.25); border-radius:10px; background:rgba(0,0,0,.25); color:#fff; cursor:pointer; font-family:'JetBrains Mono', monospace}
 
-    /* Full-screen sections */
-    section{min-height:100vh; display:flex; flex-direction:column; justify-content:center; padding:0 1rem; position:relative}
-    .section-inner{max-width:1140px; margin:0 auto; width:100%}
+    /* Full-screen sections with smooth transitions */
+    section{min-height:100vh; display:flex; flex-direction:column; justify-content:center; padding:0 1rem; position:relative; opacity:0; transform:translateY(30px); transition:all .8s cubic-bezier(0.4, 0, 0.2, 1)}
+    section.in-view{opacity:1; transform:translateY(0)}
+    .section-inner{max-width:1140px; margin:0 auto; width:100%; transform:translateY(20px); transition:transform .6s cubic-bezier(0.4, 0, 0.2, 1)}
+    section.in-view .section-inner{transform:translateY(0)}
 
     .hero{min-height:100vh; display:flex; flex-direction:column; justify-content:center; padding:0 1rem}
     .hero-inner{max-width:1140px; margin:0 auto; display:grid; grid-template-columns: 260px 1fr; gap:2rem; align-items:center}
@@ -55,14 +57,19 @@
 
     section h2{font-size:28px; margin:0 0 1.2rem 0; font-family:'Orbitron', monospace; font-weight:600}
     .grid{display:grid; grid-template-columns: repeat(auto-fit, minmax(260px,1fr)); gap:1rem}
-    .card{background: rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.12); border-radius:16px; padding:1rem 1.1rem; box-shadow:0 10px 30px rgba(0,0,0,.25); opacity:0; transform:translateY(16px); transition:opacity .6s ease, transform .6s ease; cursor:pointer}
-    .card:hover{transform:translateY(-4px); box-shadow:0 15px 40px rgba(0,0,0,.35); border-color:rgba(14,165,233,.3)}
-    .card.is-visible{opacity:1; transform:translateY(0)}
+    .card{background: rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.12); border-radius:16px; padding:1rem 1.1rem; box-shadow:0 10px 30px rgba(0,0,0,.25); opacity:0; transform:translateY(20px) scale(0.95); transition:all .6s cubic-bezier(0.4, 0, 0.2, 1); cursor:pointer; position:relative; overflow:hidden}
+    .card::before{content:''; position:absolute; top:0; left:-100%; width:100%; height:100%; background:linear-gradient(90deg, transparent, rgba(255,255,255,.1), transparent); transition:left .6s ease}
+    .card:hover{transform:translateY(-6px) scale(1.02); box-shadow:0 20px 50px rgba(0,0,0,.4); border-color:rgba(14,165,233,.5)}
+    .card:hover::before{left:100%}
+    .card.is-visible{opacity:1; transform:translateY(0) scale(1)}
     .card h3{margin:.2rem 0 .5rem 0; font-size:18px; font-family:'JetBrains Mono', monospace; font-weight:600}
     .card p{margin:0; opacity:.9; line-height:1.6}
     .list{display:grid; gap:.6rem}
-    .list .item{background: rgba(255,255,255,.05); border:1px solid rgba(255,255,255,.12); border-radius:12px; padding:.8rem 1rem; opacity:0; transform:translateY(12px); transition:opacity .5s ease, transform .5s ease; font-family:'JetBrains Mono', monospace}
-    .list .item.is-visible{opacity:1; transform:translateY(0)}
+    .list .item{background: rgba(255,255,255,.05); border:1px solid rgba(255,255,255,.12); border-radius:12px; padding:.8rem 1rem; opacity:0; transform:translateY(15px) scale(0.98); transition:all .5s cubic-bezier(0.4, 0, 0.2, 1); font-family:'JetBrains Mono', monospace; position:relative; overflow:hidden}
+    .list .item::before{content:''; position:absolute; left:0; top:0; width:3px; height:100%; background:linear-gradient(180deg, #0ea5e9, #6366f1); transform:scaleY(0); transition:transform .3s ease}
+    .list .item:hover{transform:translateY(-2px) scale(1.01); background:rgba(255,255,255,.08); border-color:rgba(14,165,233,.3)}
+    .list .item:hover::before{transform:scaleY(1)}
+    .list .item.is-visible{opacity:1; transform:translateY(0) scale(1)}
 
     .subscribe{max-width:900px; text-align:center; margin:0 auto}
     .sub-box{margin-top:1rem; display:flex; gap:.6rem; justify-content:center}
@@ -70,10 +77,14 @@
     .sub-box button{padding:.78rem 1.1rem; border-radius:10px; border:1px solid rgba(255,255,255,.25); background:linear-gradient(135deg, rgba(14,165,233,.9), rgba(99,102,241,.85)); color:white; cursor:pointer; font-family:'JetBrains Mono', monospace}
     .footer{max-width:1140px; margin:0 auto; padding:3rem 1rem 4rem 1rem; opacity:.7; text-align:center; font-family:'JetBrains Mono', monospace}
 
-    /* Scroll indicator */
-    .scroll-indicator{position:fixed; right:2rem; top:50%; transform:translateY(-50%); z-index:40; display:flex; flex-direction:column; gap:.5rem}
-    .scroll-dot{width:8px; height:8px; border-radius:50%; background:rgba(255,255,255,.3); transition:all .25s ease; cursor:pointer}
-    .scroll-dot.active{background:rgba(14,165,233,.8); transform:scale(1.3)}
+    /* Enhanced Scroll indicator */
+    .scroll-indicator{position:fixed; right:2rem; top:50%; transform:translateY(-50%); z-index:40; display:flex; flex-direction:column; gap:.8rem; padding:1rem .5rem; background:rgba(0,0,0,.2); backdrop-filter:blur(10px); border-radius:20px; border:1px solid rgba(255,255,255,.1)}
+    .scroll-dot{width:12px; height:12px; border-radius:50%; background:rgba(255,255,255,.2); transition:all .4s cubic-bezier(0.4, 0, 0.2, 1); cursor:pointer; position:relative; border:2px solid transparent}
+    .scroll-dot::before{content:''; position:absolute; inset:-4px; border-radius:50%; background:linear-gradient(45deg, #0ea5e9, #6366f1); opacity:0; transition:opacity .3s ease; z-index:-1}
+    .scroll-dot:hover{background:rgba(255,255,255,.4); transform:scale(1.2)}
+    .scroll-dot.active{background:linear-gradient(45deg, #0ea5e9, #6366f1); transform:scale(1.4); box-shadow:0 0 20px rgba(14,165,233,.6)}
+    .scroll-dot.active::before{opacity:1; animation:pulse 2s infinite}
+    @keyframes pulse{0%,100%{transform:scale(1); opacity:0.7}50%{transform:scale(1.3); opacity:0.3}}
 
     @media (max-width: 860px){ 
       .hero-inner{grid-template-columns:1fr; text-align:center} 
@@ -207,8 +218,25 @@
     // Mouse spotlight
     window.addEventListener('mousemove', (e)=>{ document.documentElement.style.setProperty('--mx', e.clientX + 'px'); document.documentElement.style.setProperty('--my', e.clientY + 'px'); });
 
-    // Scroll reveal
-    const observer = new IntersectionObserver((entries)=>{ entries.forEach(entry=>{ if(entry.isIntersecting){ entry.target.querySelectorAll('.card, .item').forEach((el,i)=>{ setTimeout(()=>el.classList.add('is-visible'), i*70); }); observer.unobserve(entry.target);} }); }, {threshold:.15});
+    // Enhanced scroll reveal with section animations
+    const sectionObserver = new IntersectionObserver((entries)=>{
+      entries.forEach(entry=>{
+        if(entry.isIntersecting){
+          entry.target.classList.add('in-view');
+          entry.target.querySelectorAll('.card, .item').forEach((el,i)=>{
+            setTimeout(()=>el.classList.add('is-visible'), i*80);
+          });
+        }
+      });
+    }, {threshold:.2, rootMargin:'-50px'});
+
+    const cardObserver = new IntersectionObserver((entries)=>{
+      entries.forEach(entry=>{
+        if(entry.isIntersecting){
+          entry.target.classList.add('is-visible');
+        }
+      });
+    }, {threshold:.1});
 
     // Particles
     const canvas = document.getElementById('particles'); const ctx = canvas.getContext('2d'); let w,h,dpr; const particles=[];
@@ -226,15 +254,28 @@
       scrollIndicator.appendChild(dot);
     });
 
-    // Update scroll indicator
+    // Enhanced scroll indicator with smooth transitions
     function updateScrollIndicator() {
       const dots = document.querySelectorAll('.scroll-dot');
       const scrollPos = window.scrollY + window.innerHeight / 2;
+      let activeIndex = 0;
+      
       sections.forEach((section, i) => {
         const rect = section.getBoundingClientRect();
-        if (rect.top <= window.innerHeight / 2 && rect.bottom >= window.innerHeight / 2) {
-          dots.forEach(d => d.classList.remove('active'));
-          dots[i]?.classList.add('active');
+        const sectionCenter = rect.top + rect.height / 2;
+        const distance = Math.abs(scrollPos - sectionCenter);
+        
+        if (distance < window.innerHeight / 3) {
+          activeIndex = i;
+        }
+      });
+      
+      dots.forEach((dot, i) => {
+        dot.classList.toggle('active', i === activeIndex);
+        if (i === activeIndex) {
+          dot.style.transform = `scale(${1.4 + Math.sin(Date.now() * 0.003) * 0.1})`;
+        } else {
+          dot.style.transform = 'scale(1)';
         }
       });
     }
@@ -399,8 +440,9 @@
       document.getElementById('emailLine').innerHTML = t.contact.email;
       document.getElementById('footerText').innerHTML = t.footer;
 
-      // hook up reveal & card handlers
-      document.querySelectorAll('.reveal, .list').forEach(el=>observer.observe(el));
+      // hook up enhanced observers
+      document.querySelectorAll('section').forEach(el => sectionObserver.observe(el));
+      document.querySelectorAll('.card, .item').forEach(el => cardObserver.observe(el));
       setTimeout(addCardHandlers, 100);
       // button text
       document.getElementById('langToggle').textContent = lang === 'en' ? '中文' : 'EN';
@@ -408,9 +450,11 @@
 
     document.getElementById('langToggle').addEventListener('click', ()=>{ lang = (lang === 'en') ? 'zh' : 'en'; render(); });
 
-    // init
+    // init with enhanced scroll handling
     resize(); spawn(); tick(); addEventListener('resize', ()=>{resize(); spawn();}); 
-    window.addEventListener('scroll', updateScrollIndicator);
+    window.addEventListener('scroll', () => {
+      requestAnimationFrame(updateScrollIndicator);
+    });
     render();
     updateScrollIndicator();
   </script>
