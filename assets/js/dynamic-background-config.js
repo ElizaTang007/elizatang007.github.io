@@ -6,40 +6,40 @@
 window.DynamicBackgroundConfig = {
   // Particle settings
   particles: {
-    count: 50,           // Number of particles
+    count: 120,           // Number of particles
     minSize: 1,          // Minimum particle size in pixels
     maxSize: 4,          // Maximum particle size in pixels
-    opacity: 0.15,       // Particle opacity (0-1)
-    glowIntensity: 0.3,  // Glow effect intensity
+    opacity: 0.2,       // Particle opacity (0-1)
+    glowIntensity: 0.5,  // Glow effect intensity
     animationSpeed: 6,   // Base animation duration in seconds
-    movementSpeed: 0.5   // Movement speed multiplier
+    movementSpeed: 0.6   // Movement speed multiplier
   },
   
   // Background settings
   background: {
     primaryGradient: {
-      start: '#667eea',
-      end: '#764ba2'
+      start: '#000814',  // deep space blue
+      end: '#001d3d'     // darker blue
     },
     secondaryGradient: {
-      start: 'rgba(102, 126, 234, 0.1)',
-      end: 'rgba(118, 75, 162, 0.1)'
+      start: 'rgba(0, 168, 255, 0.12)',
+      end: 'rgba(0, 95, 183, 0.10)'
     },
     radialGradients: [
-      { position: '20% 80%', color: 'rgba(120, 119, 198, 0.3)', size: '50%' },
-      { position: '80% 20%', color: 'rgba(255, 119, 198, 0.3)', size: '50%' },
-      { position: '40% 40%', color: 'rgba(120, 219, 255, 0.2)', size: '50%' }
+      { position: '18% 78%', color: 'rgba(0, 255, 255, 0.28)', size: '45%' },
+      { position: '78% 22%', color: 'rgba(120, 119, 255, 0.22)', size: '50%' },
+      { position: '42% 42%', color: 'rgba(0, 200, 255, 0.18)', size: '55%' }
     ]
   },
   
   // Animation settings
   animations: {
     gradientShift: {
-      duration: 20,       // Duration in seconds
+      duration: 24,       // Duration in seconds
       easing: 'ease-in-out'
     },
     radialShift: {
-      duration: 15,       // Duration in seconds
+      duration: 18,       // Duration in seconds
       easing: 'ease-in-out'
     },
     particleFloat: {
@@ -50,9 +50,9 @@ window.DynamicBackgroundConfig = {
   
   // Content styling
   content: {
-    backdropBlur: 10,    // Backdrop filter blur amount
+    backdropBlur: 12,    // Backdrop filter blur amount
     borderRadius: 15,     // Border radius in pixels
-    shadowIntensity: 0.1, // Box shadow opacity
+    shadowIntensity: 0.12, // Box shadow opacity
     hoverEffect: true,    // Enable hover animations
     fadeInAnimation: true // Enable content fade-in
   },
@@ -69,8 +69,8 @@ window.DynamicBackgroundConfig = {
   themes: {
     light: {
       background: {
-        primaryGradient: { start: '#667eea', end: '#764ba2' },
-        secondaryGradient: { start: 'rgba(102, 126, 234, 0.1)', end: 'rgba(118, 75, 162, 0.1)' }
+        primaryGradient: { start: '#000814', end: '#001d3d' },
+        secondaryGradient: { start: 'rgba(0, 168, 255, 0.12)', end: 'rgba(0, 95, 183, 0.10)' }
       },
       content: {
         background: 'rgba(255, 255, 255, 0.95)',
@@ -79,8 +79,8 @@ window.DynamicBackgroundConfig = {
     },
     dark: {
       background: {
-        primaryGradient: { start: '#1a1a2e', end: '#16213e' },
-        secondaryGradient: { start: 'rgba(26, 26, 46, 0.3)', end: 'rgba(22, 33, 62, 0.3)' }
+        primaryGradient: { start: '#000814', end: '#001d3d' },
+        secondaryGradient: { start: 'rgba(0, 168, 255, 0.12)', end: 'rgba(0, 95, 183, 0.10)' }
       },
       content: {
         background: 'rgba(26, 26, 46, 0.9)',
