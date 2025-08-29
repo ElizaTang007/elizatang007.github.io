@@ -50,10 +50,11 @@
     .cv-btn{margin-top:1.5rem; display:inline-flex; align-items:center; gap:.5rem; padding:.8rem 1.2rem; background:linear-gradient(135deg, rgba(14,165,233,.9), rgba(99,102,241,.85)); border:1px solid rgba(255,255,255,.25); border-radius:12px; color:white; text-decoration:none; font-weight:500; transition:all .25s ease; font-family:'JetBrains Mono', monospace}
     .cv-btn:hover{transform:translateY(-2px); box-shadow:0 8px 25px rgba(14,165,233,.3)}
 
-    /* Typewriter effect */
-    .typewriter{overflow:hidden; border-right:2px solid #0ea5e9; white-space:nowrap; animation:typing 3s steps(40, end), blink-caret .75s step-end infinite}
+    /* Typewriter effect with cursor fade */
+    .typewriter{overflow:hidden; border-right:2px solid #0ea5e9; white-space:nowrap; animation:typing 3s steps(40, end), blink-caret .75s step-end 4, hide-cursor 0s 3s forwards}
     @keyframes typing{from{width:0}to{width:100%}}
     @keyframes blink-caret{from,to{border-color:transparent}50%{border-color:#0ea5e9}}
+    @keyframes hide-caret{to{border-color:transparent}}
 
     section h2{font-size:28px; margin:0 0 1.2rem 0; font-family:'Orbitron', monospace; font-weight:600}
     .grid{display:grid; grid-template-columns: repeat(auto-fit, minmax(260px,1fr)); gap:1rem}
@@ -70,6 +71,17 @@
     .list .item:hover{transform:translateY(-2px) scale(1.01); background:rgba(255,255,255,.08); border-color:rgba(14,165,233,.3)}
     .list .item:hover::before{transform:scaleY(1)}
     .list .item.is-visible{opacity:1; transform:translateY(0) scale(1)}
+
+    /* Lifestyle grid */
+    .lifestyle-grid{display:grid; grid-template-columns:repeat(auto-fit, minmax(300px,1fr)); gap:1.5rem}
+    .lifestyle-card{background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.15); border-radius:20px; padding:1.5rem; opacity:0; transform:translateY(20px) scale(0.95); transition:all .6s cubic-bezier(0.4, 0, 0.2, 1); cursor:pointer; position:relative; overflow:hidden}
+    .lifestyle-card::before{content:''; position:absolute; top:0; left:0; right:0; height:3px; background:linear-gradient(90deg, #0ea5e9, #6366f1, #8b5cf6); transform:scaleX(0); transition:transform .4s ease}
+    .lifestyle-card:hover{transform:translateY(-8px) scale(1.02); box-shadow:0 25px 60px rgba(0,0,0,.3); border-color:rgba(14,165,233,.4)}
+    .lifestyle-card:hover::before{transform:scaleX(1)}
+    .lifestyle-card.is-visible{opacity:1; transform:translateY(0) scale(1)}
+    .lifestyle-card h3{margin:0 0 .8rem 0; font-size:20px; font-family:'Orbitron', monospace; font-weight:600; color:#0ea5e9}
+    .lifestyle-card p{margin:0; opacity:.9; line-height:1.7; font-family:'JetBrains Mono', monospace}
+    .lifestyle-card .emoji{font-size:2rem; margin-bottom:.5rem; display:block}
 
     .subscribe{max-width:900px; text-align:center; margin:0 auto}
     .sub-box{margin-top:1rem; display:flex; gap:.6rem; justify-content:center}
@@ -107,6 +119,7 @@
         <a href="#about" data-i18n="nav.about">About</a>
         <a href="#research" data-i18n="nav.research">Research</a>
         <a href="#highlights" data-i18n="nav.highlights">Highlights</a>
+        <a href="#lifestyle" data-i18n="nav.lifestyle">Lifestyle</a>
         <a href="#news" data-i18n="nav.news">News</a>
         <a href="#talks" data-i18n="nav.talks">Talks</a>
         <a href="#edu" data-i18n="nav.edu">Education</a>
@@ -164,6 +177,13 @@
       <div class="section-inner">
         <h2 data-i18n="highlights.title">Highlights</h2>
         <div class="grid reveal" id="highlightsGrid"></div>
+      </div>
+    </section>
+
+    <section id="lifestyle">
+      <div class="section-inner">
+        <h2 data-i18n="lifestyle.title">Lifestyle & Personality</h2>
+        <div class="lifestyle-grid" id="lifestyleGrid"></div>
       </div>
     </section>
 
@@ -314,7 +334,7 @@
     const i18n = {
       en: {
         brand: 'Eliza Tang',
-        nav: {about:'About', research:'Research', highlights:'Highlights', news:'News', talks:'Talks', edu:'Education', contact:'Contact'},
+        nav: {about:'About', research:'Research', highlights:'Highlights', lifestyle:'Lifestyle', news:'News', talks:'Talks', edu:'Education', contact:'Contact'},
         hero: {
           name:'Eliza Yiting Tang',
           subtitle:'University of Sydney · Econometrics & Software Development',
@@ -322,24 +342,30 @@
           tags:['AI & ML','Data Science','NLP','Computer Vision','UAM / eVTOL','ESG'],
           cv:'Download CV'
         },
-        research: { title:'Research Interests', items:[
-          {t:'Preference Externalities', d:'Modeling willingness-to-pay shifts under social information on digital platforms.'},
-          {t:'Retention Causality', d:'Causal evaluation of user retention interventions under regulatory and policy shocks.'},
-          {t:'EvoNet for Behavior', d:'Expressive neural architectures to capture adaptive behavior pathways with heterogeneous learning.'},
-          {t:'UAM Adoption', d:'Identity formation and incentive design for eVTOL platform adoption in emerging markets.'}
+        research: { title:'Research & Innovation', items:[
+          {t:'Preference Externalities', d:'Modeling willingness-to-pay shifts under social information on digital platforms. Developing causal frameworks for peer influence mechanisms.'},
+          {t:'Retention Causality', d:'Causal evaluation of user retention interventions under regulatory and policy shocks. Using ML for heterogeneous treatment effects.'},
+          {t:'EvoNet for Behavior', d:'Expressive neural architectures to capture adaptive behavior pathways with heterogeneous learning dynamics in digital environments.'},
+          {t:'UAM Adoption', d:'Identity formation and incentive design for eVTOL platform adoption in emerging markets. Building scalable mobility solutions.'}
         ]},
-        highlights: { title:'Highlights', items:[
+        highlights: { title:'Professional Identity', items:[
           {t:'🧠 Quant Researcher', d:'Causal inference · Behavioral modeling · Platform design — ongoing research on digital platforms; Data Analyst @Google · RA @Penn State.'},
           {t:'🌿 Sustainability Strategist', d:'Green incentives · ESG mechanisms · Platform policy — eVTOL adoption & sustainable pricing; SDG @UN AU 2024; Presenter @IAMCR.'},
           {t:'🚀 UAM Entrepreneur', d:'Co‑founder @YITA AVIATION — eVTOL platform design; low‑altitude mobility infrastructure; tech‑policy & urban air innovation.'}
         ]},
-        news: { title:'News', items:[
+        lifestyle: { title:'Lifestyle & Personality', items:[
+          {t:'🎯 Visionary Thinker', d:'Passionate about solving complex problems at the intersection of technology, economics, and human behavior. Always exploring the next frontier of innovation.'},
+          {t:'🌍 Global Citizen', d:'Lived and worked across Sydney, Shanghai, and international conferences. Embracing diverse perspectives and building bridges between cultures.'},
+          {t:'💡 Creative Problem Solver', d:'Combines analytical rigor with creative thinking. Enjoys turning abstract concepts into practical solutions that make real impact.'},
+          {t:'🚀 Future Builder', d:'Not just studying the future, but actively building it. From UAM platforms to sustainable tech solutions, creating tomorrow\'s infrastructure today.'}
+        ]},
+        news: { title:'Latest Updates', items:[
           '2025.05 · Submitted paper on LLM‑powered causal modeling for user retention to INFORMS 2025.',
           '2025.03 · Invited to the Avalon International Airshow to explore UAM platforms.',
           '2024.11 · Invited to the Sustainable Development Goals Dinner (UNAA).',
           '2024.03 · Causal modeling for retention accepted at ICEMGD.'
         ]},
-        dev: { title:'Under Development', items:[
+        dev: { title:'Current Projects', items:[
           {t:'Returns to Education — A Causal Analysis Using IV', d:'ECMT3997 Thesis, University of Sydney · PDF: <a href="ecmt3997.pdf" style="color:#7dd3fc">View</a><br/>Implements Card (1993) with proximity‑to‑college as instrument; 2SLS estimation, LATE interpretation, and instrument strength using Australian microdata.'}
         ]},
         talks: { title:'Talks & Conferences', items:[
@@ -353,12 +379,12 @@
           '2023.12–2024.01 · Meritco — AI Investment Research Intern',
           '2022.12–2023.01 · VMLY&R — Account Executive Intern (Merck, J&J)'
         ]},
-        contact: { title:'Stay in touch', desc:'Interested in my research? Subscribe or email me.', btn:'Subscribe', email:'Or email: <a href="mailto:tangyiting007@gmail.com" style="color:#7dd3fc">tangyiting007@gmail.com</a>' },
+        contact: { title:'Let\'s Connect', desc:'Interested in collaboration, research opportunities, or investment? Let\'s discuss how we can work together.', btn:'Subscribe', email:'Or email: <a href="mailto:tangyiting007@gmail.com" style="color:#7dd3fc">tangyiting007@gmail.com</a>' },
         footer:'© 2025 Eliza Tang. All rights reserved.'
       },
       zh: {
         brand: '唐怡婷 Eliza',
-        nav: {about:'关于', research:'研究', highlights:'亮点', news:'动态', talks:'演讲', edu:'教育', contact:'联系'},
+        nav: {about:'关于', research:'研究', highlights:'亮点', lifestyle:'生活', news:'动态', talks:'演讲', edu:'教育', contact:'联系'},
         hero: {
           name:'唐怡婷（Eliza Yiting Tang）',
           subtitle:'悉尼大学 · 计量经济学与软件开发',
@@ -366,16 +392,22 @@
           tags:['人工智能','数据科学','自然语言处理','计算机视觉','UAM / eVTOL','ESG'],
           cv:'下载简历'
         },
-        research: { title:'研究兴趣', items:[
-          {t:'偏好外部性', d:'在数字平台的社会信息线索下，建模支付意愿迁移与行为调整。'},
-          {t:'留存因果', d:'在监管/政策冲击下评估留存干预的因果效果与异质性。'},
-          {t:'EvoNet 行为建模', d:'可表达神经结构刻画异质学习动态中的适应性行为路径。'},
-          {t:'UAM 采纳', d:'新兴市场 eVTOL 平台采纳的身份形成与激励设计。'}
+        research: { title:'研究与创新', items:[
+          {t:'偏好外部性', d:'在数字平台的社会信息线索下，建模支付意愿迁移与行为调整。开发同伴影响机制的因果框架。'},
+          {t:'留存因果', d:'在监管/政策冲击下评估留存干预的因果效果与异质性。使用机器学习分析异质处理效应。'},
+          {t:'EvoNet 行为建模', d:'可表达神经结构刻画数字环境中异质学习动态的适应性行为路径。'},
+          {t:'UAM 采纳', d:'新兴市场 eVTOL 平台采纳的身份形成与激励设计。构建可扩展的出行解决方案。'}
         ]},
-        highlights: { title:'个人亮点', items:[
+        highlights: { title:'专业身份', items:[
           {t:'🧠 量化研究者', d:'因果推断 · 行为建模 · 平台设计；持续开展平台研究；曾任 Google 数据分析实习、宾州州立大学 RA。'},
           {t:'🌿 可持续策略', d:'绿色激励 · ESG 机制 · 平台政策；eVTOL 采纳与可持续定价；联合国澳洲 SDG、IAMCR 演讲者。'},
           {t:'🚀 UAM 创业者', d:'YITA AVIATION 联合创始人；eVTOL 平台设计与低空出行基础设施；科技政策与城市空中创新。'}
+        ]},
+        lifestyle: { title:'生活与个性', items:[
+          {t:'🎯 远见思考者', d:'热衷于解决技术、经济学和人类行为交叉领域的复杂问题。始终探索创新的前沿领域。'},
+          {t:'🌍 全球公民', d:'在悉尼、上海和国际会议间生活工作。拥抱多元视角，搭建文化桥梁。'},
+          {t:'💡 创意问题解决者', d:'结合分析严谨性与创造性思维。享受将抽象概念转化为产生实际影响的实用解决方案。'},
+          {t:'🚀 未来建设者', d:'不仅研究未来，更积极建设未来。从 UAM 平台到可持续技术解决方案，今天就在创造明天的基础设施。'}
         ]},
         news: { title:'最新动态', items:[
           '2025.05 · 提交 LLM 驱动的用户留存因果建模论文至 INFORMS 2025。',
@@ -383,7 +415,7 @@
           '2024.11 · 受邀出席联合国澳大利亚协会 SDG 晚宴。',
           '2024.03 · 留存因果建模论文被 ICEMGD 接收。'
         ]},
-        dev: { title:'在研项目', items:[
+        dev: { title:'当前项目', items:[
           {t:'教育回报的因果分析（工具变量）', d:'ECMT3997 毕设 · PDF：<a href="ecmt3997.pdf" style="color:#7dd3fc">查看</a><br/>基于 Card (1993) 的近校工具变量框架，实施 2SLS、解释 LATE，并使用澳大利亚微观数据检验工具变量强度。'}
         ]},
         talks: { title:'学术演讲', items:[
@@ -397,7 +429,7 @@
           '2023.12–2024.01 · Meritco · AI 投资研究实习',
           '2022.12–2023.01 · VMLY&R · 客户执行实习（默沙东、强生）'
         ]},
-        contact: { title:'保持联系', desc:'对我的研究与项目感兴趣？欢迎订阅或邮件联系。', btn:'订阅', email:'或发送邮件：<a href="mailto:tangyiting007@gmail.com" style="color:#7dd3fc">tangyiting007@gmail.com</a>' },
+        contact: { title:'让我们连接', desc:'对合作、研究机会或投资感兴趣？让我们讨论如何一起工作。', btn:'订阅', email:'或发送邮件：<a href="mailto:tangyiting007@gmail.com" style="color:#7dd3fc">tangyiting007@gmail.com</a>' },
         footer:'© 2025 唐怡婷（Eliza Tang）保留所有权利。'
       }
     };
@@ -421,6 +453,9 @@
       // highlights
       const h = document.getElementById('highlightsGrid');
       h.innerHTML = t.highlights.items.map(i=>`<div class="card"><h3>${i.t}</h3><p>${i.d}</p></div>`).join('');
+      // lifestyle
+      const l = document.getElementById('lifestyleGrid');
+      l.innerHTML = t.lifestyle.items.map(i=>`<div class="lifestyle-card"><div class="emoji">${i.t.split(' ')[0]}</div><h3>${i.t.split(' ').slice(1).join(' ')}</h3><p>${i.d}</p></div>`).join('');
       // news
       const n = document.getElementById('newsList');
       n.innerHTML = t.news.items.map(i=>`<div class="item">${i}</div>`).join('');
@@ -442,7 +477,7 @@
 
       // hook up enhanced observers
       document.querySelectorAll('section').forEach(el => sectionObserver.observe(el));
-      document.querySelectorAll('.card, .item').forEach(el => cardObserver.observe(el));
+      document.querySelectorAll('.card, .item, .lifestyle-card').forEach(el => cardObserver.observe(el));
       setTimeout(addCardHandlers, 100);
       // button text
       document.getElementById('langToggle').textContent = lang === 'en' ? '中文' : 'EN';

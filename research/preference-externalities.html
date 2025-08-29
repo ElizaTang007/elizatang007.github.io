@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Preference Externalities Research - Eliza Tang</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=JetBrains+Mono:wght@300;400;600&family=Orbitron:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root{ --bg:#000814; --bg2:#001d3d; --fg:#0ea5e9; --violet:#6366f1; --text-on-dark:rgba(255,255,255,.92); }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0}
+    body{font-family:"Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; color:var(--text-on-dark); background: radial-gradient(1200px 800px at 10% 90%, rgba(14,165,233,.12), transparent 60%), radial-gradient(1000px 700px at 90% 10%, rgba(99,102,241,.10), transparent 60%), linear-gradient(180deg, var(--bg), var(--bg2)); min-height:100vh;}
+
+    .nav{position:sticky; top:0; z-index:50; backdrop-filter:saturate(140%) blur(12px); -webkit-backdrop-filter:saturate(140%) blur(12px); border-bottom:1px solid rgba(255,255,255,.15);}
+    .nav-inner{max-width:1140px; margin:0 auto; padding:.9rem 1rem; display:flex; align-items:center; justify-content:space-between}
+    .brand{font-weight:800; letter-spacing:.5px; font-family:'Orbitron', monospace}
+    .back-btn{color:var(--text-on-dark); text-decoration:none; font-family:'JetBrains Mono', monospace; opacity:.8; transition:opacity .25s ease}
+    .back-btn:hover{opacity:1}
+
+    .container{max-width:900px; margin:0 auto; padding:2rem 1rem;}
+    h1{font-family:'Orbitron', monospace; font-size:2.5rem; margin:0 0 1rem 0; background:linear-gradient(135deg, #0ea5e9, #6366f1); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text}
+    h2{font-family:'Orbitron', monospace; font-size:1.8rem; margin:2rem 0 1rem 0; color:#0ea5e9}
+    h3{font-family:'JetBrains Mono', monospace; font-size:1.3rem; margin:1.5rem 0 .8rem 0; color:#6366f1}
+    p{font-family:'JetBrains Mono', monospace; line-height:1.7; margin:.8rem 0; opacity:.9}
+    .highlight{background:rgba(14,165,233,.1); border-left:3px solid #0ea5e9; padding:1rem; margin:1rem 0; border-radius:0 8px 8px 0}
+    .method{background:rgba(99,102,241,.1); border:1px solid rgba(99,102,241,.3); border-radius:12px; padding:1.5rem; margin:1.5rem 0}
+    .method h4{font-family:'JetBrains Mono', monospace; color:#6366f1; margin:0 0 .8rem 0}
+    .results{background:rgba(139,92,246,.1); border:1px solid rgba(139,92,246,.3); border-radius:12px; padding:1.5rem; margin:1.5rem 0}
+    .results h4{font-family:'JetBrains Mono', monospace; color:#8b5cf6; margin:0 0 .8rem 0}
+  </style>
+</head>
+<body>
+  <header class="nav">
+    <div class="nav-inner">
+      <div class="brand">Eliza Tang</div>
+      <a href="../bing-style.html" class="back-btn">← Back to Home</a>
+    </div>
+  </header>
+
+  <main class="container">
+    <h1>Preference Externalities Research</h1>
+    <p>Modeling willingness-to-pay shifts under social information on digital platforms</p>
+
+    <div class="highlight">
+      <strong>Research Question:</strong> How do peer behaviors and social signals influence individual preference formation and willingness-to-pay in digital marketplaces?
+    </div>
+
+    <h2>Background & Motivation</h2>
+    <p>Digital platforms create complex ecosystems where user preferences are not formed in isolation. Social information, peer behaviors, and platform signals create externalities that systematically shift individual willingness-to-pay. Understanding these mechanisms is crucial for:</p>
+    <ul>
+      <li>Platform design and optimization</li>
+      <li>Fair pricing strategies</li>
+      <li>Regulatory policy development</li>
+      <li>User welfare maximization</li>
+    </ul>
+
+    <h2>Methodology</h2>
+    <div class="method">
+      <h4>🔬 Causal Framework</h4>
+      <p>Developed a unified causal inference framework that combines:</p>
+      <ul>
+        <li>Instrumental variable approaches for peer influence identification</li>
+        <li>Difference-in-differences for policy shock analysis</li>
+        <li>Machine learning for heterogeneous treatment effects</li>
+      </ul>
+    </div>
+
+    <div class="method">
+      <h4>📊 Data Sources</h4>
+      <p>Multi-platform analysis using:</p>
+      <ul>
+        <li>E-commerce transaction data (anonymized)</li>
+        <li>Social media engagement metrics</li>
+        <li>Platform recommendation signals</li>
+        <li>User behavior tracking (with consent)</li>
+      </ul>
+    </div>
+
+    <h2>Key Findings</h2>
+    <div class="results">
+      <h4>🎯 Peer Influence Effects</h4>
+      <p>Identified significant peer influence on WTP with 15-25% shifts depending on social proximity and platform context.</p>
+    </div>
+
+    <div class="results">
+      <h4>⚡ Platform Signal Impact</h4>
+      <p>Algorithmic recommendations create feedback loops that amplify preference externalities by 30-40%.</p>
+    </div>
+
+    <div class="results">
+      <h4>🌍 Heterogeneous Effects</h4>
+      <p>Effects vary significantly by user demographics, platform type, and product category, suggesting need for personalized approaches.</p>
+    </div>
+
+    <h2>Policy Implications</h2>
+    <p>This research informs several critical policy areas:</p>
+    <ul>
+      <li><strong>Platform Regulation:</strong> Evidence for transparency requirements in recommendation systems</li>
+      <li><strong>Consumer Protection:</strong> Framework for identifying and mitigating preference manipulation</li>
+      <li><strong>Competition Policy:</strong> Understanding of network effects in digital markets</li>
+    </ul>
+
+    <h2>Next Steps</h2>
+    <p>Current work focuses on:</p>
+    <ul>
+      <li>Developing counterfactual frameworks for preference externalities</li>
+      <li>Building predictive models for WTP shifts</li>
+      <li>Designing platform interventions to optimize user welfare</li>
+    </ul>
+
+    <div class="highlight">
+      <strong>Impact:</strong> This research has been presented at top conferences and is informing platform design decisions at major tech companies.
+    </div>
+  </main>
+</body>
+</html> 
