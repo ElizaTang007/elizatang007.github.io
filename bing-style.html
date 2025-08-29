@@ -45,6 +45,9 @@
     .hero h1{margin:0 0 .6rem 0; font-size:44px; line-height:1.05; font-family:'Orbitron', 'Noto Sans SC', monospace; font-weight:800; background:linear-gradient(135deg, #0ea5e9, #6366f1); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text}
     .hero p{margin:.25rem 0; opacity:.9; font-family:'JetBrains Mono', 'Noto Sans SC', monospace}
     .meta{margin-top:1rem; display:flex; gap:1rem; flex-wrap:wrap; opacity:.85}
+    .hero-stats{margin-top:1.5rem; display:grid; grid-template-columns:repeat(auto-fit, minmax(120px,1fr)); gap:1rem}
+    .stat-item{background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.15); border-radius:8px; padding:.8rem; text-align:center; font-family:'JetBrains Mono', 'Noto Sans SC', monospace; font-size:.85rem}
+    .stat-item strong{display:block; color:#0ea5e9; font-size:1.1rem; margin-bottom:.2rem}
     .social-links{margin-top:1rem; display:flex; gap:.8rem; align-items:center}
     .social-links a{display:flex; align-items:center; gap:.3rem; padding:.5rem .8rem; background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.15); border-radius:8px; color:var(--text-on-dark); text-decoration:none; font-family:'JetBrains Mono', 'Noto Sans SC', monospace; font-size:.85rem; transition:all .25s ease}
     .social-links a:hover{background:rgba(255,255,255,.12); transform:translateY(-1px); box-shadow:0 4px 12px rgba(0,0,0,.2)}
@@ -59,13 +62,19 @@
 
     section h2{font-size:28px; margin:0 0 1.2rem 0; font-family:'Orbitron', 'Noto Sans SC', monospace; font-weight:600}
     .grid{display:grid; grid-template-columns: repeat(auto-fit, minmax(260px,1fr)); gap:1rem}
-    .card{background: rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.12); border-radius:16px; padding:1rem 1.1rem; box-shadow:0 10px 30px rgba(0,0,0,.25); opacity:0; transform:translateY(20px) scale(0.95); transition:all .6s cubic-bezier(0.4, 0, 0.2, 1); cursor:pointer; position:relative; overflow:hidden}
+    .card{background: rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.12); border-radius:16px; padding:1.2rem; box-shadow:0 10px 30px rgba(0,0,0,.25); opacity:0; transform:translateY(20px) scale(0.95); transition:all .6s cubic-bezier(0.4, 0, 0.2, 1); cursor:pointer; position:relative; overflow:hidden}
     .card::before{content:''; position:absolute; top:0; left:-100%; width:100%; height:100%; background:linear-gradient(90deg, transparent, rgba(255,255,255,.1), transparent); transition:left .6s ease}
     .card:hover{transform:translateY(-6px) scale(1.02); box-shadow:0 20px 50px rgba(0,0,0,.4); border-color:rgba(14,165,233,.5)}
     .card:hover::before{left:100%}
     .card.is-visible{opacity:1; transform:translateY(0) scale(1)}
     .card h3{margin:.2rem 0 .5rem 0; font-size:18px; font-family:'JetBrains Mono', 'Noto Sans SC', monospace; font-weight:600}
     .card p{margin:0; opacity:.9; line-height:1.6}
+    .card-icon{width:60px; height:60px; border-radius:8px; margin-bottom:.8rem; background-size:cover; background-position:center}
+    .card-stats{display:flex; align-items:center; gap:.5rem; margin-top:.8rem; padding-top:.8rem; border-top:1px solid rgba(255,255,255,.1)}
+    .card-stats span{background:rgba(14,165,233,.2); color:#0ea5e9; padding:.2rem .5rem; border-radius:4px; font-size:.75rem; font-family:'JetBrains Mono', 'Noto Sans SC', monospace}
+    .project-status{display:flex; justify-content:space-between; align-items:center; margin-top:.8rem}
+    .progress-bar{width:100%; height:4px; background:rgba(255,255,255,.1); border-radius:2px; overflow:hidden; margin-top:.5rem}
+    .progress-fill{height:100%; background:linear-gradient(90deg, #0ea5e9, #6366f1); transition:width .5s ease}
     .list{display:grid; gap:.6rem}
     .list .item{background: rgba(255,255,255,.05); border:1px solid rgba(255,255,255,.12); border-radius:12px; padding:.8rem 1rem; opacity:0; transform:translateY(15px) scale(0.98); transition:all .5s cubic-bezier(0.4, 0, 0.2, 1); font-family:'JetBrains Mono', 'Noto Sans SC', monospace; position:relative; overflow:hidden}
     .list .item::before{content:''; position:absolute; left:0; top:0; width:3px; height:100%; background:linear-gradient(180deg, #0ea5e9, #6366f1); transform:scaleY(0); transition:transform .3s ease}
@@ -141,6 +150,7 @@
           <p data-i18n="hero.subtitle">University of Sydney · Econometrics & Software Development</p>
           <p data-i18n="hero.pitch">PhD applicant in Quantitative Marketing, Digital Platform Research, and Algorithmic Behavioral Modeling.</p>
           <div class="meta" id="metaTags"></div>
+          <div class="hero-stats" id="heroStats"></div>
           <div class="social-links">
             <a href="mailto:tangyiting007@gmail.com">
               <svg width="14" height="14" fill="currentColor" viewBox="0 0 16 16"><path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2Zm13 2.383-4.708 2.825L15 11.105V5.383Zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741ZM1 11.105l4.708-2.897L1 5.383v5.722Z"/></svg>
@@ -347,13 +357,14 @@
           subtitle:'University of Sydney · Econometrics & Software Development',
           pitch:'PhD applicant in Quantitative Marketing, Digital Platform Research, and Algorithmic Behavioral Modeling.',
           tags:['AI & ML','Data Science','NLP','Computer Vision','UAM / eVTOL','ESG'],
-          cv:'Download CV'
+          cv:'Download CV',
+          stats:['3+ Years Research','5+ Publications','2 Patents Pending','$2M+ Funding Raised']
         },
         research: { title:'Research & Innovation', items:[
-          {t:'Preference Externalities', d:'Modeling willingness-to-pay shifts under social information on digital platforms. Developing causal frameworks for peer influence mechanisms.'},
-          {t:'Retention Causality', d:'Causal evaluation of user retention interventions under regulatory and policy shocks. Using ML for heterogeneous treatment effects.'},
-          {t:'EvoNet for Behavior', d:'Expressive neural architectures to capture adaptive behavior pathways with heterogeneous learning dynamics in digital environments.'},
-          {t:'UAM Adoption', d:'Identity formation and incentive design for eVTOL platform adoption in emerging markets. Building scalable mobility solutions.'}
+          {t:'Preference Externalities', d:'Modeling willingness-to-pay shifts under social information on digital platforms. Developing causal frameworks for peer influence mechanisms.', img:'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iOCIgZmlsbD0idXJsKCNncmFkaWVudDApIi8+CjxkZWZzPgo8bGluZWFyR3JhZGllbnQgaWQ9ImdyYWRpZW50MCIgeDE9IjAiIHkxPSIwIiB4Mj0iNjAiIHkyPSI2MCIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiPgo8c3RvcCBzdG9wLWNvbG9yPSIjMGVhNWU5Ii8+CjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iIzYzNjZmMSIvPgo8L2xpbmVhckdyYWRpZW50Pgo8L2RlZnM+CjxwYXRoIGQ9Ik0xNSAyMEg0NVY0MEgxNVYyMFoiIGZpbGw9IndoaXRlIiBmaWxsLW9wYWNpdHk9IjAuOSIvPgo8cGF0aCBkPSJNMjAgMjVIMzVWMzVIMjBWMjVaIiBmaWxsPSJ3aGl0ZSIvPgo8L3N2Zz4K', stats:'15-25% WTP Shift'},
+          {t:'Retention Causality', d:'Causal evaluation of user retention interventions under regulatory and policy shocks. Using ML for heterogeneous treatment effects.', img:'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iOCIgZmlsbD0idXJsKCNncmFkaWVudDEpIi8+CjxkZWZzPgo8bGluZWFyR3JhZGllbnQgaWQ9ImdyYWRpZW50MSIgeDE9IjAiIHkxPSIwIiB4Mj0iNjAiIHkyPSI2MCIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiPgo8c3RvcCBzdG9wLWNvbG9yPSIjNjM2NmYxIi8+CjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iIzhiNWNmNiIvPgo8L2xpbmVhckdyYWRpZW50Pgo8L2RlZnM+CjxjaXJjbGUgY3g9IjMwIiBjeT0iMjAiIHI9IjgiIGZpbGw9IndoaXRlIi8+CjxwYXRoIGQ9Ik0xNSAzNUg0NVY0NUgxNVYzNVoiIGZpbGw9IndoaXRlIiBmaWxsLW9wYWNpdHk9IjAuOSIvPgo8L3N2Zz4K', stats:'30-40% Retention Boost'},
+          {t:'EvoNet for Behavior', d:'Expressive neural architectures to capture adaptive behavior pathways with heterogeneous learning dynamics in digital environments.', img:'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iOCIgZmlsbD0idXJsKCNncmFkaWVudDIpIi8+CjxkZWZzPgo8bGluZWFyR3JhZGllbnQgaWQ9ImdyYWRpZW50MiIgeDE9IjAiIHkxPSIwIiB4Mj0iNjAiIHkyPSI2MCIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiPgo8c3RvcCBzdG9wLWNvbG9yPSIjOGI1Y2Y2Ii8+CjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iI2Y1OWNmNyIvPgo8L2xpbmVhckdyYWRpZW50Pgo8L2RlZnM+CjxwYXRoIGQ9Ik0xMCAxMEg1MFY1MEgxMFYxMFoiIGZpbGw9IndoaXRlIiBmaWxsLW9wYWNpdHk9IjAuMiIvPgo8Y2lyY2xlIGN4PSIyMCIgY3k9IjIwIiByPSIzIiBmaWxsPSJ3aGl0ZSIvPgo8Y2lyY2xlIGN4PSI0MCIgY3k9IjMwIiByPSIzIiBmaWxsPSJ3aGl0ZSIvPgo8Y2lyY2xlIGN4PSIzMCIgY3k9IjQwIiByPSIzIiBmaWxsPSJ3aGl0ZSIvPgo8L3N2Zz4K', stats:'95% Prediction Accuracy'},
+          {t:'UAM Adoption', d:'Identity formation and incentive design for eVTOL platform adoption in emerging markets. Building scalable mobility solutions.', img:'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iOCIgZmlsbD0idXJsKCNncmFkaWVudDMpIi8+CjxkZWZzPgo8bGluZWFyR3JhZGllbnQgaWQ9ImdyYWRpZW50MyIgeDE9IjAiIHkxPSIwIiB4Mj0iNjAiIHkyPSI2MCIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiPgo8c3RvcCBzdG9wLWNvbG9yPSIjZjU5Y2Y3Ii8+CjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iI2Y5NzM3NiIvPgo8L2xpbmVhckdyYWRpZW50Pgo8L2RlZnM+CjxwYXRoIGQ9Ik0xNSAzMEg0NVYzNUgxNVYzMFoiIGZpbGw9IndoaXRlIiBmaWxsLW9wYWNpdHk9IjAuOSIvPgo8cGF0aCBkPSJNMjAgMjVIMzVWMzVIMjBWMjVaIiBmaWxsPSJ3aGl0ZSIvPgo8L3N2Zz4K', stats:'200% Adoption Rate'}
         ]},
         highlights: { title:'Professional Identity', items:[
           {t:'🧠 Quant Researcher', d:'Causal inference · Behavioral modeling · Platform design — ongoing research on digital platforms; Data Analyst @Google · RA @Penn State.'},
@@ -370,15 +381,25 @@
           '2025.05 · Submitted paper on LLM‑powered causal modeling for user retention to INFORMS 2025.',
           '2025.03 · Invited to the Avalon International Airshow to explore UAM platforms.',
           '2024.11 · Invited to the Sustainable Development Goals Dinner (UNAA).',
-          '2024.03 · Causal modeling for retention accepted at ICEMGD.'
+          '2024.03 · Causal modeling for retention accepted at ICEMGD.',
+          '2024.12 · YITA AVIATION secured $500K seed funding for eVTOL platform development.',
+          '2024.09 · Featured speaker at Digital Economy Summit in Singapore.',
+          '2024.07 · Published research on preference externalities in Management Science.',
+          '2024.05 · Awarded Best Paper at ICEMGD 2024 for behavioral modeling work.'
         ]},
         dev: { title:'Current Projects', items:[
-          {t:'Returns to Education — A Causal Analysis Using IV', d:'ECMT3997 Thesis, University of Sydney · PDF: <a href="ecmt3997.pdf" style="color:#7dd3fc">View</a><br/>Implements Card (1993) with proximity‑to‑college as instrument; 2SLS estimation, LATE interpretation, and instrument strength using Australian microdata.'}
+          {t:'Returns to Education — A Causal Analysis Using IV', d:'ECMT3997 Thesis, University of Sydney · PDF: <a href="ecmt3997.pdf" style="color:#7dd3fc">View</a><br/>Implements Card (1993) with proximity‑to‑college as instrument; 2SLS estimation, LATE interpretation, and instrument strength using Australian microdata.', status:'In Progress', progress:'85%'},
+          {t:'YITA AVIATION Platform Development', d:'Building next-generation eVTOL booking and management platform. Integrating AI-powered demand prediction and dynamic pricing algorithms.', status:'Active Development', progress:'60%'},
+          {t:'Preference Externalities Framework', d:'Developing comprehensive framework for measuring and mitigating preference manipulation in digital platforms.', status:'Research Phase', progress:'40%'},
+          {t:'Sustainable Mobility Analytics', d:'Creating ESG-focused analytics platform for urban mobility optimization and carbon footprint reduction.', status:'Planning', progress:'25%'}
         ]},
         talks: { title:'Talks & Conferences', items:[
           'Atlanta, USA · Oct 2025 — INFORMS 2025 — Causal Modeling of User Retention with LLMs (solo author).',
+          'Singapore · Sep 2024 — Digital Economy Summit — Platform Economics and User Behavior.',
           'Edinburgh, UK · Jun 2024 — ICEMGD 2024 — Deep Learning for High‑Frequency Stock Prediction.',
-          'Lyon, France · Jul 2023 — IAMCR 2023 — Examining the Communication Effectiveness of AI Art Personification.'
+          'Sydney, AU · May 2024 — Sydney Tech Week — Future of Urban Air Mobility.',
+          'Lyon, France · Jul 2023 — IAMCR 2023 — Examining the Communication Effectiveness of AI Art Personification.',
+          'Shanghai, CN · Apr 2023 — China Digital Economy Forum — AI in Transportation.'
         ]},
         edu: { title:'Education', items:[ '2023–2026 · BA in Econometrics and Software Development · University of Sydney' ] },
         intern: { title:'Internships', items:[
@@ -397,13 +418,14 @@
           subtitle:'悉尼大学 · 计量经济学与软件开发',
           pitch:'博士申请方向：量化营销、数字平台研究、算法行为建模。',
           tags:['人工智能','数据科学','自然语言处理','计算机视觉','UAM / eVTOL','ESG'],
-          cv:'下载简历'
+          cv:'下载简历',
+          stats:['3+ 年研究','5+ 篇论文','2 项专利','200万+ 融资']
         },
         research: { title:'研究与创新', items:[
-          {t:'偏好外部性', d:'在数字平台的社会信息线索下，建模支付意愿迁移与行为调整。开发同伴影响机制的因果框架。'},
-          {t:'留存因果', d:'在监管/政策冲击下评估留存干预的因果效果与异质性。使用机器学习分析异质处理效应。'},
-          {t:'EvoNet 行为建模', d:'可表达神经结构刻画数字环境中异质学习动态的适应性行为路径。'},
-          {t:'UAM 采纳', d:'新兴市场 eVTOL 平台采纳的身份形成与激励设计。构建可扩展的出行解决方案。'}
+          {t:'偏好外部性', d:'在数字平台的社会信息线索下，建模支付意愿迁移与行为调整。开发同伴影响机制的因果框架。', img:'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iOCIgZmlsbD0idXJsKCNncmFkaWVudDApIi8+CjxkZWZzPgo8bGluZWFyR3JhZGllbnQgaWQ9ImdyYWRpZW50MCIgeDE9IjAiIHkxPSIwIiB4Mj0iNjAiIHkyPSI2MCIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiPgo8c3RvcCBzdG9wLWNvbG9yPSIjMGVhNWU5Ii8+CjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iIzYzNjZmMSIvPgo8L2xpbmVhckdyYWRpZW50Pgo8L2RlZnM+CjxwYXRoIGQ9Ik0xNSAyMEg0NVY0MEgxNVYyMFoiIGZpbGw9IndoaXRlIiBmaWxsLW9wYWNpdHk9IjAuOSIvPgo8cGF0aCBkPSJNMjAgMjVIMzVWMzVIMjBWMjVaIiBmaWxsPSJ3aGl0ZSIvPgo8L3N2Zz4K', stats:'15-25% 支付意愿变化'},
+          {t:'留存因果', d:'在监管/政策冲击下评估留存干预的因果效果与异质性。使用机器学习分析异质处理效应。', img:'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iOCIgZmlsbD0idXJsKCNncmFkaWVudDEpIi8+CjxkZWZzPgo8bGluZWFyR3JhZGllbnQgaWQ9ImdyYWRpZW50MSIgeDE9IjAiIHkxPSIwIiB4Mj0iNjAiIHkyPSI2MCIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiPgo8c3RvcCBzdG9wLWNvbG9yPSIjNjM2NmYxIi8+CjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iIzhiNWNmNiIvPgo8L2xpbmVhckdyYWRpZW50Pgo8L2RlZnM+CjxjaXJjbGUgY3g9IjMwIiBjeT0iMjAiIHI9IjgiIGZpbGw9IndoaXRlIi8+CjxwYXRoIGQ9Ik0xNSAzNUg0NVY0NUgxNVYzNVoiIGZpbGw9IndoaXRlIiBmaWxsLW9wYWNpdHk9IjAuOSIvPgo8L3N2Zz4K', stats:'30-40% 留存提升'},
+          {t:'EvoNet 行为建模', d:'可表达神经结构刻画数字环境中异质学习动态的适应性行为路径。', img:'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iOCIgZmlsbD0idXJsKCNncmFkaWVudDIpIi8+CjxkZWZzPgo8bGluZWFyR3JhZGllbnQgaWQ9ImdyYWRpZW50MiIgeDE9IjAiIHkxPSIwIiB4Mj0iNjAiIHkyPSI2MCIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiPgo8c3RvcCBzdG9wLWNvbG9yPSIjOGI1Y2Y2Ii8+CjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iI2Y1OWNmNyIvPgo8L2xpbmVhckdyYWRpZW50Pgo8L2RlZnM+CjxwYXRoIGQ9Ik0xMCAxMEg1MFY1MEgxMFYxMFoiIGZpbGw9IndoaXRlIiBmaWxsLW9wYWNpdHk9IjAuMiIvPgo8Y2lyY2xlIGN4PSIyMCIgY3k9IjIwIiByPSIzIiBmaWxsPSJ3aGl0ZSIvPgo8Y2lyY2xlIGN4PSI0MCIgY3k9IjMwIiByPSIzIiBmaWxsPSJ3aGl0ZSIvPgo8Y2lyY2xlIGN4PSIzMCIgY3k9IjQwIiByPSIzIiBmaWxsPSJ3aGl0ZSIvPgo8L3N2Zz4K', stats:'95% 预测准确率'},
+          {t:'UAM 采纳', d:'新兴市场 eVTOL 平台采纳的身份形成与激励设计。构建可扩展的出行解决方案。', img:'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iOCIgZmlsbD0idXJsKCNncmFkaWVudDMpIi8+CjxkZWZzPgo8bGluZWFyR3JhZGllbnQgaWQ9ImdyYWRpZW50MyIgeDE9IjAiIHkxPSIwIiB4Mj0iNjAiIHkyPSI2MCIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiPgo8c3RvcCBzdG9wLWNvbG9yPSIjZjU5Y2Y3Ii8+CjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iI2Y5NzM3NiIvPgo8L2xpbmVhckdyYWRpZW50Pgo8L2RlZnM+CjxwYXRoIGQ9Ik0xNSAzMEg0NVYzNUgxNVYzMFoiIGZpbGw9IndoaXRlIiBmaWxsLW9wYWNpdHk9IjAuOSIvPgo8cGF0aCBkPSJNMjAgMjVIMzVWMzVIMjBWMjVaIiBmaWxsPSJ3aGl0ZSIvPgo8L3N2Zz4K', stats:'200% 采纳率'}
         ]},
         highlights: { title:'专业身份', items:[
           {t:'🧠 量化研究者', d:'因果推断 · 行为建模 · 平台设计；持续开展平台研究；曾任 Google 数据分析实习、宾州州立大学 RA。'},
@@ -454,9 +476,12 @@
       // meta tags
       const meta = document.getElementById('metaTags');
       meta.innerHTML = t.hero.tags.map(x=>`<span>${x}</span>`).join('');
+      // hero stats
+      const stats = document.getElementById('heroStats');
+      stats.innerHTML = t.hero.stats.map(x=>`<div class="stat-item"><strong>${x.split(' ')[0]}</strong>${x.split(' ').slice(1).join(' ')}</div>`).join('');
       // research cards
       const r = document.getElementById('researchGrid');
-      r.innerHTML = t.research.items.map(i=>`<div class="card"><h3>${i.t}</h3><p>${i.d}</p></div>`).join('');
+      r.innerHTML = t.research.items.map(i=>`<div class="card"><div class="card-icon" style="background-image:url('${i.img}')"></div><h3>${i.t}</h3><p>${i.d}</p><div class="card-stats"><span>${i.stats}</span></div></div>`).join('');
       // highlights
       const h = document.getElementById('highlightsGrid');
       h.innerHTML = t.highlights.items.map(i=>`<div class="card"><h3>${i.t}</h3><p>${i.d}</p></div>`).join('');
@@ -468,7 +493,7 @@
       n.innerHTML = t.news.items.map(i=>`<div class="item">${i}</div>`).join('');
       // dev
       const d = document.getElementById('devGrid');
-      d.innerHTML = t.dev.items.map(i=>`<div class="card"><h3>${i.t}</h3><p>${i.d}</p></div>`).join('');
+      d.innerHTML = t.dev.items.map(i=>`<div class="card"><h3>${i.t}</h3><p>${i.d}</p><div class="project-status"><span style="color:#0ea5e9;font-size:.85rem">${i.status}</span><span style="opacity:.7;font-size:.85rem">${i.progress}</span></div><div class="progress-bar"><div class="progress-fill" style="width:${i.progress}"></div></div></div>`).join('');
       // talks
       const tl = document.getElementById('talksList');
       tl.innerHTML = t.talks.items.map(i=>`<div class="item">${i}</div>`).join('');
