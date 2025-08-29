@@ -92,6 +92,20 @@
     .lifestyle-card h3{margin:0 0 .8rem 0; font-size:20px; font-family:'Orbitron', 'Noto Sans SC', monospace; font-weight:600; color:#0ea5e9}
     .lifestyle-card p{margin:0; opacity:.9; line-height:1.7; font-family:'JetBrains Mono', 'Noto Sans SC', monospace}
     .lifestyle-card .emoji{font-size:2rem; margin-bottom:.5rem; display:block}
+    
+    /* Ventures grid */
+    .ventures-grid{display:grid; grid-template-columns:repeat(auto-fit, minmax(300px,1fr)); gap:1.2rem}
+    .venture-card{background:rgba(255,255,255,.08); border:2px solid rgba(255,255,255,.15); border-radius:20px; padding:1.5rem; position:relative; overflow:hidden; cursor:pointer; transition:all .4s cubic-bezier(0.4, 0, 0.2, 1); opacity:0; transform:translateY(20px) scale(0.95)}
+    .venture-card::before{content:''; position:absolute; top:0; left:-100%; width:100%; height:100%; background:linear-gradient(90deg, transparent, rgba(14,165,233,.2), transparent); transition:left .6s ease}
+    .venture-card:hover{transform:translateY(-8px) scale(1.02); border-color:rgba(14,165,233,.6); box-shadow:0 25px 60px rgba(0,0,0,.4)}
+    .venture-card:hover::before{left:100%}
+    .venture-card h3{margin:0 0 .8rem 0; font-size:22px; font-family:'Orbitron', 'Noto Sans SC', monospace; font-weight:600; background:linear-gradient(135deg, #0ea5e9, #6366f1); -webkit-background-clip:text; -webkit-text-fill-color:transparent}
+    .venture-card p{margin:0 0 1rem 0; opacity:.9; line-height:1.6; font-family:'JetBrains Mono', 'Noto Sans SC', monospace}
+    .venture-meta{display:flex; justify-content:space-between; align-items:center; margin-top:1rem}
+    .venture-type{background:rgba(14,165,233,.2); color:#0ea5e9; padding:.3rem .8rem; border-radius:20px; font-size:.8rem; font-family:'JetBrains Mono', 'Noto Sans SC', monospace; font-weight:500}
+    .venture-status{color:rgba(255,255,255,.7); font-size:.85rem; font-family:'JetBrains Mono', 'Noto Sans SC', monospace}
+    .venture-link{position:absolute; top:1rem; right:1rem; opacity:0; transform:translateX(10px); transition:all .3s ease; color:#0ea5e9; font-size:1.2rem}
+    .venture-card:hover .venture-link{opacity:1; transform:translateX(0)}
 
     .subscribe{max-width:900px; text-align:center; margin:0 auto}
     .sub-box{margin-top:1rem; display:flex; gap:.6rem; justify-content:center}
@@ -225,6 +239,13 @@
         <div class="list reveal" id="eduList"></div>
         <h2 style="margin-top:1.6rem" data-i18n="intern.title">Internships</h2>
         <div class="list reveal" id="internList"></div>
+      </div>
+    </section>
+
+    <section id="ventures">
+      <div class="section-inner">
+        <h2 data-i18n="ventures.title">Ventures & Innovation</h2>
+        <div class="ventures-grid" id="venturesGrid"></div>
       </div>
     </section>
 
@@ -408,6 +429,11 @@
           '2022.12–2023.01 · VMLY&R — Account Executive Intern (Merck, J&J)'
         ]},
         contact: { title:'Let\'s Connect', desc:'Interested in collaboration, research opportunities, or investment? Let\'s discuss how we can work together.', btn:'Subscribe', email:'Or email: <a href="mailto:tangyiting007@gmail.com" style="color:#7dd3fc">tangyiting007@gmail.com</a>' },
+        ventures: { title:'Ventures & Innovation', items:[
+          {t:'YITA AVIATION', d:'Revolutionizing urban air mobility with next-generation eVTOL platforms and intelligent air traffic management.', type:'startup', status:'Active', link:'ventures/yita-aviation.html'},
+          {t:'StratoOS', d:'Next-generation transportation OS for low-altitude economy. BVLOS mission orchestration and digital command center.', type:'platform', status:'Development', link:'ventures/stratoos.html'},
+          {t:'PRIMORDIA', d:'Interplanetary origin asset infrastructure for preserving biological and cultural heritage across civilizations.', type:'research', status:'Concept', link:'ventures/primordia.html'}
+        ]},
         footer:'© 2025 Eliza Tang. All rights reserved.'
       },
       zh: {
@@ -459,6 +485,11 @@
           '2022.12–2023.01 · VMLY&R · 客户执行实习（默沙东、强生）'
         ]},
         contact: { title:'让我们连接', desc:'对合作、研究机会或投资感兴趣？让我们讨论如何一起工作。', btn:'订阅', email:'或发送邮件：<a href="mailto:tangyiting007@gmail.com" style="color:#7dd3fc">tangyiting007@gmail.com</a>' },
+        ventures: { title:'创业与创新', items:[
+          {t:'YITA AVIATION', d:'通过下一代 eVTOL 平台和智能空中交通管理，彻底改变城市空中出行。', type:'startup', status:'活跃', link:'ventures/yita-aviation.html'},
+          {t:'StratoOS', d:'面向低空经济的下一代交通操作系统。BVLOS 任务编排和数字化指挥中心。', type:'platform', status:'开发中', link:'ventures/stratoos.html'},
+          {t:'PRIMORDIA', d:'跨行星起源资产基础设施，用于保护跨文明的生物和文化遗产。', type:'research', status:'概念', link:'ventures/primordia.html'}
+        ]},
         footer:'© 2025 唐怡婷（Eliza Tang）保留所有权利。'
       }
     };
@@ -488,6 +519,9 @@
       // lifestyle
       const l = document.getElementById('lifestyleGrid');
       l.innerHTML = t.lifestyle.items.map(i=>`<div class="lifestyle-card"><div class="emoji">${i.t.split(' ')[0]}</div><h3>${i.t.split(' ').slice(1).join(' ')}</h3><p>${i.d}</p></div>`).join('');
+      // ventures
+      const v = document.getElementById('venturesGrid');
+      v.innerHTML = t.ventures.items.map(i=>`<div class="venture-card" onclick="window.open('${i.link}', '_blank')"><h3>${i.t}</h3><p>${i.d}</p><div class="venture-meta"><span class="venture-type">${i.type}</span><span class="venture-status">${i.status}</span></div><div class="venture-link">→</div></div>`).join('');
       // news
       const n = document.getElementById('newsList');
       n.innerHTML = t.news.items.map(i=>`<div class="item">${i}</div>`).join('');

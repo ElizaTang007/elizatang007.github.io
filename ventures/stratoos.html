@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StratoOS — Next-Generation Transportation Operating System</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=JetBrains+Mono:wght@300;400;600&family=Orbitron:wght@400;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;600;700&family=Source+Han+Sans+SC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #0a0a0a;
+            --bg2: #111111;
+            --text-on-dark: #ffffff;
+            --accent: #0ea5e9;
+            --accent2: #6366f1;
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Inter', 'Noto Sans SC', 'Source Han Sans SC', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: radial-gradient(1200px 800px at 10% 90%, rgba(14,165,233,.12), transparent 60%),
+                        radial-gradient(1000px 700px at 90% 10%, rgba(99,102,241,.10), transparent 60%),
+                        linear-gradient(180deg, var(--bg), var(--bg2));
+            color: var(--text-on-dark);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 3rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid rgba(255,255,255,.1);
+        }
+        
+        .back-btn {
+            background: rgba(255,255,255,.1);
+            border: 1px solid rgba(255,255,255,.2);
+            color: var(--text-on-dark);
+            padding: .5rem 1rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-family: 'JetBrains Mono', 'Noto Sans SC', monospace;
+            transition: all .3s ease;
+        }
+        
+        .back-btn:hover {
+            background: rgba(14,165,233,.2);
+            border-color: var(--accent);
+        }
+        
+        .title {
+            font-family: 'Orbitron', 'Noto Sans SC', monospace;
+            font-size: 2.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--accent), var(--accent2));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 1rem;
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: .8;
+            margin-bottom: 2rem;
+        }
+        
+        .hero-image {
+            width: 100%;
+            height: 400px;
+            background: linear-gradient(135deg, rgba(14,165,233,.2), rgba(99,102,241,.2));
+            border-radius: 20px;
+            margin-bottom: 3rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-image::before {
+            content: '🛩️';
+            font-size: 8rem;
+            opacity: .3;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        
+        .content-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+        
+        .main-content h2 {
+            font-family: 'Orbitron', 'Noto Sans SC', monospace;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: var(--accent);
+        }
+        
+        .main-content h3 {
+            font-family: 'JetBrains Mono', 'Noto Sans SC', monospace;
+            font-size: 1.3rem;
+            margin: 2rem 0 1rem 0;
+            color: var(--accent2);
+        }
+        
+        .main-content p {
+            margin-bottom: 1rem;
+            opacity: .9;
+        }
+        
+        .highlight-box {
+            background: rgba(255,255,255,.05);
+            border: 1px solid rgba(255,255,255,.1);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        
+        .architecture-diagram {
+            background: rgba(255,255,255,.08);
+            border: 1px solid rgba(255,255,255,.15);
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .layer {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+            padding: 1rem;
+            background: rgba(255,255,255,.05);
+            border-radius: 8px;
+        }
+        
+        .layer-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--accent);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1rem;
+            font-size: 1.2rem;
+        }
+        
+        .layer-content h4 {
+            font-family: 'JetBrains Mono', 'Noto Sans SC', monospace;
+            color: var(--accent);
+            margin-bottom: .3rem;
+        }
+        
+        .layer-content p {
+            font-size: .9rem;
+            opacity: .8;
+            margin: 0;
+        }
+        
+        .sidebar {
+            background: rgba(255,255,255,.05);
+            border: 1px solid rgba(255,255,255,.1);
+            border-radius: 16px;
+            padding: 2rem;
+            height: fit-content;
+        }
+        
+        .sidebar h3 {
+            font-family: 'Orbitron', 'Noto Sans SC', monospace;
+            margin-bottom: 1rem;
+            color: var(--accent);
+        }
+        
+        .link-list {
+            list-style: none;
+        }
+        
+        .link-list li {
+            margin-bottom: .8rem;
+        }
+        
+        .link-list a {
+            color: var(--accent);
+            text-decoration: none;
+            font-family: 'JetBrains Mono', 'Noto Sans SC', monospace;
+            transition: all .3s ease;
+        }
+        
+        .link-list a:hover {
+            opacity: .8;
+            text-decoration: underline;
+        }
+        
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: .5rem;
+            margin-top: 1rem;
+        }
+        
+        .tech-tag {
+            background: rgba(14,165,233,.2);
+            color: var(--accent);
+            padding: .3rem .8rem;
+            border-radius: 20px;
+            font-size: .8rem;
+            font-family: 'JetBrains Mono', 'Noto Sans SC', monospace;
+        }
+        
+        .roadmap {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .roadmap-item {
+            background: rgba(255,255,255,.08);
+            border: 1px solid rgba(255,255,255,.15);
+            border-radius: 12px;
+            padding: 1.5rem;
+        }
+        
+        .roadmap-year {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--accent);
+            margin-bottom: .5rem;
+        }
+        
+        .roadmap-title {
+            font-family: 'JetBrains Mono', 'Noto Sans SC', monospace;
+            margin-bottom: .5rem;
+        }
+        
+        @media (max-width: 768px) {
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .title {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <a href="../bing-style.html" class="back-btn">← Back to Home</a>
+        </div>
+        
+        <h1 class="title">StratoOS</h1>
+        <p class="subtitle">Next-Generation Transportation Operating System for Low-Altitude Economy</p>
+        
+        <div class="hero-image">
+            <div style="text-align: center; z-index: 1; position: relative;">
+                <h2 style="font-size: 2rem; margin-bottom: 1rem;">Digital Command Center</h2>
+                <p style="font-size: 1.1rem; opacity: .8;">Making air operations as intuitive as gaming</p>
+            </div>
+        </div>
+        
+        <div class="content-grid">
+            <div class="main-content">
+                <h2>Vision & Mission</h2>
+                <p>StratoOS is the world's first comprehensive transportation operating system designed specifically for the low-altitude economy. We're building the digital infrastructure that will make operating drones, eVTOLs, and autonomous vehicles as intuitive as playing a video game, while maintaining the highest standards of safety and compliance.</p>
+                
+                <div class="highlight-box">
+                    <h3>The Problem We're Solving</h3>
+                    <p>Today's air operations are fragmented, complex, and require specialized training. Pilots and operators must juggle multiple systems, coordinate with air traffic control, and manage complex safety protocols. StratoOS unifies these operations into a single, intuitive platform that democratizes access to the skies.</p>
+                </div>
+                
+                <h3>Core Architecture</h3>
+                <p>StratoOS is built on a revolutionary dual-plane architecture that separates safety-critical operations from user experience:</p>
+                
+                <div class="architecture-diagram">
+                    <div class="layer">
+                        <div class="layer-icon">🛡️</div>
+                        <div class="layer-content">
+                            <h4>Safety Control Plane</h4>
+                            <p>RTOS + seL4 microkernel ensuring real-time performance and formal security verification</p>
+                        </div>
+                    </div>
+                    <div class="layer">
+                        <div class="layer-icon">🎮</div>
+                        <div class="layer-content">
+                            <h4>Application Experience Plane</h4>
+                            <p>Linux + SDK providing task primitives API and intuitive interaction interfaces</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <h3>Key Features</h3>
+                <ul style="margin-left: 2rem; margin-bottom: 1rem;">
+                    <li><strong>BVLOS Support:</strong> Beyond Visual Line of Sight operations with advanced autonomy</li>
+                    <li><strong>Swarm Intelligence:</strong> Multi-vehicle coordination and formation flying</li>
+                    <li><strong>Mission Orchestration:</strong> Complex task sequencing and resource optimization</li>
+                    <li><strong>Safety Certification:</strong> Built-in compliance with aviation safety standards</li>
+                    <li><strong>Gamified Interface:</strong> Intuitive controls inspired by modern gaming</li>
+                </ul>
+                
+                <h3>User Experience Revolution</h3>
+                <p>Instead of traditional "pilot" interfaces, StratoOS treats users as "commanders" who issue high-level mission primitives:</p>
+                <ul style="margin-left: 2rem; margin-bottom: 1rem;">
+                    <li><code>takeoff()</code> - Automated takeoff with safety checks</li>
+                    <li><code>move_to(lat, lon, alt)</code> - Navigate to specific coordinates</li>
+                    <li><code>orbit(center, radius, duration)</code> - Maintain position in circular pattern</li>
+                    <li><code>land()</code> - Safe landing with obstacle avoidance</li>
+                </ul>
+                
+                <h3>Target Applications</h3>
+                <div class="roadmap">
+                    <div class="roadmap-item">
+                        <div class="roadmap-year">2024-2025</div>
+                        <div class="roadmap-title">Drone Operations</div>
+                        <p>Inspection, logistics, emergency response, and surveillance missions</p>
+                    </div>
+                    <div class="roadmap-item">
+                        <div class="roadmap-year">2025-2027</div>
+                        <div class="roadmap-title">eVTOL Integration</div>
+                        <p>Urban air mobility and passenger transportation services</p>
+                    </div>
+                    <div class="roadmap-item">
+                        <div class="roadmap-year">2027-2030</div>
+                        <div class="roadmap-title">City-Scale Management</div>
+                        <p>Integrated airspace management for entire metropolitan areas</p>
+                    </div>
+                </div>
+                
+                <h3>Business Model</h3>
+                <p>StratoOS operates on a platform-as-a-service model:</p>
+                <ul style="margin-left: 2rem; margin-bottom: 1rem;">
+                    <li><strong>OS Licensing:</strong> Core operating system licensing for hardware manufacturers</li>
+                    <li><strong>SDK & App Store:</strong> Developer tools and application marketplace</li>
+                    <li><strong>Cloud Services:</strong> Airspace management and traffic coordination SaaS</li>
+                    <li><strong>Government Partnerships:</strong> Municipal and national airspace management contracts</li>
+                </ul>
+                
+                <div class="highlight-box">
+                    <h3>Competitive Advantage</h3>
+                    <p>Unlike existing solutions that focus on individual vehicles or specific use cases, StratoOS provides a unified platform that scales from single drone operations to city-wide air traffic management. Our dual-plane architecture ensures both safety and usability, while our open ecosystem enables rapid innovation.</p>
+                </div>
+            </div>
+            
+            <div class="sidebar">
+                <h3>Technical Resources</h3>
+                <ul class="link-list">
+                    <li><a href="https://www.nature.com/articles/s41586-021-03900-w" target="_blank">Nature: Autonomous Systems</a></li>
+                    <li><a href="https://www.science.org/doi/10.1126/science.abc6284" target="_blank">Science: Swarm Robotics</a></li>
+                    <li><a href="https://sel4.systems/" target="_blank">seL4 Microkernel</a></li>
+                    <li><a href="https://www.rtos.com/" target="_blank">Real-Time Operating Systems</a></li>
+                </ul>
+                
+                <h3 style="margin-top: 2rem;">Technology Stack</h3>
+                <div class="tech-stack">
+                    <span class="tech-tag">Rust</span>
+                    <span class="tech-tag">C++</span>
+                    <span class="tech-tag">seL4</span>
+                    <span class="tech-tag">Linux</span>
+                    <span class="tech-tag">ROS2</span>
+                    <span class="tech-tag">WebRTC</span>
+                    <span class="tech-tag">Kubernetes</span>
+                    <span class="tech-tag">PostgreSQL</span>
+                </div>
+                
+                <h3 style="margin-top: 2rem;">Development Status</h3>
+                <p style="margin-bottom: .5rem;"><strong>Current Phase:</strong> Core Development</p>
+                <p style="margin-bottom: .5rem;"><strong>Timeline:</strong> Q4 2025 Beta</p>
+                <p style="margin-bottom: .5rem;"><strong>Team Size:</strong> 8 Engineers</p>
+                
+                <h3 style="margin-top: 2rem;">Contact</h3>
+                <p style="margin-bottom: .5rem;">Interested in early access?</p>
+                <p><a href="mailto:eliza@stratoos.com" style="color: var(--accent);">eliza@stratoos.com</a></p>
+                
+                <h3 style="margin-top: 2rem;">Partners</h3>
+                <ul class="link-list">
+                    <li><a href="#" target="_blank">DJI Integration</a></li>
+                    <li><a href="#" target="_blank">Airbus Partnership</a></li>
+                    <li><a href="#" target="_blank">FAA Collaboration</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html> 

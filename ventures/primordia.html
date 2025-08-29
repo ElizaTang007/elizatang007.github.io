@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PRIMORDIA — Interplanetary Origin Asset Infrastructure</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=JetBrains+Mono:wght@300;400;600&family=Orbitron:wght@400;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;600;700&family=Source+Han+Sans+SC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #0a0a0a;
+            --bg2: #111111;
+            --text-on-dark: #ffffff;
+            --accent: #0ea5e9;
+            --accent2: #6366f1;
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Inter', 'Noto Sans SC', 'Source Han Sans SC', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: radial-gradient(1200px 800px at 10% 90%, rgba(14,165,233,.12), transparent 60%),
+                        radial-gradient(1000px 700px at 90% 10%, rgba(99,102,241,.10), transparent 60%),
+                        linear-gradient(180deg, var(--bg), var(--bg2));
+            color: var(--text-on-dark);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 3rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid rgba(255,255,255,.1);
+        }
+        
+        .back-btn {
+            background: rgba(255,255,255,.1);
+            border: 1px solid rgba(255,255,255,.2);
+            color: var(--text-on-dark);
+            padding: .5rem 1rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-family: 'JetBrains Mono', 'Noto Sans SC', monospace;
+            transition: all .3s ease;
+        }
+        
+        .back-btn:hover {
+            background: rgba(14,165,233,.2);
+            border-color: var(--accent);
+        }
+        
+        .title {
+            font-family: 'Orbitron', 'Noto Sans SC', monospace;
+            font-size: 2.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--accent), var(--accent2));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 1rem;
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: .8;
+            margin-bottom: 2rem;
+        }
+        
+        .hero-image {
+            width: 100%;
+            height: 400px;
+            background: linear-gradient(135deg, rgba(14,165,233,.2), rgba(99,102,241,.2));
+            border-radius: 20px;
+            margin-bottom: 3rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-image::before {
+            content: '🌌';
+            font-size: 8rem;
+            opacity: .3;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        
+        .content-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+        
+        .main-content h2 {
+            font-family: 'Orbitron', 'Noto Sans SC', monospace;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: var(--accent);
+        }
+        
+        .main-content h3 {
+            font-family: 'JetBrains Mono', 'Noto Sans SC', monospace;
+            font-size: 1.3rem;
+            margin: 2rem 0 1rem 0;
+            color: var(--accent2);
+        }
+        
+        .main-content p {
+            margin-bottom: 1rem;
+            opacity: .9;
+        }
+        
+        .highlight-box {
+            background: rgba(255,255,255,.05);
+            border: 1px solid rgba(255,255,255,.1);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        
+        .architecture-diagram {
+            background: rgba(255,255,255,.08);
+            border: 1px solid rgba(255,255,255,.15);
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .layer {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+            padding: 1rem;
+            background: rgba(255,255,255,.05);
+            border-radius: 8px;
+        }
+        
+        .layer-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--accent);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1rem;
+            font-size: 1.2rem;
+        }
+        
+        .layer-content h4 {
+            font-family: 'JetBrains Mono', 'Noto Sans SC', monospace;
+            color: var(--accent);
+            margin-bottom: .3rem;
+        }
+        
+        .layer-content p {
+            font-size: .9rem;
+            opacity: .8;
+            margin: 0;
+        }
+        
+        .sidebar {
+            background: rgba(255,255,255,.05);
+            border: 1px solid rgba(255,255,255,.1);
+            border-radius: 16px;
+            padding: 2rem;
+            height: fit-content;
+        }
+        
+        .sidebar h3 {
+            font-family: 'Orbitron', 'Noto Sans SC', monospace;
+            margin-bottom: 1rem;
+            color: var(--accent);
+        }
+        
+        .link-list {
+            list-style: none;
+        }
+        
+        .link-list li {
+            margin-bottom: .8rem;
+        }
+        
+        .link-list a {
+            color: var(--accent);
+            text-decoration: none;
+            font-family: 'JetBrains Mono', 'Noto Sans SC', monospace;
+            transition: all .3s ease;
+        }
+        
+        .link-list a:hover {
+            opacity: .8;
+            text-decoration: underline;
+        }
+        
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: .5rem;
+            margin-top: 1rem;
+        }
+        
+        .tech-tag {
+            background: rgba(14,165,233,.2);
+            color: var(--accent);
+            padding: .3rem .8rem;
+            border-radius: 20px;
+            font-size: .8rem;
+            font-family: 'JetBrains Mono', 'Noto Sans SC', monospace;
+        }
+        
+        .roadmap {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .roadmap-item {
+            background: rgba(255,255,255,.08);
+            border: 1px solid rgba(255,255,255,.15);
+            border-radius: 12px;
+            padding: 1.5rem;
+        }
+        
+        .roadmap-year {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--accent);
+            margin-bottom: .5rem;
+        }
+        
+        .roadmap-title {
+            font-family: 'JetBrains Mono', 'Noto Sans SC', monospace;
+            margin-bottom: .5rem;
+        }
+        
+        .planet-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+        
+        .planet-card {
+            background: rgba(255,255,255,.08);
+            border: 1px solid rgba(255,255,255,.15);
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-align: center;
+        }
+        
+        .planet-emoji {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .planet-name {
+            font-family: 'Orbitron', 'Noto Sans SC', monospace;
+            font-size: 1.2rem;
+            margin-bottom: .5rem;
+            color: var(--accent);
+        }
+        
+        @media (max-width: 768px) {
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .title {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <a href="../bing-style.html" class="back-btn">← Back to Home</a>
+        </div>
+        
+        <h1 class="title">PRIMORDIA</h1>
+        <p class="subtitle">Interplanetary Origin Asset Infrastructure for Multi-Civilization Heritage Preservation</p>
+        
+        <div class="hero-image">
+            <div style="text-align: center; z-index: 1; position: relative;">
+                <h2 style="font-size: 2rem; margin-bottom: 1rem;">Preserving Life Across the Cosmos</h2>
+                <p style="font-size: 1.1rem; opacity: .8;">From Earth to the stars, safeguarding our origins</p>
+            </div>
+        </div>
+        
+        <div class="content-grid">
+            <div class="main-content">
+                <h2>Executive Summary</h2>
+                <p>PRIMORDIA is an open, interoperable infrastructure for the registration, verification, and preservation of unique biological and origin-based data assets. Unlike traditional financial tokens or cryptocurrency networks, PRIMORDIA exists as a planetary-to-interplanetary registry layer, independent from any single currency system or central authority.</p>
+                
+                <div class="highlight-box">
+                    <h3>Our Mission</h3>
+                    <p>By encoding the Origin Asset Identifier (OAI) of DNA sequences and other unique origin datasets, PRIMORDIA provides a unified technical standard for multi-planetary civilizations to record, exchange, and preserve irreplaceable origin data for centuries and beyond.</p>
+                </div>
+                
+                <h3>The Foundation of Civilization</h3>
+                <p>The preservation of identity, knowledge, and heritage is the cornerstone of any lasting civilization. From the first written records on clay tablets to the Voyager Golden Record, humanity has sought ways to protect its most valuable origins against time and catastrophe.</p>
+                
+                <p>PRIMORDIA extends this tradition into the interplanetary age, enabling cross-species, cross-planet, and cross-epoch continuity for origin data — ensuring that even if Earth were lost, the essence of life and culture would persist.</p>
+                
+                <h3>Architecture Overview</h3>
+                <p>PRIMORDIA is built on three primary layers:</p>
+                
+                <div class="architecture-diagram">
+                    <div class="layer">
+                        <div class="layer-icon">🧬</div>
+                        <div class="layer-content">
+                            <h4>Origin Sequencing Layer</h4>
+                            <p>DNA sequencing, origin asset recording, and pre-processing</p>
+                        </div>
+                    </div>
+                    <div class="layer">
+                        <div class="layer-icon">🔐</div>
+                        <div class="layer-content">
+                            <h4>OAI Core Protocol</h4>
+                            <p>Distributed cryptographic system for assigning, hashing, and verifying Origin Asset Identifiers</p>
+                        </div>
+                    </div>
+                    <div class="layer">
+                        <div class="layer-icon">🌍</div>
+                        <div class="layer-content">
+                            <h4>Interplanetary Storage Mesh</h4>
+                            <p>Redundant, multi-location data domes and satellite-linked vaults across Earth, Moon, Mars, and asteroid nodes</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <h3>Multi-Planet Infrastructure</h3>
+                <div class="planet-grid">
+                    <div class="planet-card">
+                        <div class="planet-emoji">🌍</div>
+                        <div class="planet-name">Earth</div>
+                        <p>Primary data center and governance hub</p>
+                    </div>
+                    <div class="planet-card">
+                        <div class="planet-emoji">🌙</div>
+                        <div class="planet-name">Moon</div>
+                        <p>Lunar data vault and backup facility</p>
+                    </div>
+                    <div class="planet-card">
+                        <div class="planet-emoji">🔴</div>
+                        <div class="planet-name">Mars</div>
+                        <p>Martian archive and research station</p>
+                    </div>
+                    <div class="planet-card">
+                        <div class="planet-emoji">☄️</div>
+                        <div class="planet-name">Asteroid Pods</div>
+                        <p>Distributed storage nodes in deep space</p>
+                    </div>
+                </div>
+                
+                <h3>OAI Registration Flow</h3>
+                <ol style="margin-left: 2rem; margin-bottom: 1rem;">
+                    <li><strong>DNA Sequencing / Origin Data Recording</strong> - Initial data capture and digitization</li>
+                    <li><strong>OAI Generation</strong> - Secure hashing and PUE verification</li>
+                    <li><strong>OAI Registration</strong> - Indexed on the ODCP protocol and synchronized to distributed storage nodes</li>
+                    <li><strong>Access & Verification</strong> - Multilevel querying with cryptographic proofs</li>
+                </ol>
+                
+                <h3>Impact & Applications</h3>
+                <ul style="margin-left: 2rem; margin-bottom: 1rem;">
+                    <li><strong>Biosphere Preservation:</strong> Permanent archive of genetic biodiversity</li>
+                    <li><strong>Medical & Genomic Research:</strong> Cross-generational genomic continuity</li>
+                    <li><strong>Cultural Heritage:</strong> Immutable records of language, art, and human origin stories</li>
+                    <li><strong>Interplanetary Governance:</strong> Standardized origin data for multi-world civilizations</li>
+                </ul>
+                
+                <h3>Roadmap</h3>
+                <div class="roadmap">
+                    <div class="roadmap-item">
+                        <div class="roadmap-year">2040</div>
+                        <div class="roadmap-title">Core Development</div>
+                        <p>Protocol finalization and initial terrestrial nodes</p>
+                    </div>
+                    <div class="roadmap-item">
+                        <div class="roadmap-year">2045</div>
+                        <div class="roadmap-title">Earth Launch</div>
+                        <p>Institutional partnerships and public access</p>
+                    </div>
+                    <div class="roadmap-item">
+                        <div class="roadmap-year">2050</div>
+                        <div class="roadmap-title">Interplanetary</div>
+                        <p>Moon and Mars data domes; asteroid node commissioning</p>
+                    </div>
+                    <div class="roadmap-item">
+                        <div class="roadmap-year">2055</div>
+                        <div class="roadmap-title">Multi-Species</div>
+                        <p>Scaling to multi-species, multi-planetary integration</p>
+                    </div>
+                </div>
+                
+                <h3>Governance & Stewardship</h3>
+                <p>PRIMORDIA is managed by an Interplanetary Origin Council (IOC) — a consortium of scientific institutions, space agencies, and cultural heritage organizations. The platform operates under an open-source charter with transparent auditing and community governance.</p>
+                
+                <div class="highlight-box">
+                    <h3>Differentiation from Cryptocurrencies</h3>
+                    <p>PRIMORDIA does not act as a financial instrument. Its value lies not in speculation but in the irreplaceability of the data it protects. While it uses cryptographic verification, it does not require dependence on existing token ecosystems, ensuring independence from financial volatility.</p>
+                </div>
+            </div>
+            
+            <div class="sidebar">
+                <h3>Research Resources</h3>
+                <ul class="link-list">
+                    <li><a href="https://www.nature.com/articles/s41586-021-03900-w" target="_blank">Nature: DNA Storage Technology</a></li>
+                    <li><a href="https://www.science.org/doi/10.1126/science.abc6284" target="_blank">Science: Interplanetary Data Transfer</a></li>
+                    <li><a href="https://www.nasa.gov/mission_pages/station/research/experiments/explorer/Investigation.html?#id=8075" target="_blank">NASA: Space Data Preservation</a></li>
+                    <li><a href="https://www.esa.int/Science_Exploration/Human_and_Robotic_Exploration" target="_blank">ESA: Human Spaceflight</a></li>
+                </ul>
+                
+                <h3 style="margin-top: 2rem;">Technology Stack</h3>
+                <div class="tech-stack">
+                    <span class="tech-tag">Blockchain</span>
+                    <span class="tech-tag">IPFS</span>
+                    <span class="tech-tag">Zero-Knowledge</span>
+                    <span class="tech-tag">DNA Storage</span>
+                    <span class="tech-tag">Quantum Encryption</span>
+                    <span class="tech-tag">Satellite Networks</span>
+                </div>
+                
+                <h3 style="margin-top: 2rem;">Development Status</h3>
+                <p style="margin-bottom: .5rem;"><strong>Current Phase:</strong> Research & Design</p>
+                <p style="margin-bottom: .5rem;"><strong>Timeline:</strong> 2040 Launch</p>
+                <p style="margin-bottom: .5rem;"><strong>Team Size:</strong> 12 Researchers</p>
+                
+                <h3 style="margin-top: 2rem;">Partners</h3>
+                <ul class="link-list">
+                    <li><a href="#" target="_blank">NASA Collaboration</a></li>
+                    <li><a href="#" target="_blank">ESA Partnership</a></li>
+                    <li><a href="#" target="_blank">UNESCO Heritage</a></li>
+                    <li><a href="#" target="_blank">MIT Research</a></li>
+                </ul>
+                
+                <h3 style="margin-top: 2rem;">Contact</h3>
+                <p style="margin-bottom: .5rem;">Interested in research collaboration?</p>
+                <p><a href="mailto:eliza@primordia.org" style="color: var(--accent);">eliza@primordia.org</a></p>
+            </div>
+        </div>
+    </div>
+</body>
+</html> 
