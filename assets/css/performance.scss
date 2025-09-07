@@ -1,0 +1,91 @@
+// Performance optimization styles
+
+// Critical CSS for above-the-fold content
+.hero {
+  // Ensure hero section loads quickly
+  contain: layout style paint;
+  will-change: transform;
+}
+
+// Lazy loading styles
+img.lazy {
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+img.lazy.loaded {
+  opacity: 1;
+}
+
+// Optimize animations
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+// Optimize for mobile
+@media (max-width: 768px) {
+  .hero {
+    // Reduce complexity on mobile
+    background-attachment: scroll;
+  }
+  
+  .orb {
+    // Simplify animations on mobile
+    animation-duration: 60s;
+  }
+}
+
+// Print styles
+@media print {
+  .nav,
+  .mouse-spot,
+  .orbs {
+    display: none !important;
+  }
+  
+  body {
+    background: white !important;
+    color: black !important;
+  }
+}
+
+// High contrast mode support
+@media (prefers-contrast: high) {
+  :root {
+    --text-on-dark: #ffffff;
+    --bg: #000000;
+    --bg2: #111111;
+  }
+}
+
+// Dark mode support
+@media (prefers-color-scheme: dark) {
+  // Already optimized for dark mode
+}
+
+// Focus styles for accessibility
+a:focus,
+button:focus {
+  outline: 2px solid #0ea5e9;
+  outline-offset: 2px;
+}
+
+// Skip link for accessibility
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 6px;
+  background: #0ea5e9;
+  color: white;
+  padding: 8px;
+  text-decoration: none;
+  z-index: 1000;
+}
+
+.skip-link:focus {
+  top: 6px;
+}
