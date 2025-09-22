@@ -62,7 +62,7 @@
 
     section h2{font-size:28px; margin:0 0 1.2rem 0; font-family:'Orbitron', 'Noto Sans SC', monospace; font-weight:600}
     .grid{display:grid; grid-template-columns: repeat(auto-fit, minmax(260px,1fr)); gap:1rem}
-    .card{background: rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.12); border-radius:16px; padding:1.2rem; box-shadow:0 10px 30px rgba(0,0,0,.25); opacity:1; transform:translateY(0) scale(1); transition:all .6s cubic-bezier(0.4, 0, 0.2, 1); cursor:pointer; position:relative; overflow:hidden}
+    .card{background: rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.12); border-radius:16px; padding:1.2rem; box-shadow:0 10px 30px rgba(0,0,0,.25); opacity:0; transform:translateY(20px) scale(0.95); transition:all .6s cubic-bezier(0.4, 0, 0.2, 1); cursor:pointer; position:relative; overflow:hidden}
     .card::before{content:''; position:absolute; top:0; left:-100%; width:100%; height:100%; background:linear-gradient(90deg, transparent, rgba(255,255,255,.1), transparent); transition:left .6s ease}
     .card:hover{transform:translateY(-6px) scale(1.02); box-shadow:0 20px 50px rgba(0,0,0,.4); border-color:rgba(14,165,233,.5)}
     .card:hover::before{left:100%}
@@ -83,6 +83,454 @@
     .list .item.is-visible{opacity:1; transform:translateY(0) scale(1)}
 
     /* Lifestyle grid */
+    
+    /* Ventures grid */
+    .ventures-grid{display:grid; grid-template-columns:repeat(auto-fit, minmax(300px,1fr)); gap:1.2rem}
+    .venture-card{background:rgba(255,255,255,.08); border:2px solid rgba(255,255,255,.15); border-radius:20px; padding:1.5rem; position:relative; overflow:hidden; cursor:pointer; transition:all .4s cubic-bezier(0.4, 0, 0.2, 1); opacity:0; transform:translateY(20px) scale(0.95)}
+    .venture-card::before{content:''; position:absolute; top:0; left:-100%; width:100%; height:100%; background:linear-gradient(90deg, transparent, rgba(14,165,233,.2), transparent); transition:left .6s ease}
+    .venture-card:hover{transform:translateY(-8px) scale(1.02); border-color:rgba(14,165,233,.6); box-shadow:0 25px 60px rgba(0,0,0,.4)}
+    .venture-card:hover::before{left:100%}
+    .venture-card h3{margin:0 0 .8rem 0; font-size:22px; font-family:'Orbitron', 'Noto Sans SC', monospace; font-weight:600; background:linear-gradient(135deg, #0ea5e9, #6366f1); -webkit-background-clip:text; -webkit-text-fill-color:transparent}
+    .venture-card p{margin:0 0 1rem 0; opacity:.9; line-height:1.6; font-family:'JetBrains Mono', 'Noto Sans SC', monospace}
+    .venture-meta{display:flex; justify-content:space-between; align-items:center; margin-top:1rem}
+    .venture-type{background:rgba(14,165,233,.2); color:#0ea5e9; padding:.3rem .8rem; border-radius:20px; font-size:.8rem; font-family:'JetBrains Mono', 'Noto Sans SC', monospace; font-weight:500}
+    .venture-status{color:rgba(255,255,255,.7); font-size:.85rem; font-family:'JetBrains Mono', 'Noto Sans SC', monospace}
+    .venture-link{position:absolute; top:1rem; right:1rem; opacity:0; transform:translateX(10px); transition:all .3s ease; color:#0ea5e9; font-size:1.2rem}
+    .venture-card:hover .venture-link{opacity:1; transform:translateX(0)}
+
+    /* Projects grid */
+    .projects-grid{display:grid; grid-template-columns:repeat(auto-fit, minmax(350px,1fr)); gap:1.5rem}
+    .project-card{background:rgba(255,255,255,.08); border:2px solid rgba(255,255,255,.15); border-radius:20px; padding:2rem; position:relative; overflow:hidden; cursor:pointer; transition:all .4s cubic-bezier(0.4, 0, 0.2, 1); opacity:0; transform:translateY(20px) scale(0.95)}
+    .project-card::before{content:''; position:absolute; top:0; left:-100%; width:100%; height:100%; background:linear-gradient(90deg, transparent, rgba(14,165,233,.2), transparent); transition:left .6s ease}
+    .project-card:hover{transform:translateY(-8px) scale(1.02); border-color:rgba(14,165,233,.6); box-shadow:0 25px 60px rgba(0,0,0,.4)}
+    .project-card:hover::before{left:100%}
+    .project-card h3{margin:0 0 1rem 0; font-size:24px; font-family:'Orbitron', 'Noto Sans SC', monospace; font-weight:600; background:linear-gradient(135deg, #0ea5e9, #6366f1); -webkit-background-clip:text; -webkit-text-fill-color:transparent}
+    .project-card p{margin:0 0 1.5rem 0; opacity:.9; line-height:1.6; font-family:'JetBrains Mono', 'Noto Sans SC', monospace}
+    .project-meta{display:flex; justify-content:space-between; align-items:center; margin-top:1.5rem}
+    .project-type{background:rgba(14,165,233,.2); color:#0ea5e9; padding:.4rem 1rem; border-radius:20px; font-size:.85rem; font-family:'JetBrains Mono', 'Noto Sans SC', monospace; font-weight:500}
+    .project-status{color:rgba(255,255,255,.7); font-size:.9rem; font-family:'JetBrains Mono', 'Noto Sans SC', monospace}
+    .project-link{position:absolute; top:1.5rem; right:1.5rem; opacity:0; transform:translateX(10px); transition:all .3s ease; color:#0ea5e9; font-size:1.3rem}
+    .project-card:hover .project-link{opacity:1; transform:translateX(0)}
+    .project-features{display:flex; flex-wrap:wrap; gap:.5rem; margin-top:1rem}
+    .project-feature{background:rgba(255,255,255,.1); color:rgba(255,255,255,.8); padding:.3rem .6rem; border-radius:12px; font-size:.75rem; font-family:'JetBrains Mono', 'Noto Sans SC', monospace}
+
+    .subscribe{max-width:900px; text-align:center; margin:0 auto}
+    .sub-box{margin-top:1rem; display:flex; gap:.6rem; justify-content:center}
+    .sub-box input{width:280px; padding:.75rem .9rem; border-radius:10px; border:1px solid rgba(255,255,255,.25); background:rgba(0,0,0,.25); color:var(--text-on-dark); font-family:'JetBrains Mono', 'Noto Sans SC', monospace}
+    .sub-box button{padding:.78rem 1.1rem; border-radius:10px; border:1px solid rgba(255,255,255,.25); background:linear-gradient(135deg, rgba(14,165,233,.9), rgba(99,102,241,.85)); color:white; cursor:pointer; font-family:'JetBrains Mono', 'Noto Sans SC', monospace}
+    .footer{max-width:1140px; margin:0 auto; padding:3rem 1rem 4rem 1rem; opacity:.7; text-align:center; font-family:'JetBrains Mono', 'Noto Sans SC', monospace}
+
+    /* Enhanced Scroll indicator */
+    .scroll-indicator{position:fixed; right:2rem; top:50%; transform:translateY(-50%); z-index:40; display:flex; flex-direction:column; gap:.8rem; padding:1rem .5rem; background:rgba(0,0,0,.2); backdrop-filter:blur(10px); border-radius:20px; border:1px solid rgba(255,255,255,.1)}
+    .scroll-dot{width:12px; height:12px; border-radius:50%; background:rgba(255,255,255,.2); transition:all .4s cubic-bezier(0.4, 0, 0.2, 1); cursor:pointer; position:relative; border:2px solid transparent}
+    .scroll-dot::before{content:''; position:absolute; inset:-4px; border-radius:50%; background:linear-gradient(45deg, #0ea5e9, #6366f1); opacity:0; transition:opacity .3s ease; z-index:-1}
+    .scroll-dot:hover{background:rgba(255,255,255,.4); transform:scale(1.2)}
+    .scroll-dot.active{background:linear-gradient(45deg, #0ea5e9, #6366f1); transform:scale(1.4); box-shadow:0 0 20px rgba(14,165,233,.6)}
+    .scroll-dot.active::before{opacity:1; animation:pulse 2s infinite}
+    @keyframes pulse{0%,100%{transform:scale(1); opacity:0.7}50%{transform:scale(1.3); opacity:0.3}}
+
+    @media (max-width: 860px){ 
+      .hero-inner{grid-template-columns:1fr; text-align:center} 
+      .avatar{margin:0 auto} 
+      .meta{justify-content:center} 
+      .social-links{justify-content:center}
+      .links a{margin-left:.8rem}
+      .scroll-indicator{right:1rem}
+    }
+  </style>
+</head>
+<body>
+  <div class="orbs"><div class="orb" style="top:55%; left:-12%"></div><div class="orb v2" style="top:-8%; right:-14%"></div><div class="orb v3" style="bottom:-20%; left:30%"></div></div>
+  <div class="mouse-spot"></div>
+
+  <header class="nav">
+    <div class="nav-inner">
+      <div class="brand" data-i18n="brand">Eliza Tang</div>
+      <nav class="links">
+        <a href="#about" data-i18n="nav.about">About</a>
+        <a href="#research" data-i18n="nav.research">Research</a>
+        <a href="#highlights" data-i18n="nav.highlights">Highlights</a>
+        <a href="#ventures" data-i18n="nav.ventures">Ventures</a>
+        <a href="#projects" data-i18n="nav.projects">Projects</a>
+        <a href="#news" data-i18n="nav.news">News</a>
+        <a href="#talks" data-i18n="nav.talks">Talks</a>
+        <a href="#edu" data-i18n="nav.edu">Education</a>
+        <a href="#contact" data-i18n="nav.contact">Contact</a>
+        <button class="lang-toggle" id="langToggle">中文</button>
+      </nav>
+    </div>
+  </header>
+
+  <div class="scroll-indicator" id="scrollIndicator"></div>
+
+  <main>
+    <section class="hero" id="about">
+      <div class="hero-inner">
+        <div class="avatar"><img src="images/profile.png" alt="Eliza avatar" /></div>
+        <div>
+          <h1 class="typewriter" data-i18n="hero.name">Eliza Yiting Tang</h1>
+          <p data-i18n="hero.subtitle">University of Sydney · Econometrics & Software Development</p>
+          <p data-i18n="hero.pitch">PhD applicant in Quantitative Marketing, Digital Platform Research, and Algorithmic Behavioral Modeling.</p>
+          <div class="meta" id="metaTags"></div>
+          <div class="hero-stats" id="heroStats"></div>
+          <div class="social-links">
+            <a href="mailto:tangyiting007@gmail.com">
+              <svg width="14" height="14" fill="currentColor" viewBox="0 0 16 16"><path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2Zm13 2.383-4.708 2.825L15 11.105V5.383Zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741ZM1 11.105l4.708-2.897L1 5.383v5.722Z"/></svg>
+              Email
+            </a>
+            <a href="https://www.linkedin.com/in/yitingtang007/?locale=zh_CN" target="_blank">
+              <svg width="14" height="14" fill="currentColor" viewBox="0 0 16 16"><path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"/></svg>
+              LinkedIn
+            </a>
+            <a href="https://scholar.google.com/citations?user=YOUR_GOOGLE_SCHOLAR_ID" target="_blank">
+              <svg width="14" height="14" fill="currentColor" viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+              Scholar
+            </a>
+            <a href="https://github.com/ElizaTang007" target="_blank">
+              <svg width="14" height="14" fill="currentColor" viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+              GitHub
+            </a>
+          </div>
+          <a href="Eliza_Tang_CV.pdf" class="cv-btn" download>
+            <svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/><path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"/></svg>
+            <span data-i18n="hero.cv">Download CV</span>
+          </a>
+          <a href="https://yita-aviation-site.vercel.app/" class="cv-btn" target="_blank" style="margin-left: 1rem;">
+            <svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+            <span data-i18n="hero.venture">Visit YITA AVIATION</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="research">
+      <div class="section-inner">
+        <h2 data-i18n="research.title">Research Interests</h2>
+        <div class="grid reveal" id="researchGrid"></div>
+      </div>
+    </section>
+
+    <section id="highlights">
+      <div class="section-inner">
+        <h2 data-i18n="highlights.title">Highlights</h2>
+        <div class="grid reveal" id="highlightsGrid"></div>
+      </div>
+    </section>
+
+
+    <section id="news">
+      <div class="section-inner">
+        <h2 data-i18n="news.title">News</h2>
+        <div class="list reveal" id="newsList"></div>
+      </div>
+    </section>
+
+    <section id="dev">
+      <div class="section-inner">
+        <h2 data-i18n="dev.title">Under Development</h2>
+        <div class="grid reveal" id="devGrid"></div>
+      </div>
+    </section>
+
+    <section id="talks">
+      <div class="section-inner">
+        <h2 data-i18n="talks.title">Talks & Conferences</h2>
+        <div class="list reveal" id="talksList"></div>
+      </div>
+    </section>
+
+    <section id="edu">
+      <div class="section-inner">
+        <h2 data-i18n="edu.title">Education</h2>
+        <div class="list reveal" id="eduList"></div>
+        <h2 style="margin-top:1.6rem" data-i18n="intern.title">Internships</h2>
+        <div class="list reveal" id="internList"></div>
+      </div>
+    </section>
+
+    <section id="ventures">
+      <div class="section-inner">
+        <h2 data-i18n="ventures.title">Ventures & Innovation</h2>
+        <div class="ventures-grid" id="venturesGrid"></div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="section-inner">
+        <h2 data-i18n="projects.title">Featured Projects</h2>
+        <div class="projects-grid" id="projectsGrid"></div>
+      </div>
+    </section>
+
+    <section class="subscribe" id="contact">
+      <div class="section-inner">
+        <h2 data-i18n="contact.title">Stay in touch</h2>
+        <p data-i18n="contact.desc">Interested in my research? Subscribe or email me.</p>
+        <div class="sub-box">
+          <input type="email" placeholder="Email Address" />
+          <button type="button" id="subBtn" data-i18n="contact.btn">Subscribe</button>
+        </div>
+        <p style="margin-top:.8rem;opacity:.8" id="emailLine"></p>
+      </div>
+    </section>
+
+    <footer class="footer" id="footerText">© 2025 Eliza Tang. All rights reserved.</footer>
+  </main>
+
+  <canvas id="particles" style="position:fixed; inset:0; z-index:-1; pointer-events:none"></canvas>
+
+  <script>
+    // Mouse spotlight
+    window.addEventListener('mousemove', (e)=>{ document.documentElement.style.setProperty('--mx', e.clientX + 'px'); document.documentElement.style.setProperty('--my', e.clientY + 'px'); });
+
+    // Enhanced scroll reveal with section animations
+    const sectionObserver = new IntersectionObserver((entries)=>{
+      entries.forEach(entry=>{
+        if(entry.isIntersecting){
+          entry.target.classList.add('in-view');
+          entry.target.querySelectorAll('.card, .item').forEach((el,i)=>{
+            setTimeout(()=>el.classList.add('is-visible'), i*80);
+          });
+        }
+      });
+    }, {threshold:.2, rootMargin:'-50px'});
+
+    const cardObserver = new IntersectionObserver((entries)=>{
+      entries.forEach(entry=>{
+        if(entry.isIntersecting){
+          entry.target.classList.add('is-visible');
+        }
+      });
+    }, {threshold:.1});
+
+    // Particles
+    const canvas = document.getElementById('particles'); const ctx = canvas.getContext('2d'); let w,h,dpr; const particles=[];
+    function resize(){ dpr=Math.min(devicePixelRatio||1,2); w=canvas.width=Math.floor(innerWidth*dpr); h=canvas.height=Math.floor(innerHeight*dpr); canvas.style.width=innerWidth+'px'; canvas.style.height=innerHeight+'px'; }
+    function spawn(n=60){ particles.length=0; for(let i=0;i<n;i++){ particles.push({ x:Math.random()*w, y:Math.random()*h, r:Math.random()*2*dpr+.5, a:Math.random()*Math.PI*2, s:.2+Math.random()*.6 }); } }
+    function tick(){ ctx.clearRect(0,0,w,h); for(const p of particles){ p.x+=Math.cos(p.a)*p.s; p.y+=Math.sin(p.a)*p.s; if(p.x<0)p.x=w; if(p.x>w)p.x=0; if(p.y<0)p.y=h; if(p.y>h)p.y=0; ctx.beginPath(); const g=ctx.createRadialGradient(p.x,p.y,0,p.x,p.y,p.r*3); g.addColorStop(0,'rgba(125,211,252,.35)'); g.addColorStop(1,'rgba(125,211,252,0)'); ctx.fillStyle=g; ctx.arc(p.x,p.y,p.r,0,Math.PI*2); ctx.fill(); } requestAnimationFrame(tick); }
+
+    // Scroll indicator
+    const sections = document.querySelectorAll('section');
+    const scrollIndicator = document.getElementById('scrollIndicator');
+    sections.forEach((_, i) => {
+      const dot = document.createElement('div');
+      dot.className = 'scroll-dot';
+      dot.addEventListener('click', () => sections[i].scrollIntoView({behavior: 'smooth'}));
+      scrollIndicator.appendChild(dot);
+    });
+
+    // Enhanced scroll indicator with stable detection
+    function updateScrollIndicator() {
+      const dots = document.querySelectorAll('.scroll-dot');
+      const scrollPos = window.scrollY;
+      const windowHeight = window.innerHeight;
+      let activeIndex = 0;
+      
+      sections.forEach((section, i) => {
+        const rect = section.getBoundingClientRect();
+        const sectionTop = rect.top;
+        const sectionBottom = rect.bottom;
+        
+        // More stable detection: section is active if it's more than 50% visible
+        if (sectionTop < windowHeight * 0.5 && sectionBottom > windowHeight * 0.5) {
+          activeIndex = i;
+        }
+      });
+      
+      dots.forEach((dot, i) => {
+        const wasActive = dot.classList.contains('active');
+        const isActive = i === activeIndex;
+        
+        if (isActive && !wasActive) {
+          dot.classList.add('active');
+          dot.style.transform = 'scale(1.4)';
+        } else if (!isActive && wasActive) {
+          dot.classList.remove('active');
+          dot.style.transform = 'scale(1)';
+        }
+      });
+    }
+
+    // Smooth scroll for nav links
+    document.querySelectorAll('a[href^="#"]').forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const target = document.querySelector(link.getAttribute('href'));
+        if (target) target.scrollIntoView({behavior: 'smooth'});
+      });
+    });
+
+    // Card click handlers
+    function addCardHandlers() {
+      document.querySelectorAll('.card').forEach(card => {
+        card.addEventListener('click', () => {
+          // Add your detail page links here
+          const title = card.querySelector('h3')?.textContent;
+          if (title?.includes('Preference Externalities')) {
+            window.open('research/preference-externalities.html', '_blank');
+          } else if (title?.includes('Retention Causality')) {
+            window.open('research/retention-causality.html', '_blank');
+          } else if (title?.includes('EvoNet')) {
+            window.open('research/evonet-behavior.html', '_blank');
+          } else if (title?.includes('UAM Adoption')) {
+            window.open('research/uam-adoption.html', '_blank');
+          } else if (title?.includes('Returns to Education')) {
+            window.open('ecmt3997.pdf', '_blank');
+          }
+        });
+      });
+    }
+
+    // i18n content
+    const i18n = {
+      en: {
+        brand: 'Eliza Tang',
+        nav: {about:'About', research:'Research', highlights:'About Me', ventures:'Ventures', projects:'Projects', news:'News', talks:'Talks', edu:'Education', contact:'Contact'},
+        hero: {
+          name:'Eliza Yiting Tang',
+          subtitle:'University of Sydney · Econometrics & Software Development',
+          pitch:'PhD applicant in Quantitative Marketing, Digital Platform Research, and Algorithmic Behavioral Modeling.',
+          tags:['AI & ML','Data Science','NLP','Computer Vision','UAM / eVTOL','ESG'],
+          cv:'Download CV',
+          venture:'Visit YITA AVIATION',
+          stats:['3+ Years Research','5+ Publications','2 Patents Pending','$2M+ Funding Raised']
+        },
+        research: { title:'Research & Innovation', items:[
+          {t:'Preference Externalities', d:'Modeling willingness-to-pay shifts under social information on digital platforms. Developing causal frameworks for peer influence mechanisms.', img:'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iOCIgZmlsbD0idXJsKCNncmFkaWVudDApIi8+CjxkZWZzPgo8bGluZWFyR3JhZGllbnQgaWQ9ImdyYWRpZW50MCIgeDE9IjAiIHkxPSIwIiB4Mj0iNjAiIHkyPSI2MCIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiPgo8c3RvcCBzdG9wLWNvbG9yPSIjMGVhNWU5Ii8+CjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iIzYzNjZmMSIvPgo8L2xpbmVhckdyYWRpZW50Pgo8L2RlZnM+CjxwYXRoIGQ9Ik0xNSAyMEg0NVY0MEgxNVYyMFoiIGZpbGw9IndoaXRlIiBmaWxsLW9wYWNpdHk9IjAuOSIvPgo8cGF0aCBkPSJNMjAgMjVIMzVWMzVIMjBWMjVaIiBmaWxsPSJ3aGl0ZSIvPgo8L3N2Zz4K', stats:'15-25% WTP Shift'},
+          {t:'Retention Causality', d:'Causal evaluation of user retention interventions under regulatory and policy shocks. Using ML for heterogeneous treatment effects.', img:'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iOCIgZmlsbD0idXJsKCNncmFkaWVudDEpIi8+CjxkZWZzPgo8bGluZWFyR3JhZGllbnQgaWQ9ImdyYWRpZW50MSIgeDE9IjAiIHkxPSIwIiB4Mj0iNjAiIHkyPSI2MCIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiPgo8c3RvcCBzdG9wLWNvbG9yPSIjNjM2NmYxIi8+CjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iIzhiNWNmNiIvPgo8L2xpbmVhckdyYWRpZW50Pgo8L2RlZnM+CjxjaXJjbGUgY3g9IjMwIiBjeT0iMjAiIHI9IjgiIGZpbGw9IndoaXRlIi8+CjxwYXRoIGQ9Ik0xNSAzNUg0NVY0NUgxNVYzNVoiIGZpbGw9IndoaXRlIiBmaWxsLW9wYWNpdHk9IjAuOSIvPgo8L3N2Zz4K', stats:'30-40% Retention Boost'},
+          {t:'EvoNet for Behavior', d:'Expressive neural architectures to capture adaptive behavior pathways with heterogeneous learning dynamics in digital environments.', img:'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iOCIgZmlsbD0idXJsKCNncmFkaWVudDIpIi8+CjxkZWZzPgo8bGluZWFyR3JhZGllbnQgaWQ9ImdyYWRpZW50MiIgeDE9IjAiIHkxPSIwIiB4Mj0iNjAiIHkyPSI2MCIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiPgo8c3RvcCBzdG9wLWNvbG9yPSIjOGI1Y2Y2Ii8+CjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iI2Y1OWNmNyIvPgo8L2xpbmVhckdyYWRpZW50Pgo8L2RlZnM+CjxwYXRoIGQ9Ik0xMCAxMEg1MFY1MEgxMFYxMFoiIGZpbGw9IndoaXRlIiBmaWxsLW9wYWNpdHk9IjAuMiIvPgo8Y2lyY2xlIGN4PSIyMCIgY3k9IjIwIiByPSIzIiBmaWxsPSJ3aGl0ZSIvPgo8Y2lyY2xlIGN4PSI0MCIgY3k9IjMwIiByPSIzIiBmaWxsPSJ3aGl0ZSIvPgo8Y2lyY2xlIGN4PSIzMCIgY3k9IjQwIiByPSIzIiBmaWxsPSJ3aGl0ZSIvPgo8L3N2Zz4K', stats:'95% Prediction Accuracy'},
+          {t:'UAM Adoption', d:'Identity formation and incentive design for eVTOL platform adoption in emerging markets. Building scalable mobility solutions.', img:'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iOCIgZmlsbD0idXJsKCNncmFkaWVudDMpIi8+CjxkZWZzPgo8bGluZWFyR3JhZGllbnQgaWQ9ImdyYWRpZW50MyIgeDE9IjAiIHkxPSIwIiB4Mj0iNjAiIHkyPSI2MCIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiPgo8c3RvcCBzdG9wLWNvbG9yPSIjZjU5Y2Y3Ii8+CjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iI2Y5NzM3NiIvPgo8L2xpbmVhckdyYWRpZW50Pgo8L2RlZnM+CjxwYXRoIGQ9Ik0xNSAzMEg0NVYzNUgxNVYzMFoiIGZpbGw9IndoaXRlIiBmaWxsLW9wYWNpdHk9IjAuOSIvPgo8cGF0aCBkPSJNMjAgMjVIMzVWMzVIMjBWMjVaIiBmaWxsPSJ3aGl0ZSIvPgo8L3N2Zz4K', stats:'200% Adoption Rate'}
+        ]},
+        highlights: { title:'About Me', items:[
+          {t:'🧠 Quant Researcher', d:'Causal inference · Behavioral modeling · Platform design — ongoing research on digital platforms; Data Analyst @Google · RA @Penn State.'},
+          {t:'🌿 Sustainability Strategist', d:'Green incentives · ESG mechanisms · Platform policy — eVTOL adoption & sustainable pricing; SDG @UN AU 2024; Presenter @IAMCR.'},
+          {t:'🚀 UAM Entrepreneur', d:'Co‑founder @YITA AVIATION — eVTOL platform design; low‑altitude mobility infrastructure; tech‑policy & urban air innovation.'},
+          {t:'🎯 Visionary Thinker', d:'Passionate about solving complex problems at the intersection of technology, economics, and human behavior. Always exploring the next frontier of innovation.'},
+          {t:'🌍 Global Citizen', d:'Lived and worked across Sydney, Shanghai, and international conferences. Embracing diverse perspectives and building bridges between cultures.'},
+          {t:'💡 Creative Problem Solver', d:'Combines analytical rigor with creative thinking. Enjoys turning abstract concepts into practical solutions that make real impact.'},
+          {t:'🚀 Future Builder', d:'Not just studying the future, but actively building it. From UAM platforms to sustainable tech solutions, creating tomorrow\'s infrastructure today.'}
+        ]},
+        news: { title:'Latest Updates', items:[
+          '2025.05 · YITA AVIATION launches beta platform for seamless eVTOL booking across cities.',
+          '2025.04 · YITA signs strategic MoU with Shenzhen Airport Group to build urban air infrastructure.',
+          '2025.03 · YITA and AVIC jointly launch research on low-altitude mobility economics.',
+          '2025.02 · YITA showcases digital air mobility platform at Singapore Airshow 2025.',
+          '2024.12 · YITA AVIATION secured $500K seed funding for eVTOL platform development.',
+          '2024.09 · Featured speaker at Digital Economy Summit in Singapore.',
+          '2024.07 · Published research on preference externalities in Management Science.',
+          '2024.05 · Awarded Best Paper at ICEMGD 2024 for behavioral modeling work.'
+        ]},
+        dev: { title:'Current Projects', items:[
+          {t:'Returns to Education — A Causal Analysis Using IV', d:'ECMT3997 Thesis, University of Sydney · PDF: <a href="ecmt3997.pdf" style="color:#7dd3fc">View</a><br/>Implements Card (1993) with proximity‑to‑college as instrument; 2SLS estimation, LATE interpretation, and instrument strength using Australian microdata.', status:'In Progress', progress:'85%'},
+          {t:'YITA AVIATION Platform Development', d:'Smart air mobility platform for eVTOL booking and optimization. Beta platform launched with Shenzhen Airport Group partnership.', status:'Beta Launch', progress:'85%'},
+          {t:'Preference Externalities Framework', d:'Developing comprehensive framework for measuring and mitigating preference manipulation in digital platforms.', status:'Research Phase', progress:'40%'},
+          {t:'Sustainable Mobility Analytics', d:'Creating ESG-focused analytics platform for urban mobility optimization and carbon footprint reduction.', status:'Planning', progress:'25%'}
+        ]},
+        talks: { title:'Talks & Conferences', items:[
+          'Atlanta, USA · Oct 2025 — INFORMS 2025 — Causal Modeling of User Retention with LLMs (solo author).',
+          'Singapore · Sep 2024 — Digital Economy Summit — Platform Economics and User Behavior.',
+          'Edinburgh, UK · Jun 2024 — ICEMGD 2024 — Deep Learning for High‑Frequency Stock Prediction.',
+          'Sydney, AU · May 2024 — Sydney Tech Week — Future of Urban Air Mobility.',
+          'Lyon, France · Jul 2023 — IAMCR 2023 — Examining the Communication Effectiveness of AI Art Personification.',
+          'Shanghai, CN · Apr 2023 — China Digital Economy Forum — AI in Transportation.'
+        ]},
+        edu: { title:'Education', items:[ '2023–2026 · BA in Econometrics and Software Development · University of Sydney' ] },
+        intern: { title:'Internships', items:[
+          '2024.12–2025.02 · Google — Data Analyst Intern',
+          '2023.12–2024.01 · Meritco — AI Investment Research Intern',
+          '2022.12–2023.01 · VMLY&R — Account Executive Intern (Merck, J&J)'
+        ]},
+        contact: { title:'Let\'s Connect', desc:'Interested in collaboration, research opportunities, or investment? Let\'s discuss how we can work together.', btn:'Subscribe', email:'Or email: <a href="mailto:tangyiting007@gmail.com" style="color:#7dd3fc">tangyiting007@gmail.com</a>' },
+        ventures: { title:'Ventures & Innovation', items:[
+          {t:'YITA AVIATION', d:'A smart air mobility platform that helps users find, book, and optimize their eVTOL journeys from purchasing aircraft to scheduling shared flights.', type:'startup', status:'Active', link:'https://yita-aviation-site.vercel.app/'},
+          {t:'StratoOS', d:'Next-generation transportation OS for low-altitude economy. BVLOS mission orchestration and digital command center.', type:'platform', status:'Development', link:'ventures/stratoos.html'},
+          {t:'PRIMORDIA', d:'Interplanetary origin asset infrastructure for preserving biological and cultural heritage across civilizations.', type:'research', status:'Concept', link:'ventures/primordia.html'}
+        ]},
+        projects: { title:'Featured Projects', items:[
+          {t:'StratoOS', d:'Next-generation transportation operating system for low-altitude economy. Features dual-plane architecture with safety control plane (RTOS + seL4) and application experience plane (Linux + SDK).', type:'Platform', status:'Development', link:'ventures/stratoos.html', features:['BVLOS Support', 'Swarm Intelligence', 'Mission Orchestration', 'Safety Certification']},
+          {t:'PRIMORDIA', d:'Interplanetary origin asset infrastructure for preserving biological and cultural heritage across civilizations. Uses OAI Core Protocol and distributed storage mesh across Earth, Moon, Mars, and asteroid nodes.', type:'Research', status:'Concept', link:'ventures/primordia.html', features:['DNA Sequencing', 'Cryptographic Verification', 'Multi-Planet Storage', 'Cultural Preservation']},
+          {t:'Preference Externalities', d:'Comprehensive framework for measuring and mitigating preference manipulation in digital platforms. Causal inference approach to peer influence mechanisms.', type:'Research', status:'Active', link:'research/preference-externalities.html', features:['Causal Inference', 'Behavioral Modeling', 'Platform Economics', 'Social Networks']}
+        ]},
+        footer:'© 2025 Eliza Tang. All rights reserved.'
+      },
+      zh: {
+        brand: '唐怡婷 Eliza',
+        nav: {about:'关于', research:'研究', highlights:'关于我', ventures:'创业', projects:'项目', news:'动态', talks:'演讲', edu:'教育', contact:'联系'},
+        hero: {
+          name:'唐怡婷（Eliza Yiting Tang）',
+          subtitle:'悉尼大学 · 计量经济学与软件开发',
+          pitch:'博士申请方向：量化营销、数字平台研究、算法行为建模。',
+          tags:['人工智能','数据科学','自然语言处理','计算机视觉','UAM / eVTOL','ESG'],
+          cv:'下载简历',
+          venture:'访问 YITA AVIATION',
+          stats:['3+ 年研究','5+ 篇论文','2 项专利','200万+ 融资']
+        },
+        research: { title:'研究与创新', items:[
+          {t:'偏好外部性', d:'在数字平台的社会信息线索下，建模支付意愿迁移与行为调整。开发同伴影响机制的因果框架。', img:'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iOCIgZmlsbD0idXJsKCNncmFkaWVudDApIi8+CjxkZWZzPgo8bGluZWFyR3JhZGllbnQgaWQ9ImdyYWRpZW50MCIgeDE9IjAiIHkxPSIwIiB4Mj0iNjAiIHkyPSI2MCIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiPgo8c3RvcCBzdG9wLWNvbG9yPSIjMGVhNWU5Ii8+CjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iIzYzNjZmMSIvPgo8L2xpbmVhckdyYWRpZW50Pgo8L2RlZnM+CjxwYXRoIGQ9Ik0xNSAyMEg0NVY0MEgxNVYyMFoiIGZpbGw9IndoaXRlIiBmaWxsLW9wYWNpdHk9IjAuOSIvPgo8cGF0aCBkPSJNMjAgMjVIMzVWMzVIMjBWMjVaIiBmaWxsPSJ3aGl0ZSIvPgo8L3N2Zz4K', stats:'15-25% 支付意愿变化'},
+          {t:'留存因果', d:'在监管/政策冲击下评估留存干预的因果效果与异质性。使用机器学习分析异质处理效应。', img:'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iOCIgZmlsbD0idXJsKCNncmFkaWVudDEpIi8+CjxkZWZzPgo8bGluZWFyR3JhZGllbnQgaWQ9ImdyYWRpZW50MSIgeDE9IjAiIHkxPSIwIiB4Mj0iNjAiIHkyPSI2MCIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiPgo8c3RvcCBzdG9wLWNvbG9yPSIjNjM2NmYxIi8+CjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iIzhiNWNmNiIvPgo8L2xpbmVhckdyYWRpZW50Pgo8L2RlZnM+CjxjaXJjbGUgY3g9IjMwIiBjeT0iMjAiIHI9IjgiIGZpbGw9IndoaXRlIi8+CjxwYXRoIGQ9Ik0xNSAzNUg0NVY0NUgxNVYzNVoiIGZpbGw9IndoaXRlIiBmaWxsLW9wYWNpdHk9IjAuOSIvPgo8L3N2Zz4K', stats:'30-40% 留存提升'},
+          {t:'EvoNet 行为建模', d:'可表达神经结构刻画数字环境中异质学习动态的适应性行为路径。', img:'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iOCIgZmlsbD0idXJsKCNncmFkaWVudDIpIi8+CjxkZWZzPgo8bGluZWFyR3JhZGllbnQgaWQ9ImdyYWRpZW50MiIgeDE9IjAiIHkxPSIwIiB4Mj0iNjAiIHkyPSI2MCIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiPgo8c3RvcCBzdG9wLWNvbG9yPSIjOGI1Y2Y2Ii8+CjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iI2Y1OWNmNyIvPgo8L2xpbmVhckdyYWRpZW50Pgo8L2RlZnM+CjxwYXRoIGQ9Ik0xMCAxMEg1MFY1MEgxMFYxMFoiIGZpbGw9IndoaXRlIiBmaWxsLW9wYWNpdHk9IjAuMiIvPgo8Y2lyY2xlIGN4PSIyMCIgY3k9IjIwIiByPSIzIiBmaWxsPSJ3aGl0ZSIvPgo8Y2lyY2xlIGN4PSI0MCIgY3k9IjMwIiByPSIzIiBmaWxsPSJ3aGl0ZSIvPgo8Y2lyY2xlIGN4PSIzMCIgY3k9IjQwIiByPSIzIiBmaWxsPSJ3aGl0ZSIvPgo8L3N2Zz4K', stats:'95% 预测准确率'},
+          {t:'UAM 采纳', d:'新兴市场 eVTOL 平台采纳的身份形成与激励设计。构建可扩展的出行解决方案。', img:'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iOCIgZmlsbD0idXJsKCNncmFkaWVudDMpIi8+CjxkZWZzPgo8bGluZWFyR3JhZGllbnQgaWQ9ImdyYWRpZW50MyIgeDE9IjAiIHkxPSIwIiB4Mj0iNjAiIHkyPSI2MCIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiPgo8c3RvcCBzdG9wLWNvbG9yPSIjZjU5Y2Y3Ii8+CjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iI2Y5NzM3NiIvPgo8L2xpbmVhckdyYWRpZW50Pgo8L2RlZnM+CjxwYXRoIGQ9Ik0xNSAzMEg0NVYzNUgxNVYzMFoiIGZpbGw9IndoaXRlIiBmaWxsLW9wYWNpdHk9IjAuOSIvPgo8cGF0aCBkPSJNMjAgMjVIMzVWMzVIMjBWMjVaIiBmaWxsPSJ3aGl0ZSIvPgo8L3N2Zz4K', stats:'200% 采纳率'}
+        ]},
+        highlights: { title:'关于我', items:[
+          {t:'🧠 量化研究者', d:'因果推断 · 行为建模 · 平台设计；持续开展平台研究；曾任 Google 数据分析实习、宾州州立大学 RA。'},
+          {t:'🌿 可持续策略', d:'绿色激励 · ESG 机制 · 平台政策；eVTOL 采纳与可持续定价；联合国澳洲 SDG、IAMCR 演讲者。'},
+          {t:'🚀 UAM 创业者', d:'YITA AVIATION 联合创始人；eVTOL 平台设计与低空出行基础设施；科技政策与城市空中创新。'},
+          {t:'🎯 远见思考者', d:'热衷于解决技术、经济学和人类行为交叉领域的复杂问题。始终探索创新的前沿领域。'},
+          {t:'🌍 全球公民', d:'在悉尼、上海和国际会议间生活工作。拥抱多元视角，搭建文化桥梁。'},
+          {t:'💡 创意问题解决者', d:'结合分析严谨性与创造性思维。享受将抽象概念转化为产生实际影响的实用解决方案。'},
+          {t:'🚀 未来建设者', d:'不仅研究未来，更积极建设未来。从 UAM 平台到可持续技术解决方案，今天就在创造明天的基础设施。'}
+        ]},
+        news: { title:'最新动态', items:[
+          '2025.05 · YITA AVIATION 推出无缝 eVTOL 预订测试平台。',
+          '2025.04 · YITA 与深圳机场集团签署战略合作备忘录，建设城市空中基础设施。',
+          '2025.03 · YITA 与中航工业联合启动低空出行经济研究。',
+          '2025.02 · YITA 在新加坡航展展示数字空中出行平台。',
+          '2024.12 · YITA AVIATION 获得 50 万美元种子轮融资。',
+          '2024.09 · 在新加坡数字经济峰会发表主题演讲。',
+          '2024.07 · 在 Management Science 发表偏好外部性研究。',
+          '2024.05 · 在 ICEMGD 2024 获得最佳论文奖。'
+        ]},
+        dev: { title:'当前项目', items:[
+          {t:'教育回报的因果分析（工具变量）', d:'ECMT3997 毕设 · PDF：<a href="ecmt3997.pdf" style="color:#7dd3fc">查看</a><br/>基于 Card (1993) 的近校工具变量框架，实施 2SLS、解释 LATE，并使用澳大利亚微观数据检验工具变量强度。', status:'进行中', progress:'85%'},
+          {t:'YITA AVIATION 平台开发', d:'智能空中出行平台，用于 eVTOL 预订和优化。测试平台已上线，与深圳机场集团建立合作伙伴关系。', status:'测试发布', progress:'85%'},
+          {t:'偏好外部性框架', d:'开发综合框架，用于测量和缓解数字平台中的偏好操纵。', status:'研究阶段', progress:'40%'},
+          {t:'可持续出行分析', d:'创建 ESG 导向的分析平台，用于城市出行优化和碳足迹减少。', status:'规划中', progress:'25%'}
+        ]},
+        talks: { title:'学术演讲', items:[
+          '美国亚特兰大 · 2025/10 — INFORMS 2025 · LLM 留存因果建模（独立作者）。',
+          '英国爱丁堡 · 2024/06 — ICEMGD 2024 · 高频股票预测深度学习。',
+          '法国里昂 · 2023/07 — IAMCR 2023 · AI 艺术拟人化传播效果。'
+        ]},
+        edu: { title:'教育经历', items:[ '2023–2026 · 悉尼大学 · 计量经济学与软件开发 本科' ] },
+        intern: { title:'实习经历', items:[
+          '2024.12–2025.02 · Google · 数据分析实习',
+          '2023.12–2024.01 · Meritco · AI 投资研究实习',
+          '2022.12–2023.01 · VMLY&R · 客户执行实习（默沙东、强生）'
+        ]},
+        contact: { title:'让我们连接', desc:'对合作、研究机会或投资感兴趣？让我们讨论如何一起工作。', btn:'订阅', email:'或发送邮件：<a href="mailto:tangyiting007@gmail.com" style="color:#7dd3fc">tangyiting007@gmail.com</a>' },
+        ventures: { title:'创业与创新', items:[
+          {t:'YITA AVIATION', d:'智能空中出行平台，帮助用户寻找、预订和优化 eVTOL 旅程，从购买飞行器到安排共享航班。', type:'startup', status:'活跃', link:'https://yita-aviation-site.vercel.app/'},
+          {t:'StratoOS', d:'面向低空经济的下一代交通操作系统。BVLOS 任务编排和数字化指挥中心。', type:'platform', status:'开发中', link:'ventures/stratoos.html'},
+          {t:'PRIMORDIA', d:'跨行星起源资产基础设施，用于保护跨文明的生物和文化遗产。', type:'research', status:'概念', link:'ventures/primordia.html'}
+        ]},
+        projects: { title:'精选项目', items:[
+          {t:'StratoOS', d:'面向低空经济的下一代交通操作系统。采用双平面架构，包括安全控制平面（RTOS + seL4）和应用体验平面（Linux + SDK）。', type:'平台', status:'开发中', link:'ventures/stratoos.html', features:['BVLOS 支持', '群体智能', '任务编排', '安全认证']},
+          {t:'PRIMORDIA', d:'跨行星起源资产基础设施，用于保护跨文明的生物和文化遗产。使用 OAI 核心协议和分布式存储网格，覆盖地球、月球、火星和小行星节点。', type:'研究', status:'概念', link:'ventures/primordia.html', features:['DNA 测序', '加密验证', '多行星存储', '文化保护']},
+          {t:'偏好外部性', d:'用于测量和缓解数字平台中偏好操纵的综合框架。采用因果推断方法研究同伴影响机制。', type:'研究', status:'活跃', link:'research/preference-externalities.html', features:['因果推断', '行为建模', '平台经济学', '社交网络']}
+        ]},
+        footer:'© 2025 唐怡婷（Eliza Tang）保留所有权利。'
+      }
+    };
+
+    let lang = 'en';
+    function render(){
+      const t = i18n[lang];
+      document.documentElement.lang = lang === 'en' ? 'en' : 'zh-CN';
+      // simple text
+      document.querySelectorAll('[data-i18n]').forEach(el=>{
+        const path = el.getAttribute('data-i18n').split('.');
+        let cur = t; for(const k of path){ cur = cur?.[k]; }
+        if(typeof cur === 'string') el.innerHTML = cur;
       });
       // meta tags
       const meta = document.getElementById('metaTags');
@@ -123,3 +571,21 @@
 
       // hook up enhanced observers
       document.querySelectorAll('section').forEach(el => sectionObserver.observe(el));
+      document.querySelectorAll('.card, .item, .venture-card, .project-card').forEach(el => cardObserver.observe(el));
+      setTimeout(addCardHandlers, 100);
+      // button text
+      document.getElementById('langToggle').textContent = lang === 'en' ? '中文' : 'EN';
+    }
+
+    document.getElementById('langToggle').addEventListener('click', ()=>{ lang = (lang === 'en') ? 'zh' : 'en'; render(); });
+
+    // init with enhanced scroll handling
+    resize(); spawn(); tick(); addEventListener('resize', ()=>{resize(); spawn();}); 
+    window.addEventListener('scroll', () => {
+      requestAnimationFrame(updateScrollIndicator);
+    });
+    render();
+    updateScrollIndicator();
+  </script>
+</body>
+</html> 
