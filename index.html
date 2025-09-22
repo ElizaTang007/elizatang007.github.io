@@ -603,7 +603,7 @@
     document.getElementById('langToggle').addEventListener('click', ()=>{ lang = (lang === 'en') ? 'zh' : 'en'; render(); });
 
     // init with enhanced scroll handling
-    resize(); spawn(); tick(); addEventListener('resize', ()=>{resize(); spawn();}); 
+    resize(); spawn(); tick(); window.addEventListener('resize', ()=>{resize(); spawn();}); 
     window.addEventListener('scroll', () => {
       requestAnimationFrame(updateScrollIndicator);
     });
