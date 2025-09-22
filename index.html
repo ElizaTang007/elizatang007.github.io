@@ -594,7 +594,7 @@
 
       // hook up enhanced observers
       document.querySelectorAll('section').forEach(el => sectionObserver.observe(el));
-      document.querySelectorAll('.card, .item, .lifestyle-card').forEach(el => cardObserver.observe(el));
+      document.querySelectorAll('.card, .item, .lifestyle-card, .venture-card, .project-card').forEach(el => cardObserver.observe(el));
       setTimeout(addCardHandlers, 100);
       // button text
       document.getElementById('langToggle').textContent = lang === 'en' ? '中文' : 'EN';
