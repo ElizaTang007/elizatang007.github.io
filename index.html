@@ -251,7 +251,35 @@
     <section id="ventures">
       <div class="section-inner">
         <h2 data-i18n="ventures.title">Ventures & Innovation</h2>
-        <div class="ventures-grid" id="venturesGrid"></div>
+        <div class="ventures-grid" id="venturesGrid">
+          <div class="venture-card" onclick="window.open('https://yita-aviation-site.vercel.app/', '_blank')">
+            <h3>YITA AVIATION</h3>
+            <p>A smart air mobility platform that helps users find, book, and optimize their eVTOL journeys from purchasing aircraft to scheduling shared flights.</p>
+            <div class="venture-meta">
+              <span class="venture-type">startup</span>
+              <span class="venture-status">Active</span>
+            </div>
+            <div class="venture-link">→</div>
+          </div>
+          <div class="venture-card" onclick="window.open('ventures/stratoos.html', '_blank')">
+            <h3>StratoOS</h3>
+            <p>Next-generation transportation OS for low-altitude economy. BVLOS mission orchestration and digital command center.</p>
+            <div class="venture-meta">
+              <span class="venture-type">platform</span>
+              <span class="venture-status">Development</span>
+            </div>
+            <div class="venture-link">→</div>
+          </div>
+          <div class="venture-card" onclick="window.open('ventures/primordia.html', '_blank')">
+            <h3>PRIMORDIA</h3>
+            <p>Interplanetary origin asset infrastructure for preserving biological and cultural heritage across civilizations.</p>
+            <div class="venture-meta">
+              <span class="venture-type">research</span>
+              <span class="venture-status">Concept</span>
+            </div>
+            <div class="venture-link">→</div>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -546,6 +574,7 @@
       h.innerHTML = t.highlights.items.map(i=>`<div class="card"><h3>${i.t}</h3><p>${i.d}</p></div>`).join('');
       // ventures
       const v = document.getElementById('venturesGrid');
+      console.log('Ventures data:', t.ventures.items);
       v.innerHTML = t.ventures.items.map(i=>`<div class="venture-card" onclick="window.open('${i.link}', '_blank')"><h3>${i.t}</h3><p>${i.d}</p><div class="venture-meta"><span class="venture-type">${i.type}</span><span class="venture-status">${i.status}</span></div><div class="venture-link">→</div></div>`).join('');
       // projects
       const p = document.getElementById('projectsGrid');
