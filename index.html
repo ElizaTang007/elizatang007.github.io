@@ -626,10 +626,7 @@
       // highlights
       const h = document.getElementById('highlightsGrid');
       h.innerHTML = t.highlights.items.map(i=>`<div class="card"><h3>${i.t}</h3><p>${i.d}</p></div>`).join('');
-      // ventures
-      const v = document.getElementById('venturesGrid');
-      console.log('Ventures data:', t.ventures.items);
-      v.innerHTML = t.ventures.items.map(i=>`<div class="venture-card" onclick="window.open('${i.link}', '_blank')"><h3>${i.t}</h3><p>${i.d}</p><div class="venture-meta"><span class="venture-type">${i.type}</span><span class="venture-status">${i.status}</span></div><div class="venture-link">→</div></div>`).join('');
+      // ventures - content is statically embedded in HTML
       // projects
       const p = document.getElementById('projectsGrid');
       p.innerHTML = t.projects.items.map(i=>`<div class="project-card" onclick="window.open('${i.link}', '_blank')"><h3>${i.t}</h3><p>${i.d}</p><div class="project-features">${i.features.map(f=>`<span class="project-feature">${f}</span>`).join('')}</div><div class="project-meta"><span class="project-type">${i.type}</span><span class="project-status">${i.status}</span></div><div class="project-link">→</div></div>`).join('');
