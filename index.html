@@ -86,7 +86,7 @@
     
     /* Ventures grid */
     .ventures-grid{display:grid; grid-template-columns:repeat(auto-fit, minmax(300px,1fr)); gap:1.2rem}
-    .venture-card{background:rgba(255,255,255,.08); border:2px solid rgba(255,255,255,.15); border-radius:20px; padding:1.5rem; position:relative; overflow:hidden; cursor:pointer; transition:all .4s cubic-bezier(0.4, 0, 0.2, 1); opacity:0; transform:translateY(20px) scale(0.95)}
+    .venture-card{background:rgba(255,255,255,.08); border:2px solid rgba(255,255,255,.15); border-radius:20px; padding:1.5rem; position:relative; overflow:hidden; cursor:pointer; transition:all .4s cubic-bezier(0.4, 0, 0.2, 1); opacity:1; transform:translateY(0) scale(1)}
     .venture-card::before{content:''; position:absolute; top:0; left:-100%; width:100%; height:100%; background:linear-gradient(90deg, transparent, rgba(14,165,233,.2), transparent); transition:left .6s ease}
     .venture-card:hover{transform:translateY(-8px) scale(1.02); border-color:rgba(14,165,233,.6); box-shadow:0 25px 60px rgba(0,0,0,.4)}
     .venture-card:hover::before{left:100%}
