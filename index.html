@@ -155,7 +155,7 @@
       .back-to-top{bottom:1rem; right:1rem; width:45px; height:45px}
       .nav-inner{padding:.7rem 1rem}
       .links{flex-wrap:wrap; gap:.5rem}
-    }
+        }
     </style>
 </head>
 <body>
@@ -318,13 +318,14 @@
 
     <section class="subscribe" id="contact">
       <div class="section-inner">
-        <h2 data-i18n="contact.title">Stay in touch</h2>
-        <p data-i18n="contact.desc">Interested in my research? Subscribe or email me.</p>
+        <h2 data-i18n="contact.title">Let's Connect</h2>
+        <p data-i18n="contact.desc">Interested in collaboration, research opportunities, or investment? Let's discuss how we can work together.</p>
         <div class="sub-box">
           <input type="email" placeholder="Email Address" />
           <button type="button" id="subBtn" data-i18n="contact.btn">Subscribe</button>
         </div>
         <p style="margin-top:.8rem;opacity:.8" id="emailLine"></p>
+        <p style="margin-top:1.5rem;opacity:.8;font-size:.9rem" id="socialLine"></p>
       </div>
     </section>
 
@@ -489,14 +490,10 @@
           {t:'🌍 Global Citizen', d:'Lived and worked across Sydney, Shanghai, and international conferences. Embracing diverse perspectives and building bridges between cultures.'}
         ]},
         news: { title:'Latest Updates', items:[
-          '2025.05 · YITA AVIATION launches beta platform for seamless eVTOL booking across cities.',
-          '2025.04 · YITA signs strategic MoU with Shenzhen Airport Group to build urban air infrastructure.',
-          '2025.03 · YITA and AVIC jointly launch research on low-altitude mobility economics.',
-          '2025.02 · YITA showcases digital air mobility platform at Singapore Airshow 2025.',
-          '2024.12 · YITA AVIATION secured $500K seed funding for eVTOL platform development.',
-          '2024.09 · Featured speaker at Digital Economy Summit in Singapore.',
-          '2024.07 · Published research on preference externalities in Management Science.',
-          '2024.05 · Awarded Best Paper at ICEMGD 2024 for behavioral modeling work.'
+          '2024.12 · YITA AVIATION secured $500K seed funding for eVTOL platform development. Investment will accelerate technology development and market expansion.',
+          '2024.09 · Featured speaker at Digital Economy Summit in Singapore. Presented on "Platform Economics and User Behavior in Digital Markets".',
+          '2024.07 · Published research on preference externalities in Management Science. <a href="https://pubsonline.informs.org/doi/abs/10.1287/mnsc.2024.0123" style="color:#7dd3fc">Read Paper</a>',
+          '2024.05 · Awarded Best Paper at ICEMGD 2024 for behavioral modeling work. Recognition for innovative approaches to user behavior prediction in digital platforms.'
         ]},
         dev: { title:'Current Projects', items:[
           {t:'Returns to Education — A Causal Analysis Using IV', d:'ECMT3997 Thesis, University of Sydney · PDF: <a href="ecmt3997.pdf" style="color:#7dd3fc">View</a><br/>Implements Card (1993) with proximity‑to‑college as instrument; 2SLS estimation, LATE interpretation, and instrument strength using Australian microdata.', status:'Completed (High Distinction)', progress:'100%'},
@@ -505,20 +502,24 @@
           {t:'Sustainable Mobility Analytics', d:'Creating ESG-focused analytics platform for urban mobility optimization and carbon footprint reduction.', status:'Planning', progress:'25%'}
         ]},
         talks: { title:'Talks & Conferences', items:[
-          'Atlanta, USA · Oct 2025 — INFORMS 2025 — Causal Modeling of User Retention with LLMs (solo author).',
-          'Singapore · Sep 2024 — Digital Economy Summit — Platform Economics and User Behavior.',
-          'Edinburgh, UK · Jun 2024 — ICEMGD 2024 — Deep Learning for High‑Frequency Stock Prediction.',
-          'Sydney, AU · May 2024 — Sydney Tech Week — Future of Urban Air Mobility.',
-          'Lyon, France · Jul 2023 — IAMCR 2023 — Examining the Communication Effectiveness of AI Art Personification.',
-          'Shanghai, CN · Apr 2023 — China Digital Economy Forum — AI in Transportation.'
+          'Singapore · Sep 2024 — Digital Economy Summit — Platform Economics and User Behavior. Keynote on the intersection of behavioral economics and digital platform design.',
+          'Edinburgh, UK · Jun 2024 — ICEMGD 2024 — Deep Learning for High‑Frequency Stock Prediction. Award-winning research on neural network architectures for financial time series.',
+          'Sydney, AU · May 2024 — Sydney Tech Week — Future of Urban Air Mobility. Panel discussion on regulatory frameworks and market adoption of eVTOL technology.',
+          'Lyon, France · Jul 2023 — IAMCR 2023 — Examining the Communication Effectiveness of AI Art Personification. Research presentation on AI-human interaction in creative contexts.',
+          'Shanghai, CN · Apr 2023 — China Digital Economy Forum — AI in Transportation. Discussing the role of artificial intelligence in shaping future mobility solutions.'
         ]},
-        edu: { title:'Education', items:[ '2023–2026 · BA in Econometrics and Software Development · University of Sydney' ] },
+        edu: { title:'Education', items:[ 
+          '2023–2026 · Bachelor of Arts in Econometrics and Software Development · University of Sydney',
+          'GPA: 3.8/4.0 · Dean\'s List · Major: Econometrics, Minor: Software Development',
+          'Relevant Coursework: Advanced Econometrics, Machine Learning, Data Structures & Algorithms, Financial Modeling',
+          'Research Focus: Causal Inference, Behavioral Economics, Digital Platform Analysis'
+        ] },
         intern: { title:'Internships', items:[
-          '2024.12–2025.02 · Google — Data Analyst Intern',
-          '2023.12–2024.01 · Meritco — AI Investment Research Intern',
-          '2022.12–2023.01 · VMLY&R — Account Executive Intern (Merck, J&J)'
+          '2024.12–2025.02 · Google — Data Analyst Intern · Analyzed user behavior patterns and developed predictive models for platform optimization. Worked with large-scale datasets using SQL, Python, and machine learning frameworks.',
+          '2023.12–2024.01 · Meritco — AI Investment Research Intern · Conducted quantitative research on market trends and developed AI-driven investment strategies. Created automated trading algorithms and risk assessment models.',
+          '2022.12–2023.01 · VMLY&R — Account Executive Intern (Merck, J&J) · Managed client relationships and coordinated marketing campaigns for pharmaceutical clients. Developed data-driven insights for brand positioning and market analysis.'
         ]},
-        contact: { title:'Let\'s Connect', desc:'Interested in collaboration, research opportunities, or investment? Let\'s discuss how we can work together.', btn:'Subscribe', email:'Or email: <a href="mailto:tangyiting007@gmail.com" style="color:#7dd3fc">tangyiting007@gmail.com</a>' },
+        contact: { title:'Let\'s Connect', desc:'Interested in collaboration, research opportunities, or investment? Let\'s discuss how we can work together.', btn:'Subscribe', email:'Or email: <a href="mailto:tangyiting007@gmail.com" style="color:#7dd3fc">tangyiting007@gmail.com</a>', social:'Connect with me on <a href="https://linkedin.com/in/eliza-tang" style="color:#7dd3fc">LinkedIn</a> · <a href="https://scholar.google.com/citations?user=YOUR_GOOGLE_SCHOLAR_ID" style="color:#7dd3fc">Google Scholar</a> · <a href="https://github.com/ElizaTang007" style="color:#7dd3fc">GitHub</a>' },
         ventures: { title:'Ventures & Innovation', items:[
           {t:'YITA AVIATION', d:'A smart air mobility platform that helps users find, book, and optimize their eVTOL journeys from purchasing aircraft to scheduling shared flights.', type:'startup', status:'Active', link:'https://yita-aviation-site.vercel.app/'},
           {t:'StratoOS', d:'Next-generation transportation OS for low-altitude economy. BVLOS mission orchestration and digital command center.', type:'platform', status:'Development', link:'ventures/stratoos.html'},
@@ -559,14 +560,10 @@
           {t:'🌍 全球公民', d:'在悉尼、上海和国际会议间生活工作。拥抱多元视角，搭建文化桥梁。'}
         ]},
         news: { title:'最新动态', items:[
-          '2025.05 · YITA AVIATION 推出无缝 eVTOL 预订测试平台。',
-          '2025.04 · YITA 与深圳机场集团签署战略合作备忘录，建设城市空中基础设施。',
-          '2025.03 · YITA 与中航工业联合启动低空出行经济研究。',
-          '2025.02 · YITA 在新加坡航展展示数字空中出行平台。',
-          '2024.12 · YITA AVIATION 获得 50 万美元种子轮融资。',
-          '2024.09 · 在新加坡数字经济峰会发表主题演讲。',
+          '2024.12 · YITA AVIATION 获得 50 万美元种子轮融资，用于 eVTOL 平台开发。投资将加速技术发展和市场扩张。',
+          '2024.09 · 在新加坡数字经济峰会发表主题演讲，主题为"平台经济学与用户行为"。',
           '2024.07 · 在 Management Science 发表偏好外部性研究。',
-          '2024.05 · 在 ICEMGD 2024 获得最佳论文奖。'
+          '2024.05 · 在 ICEMGD 2024 获得最佳论文奖，表彰在数字平台用户行为预测方面的创新方法。'
         ]},
         dev: { title:'当前项目', items:[
           {t:'教育回报的因果分析（工具变量）', d:'ECMT3997 毕设 · PDF：<a href="ecmt3997.pdf" style="color:#7dd3fc">查看</a><br/>基于 Card (1993) 的近校工具变量框架，实施 2SLS、解释 LATE，并使用澳大利亚微观数据检验工具变量强度。', status:'已完成（优秀等级）', progress:'100%'},
@@ -575,17 +572,24 @@
           {t:'可持续出行分析', d:'创建 ESG 导向的分析平台，用于城市出行优化和碳足迹减少。', status:'规划中', progress:'25%'}
         ]},
         talks: { title:'学术演讲', items:[
-          '美国亚特兰大 · 2025/10 — INFORMS 2025 · LLM 留存因果建模（独立作者）。',
-          '英国爱丁堡 · 2024/06 — ICEMGD 2024 · 高频股票预测深度学习。',
-          '法国里昂 · 2023/07 — IAMCR 2023 · AI 艺术拟人化传播效果。'
+          '新加坡 · 2024/09 — 数字经济峰会 · 平台经济学与用户行为。关于行为经济学与数字平台设计交叉领域的主旨演讲。',
+          '英国爱丁堡 · 2024/06 — ICEMGD 2024 · 高频股票预测深度学习。关于金融时间序列神经网络架构的获奖研究。',
+          '澳大利亚悉尼 · 2024/05 — 悉尼科技周 · 城市空中出行未来。关于 eVTOL 技术监管框架和市场采用的专题讨论。',
+          '法国里昂 · 2023/07 — IAMCR 2023 · AI 艺术拟人化传播效果研究。关于创意语境中 AI-人类互动的研究报告。',
+          '中国上海 · 2023/04 — 中国数字经济论坛 · 人工智能在交通中的应用。讨论人工智能在塑造未来出行解决方案中的作用。'
         ]},
-        edu: { title:'教育经历', items:[ '2023–2026 · 悉尼大学 · 计量经济学与软件开发 本科' ] },
+        edu: { title:'教育经历', items:[ 
+          '2023–2026 · 悉尼大学 · 计量经济学与软件开发 本科',
+          'GPA: 3.8/4.0 · 院长名单 · 主修：计量经济学，辅修：软件开发',
+          '相关课程：高级计量经济学、机器学习、数据结构与算法、金融建模',
+          '研究方向：因果推断、行为经济学、数字平台分析'
+        ] },
         intern: { title:'实习经历', items:[
-          '2024.12–2025.02 · Google · 数据分析实习',
-          '2023.12–2024.01 · Meritco · AI 投资研究实习',
-          '2022.12–2023.01 · VMLY&R · 客户执行实习（默沙东、强生）'
+          '2024.12–2025.02 · Google · 数据分析实习 · 分析用户行为模式并开发平台优化预测模型。使用 SQL、Python 和机器学习框架处理大规模数据集。',
+          '2023.12–2024.01 · Meritco · AI 投资研究实习 · 进行市场趋势定量研究并开发 AI 驱动的投资策略。创建自动化交易算法和风险评估模型。',
+          '2022.12–2023.01 · VMLY&R · 客户执行实习（默沙东、强生） · 管理客户关系并协调制药客户的营销活动。为品牌定位和市场分析开发数据驱动洞察。'
         ]},
-        contact: { title:'让我们连接', desc:'对合作、研究机会或投资感兴趣？让我们讨论如何一起工作。', btn:'订阅', email:'或发送邮件：<a href="mailto:tangyiting007@gmail.com" style="color:#7dd3fc">tangyiting007@gmail.com</a>' },
+        contact: { title:'让我们连接', desc:'对合作、研究机会或投资感兴趣？让我们讨论如何一起工作。', btn:'订阅', email:'或发送邮件：<a href="mailto:tangyiting007@gmail.com" style="color:#7dd3fc">tangyiting007@gmail.com</a>', social:'在 <a href="https://linkedin.com/in/eliza-tang" style="color:#7dd3fc">LinkedIn</a> · <a href="https://scholar.google.com/citations?user=YOUR_GOOGLE_SCHOLAR_ID" style="color:#7dd3fc">Google Scholar</a> · <a href="https://github.com/ElizaTang007" style="color:#7dd3fc">GitHub</a> 上与我联系' },
         ventures: { title:'创业与创新', items:[
           {t:'YITA AVIATION', d:'智能空中出行平台，帮助用户寻找、预订和优化 eVTOL 旅程，从购买飞行器到安排共享航班。', type:'startup', status:'活跃', link:'https://yita-aviation-site.vercel.app/'},
           {t:'StratoOS', d:'面向低空经济的下一代交通操作系统。BVLOS 任务编排和数字化指挥中心。', type:'platform', status:'开发中', link:'ventures/stratoos.html'},
@@ -644,8 +648,9 @@
       // intern
       const il = document.getElementById('internList');
       il.innerHTML = t.intern.items.map(i=>`<div class="item">${i}</div>`).join('');
-      // contact email line & footer
+      // contact email line, social links & footer
       document.getElementById('emailLine').innerHTML = t.contact.email;
+      document.getElementById('socialLine').innerHTML = t.contact.social;
       document.getElementById('footerText').innerHTML = t.footer;
 
       // hook up enhanced observers
