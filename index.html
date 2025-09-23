@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=JetBrains+Mono:wght@300;400;600&family=Orbitron:wght@400;600;800&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;600;700&family=Source+Han+Sans+SC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <style>
+    <style>
     :root{ --bg:#000814; --bg2:#001d3d; --fg:#0ea5e9; --violet:#6366f1; --text-on-dark:rgba(255,255,255,.92); --mx:50%; --my:50%; }
     *{box-sizing:border-box}
     html,body{margin:0;padding:0}
@@ -30,11 +30,20 @@
     .links a:hover{opacity:1}
     .links a::after{content:""; position:absolute; left:0; right:0; bottom:-6px; height:2px; background:linear-gradient(90deg, rgba(14,165,233,.8), rgba(99,102,241,.8)); transform:scaleX(0); transform-origin:left; transition:transform .25s ease}
     .links a:hover::after{transform:scaleX(1)}
+    .links a.active::after{transform:scaleX(1); background:linear-gradient(90deg, #0ea5e9, #6366f1)}
+    .links a.active{color:#0ea5e9; font-weight:600}
     .lang-toggle{margin-left:1rem; padding:.4rem .6rem; border:1px solid rgba(255,255,255,.25); border-radius:10px; background:rgba(0,0,0,.25); color:#fff; cursor:pointer; font-family:'JetBrains Mono', 'Noto Sans SC', monospace}
 
     /* Full-screen sections with smooth transitions */
     section{min-height:100vh; display:flex; flex-direction:column; justify-content:center; padding:0 1rem; position:relative; opacity:0; transform:translateY(30px); transition:all .8s cubic-bezier(0.4, 0, 0.2, 1)}
     section.in-view{opacity:1; transform:translateY(0)}
+    
+    /* Page load animation */
+    body{opacity:0; animation:fadeIn 0.8s ease-in-out forwards}
+    @keyframes fadeIn{to{opacity:1}}
+    
+    /* Smooth scroll behavior */
+    html{scroll-behavior:smooth}
     .section-inner{max-width:1140px; margin:0 auto; width:100%; transform:translateY(20px); transition:transform .6s cubic-bezier(0.4, 0, 0.2, 1)}
     section.in-view .section-inner{transform:translateY(0)}
 
@@ -129,6 +138,13 @@
     .scroll-dot.active::before{opacity:1; animation:pulse 2s infinite}
     @keyframes pulse{0%,100%{transform:scale(1); opacity:0.7}50%{transform:scale(1.3); opacity:0.3}}
 
+    /* Back to top button */
+    .back-to-top{position:fixed; bottom:2rem; right:2rem; width:50px; height:50px; border-radius:50%; background:linear-gradient(135deg, rgba(14,165,233,.9), rgba(99,102,241,.85)); border:1px solid rgba(255,255,255,.25); color:white; cursor:pointer; display:flex; align-items:center; justify-content:center; opacity:0; transform:translateY(20px); transition:all .3s cubic-bezier(0.4, 0, 0.2, 1); z-index:50; box-shadow:0 4px 20px rgba(0,0,0,.3)}
+    .back-to-top:hover{transform:translateY(-2px); box-shadow:0 8px 30px rgba(14,165,233,.4); background:linear-gradient(135deg, #0ea5e9, #6366f1)}
+    .back-to-top.visible{opacity:1; transform:translateY(0)}
+    .back-to-top svg{transition:transform .3s ease}
+    .back-to-top:hover svg{transform:translateY(-2px)}
+
     @media (max-width: 860px){ 
       .hero-inner{grid-template-columns:1fr; text-align:center} 
       .avatar{margin:0 auto} 
@@ -136,8 +152,11 @@
       .social-links{justify-content:center}
       .links a{margin-left:.8rem}
       .scroll-indicator{right:1rem}
+      .back-to-top{bottom:1rem; right:1rem; width:45px; height:45px}
+      .nav-inner{padding:.7rem 1rem}
+      .links{flex-wrap:wrap; gap:.5rem}
     }
-  </style>
+    </style>
 </head>
 <body>
   <div class="orbs"><div class="orb" style="top:55%; left:-12%"></div><div class="orb v2" style="top:-8%; right:-14%"></div><div class="orb v3" style="bottom:-20%; left:30%"></div></div>
@@ -162,6 +181,13 @@
   </header>
 
   <div class="scroll-indicator" id="scrollIndicator"></div>
+  
+  <!-- Back to top button -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M18 15l-6-6-6 6"/>
+    </svg>
+  </button>
 
   <main>
     <section class="hero" id="about">
@@ -353,38 +379,62 @@
       const scrollPos = window.scrollY;
       const windowHeight = window.innerHeight;
       let activeIndex = 0;
+      let minDistance = Infinity;
       
       sections.forEach((section, i) => {
         const rect = section.getBoundingClientRect();
-        const sectionTop = rect.top;
-        const sectionBottom = rect.bottom;
+        const sectionTop = rect.top + scrollPos;
+        const distance = Math.abs(sectionTop - scrollPos - 100); // 100px offset for header
         
-        // More stable detection: section is active if it's more than 50% visible
-        if (sectionTop < windowHeight * 0.5 && sectionBottom > windowHeight * 0.5) {
+        if (distance < minDistance) {
+          minDistance = distance;
           activeIndex = i;
         }
       });
       
+      // Update scroll dots
       dots.forEach((dot, i) => {
         const wasActive = dot.classList.contains('active');
         const isActive = i === activeIndex;
         
         if (isActive && !wasActive) {
           dot.classList.add('active');
-          dot.style.transform = 'scale(1.4)';
         } else if (!isActive && wasActive) {
           dot.classList.remove('active');
-          dot.style.transform = 'scale(1)';
+        }
+      });
+      
+      // Update navigation links
+      const navLinks = document.querySelectorAll('.links a[href^="#"]');
+      navLinks.forEach((link, i) => {
+        if (i === activeIndex) {
+          link.classList.add('active');
+        } else {
+          link.classList.remove('active');
         }
       });
     }
 
-    // Smooth scroll for nav links
+    // Enhanced smooth scroll for nav links with offset
     document.querySelectorAll('a[href^="#"]').forEach(link => {
       link.addEventListener('click', (e) => {
         e.preventDefault();
         const target = document.querySelector(link.getAttribute('href'));
-        if (target) target.scrollIntoView({behavior: 'smooth'});
+        if (target) {
+          const headerHeight = 80; // Account for fixed header
+          const targetPosition = target.offsetTop - headerHeight;
+          
+          window.scrollTo({
+            top: targetPosition,
+            behavior: 'smooth'
+          });
+          
+          // Update active nav link
+          document.querySelectorAll('.links a').forEach(navLink => {
+            navLink.classList.remove('active');
+          });
+          link.classList.add('active');
+        }
       });
     });
 
@@ -608,13 +658,34 @@
 
     document.getElementById('langToggle').addEventListener('click', ()=>{ lang = (lang === 'en') ? 'zh' : 'en'; render(); });
 
+    // Back to top button functionality
+    const backToTopBtn = document.getElementById('backToTop');
+    
+    backToTopBtn.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+    
+    // Show/hide back to top button based on scroll position
+    function toggleBackToTop() {
+      if (window.scrollY > 300) {
+        backToTopBtn.classList.add('visible');
+      } else {
+        backToTopBtn.classList.remove('visible');
+      }
+    }
+
     // init with enhanced scroll handling
     resize(); spawn(); tick(); addEventListener('resize', ()=>{resize(); spawn();}); 
     window.addEventListener('scroll', () => {
       requestAnimationFrame(updateScrollIndicator);
+      requestAnimationFrame(toggleBackToTop);
     });
     render();
     updateScrollIndicator();
+    toggleBackToTop();
   </script>
 </body>
 </html> 
