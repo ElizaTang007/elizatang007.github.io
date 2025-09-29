@@ -590,10 +590,13 @@
       track.innerHTML = photos.map((photo, index) => {
         // 第5张（索引4）：Research Retreat - 竖屏居中显示
         // 第6张（索引5）：Cultural Exchange - 竖屏居中显示
+        // 第10张（索引9）：Avalon Airshow - 横屏居中显示
         // 第13张（索引12）：Sydney Nightscape - 竖屏居中显示
         let slideClass = '';
         if ([4, 5, 12].includes(index)) {
           slideClass = 'landscape-center'; // 竖屏居中，黑色背景
+        } else if (index === 9) {
+          slideClass = 'landscape'; // 横屏居中
         }
         
         return `
