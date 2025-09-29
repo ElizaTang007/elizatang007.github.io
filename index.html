@@ -275,7 +275,6 @@
         <a href="#research" data-i18n="nav.research">Research</a>
         <a href="#highlights" data-i18n="nav.highlights">Highlights</a>
         <a href="#ventures" data-i18n="nav.ventures">Ventures</a>
-        <a href="#projects" data-i18n="nav.projects">Projects</a>
         <a href="#news" data-i18n="nav.news">News</a>
         <a href="#edu" data-i18n="nav.edu">Education</a>
         <a href="#contact" data-i18n="nav.contact">Contact</a>
@@ -413,12 +412,6 @@
       </div>
     </section>
 
-    <section id="projects">
-      <div class="section-inner">
-        <h2 data-i18n="projects.title">Featured Projects</h2>
-        <div class="projects-grid" id="projectsGrid"></div>
-      </div>
-    </section>
 
     <section class="subscribe" id="contact">
       <div class="section-inner">
@@ -568,7 +561,7 @@
     const i18n = {
       en: {
         brand: 'Eliza Tang',
-        nav: {about:'About', research:'Research', highlights:'About Me', ventures:'Ventures', projects:'Projects', news:'News', edu:'Education', contact:'Contact'},
+        nav: {about:'About', research:'Research', highlights:'About Me', ventures:'Ventures', news:'News', edu:'Education', contact:'Contact'},
         hero: {
           name:'Eliza Yiting Tang',
           subtitle:'University of Sydney · Econometrics & Software Development',
@@ -625,16 +618,11 @@
           {t:'StratoOS', d:'Next-generation transportation OS for low-altitude economy. BVLOS mission orchestration and digital command center.', type:'platform', status:'Development', link:'ventures/stratoos.html'},
           {t:'PRIMORDIA', d:'Interplanetary origin asset infrastructure for preserving biological and cultural heritage across civilizations.', type:'research', status:'Concept', link:'ventures/primordia.html'}
         ]},
-        projects: { title:'Featured Projects', items:[
-          {t:'StratoOS', d:'Next-generation transportation operating system for low-altitude economy. Features dual-plane architecture with safety control plane (RTOS + seL4) and application experience plane (Linux + SDK).', type:'Platform', status:'Development', link:'ventures/stratoos.html', features:['BVLOS Support', 'Swarm Intelligence', 'Mission Orchestration', 'Safety Certification']},
-          {t:'PRIMORDIA', d:'Interplanetary origin asset infrastructure for preserving biological and cultural heritage across civilizations. Uses OAI Core Protocol and distributed storage mesh across Earth, Moon, Mars, and asteroid nodes.', type:'Research', status:'Concept', link:'ventures/primordia.html', features:['DNA Sequencing', 'Cryptographic Verification', 'Multi-Planet Storage', 'Cultural Preservation']},
-          {t:'Preference Externalities', d:'Comprehensive framework for measuring and mitigating preference manipulation in digital platforms. Causal inference approach to peer influence mechanisms.', type:'Research', status:'Active', link:'research/preference-externalities.html', features:['Causal Inference', 'Behavioral Modeling', 'Platform Economics', 'Social Networks']}
-        ]},
         footer:'© 2025 Eliza Tang. All rights reserved.'
       },
       zh: {
         brand: '唐怡婷 Eliza',
-        nav: {about:'关于', research:'研究', highlights:'关于我', ventures:'创业', projects:'项目', news:'动态', edu:'教育', contact:'联系'},
+        nav: {about:'关于', research:'研究', highlights:'关于我', ventures:'创业', news:'动态', edu:'教育', contact:'联系'},
         hero: {
           name:'唐怡婷（Eliza Yiting Tang）',
           subtitle:'悉尼大学 · 计量经济学与软件开发',
@@ -723,9 +711,6 @@
       const h = document.getElementById('highlightsGrid');
       h.innerHTML = t.highlights.items.map(i=>`<div class="card"><h3>${i.t}</h3><p>${i.d}</p></div>`).join('');
       // ventures - content is statically embedded in HTML
-      // projects
-      const p = document.getElementById('projectsGrid');
-      p.innerHTML = t.projects.items.map(i=>`<div class="project-card" onclick="window.open('${i.link}', '_blank')"><h3>${i.t}</h3><p>${i.d}</p><div class="project-features">${i.features.map(f=>`<span class="project-feature">${f}</span>`).join('')}</div><div class="project-meta"><span class="project-type">${i.type}</span><span class="project-status">${i.status}</span></div><div class="project-link">→</div></div>`).join('');
       // news
       const n = document.getElementById('newsList');
       n.innerHTML = t.news.items.map(i=>`<div class="item">${i}</div>`).join('');
