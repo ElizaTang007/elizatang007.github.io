@@ -585,8 +585,8 @@
 
       // Create slides
       track.innerHTML = photos.map((photo, index) => {
-        // 横屏照片：6、7、11、15 (索引为5、6、10、14)
-        const isLandscape = [5, 6, 10, 14].includes(index);
+        // 横屏照片：6、15 (索引为5、14) - 只保留Cultural Exchange和Sydney Nightscape
+        const isLandscape = [5, 14].includes(index);
         return `
           <div class="carousel-slide ${isLandscape ? 'landscape' : ''}">
             <img src="${photo.src}" alt="${photo.title}" loading="lazy">
