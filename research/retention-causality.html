@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Causal Modeling of User Retention with Large Language Models - Eliza Tang</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding-bottom: 2rem;
+            border-bottom: 2px solid #f0f0f0;
+        }
+
+        .back-btn {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background: #667eea;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .back-btn:hover {
+            background: #5a6fd8;
+            transform: translateY(-2px);
+        }
+
+        h1 {
+            color: #2d3748;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .subtitle {
+            color: #667eea;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .status {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 2rem;
+        }
+
+        .content {
+            line-height: 1.8;
+        }
+
+        .section {
+            margin-bottom: 2.5rem;
+        }
+
+        .section h2 {
+            color: #2d3748;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+            border-left: 4px solid #667eea;
+            padding-left: 1rem;
+        }
+
+        .section p {
+            margin-bottom: 1rem;
+            color: #4a5568;
+        }
+
+        .keywords {
+            background: #f7fafc;
+            padding: 1.5rem;
+            border-radius: 10px;
+            border-left: 4px solid #667eea;
+        }
+
+        .keywords h3 {
+            color: #2d3748;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .keyword-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .keyword-tag {
+            background: #667eea;
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .working-paper {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            text-align: center;
+            font-weight: 600;
+            margin-top: 2rem;
+        }
+
+        .highlight-box {
+            background: #f0f9ff;
+            border: 1px solid #0ea5e9;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .highlight-box h3 {
+            color: #0369a1;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .highlight-box p {
+            color: #0c4a6e;
+            margin-bottom: 0.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                margin: 1rem;
+                padding: 1.5rem;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            .keyword-tags {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="https://elizatang007.github.io/" class="back-btn">← Back to Home</a>
+        
+        <div class="header">
+            <h1>Causal Modeling of User Retention with Large Language Models</h1>
+            <div class="subtitle">Integrating LLM-based behavioral signals with heterogeneous treatment effect estimation</div>
+            <div class="status">Presented at INFORMS 2025; Preparing for Marketing Science submission</div>
+        </div>
+
+        <div class="content">
+            <div class="section">
+                <h2>Abstract</h2>
+                <p>User retention is a critical challenge for digital platforms. While many predictive approaches exist, few explain <em>why</em> and <em>for whom</em> retention interventions succeed. This paper introduces a unified causal modeling framework that integrates large language models (LLMs) with heterogeneous treatment effect estimation to uncover the mechanisms behind retention.</p>
+                
+                <p>We extract psychological signals from user-generated text—sentiment, identity activation, cognitive complexity—and embed them into quasi-experimental designs (difference-in-differences, causal forests). Using a large-scale natural experiment, we find that identity-framed notifications significantly increase retention, with effects strongly moderated by language-derived user traits. Mediation analysis shows that identity activation and cognitive engagement explain over 60% of the treatment effect.</p>
+                
+                <p>Our findings advance marketing science by demonstrating how LLM-based behavioral features enhance causal inference, offering actionable strategies for personalized platform interventions.</p>
+            </div>
+
+            <div class="highlight-box">
+                <h3>Key Findings</h3>
+                <p><strong>Identity-framed notifications</strong> significantly increase user retention</p>
+                <p><strong>Language-derived user traits</strong> strongly moderate treatment effects</p>
+                <p><strong>Identity activation and cognitive engagement</strong> explain over 60% of the treatment effect</p>
+                <p><strong>LLM-based behavioral features</strong> enhance causal inference capabilities</p>
+            </div>
+
+            <div class="keywords">
+                <h3>Keywords</h3>
+                <div class="keyword-tags">
+                    <span class="keyword-tag">Retention</span>
+                    <span class="keyword-tag">Causal inference</span>
+                    <span class="keyword-tag">LLM</span>
+                    <span class="keyword-tag">Identity framing</span>
+                    <span class="keyword-tag">Heterogeneous treatment effects</span>
+                    <span class="keyword-tag">Digital platforms</span>
+                    <span class="keyword-tag">Behavioral signals</span>
+                    <span class="keyword-tag">Marketing science</span>
+                </div>
+            </div>
+
+            <div class="working-paper">
+                [Working Paper / ArXiv link – coming soon]
+            </div>
+        </div>
+    </div>
+</body>
+</html>
