@@ -275,7 +275,6 @@
         <a href="#research" data-i18n="nav.research">Research</a>
         <a href="#highlights" data-i18n="nav.highlights">Highlights</a>
         <a href="#ventures" data-i18n="nav.ventures">Ventures</a>
-        <a href="#news" data-i18n="nav.news">News</a>
         <a href="#edu" data-i18n="nav.edu">Education</a>
         <a href="#contact" data-i18n="nav.contact">Contact</a>
         <button class="lang-toggle" id="langToggle">中文</button>
@@ -361,12 +360,6 @@
       </div>
     </section>
 
-    <section id="news">
-      <div class="section-inner">
-        <h2 data-i18n="news.title">News & Updates</h2>
-        <div class="list reveal" id="newsList"></div>
-      </div>
-    </section>
 
     <section id="edu">
       <div class="section-inner">
@@ -561,7 +554,7 @@
     const i18n = {
       en: {
         brand: 'Eliza Tang',
-        nav: {about:'About', research:'Research', highlights:'About Me', ventures:'Ventures', news:'News', edu:'Education', contact:'Contact'},
+        nav: {about:'About', research:'Research', highlights:'About Me', ventures:'Ventures', edu:'Education', contact:'Contact'},
         hero: {
           name:'Eliza Yiting Tang',
           subtitle:'University of Sydney · Econometrics & Software Development',
@@ -585,16 +578,6 @@
           {t:'💡 Creative Problem Solver', d:'Combines analytical rigor with creative thinking. Enjoys turning abstract concepts into practical solutions that make real impact.'},
           {t:'🎯 Visionary Thinker', d:'Passionate about solving complex problems at the intersection of technology, economics, and human behavior. Always exploring the next frontier of innovation.'},
           {t:'🌍 Global Citizen', d:'Lived and worked across Sydney, Shanghai, and international conferences. Embracing diverse perspectives and building bridges between cultures.'}
-        ]},
-        news: { title:'News & Updates', items:[
-          '2024 · Completed ECMT3997 thesis on "Returns to Education — A Causal Analysis Using IV" at University of Sydney. <a href="ecmt3997.pdf" style="color:#7dd3fc">View Thesis</a>',
-          '2024 · Published research on "Examining the Communication Effectiveness of Artificial Intelligence Art Personification". <a href="Examining the Communication Effectiveness of Artificial Intelligence Art Personification.pdf" style="color:#7dd3fc">Read Paper</a>',
-          '2024 · University of Sydney — ECMT3997 Thesis Defense — "Returns to Education: A Causal Analysis Using IV". Presented econometric analysis using instrumental variables approach.',
-          '2024 · Research Presentation — "Examining the Communication Effectiveness of Artificial Intelligence Art Personification". Exploring AI-human interaction in creative contexts.',
-          '2024 · Academic Conference — Presented findings on causal inference methods in education economics research.',
-          '2024 · Student Research Symposium — Shared insights on econometric modeling and statistical analysis techniques.',
-          '2024 · Currently pursuing Bachelor of Arts in Econometrics and Software Development at University of Sydney.',
-          '2024 · Working on YITA AVIATION project - exploring eVTOL platform development and urban air mobility solutions.'
         ]},
         dev: { title:'Current Projects', items:[
           {t:'Returns to Education — A Causal Analysis Using IV', d:'ECMT3997 Thesis, University of Sydney · PDF: <a href="ecmt3997.pdf" style="color:#7dd3fc">View</a><br/>Implements Card (1993) with proximity‑to‑college as instrument; 2SLS estimation, LATE interpretation, and instrument strength using Australian microdata.', status:'Completed (High Distinction)', progress:'100%'},
@@ -622,7 +605,7 @@
       },
       zh: {
         brand: '唐怡婷 Eliza',
-        nav: {about:'关于', research:'研究', highlights:'关于我', ventures:'创业', news:'动态', edu:'教育', contact:'联系'},
+        nav: {about:'关于', research:'研究', highlights:'关于我', ventures:'创业', edu:'教育', contact:'联系'},
         hero: {
           name:'唐怡婷（Eliza Yiting Tang）',
           subtitle:'悉尼大学 · 计量经济学与软件开发',
@@ -646,16 +629,6 @@
           {t:'💡 创意问题解决者', d:'结合分析严谨性与创造性思维。享受将抽象概念转化为产生实际影响的实用解决方案。'},
           {t:'🎯 远见思考者', d:'热衷于解决技术、经济学和人类行为交叉领域的复杂问题。始终探索创新的前沿领域。'},
           {t:'🌍 全球公民', d:'在悉尼、上海和国际会议间生活工作。拥抱多元视角，搭建文化桥梁。'}
-        ]},
-        news: { title:'动态与演讲', items:[
-          '2024 · 完成悉尼大学 ECMT3997 论文"教育回报的因果分析（工具变量）"。<a href="ecmt3997.pdf" style="color:#7dd3fc">查看论文</a>',
-          '2024 · 发表研究论文"人工智能艺术拟人化的传播效果研究"。<a href="Examining the Communication Effectiveness of Artificial Intelligence Art Personification.pdf" style="color:#7dd3fc">阅读论文</a>',
-          '2024 · 悉尼大学 — ECMT3997 论文答辩 — "教育回报：使用工具变量的因果分析"。展示使用工具变量方法的计量经济学分析。',
-          '2024 · 研究展示 — "人工智能艺术拟人化的传播效果研究"。探索创意语境中的 AI-人类互动。',
-          '2024 · 学术会议 — 展示教育经济学研究中因果推断方法的发现。',
-          '2024 · 学生研究研讨会 — 分享计量经济学建模和统计分析技术的见解。',
-          '2024 · 目前正在悉尼大学攻读计量经济学与软件开发学士学位。',
-          '2024 · 正在开展 YITA AVIATION 项目，探索 eVTOL 平台开发和城市空中出行解决方案。'
         ]},
         dev: { title:'当前项目', items:[
           {t:'教育回报的因果分析（工具变量）', d:'ECMT3997 毕设 · PDF：<a href="ecmt3997.pdf" style="color:#7dd3fc">查看</a><br/>基于 Card (1993) 的近校工具变量框架，实施 2SLS、解释 LATE，并使用澳大利亚微观数据检验工具变量强度。', status:'已完成（优秀等级）', progress:'100%'},
@@ -711,9 +684,6 @@
       const h = document.getElementById('highlightsGrid');
       h.innerHTML = t.highlights.items.map(i=>`<div class="card"><h3>${i.t}</h3><p>${i.d}</p></div>`).join('');
       // ventures - content is statically embedded in HTML
-      // news
-      const n = document.getElementById('newsList');
-      n.innerHTML = t.news.items.map(i=>`<div class="item">${i}</div>`).join('');
       // dev
       const d = document.getElementById('devGrid');
       d.innerHTML = t.dev.items.map(i=>`<div class="card"><h3>${i.t}</h3><p>${i.d}</p><div class="project-status"><span style="color:#0ea5e9;font-size:.85rem">${i.status}</span><span style="opacity:.7;font-size:.85rem">${i.progress}</span></div><div class="progress-bar"><div class="progress-fill" style="width:${i.progress}"></div></div></div>`).join('');
