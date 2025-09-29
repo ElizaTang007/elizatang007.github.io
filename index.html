@@ -186,6 +186,8 @@
     .card-icon{width:60px; height:60px; border-radius:8px; margin-bottom:.8rem; background-size:cover; background-position:center}
     .card-stats{display:flex; align-items:center; gap:.5rem; margin-top:.8rem; padding-top:.8rem; border-top:1px solid rgba(255,255,255,.1)}
     .card-stats span{background:rgba(14,165,233,.2); color:#0ea5e9; padding:.2rem .5rem; border-radius:4px; font-size:.75rem; font-family:'JetBrains Mono', 'Noto Sans SC', monospace}
+    .card-hint{position:absolute; bottom:1rem; right:1rem; background:rgba(14,165,233,.8); color:white; padding:.3rem .6rem; border-radius:12px; font-size:.7rem; font-family:'JetBrains Mono', 'Noto Sans SC', monospace; opacity:0; transform:translateY(10px); transition:all .3s ease; pointer-events:none}
+    .card:hover .card-hint{opacity:1; transform:translateY(0)}
     .project-status{display:flex; justify-content:space-between; align-items:center; margin-top:.8rem}
     .progress-bar{width:100%; height:4px; background:rgba(255,255,255,.1); border-radius:2px; overflow:hidden; margin-top:.5rem}
     .progress-fill{height:100%; background:linear-gradient(90deg, #0ea5e9, #6366f1); transition:width .5s ease}
@@ -675,7 +677,7 @@
       stats.innerHTML = t.hero.stats.map(x=>`<div class="stat-item"><strong>${x.split(' ')[0]}</strong>${x.split(' ').slice(1).join(' ')}</div>`).join('');
       // research cards
       const r = document.getElementById('researchGrid');
-      r.innerHTML = t.research.items.map(i=>`<div class="card"><div class="card-icon" style="background-image:url('${i.img}')"></div><h3>${i.t}</h3><p>${i.d}</p><div class="card-stats"><span>${i.stats}</span></div></div>`).join('');
+      r.innerHTML = t.research.items.map(i=>`<div class="card"><div class="card-icon" style="background-image:url('${i.img}')"></div><h3>${i.t}</h3><p>${i.d}</p><div class="card-stats"><span>${i.stats}</span></div><div class="card-hint">${lang === 'en' ? 'Click to view details' : '点击查看详情'}</div></div>`).join('');
       // highlights
       const h = document.getElementById('highlightsGrid');
       h.innerHTML = t.highlights.items.map(i=>`<div class="card"><h3>${i.t}</h3><p>${i.d}</p></div>`).join('');
