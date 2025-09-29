@@ -190,18 +190,31 @@
     .card:hover .card-hint{opacity:1; transform:translateY(0)}
     
     /* Research Card Styles */
-    .research-card{display:flex; flex-direction:column; height:100%; overflow:hidden}
-    .research-image-container{position:relative; height:200px; overflow:hidden; border-radius:12px 12px 0 0}
+    .research-card{display:flex; height:100%; overflow:hidden; border-radius:12px}
+    .research-card.landscape{flex-direction:row}
+    .research-card.portrait{flex-direction:column}
+    .research-image-container{position:relative; overflow:hidden; border-radius:12px 0 0 12px}
+    .research-card.landscape .research-image-container{width:40%; height:200px; border-radius:12px 0 0 12px}
+    .research-card.portrait .research-image-container{width:100%; height:200px; border-radius:12px 12px 0 0}
     .research-image{width:100%; height:100%; object-fit:cover; transition:transform .3s ease}
     .research-card:hover .research-image{transform:scale(1.05)}
     .research-overlay{position:absolute; top:0; left:0; right:0; bottom:0; background:linear-gradient(135deg, rgba(0,0,0,0.3), rgba(0,0,0,0.1)); display:flex; align-items:flex-end; justify-content:flex-end; padding:1rem; opacity:0; transition:opacity .3s ease}
     .research-card:hover .research-overlay{opacity:1}
     .research-status{background:rgba(14,165,233,0.9); color:white; padding:.3rem .6rem; border-radius:6px; font-size:.75rem; font-family:'JetBrains Mono', 'Noto Sans SC', monospace; font-weight:500}
     .research-content{padding:1.5rem; flex:1; display:flex; flex-direction:column}
+    .research-card.landscape .research-content{border-radius:0 12px 12px 0}
+    .research-card.portrait .research-content{border-radius:0 0 12px 12px}
     .research-content h3{margin:0 0 .8rem 0; font-size:18px; font-family:'JetBrains Mono', 'Noto Sans SC', monospace; font-weight:600; color:#0ea5e9}
     .research-content p{margin:0 0 1rem 0; opacity:.9; line-height:1.6; flex:1}
     .research-hint{background:rgba(14,165,233,0.1); color:#0ea5e9; padding:.4rem .8rem; border-radius:8px; font-size:.8rem; font-family:'JetBrains Mono', 'Noto Sans SC', monospace; text-align:center; opacity:0; transform:translateY(5px); transition:all .3s ease}
     .research-card:hover .research-hint{opacity:1; transform:translateY(0)}
+    
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .research-card.landscape{flex-direction:column}
+      .research-card.landscape .research-image-container{width:100%; height:150px; border-radius:12px 12px 0 0}
+      .research-card.landscape .research-content{border-radius:0 0 12px 12px}
+    }
     
     /* Research More Button */
     .research-more{text-align:center; margin-top:2rem}
@@ -931,10 +944,10 @@
       stats.innerHTML = t.hero.stats.map(x=>`<div class="stat-item"><strong>${x.split(' ')[0]}</strong>${x.split(' ').slice(1).join(' ')}</div>`).join('');
       // research cards
       const r = document.getElementById('researchGrid');
-      r.innerHTML = t.research.items.map(i=>`
-        <div class="card research-card">
+      r.innerHTML = t.research.items.map((i, index)=>`
+        <div class="card research-card" data-index="${index}">
           <div class="research-image-container">
-            <img src="${i.img}" alt="${i.t}" class="research-image" loading="lazy">
+            <img src="${i.img}" alt="${i.t}" class="research-image" loading="lazy" onload="detectImageOrientation(this, ${index})">
             <div class="research-overlay">
               <div class="research-status">${i.stats}</div>
             </div>
@@ -1014,6 +1027,32 @@
     
     // Initialize carousel
     initCarousel();
+    
+    // Image orientation detection function
+    function detectImageOrientation(img, index) {
+      const card = document.querySelector(`[data-index="${index}"]`);
+      if (!card) return;
+      
+      // Check if image loaded successfully
+      if (img.naturalWidth && img.naturalHeight) {
+        const aspectRatio = img.naturalWidth / img.naturalHeight;
+        
+        // Determine layout based on aspect ratio
+        if (aspectRatio > 1.2) {
+          // Wide image - use landscape layout
+          card.classList.add('landscape');
+          card.classList.remove('portrait');
+        } else {
+          // Tall or square image - use portrait layout
+          card.classList.add('portrait');
+          card.classList.remove('landscape');
+        }
+      } else {
+        // Fallback to portrait if image fails to load
+        card.classList.add('portrait');
+        card.classList.remove('landscape');
+      }
+    }
     
     // Research Modal Function
     function showResearchModal() {
