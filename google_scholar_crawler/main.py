@@ -22,11 +22,11 @@ def main():
             sys.exit(1)
         
         # Fill author data
-        scholarly.fill(author, sections=['basics', 'indices', 'counts', 'publications'])
+scholarly.fill(author, sections=['basics', 'indices', 'counts', 'publications'])
         
         # Process data
         name = author.get('name', 'Unknown')
-        author['updated'] = str(datetime.now())
+author['updated'] = str(datetime.now())
         
         # Handle publications safely
         publications = author.get('publications', [])
@@ -36,10 +36,10 @@ def main():
             author['publications'] = {}
         
         print(f"Successfully fetched data for {name}")
-        print(json.dumps(author, indent=2))
+print(json.dumps(author, indent=2))
         
         # Create results directory
-        os.makedirs('results', exist_ok=True)
+os.makedirs('results', exist_ok=True)
         
         # Save main data
         with open('results/gs_data.json', 'w') as outfile:
@@ -47,9 +47,9 @@ def main():
         
         # Save shields.io data
         citedby = author.get('citedby', 0)
-        shieldio_data = {
-            "schemaVersion": 1,
-            "label": "citations",
+shieldio_data = {
+  "schemaVersion": 1,
+  "label": "citations",
             "message": str(citedby),
         }
         with open('results/gs_data_shieldsio.json', 'w') as outfile:
