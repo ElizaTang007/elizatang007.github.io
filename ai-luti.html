@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI for Land Use & Transport Integration - Eliza Tang</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding-bottom: 2rem;
+            border-bottom: 2px solid #f0f0f0;
+        }
+
+        .back-btn {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background: #667eea;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .back-btn:hover {
+            background: #5a6fd8;
+            transform: translateY(-2px);
+        }
+
+        h1 {
+            color: #2d3748;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .subtitle {
+            color: #667eea;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .status {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 2rem;
+        }
+
+        .content {
+            line-height: 1.8;
+        }
+
+        .section {
+            margin-bottom: 2.5rem;
+        }
+
+        .section h2 {
+            color: #2d3748;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+            border-left: 4px solid #667eea;
+            padding-left: 1rem;
+        }
+
+        .section p {
+            margin-bottom: 1rem;
+            color: #4a5568;
+        }
+
+        .keywords {
+            background: #f7fafc;
+            padding: 1.5rem;
+            border-radius: 10px;
+            border-left: 4px solid #667eea;
+        }
+
+        .keywords h3 {
+            color: #2d3748;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .keyword-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .keyword-tag {
+            background: #667eea;
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .working-paper {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            text-align: center;
+            font-weight: 600;
+            margin-top: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                margin: 1rem;
+                padding: 1.5rem;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            .keyword-tags {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="https://elizatang007.github.io/" class="back-btn">← Back to Home</a>
+        
+        <div class="header">
+            <h1>AI for Land Use & Transport Integration</h1>
+            <div class="subtitle">AI-driven causal and interpretable modeling of accessibility for integrated land use and urban air mobility systems</div>
+            <div class="status">Targeting Special Issue on Artificial Intelligence in Land Use and Transport Integration (Deadline: Aug 30, 2026)</div>
+        </div>
+
+        <div class="content">
+            <div class="section">
+                <h2>Abstract</h2>
+                <p>Urban mobility systems are increasingly shaped by the interdependence between land use, accessibility, and emerging transportation technologies. Traditional land use–transport integration (LUTI) models struggle to capture nonlinear interactions, spatial heterogeneity, and the dynamic adoption of new mobility solutions.</p>
+                
+                <p>This paper proposes an AI-driven causal modeling framework to evaluate how accessibility shapes the integration of land use and urban air mobility (UAM) platforms in metropolitan contexts. By combining interpretable machine learning with quasi-experimental causal inference, we model heterogeneous accessibility effects across neighborhoods. Using multimodal data—land use maps, population density, economic activity, and simulated UAM networks—we estimate how eVTOL-based mobility alters residential and employment location choices.</p>
+                
+                <p>Explainable AI tools (e.g., SHAP values, causal forests) identify the key drivers of accessibility shifts, while counterfactual simulations test zoning reforms, vertiport placement, and fare subsidy policies. Findings suggest that AI-enabled LUTI models reveal complementarities between UAM adoption and traditional transit, while highlighting equity concerns and potential efficiency gains.</p>
+                
+                <p>This study demonstrates how integrating interpretable AI with causal inference enhances policy relevance, offering insights for planners and policymakers on coordinating emerging mobility technologies with sustainable land use planning.</p>
+            </div>
+
+            <div class="keywords">
+                <h3>Keywords</h3>
+                <div class="keyword-tags">
+                    <span class="keyword-tag">Land use</span>
+                    <span class="keyword-tag">Transport integration</span>
+                    <span class="keyword-tag">Urban air mobility</span>
+                    <span class="keyword-tag">Accessibility</span>
+                    <span class="keyword-tag">Causal inference</span>
+                    <span class="keyword-tag">Interpretable AI</span>
+                    <span class="keyword-tag">Machine learning</span>
+                </div>
+            </div>
+
+            <div class="working-paper">
+                [Working Paper – coming soon]
+            </div>
+        </div>
+    </div>
+</body>
+</html>
