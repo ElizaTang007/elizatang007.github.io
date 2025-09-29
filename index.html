@@ -189,6 +189,20 @@
     .card-hint{position:absolute; bottom:1rem; right:1rem; background:rgba(14,165,233,.8); color:white; padding:.3rem .6rem; border-radius:12px; font-size:.7rem; font-family:'JetBrains Mono', 'Noto Sans SC', monospace; opacity:0; transform:translateY(10px); transition:all .3s ease; pointer-events:none}
     .card:hover .card-hint{opacity:1; transform:translateY(0)}
     
+    /* Research Card Styles */
+    .research-card{display:flex; flex-direction:column; height:100%; overflow:hidden}
+    .research-image-container{position:relative; height:200px; overflow:hidden; border-radius:12px 12px 0 0}
+    .research-image{width:100%; height:100%; object-fit:cover; transition:transform .3s ease}
+    .research-card:hover .research-image{transform:scale(1.05)}
+    .research-overlay{position:absolute; top:0; left:0; right:0; bottom:0; background:linear-gradient(135deg, rgba(0,0,0,0.3), rgba(0,0,0,0.1)); display:flex; align-items:flex-end; justify-content:flex-end; padding:1rem; opacity:0; transition:opacity .3s ease}
+    .research-card:hover .research-overlay{opacity:1}
+    .research-status{background:rgba(14,165,233,0.9); color:white; padding:.3rem .6rem; border-radius:6px; font-size:.75rem; font-family:'JetBrains Mono', 'Noto Sans SC', monospace; font-weight:500}
+    .research-content{padding:1.5rem; flex:1; display:flex; flex-direction:column}
+    .research-content h3{margin:0 0 .8rem 0; font-size:18px; font-family:'JetBrains Mono', 'Noto Sans SC', monospace; font-weight:600; color:#0ea5e9}
+    .research-content p{margin:0 0 1rem 0; opacity:.9; line-height:1.6; flex:1}
+    .research-hint{background:rgba(14,165,233,0.1); color:#0ea5e9; padding:.4rem .8rem; border-radius:8px; font-size:.8rem; font-family:'JetBrains Mono', 'Noto Sans SC', monospace; text-align:center; opacity:0; transform:translateY(5px); transition:all .3s ease}
+    .research-card:hover .research-hint{opacity:1; transform:translateY(0)}
+    
     /* Research More Button */
     .research-more{text-align:center; margin-top:2rem}
     .research-more-btn{display:inline-flex; align-items:center; gap:.5rem; background:linear-gradient(135deg, rgba(14,165,233,.9), rgba(99,102,241,.85)); border:none; color:white; padding:.8rem 1.5rem; border-radius:12px; font-family:'JetBrains Mono', 'Noto Sans SC', monospace; font-weight:500; cursor:pointer; transition:all .3s ease; box-shadow:0 4px 20px rgba(14,165,233,.3)}
@@ -807,10 +821,10 @@
           stats:['2+ Years Research','4+ Publications','1 Patent Pending','$50K+ Funding Raised']
         },
         research: { title:'Research & Innovation', more:'View More Research', items:[
-          {t:'Preference Externalities', d:'Modeling willingness-to-pay shifts under social information on digital platforms. Developing causal frameworks for peer influence mechanisms.', img:'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iOCIgZmlsbD0idXJsKCNncmFkaWVudDApIi8+CjxkZWZzPgo8bGluZWFyR3JhZGllbnQgaWQ9ImdyYWRpZW50MCIgeDE9IjAiIHkxPSIwIiB4Mj0iNjAiIHkyPSI2MCIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiPgo8c3RvcCBzdG9wLWNvbG9yPSIjMGVhNWU5Ii8+CjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iIzYzNjZmMSIvPgo8L2xpbmVhckdyYWRpZW50Pgo8L2RlZnM+CjxwYXRoIGQ9Ik0xNSAyMEg0NVY0MEgxNVYyMFoiIGZpbGw9IndoaXRlIiBmaWxsLW9wYWNpdHk9IjAuOSIvPgo8cGF0aCBkPSJNMjAgMjVIMzVWMzVIMjBWMjVaIiBmaWxsPSJ3aGl0ZSIvPgo8L3N2Zz4K', stats:'15-25% WTP Shift', link:'research/preference-externalities.html'},
-          {t:'Retention Causality (INFORMS → Marketing Science)', d:'Causal modeling of user retention interventions with LLM-based behavioral signals and heterogeneous treatment effect estimation.', img:'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iOCIgZmlsbD0idXJsKCNncmFkaWVudDIpIi8+CjxkZWZzPgo8bGluZWFyR3JhZGllbnQgaWQ9ImdyYWRpZW50MiIgeDE9IjAiIHkxPSIwIiB4Mj0iNjAiIHkyPSI2MCIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiPgo8c3RvcCBzdG9wLWNvbG9yPSIjOGI1Y2Y2Ii8+CjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iI2Y1OWNmNyIvPgo8L2xpbmVhckdyYWRpZW50Pgo8L2RlZnM+CjxwYXRoIGQ9Ik0xMCAxMEg1MFY1MEgxMFYxMFoiIGZpbGw9IndoaXRlIiBmaWxsLW9wYWNpdHk9IjAuMiIvPgo8Y2lyY2xlIGN4PSIyMCIgY3k9IjIwIiByPSIzIiBmaWxsPSJ3aGl0ZSIvPgo8Y2lyY2xlIGN4PSI0MCIgY3k9IjMwIiByPSIzIiBmaWxsPSJ3aGl0ZSIvPgo8Y2lyY2xlIGN4PSIzMCIgY3k9IjQwIiByPSIzIiBmaWxsPSJ3aGl0ZSIvPgo8L3N2Zz4K', stats:'INFORMS 2025', link:'research/retention-causality.html'},
-          {t:'Generative Engine Optimization (IJRM Special Issue)', d:'Simulating search and marketing strategies via synthetic respondents and causal inference frameworks.', img:'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iOCIgZmlsbD0idXJsKCNncmFkaWVudDMpIi8+CjxkZWZzPgo8bGluZWFyR3JhZGllbnQgaWQ9ImdyYWRpZW50MyIgeDE9IjAiIHkxPSIwIiB4Mj0iNjAiIHkyPSI2MCIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiPgo8c3RvcCBzdG9wLWNvbG9yPSIjZjU5Y2Y3Ii8+CjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iI2Y5NzM3NiIvPgo8L2xpbmVhckdyYWRpZW50Pgo8L2RlZnM+CjxwYXRoIGQ9Ik0xNSAzMEg0NVYzNUgxNVYzMFoiIGZpbGw9IndoaXRlIiBmaWxsLW9wYWNpdHk9IjAuOSIvPgo8cGF0aCBkPSJNMjAgMjVIMzVWMzVIMjBWMjVaIiBmaWxsPSJ3aGl0ZSIvPgo8L3N2Zz4K', stats:'IJRM Special Issue', link:'research/generative-engine-optimization.html'},
-          {t:'AI for Land Use & Transport Integration (Special Issue)', d:'AI-driven causal and interpretable modeling of accessibility for integrated land use and urban air mobility systems.', img:'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iOCIgZmlsbD0idXJsKCNncmFkaWVudDQpIi8+CjxkZWZzPgo8bGluZWFyR3JhZGllbnQgaWQ9ImdyYWRpZW50NCIgeDE9IjAiIHkxPSIwIiB4Mj0iNjAiIHkyPSI2MCIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiPgo8c3RvcCBzdG9wLWNvbG9yPSIjZjU5Y2Y3Ii8+CjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iI2Y5NzM3NiIvPgo8L2xpbmVhckdyYWRpZW50Pgo8L2RlZnM+CjxwYXRoIGQ9Ik0xNSAzMEg0NVYzNUgxNVYzMFoiIGZpbGw9IndoaXRlIiBmaWxsLW9wYWNpdHk9IjAuOSIvPgo8cGF0aCBkPSJNMjAgMjVIMzVWMzVIMjBWMjVaIiBmaWxsPSJ3aGl0ZSIvPgo8L3N2Zz4K', stats:'Special Issue Aug 2026', link:'ai-luti.html'}
+          {t:'Preference Externalities', d:'Modeling willingness-to-pay shifts under social information on digital platforms. Developing causal frameworks for peer influence mechanisms.', img:'images/research/preference-externalities.jpg', stats:'15-25% WTP Shift', link:'research/preference-externalities.html'},
+          {t:'Retention Causality (INFORMS → Marketing Science)', d:'Causal modeling of user retention interventions with LLM-based behavioral signals and heterogeneous treatment effect estimation.', img:'images/research/retention-causality.jpg', stats:'INFORMS 2025', link:'research/retention-causality.html'},
+          {t:'Generative Engine Optimization (IJRM Special Issue)', d:'Simulating search and marketing strategies via synthetic respondents and causal inference frameworks.', img:'images/research/generative-engine-optimization.jpg', stats:'IJRM Special Issue', link:'research/generative-engine-optimization.html'},
+          {t:'AI for Land Use & Transport Integration (Special Issue)', d:'AI-driven causal and interpretable modeling of accessibility for integrated land use and urban air mobility systems.', img:'images/research/ai-luti.jpg', stats:'Special Issue Aug 2026', link:'ai-luti.html'}
         ]},
         highlights: { title:'About Me', items:[
           {t:'🧠 Quant Researcher', d:'Causal inference · Behavioral modeling · Platform design — ongoing research on digital platforms; Data Analyst @Google · RA @Penn State.'},
@@ -856,10 +870,10 @@
           stats:['2+ 年研究','4+ 篇论文','1 项专利','5万+ 融资']
         },
         research: { title:'研究与创新', more:'查看更多研究', items:[
-          {t:'偏好外部性', d:'在数字平台的社会信息线索下，建模支付意愿迁移与行为调整。开发同伴影响机制的因果框架。', img:'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iOCIgZmlsbD0idXJsKCNncmFkaWVudDApIi8+CjxkZWZzPgo8bGluZWFyR3JhZGllbnQgaWQ9ImdyYWRpZW50MCIgeDE9IjAiIHkxPSIwIiB4Mj0iNjAiIHkyPSI2MCIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiPgo8c3RvcCBzdG9wLWNvbG9yPSIjMGVhNWU5Ii8+CjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iIzYzNjZmMSIvPgo8L2xpbmVhckdyYWRpZW50Pgo8L2RlZnM+CjxwYXRoIGQ9Ik0xNSAyMEg0NVY0MEgxNVYyMFoiIGZpbGw9IndoaXRlIiBmaWxsLW9wYWNpdHk9IjAuOSIvPgo8cGF0aCBkPSJNMjAgMjVIMzVWMzVIMjBWMjVaIiBmaWxsPSJ3aGl0ZSIvPgo8L3N2Zz4K', stats:'15-25% 支付意愿变化', link:'research/preference-externalities.html'},
-          {t:'留存因果 (INFORMS → Marketing Science)', d:'基于LLM行为信号和异质性处理效应估计的用户保留干预因果建模。', img:'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iOCIgZmlsbD0idXJsKCNncmFkaWVudDIpIi8+CjxkZWZzPgo8bGluZWFyR3JhZGllbnQgaWQ9ImdyYWRpZW50MiIgeDE9IjAiIHkxPSIwIiB4Mj0iNjAiIHkyPSI2MCIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiPgo8c3RvcCBzdG9wLWNvbG9yPSIjOGI1Y2Y2Ii8+CjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iI2Y1OWNmNyIvPgo8L2xpbmVhckdyYWRpZW50Pgo8L2RlZnM+CjxwYXRoIGQ9Ik0xMCAxMEg1MFY1MEgxMFYxMFoiIGZpbGw9IndoaXRlIiBmaWxsLW9wYWNpdHk9IjAuMiIvPgo8Y2lyY2xlIGN4PSIyMCIgY3k9IjIwIiByPSIzIiBmaWxsPSJ3aGl0ZSIvPgo8Y2lyY2xlIGN4PSI0MCIgY3k9IjMwIiByPSIzIiBmaWxsPSJ3aGl0ZSIvPgo8Y2lyY2xlIGN4PSIzMCIgY3k9IjQwIiByPSIzIiBmaWxsPSJ3aGl0ZSIvPgo8L3N2Zz4K', stats:'INFORMS 2025', link:'research/retention-causality.html'},
-          {t:'生成引擎优化 (IJRM 特刊)', d:'通过合成受访者和因果推断框架模拟搜索和营销策略。', img:'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iOCIgZmlsbD0idXJsKCNncmFkaWVudDMpIi8+CjxkZWZzPgo8bGluZWFyR3JhZGllbnQgaWQ9ImdyYWRpZW50MyIgeDE9IjAiIHkxPSIwIiB4Mj0iNjAiIHkyPSI2MCIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiPgo8c3RvcCBzdG9wLWNvbG9yPSIjZjU5Y2Y3Ii8+CjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iI2Y5NzM3NiIvPgo8L2xpbmVhckdyYWRpZW50Pgo8L2RlZnM+CjxwYXRoIGQ9Ik0xNSAzMEg0NVYzNUgxNVYzMFoiIGZpbGw9IndoaXRlIiBmaWxsLW9wYWNpdHk9IjAuOSIvPgo8cGF0aCBkPSJNMjAgMjVIMzVWMzVIMjBWMjVaIiBmaWxsPSJ3aGl0ZSIvPgo8L3N2Zz4K', stats:'IJRM 特刊', link:'research/generative-engine-optimization.html'},
-          {t:'土地利用与交通一体化AI (特刊)', d:'AI驱动的因果和可解释建模，用于土地利用与城市空中出行系统一体化的可达性分析。', img:'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iOCIgZmlsbD0idXJsKCNncmFkaWVudDQpIi8+CjxkZWZzPgo8bGluZWFyR3JhZGllbnQgaWQ9ImdyYWRpZW50NCIgeDE9IjAiIHkxPSIwIiB4Mj0iNjAiIHkyPSI2MCIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiPgo8c3RvcCBzdG9wLWNvbG9yPSIjZjU5Y2Y3Ii8+CjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iI2Y5NzM3NiIvPgo8L2xpbmVhckdyYWRpZW50Pgo8L2RlZnM+CjxwYXRoIGQ9Ik0xNSAzMEg0NVYzNUgxNVYzMFoiIGZpbGw9IndoaXRlIiBmaWxsLW9wYWNpdHk9IjAuOSIvPgo8cGF0aCBkPSJNMjAgMjVIMzVWMzVIMjBWMjVaIiBmaWxsPSJ3aGl0ZSIvPgo8L3N2Zz4K', stats:'特刊 2026年8月', link:'ai-luti.html'}
+          {t:'偏好外部性', d:'在数字平台的社会信息线索下，建模支付意愿迁移与行为调整。开发同伴影响机制的因果框架。', img:'images/research/preference-externalities.jpg', stats:'15-25% 支付意愿变化', link:'research/preference-externalities.html'},
+          {t:'留存因果 (INFORMS → Marketing Science)', d:'基于LLM行为信号和异质性处理效应估计的用户保留干预因果建模。', img:'images/research/retention-causality.jpg', stats:'INFORMS 2025', link:'research/retention-causality.html'},
+          {t:'生成引擎优化 (IJRM 特刊)', d:'通过合成受访者和因果推断框架模拟搜索和营销策略。', img:'images/research/generative-engine-optimization.jpg', stats:'IJRM 特刊', link:'research/generative-engine-optimization.html'},
+          {t:'土地利用与交通一体化AI (特刊)', d:'AI驱动的因果和可解释建模，用于土地利用与城市空中出行系统一体化的可达性分析。', img:'images/research/ai-luti.jpg', stats:'特刊 2026年8月', link:'ai-luti.html'}
         ]},
         highlights: { title:'关于我', items:[
           {t:'🧠 量化研究者', d:'因果推断 · 行为建模 · 平台设计；持续开展平台研究；曾任 Google 数据分析实习、宾州州立大学 RA。'},
@@ -917,7 +931,21 @@
       stats.innerHTML = t.hero.stats.map(x=>`<div class="stat-item"><strong>${x.split(' ')[0]}</strong>${x.split(' ').slice(1).join(' ')}</div>`).join('');
       // research cards
       const r = document.getElementById('researchGrid');
-      r.innerHTML = t.research.items.map(i=>`<div class="card"><div class="card-icon" style="background-image:url('${i.img}')"></div><h3>${i.t}</h3><p>${i.d}</p><div class="card-stats"><span>${i.stats}</span></div><div class="card-hint">${lang === 'en' ? 'Click to view details' : '点击查看详情'}</div></div>`).join('');
+      r.innerHTML = t.research.items.map(i=>`
+        <div class="card research-card">
+          <div class="research-image-container">
+            <img src="${i.img}" alt="${i.t}" class="research-image" loading="lazy">
+            <div class="research-overlay">
+              <div class="research-status">${i.stats}</div>
+            </div>
+          </div>
+          <div class="research-content">
+            <h3>${i.t}</h3>
+            <p>${i.d}</p>
+            <div class="research-hint">${lang === 'en' ? 'Click to view details' : '点击查看详情'}</div>
+          </div>
+        </div>
+      `).join('');
       
       // Add research more button functionality
       const researchMoreBtn = document.getElementById('researchMoreBtn');
