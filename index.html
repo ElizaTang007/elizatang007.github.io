@@ -188,6 +188,13 @@
     .card-stats span{background:rgba(14,165,233,.2); color:#0ea5e9; padding:.2rem .5rem; border-radius:4px; font-size:.75rem; font-family:'JetBrains Mono', 'Noto Sans SC', monospace}
     .card-hint{position:absolute; bottom:1rem; right:1rem; background:rgba(14,165,233,.8); color:white; padding:.3rem .6rem; border-radius:12px; font-size:.7rem; font-family:'JetBrains Mono', 'Noto Sans SC', monospace; opacity:0; transform:translateY(10px); transition:all .3s ease; pointer-events:none}
     .card:hover .card-hint{opacity:1; transform:translateY(0)}
+    
+    /* Research More Button */
+    .research-more{text-align:center; margin-top:2rem}
+    .research-more-btn{display:inline-flex; align-items:center; gap:.5rem; background:linear-gradient(135deg, rgba(14,165,233,.9), rgba(99,102,241,.85)); border:none; color:white; padding:.8rem 1.5rem; border-radius:12px; font-family:'JetBrains Mono', 'Noto Sans SC', monospace; font-weight:500; cursor:pointer; transition:all .3s ease; box-shadow:0 4px 20px rgba(14,165,233,.3)}
+    .research-more-btn:hover{transform:translateY(-2px); box-shadow:0 8px 30px rgba(14,165,233,.4); background:linear-gradient(135deg, #0ea5e9, #6366f1)}
+    .research-more-btn svg{transition:transform .3s ease}
+    .research-more-btn:hover svg{transform:translateX(3px)}
     .project-status{display:flex; justify-content:space-between; align-items:center; margin-top:.8rem}
     .progress-bar{width:100%; height:4px; background:rgba(255,255,255,.1); border-radius:2px; overflow:hidden; margin-top:.5rem}
     .progress-fill{height:100%; background:linear-gradient(90deg, #0ea5e9, #6366f1); transition:width .5s ease}
@@ -396,6 +403,14 @@
       <div class="section-inner">
         <h2 data-i18n="research.title">Research Interests</h2>
         <div class="grid reveal" id="researchGrid"></div>
+        <div class="research-more">
+          <button class="research-more-btn" id="researchMoreBtn">
+            <span data-i18n="research.more">查看更多研究</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M9 18l6-6-6-6"/>
+            </svg>
+          </button>
+        </div>
       </div>
     </section>
 
@@ -791,7 +806,7 @@
           venture:'Visit YITA AVIATION',
           stats:['2+ Years Research','4+ Publications','1 Patent Pending','$50K+ Funding Raised']
         },
-        research: { title:'Research & Innovation', items:[
+        research: { title:'Research & Innovation', more:'View More Research', items:[
           {t:'Preference Externalities', d:'Modeling willingness-to-pay shifts under social information on digital platforms. Developing causal frameworks for peer influence mechanisms.', img:'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iOCIgZmlsbD0idXJsKCNncmFkaWVudDApIi8+CjxkZWZzPgo8bGluZWFyR3JhZGllbnQgaWQ9ImdyYWRpZW50MCIgeDE9IjAiIHkxPSIwIiB4Mj0iNjAiIHkyPSI2MCIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiPgo8c3RvcCBzdG9wLWNvbG9yPSIjMGVhNWU5Ii8+CjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iIzYzNjZmMSIvPgo8L2xpbmVhckdyYWRpZW50Pgo8L2RlZnM+CjxwYXRoIGQ9Ik0xNSAyMEg0NVY0MEgxNVYyMFoiIGZpbGw9IndoaXRlIiBmaWxsLW9wYWNpdHk9IjAuOSIvPgo8cGF0aCBkPSJNMjAgMjVIMzVWMzVIMjBWMjVaIiBmaWxsPSJ3aGl0ZSIvPgo8L3N2Zz4K', stats:'15-25% WTP Shift', link:'research/preference-externalities.html'},
           {t:'Retention Causality (INFORMS → Marketing Science)', d:'Causal modeling of user retention interventions with LLM-based behavioral signals and heterogeneous treatment effect estimation.', img:'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iOCIgZmlsbD0idXJsKCNncmFkaWVudDIpIi8+CjxkZWZzPgo8bGluZWFyR3JhZGllbnQgaWQ9ImdyYWRpZW50MiIgeDE9IjAiIHkxPSIwIiB4Mj0iNjAiIHkyPSI2MCIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiPgo8c3RvcCBzdG9wLWNvbG9yPSIjOGI1Y2Y2Ii8+CjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iI2Y1OWNmNyIvPgo8L2xpbmVhckdyYWRpZW50Pgo8L2RlZnM+CjxwYXRoIGQ9Ik0xMCAxMEg1MFY1MEgxMFYxMFoiIGZpbGw9IndoaXRlIiBmaWxsLW9wYWNpdHk9IjAuMiIvPgo8Y2lyY2xlIGN4PSIyMCIgY3k9IjIwIiByPSIzIiBmaWxsPSJ3aGl0ZSIvPgo8Y2lyY2xlIGN4PSI0MCIgY3k9IjMwIiByPSIzIiBmaWxsPSJ3aGl0ZSIvPgo8Y2lyY2xlIGN4PSIzMCIgY3k9IjQwIiByPSIzIiBmaWxsPSJ3aGl0ZSIvPgo8L3N2Zz4K', stats:'INFORMS 2025', link:'research/retention-causality.html'},
           {t:'Generative Engine Optimization (IJRM Special Issue)', d:'Simulating search and marketing strategies via synthetic respondents and causal inference frameworks.', img:'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iOCIgZmlsbD0idXJsKCNncmFkaWVudDMpIi8+CjxkZWZzPgo8bGluZWFyR3JhZGllbnQgaWQ9ImdyYWRpZW50MyIgeDE9IjAiIHkxPSIwIiB4Mj0iNjAiIHkyPSI2MCIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiPgo8c3RvcCBzdG9wLWNvbG9yPSIjZjU5Y2Y3Ii8+CjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iI2Y5NzM3NiIvPgo8L2xpbmVhckdyYWRpZW50Pgo8L2RlZnM+CjxwYXRoIGQ9Ik0xNSAzMEg0NVYzNUgxNVYzMFoiIGZpbGw9IndoaXRlIiBmaWxsLW9wYWNpdHk9IjAuOSIvPgo8cGF0aCBkPSJNMjAgMjVIMzVWMzVIMjBWMjVaIiBmaWxsPSJ3aGl0ZSIvPgo8L3N2Zz4K', stats:'IJRM Special Issue', link:'research/generative-engine-optimization.html'},
@@ -840,7 +855,7 @@
           venture:'访问 YITA AVIATION',
           stats:['2+ 年研究','4+ 篇论文','1 项专利','5万+ 融资']
         },
-        research: { title:'研究与创新', items:[
+        research: { title:'研究与创新', more:'查看更多研究', items:[
           {t:'偏好外部性', d:'在数字平台的社会信息线索下，建模支付意愿迁移与行为调整。开发同伴影响机制的因果框架。', img:'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iOCIgZmlsbD0idXJsKCNncmFkaWVudDApIi8+CjxkZWZzPgo8bGluZWFyR3JhZGllbnQgaWQ9ImdyYWRpZW50MCIgeDE9IjAiIHkxPSIwIiB4Mj0iNjAiIHkyPSI2MCIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiPgo8c3RvcCBzdG9wLWNvbG9yPSIjMGVhNWU5Ii8+CjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iIzYzNjZmMSIvPgo8L2xpbmVhckdyYWRpZW50Pgo8L2RlZnM+CjxwYXRoIGQ9Ik0xNSAyMEg0NVY0MEgxNVYyMFoiIGZpbGw9IndoaXRlIiBmaWxsLW9wYWNpdHk9IjAuOSIvPgo8cGF0aCBkPSJNMjAgMjVIMzVWMzVIMjBWMjVaIiBmaWxsPSJ3aGl0ZSIvPgo8L3N2Zz4K', stats:'15-25% 支付意愿变化', link:'research/preference-externalities.html'},
           {t:'留存因果 (INFORMS → Marketing Science)', d:'基于LLM行为信号和异质性处理效应估计的用户保留干预因果建模。', img:'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iOCIgZmlsbD0idXJsKCNncmFkaWVudDIpIi8+CjxkZWZzPgo8bGluZWFyR3JhZGllbnQgaWQ9ImdyYWRpZW50MiIgeDE9IjAiIHkxPSIwIiB4Mj0iNjAiIHkyPSI2MCIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiPgo8c3RvcCBzdG9wLWNvbG9yPSIjOGI1Y2Y2Ii8+CjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iI2Y1OWNmNyIvPgo8L2xpbmVhckdyYWRpZW50Pgo8L2RlZnM+CjxwYXRoIGQ9Ik0xMCAxMEg1MFY1MEgxMFYxMFoiIGZpbGw9IndoaXRlIiBmaWxsLW9wYWNpdHk9IjAuMiIvPgo8Y2lyY2xlIGN4PSIyMCIgY3k9IjIwIiByPSIzIiBmaWxsPSJ3aGl0ZSIvPgo8Y2lyY2xlIGN4PSI0MCIgY3k9IjMwIiByPSIzIiBmaWxsPSJ3aGl0ZSIvPgo8Y2lyY2xlIGN4PSIzMCIgY3k9IjQwIiByPSIzIiBmaWxsPSJ3aGl0ZSIvPgo8L3N2Zz4K', stats:'INFORMS 2025', link:'research/retention-causality.html'},
           {t:'生成引擎优化 (IJRM 特刊)', d:'通过合成受访者和因果推断框架模拟搜索和营销策略。', img:'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iOCIgZmlsbD0idXJsKCNncmFkaWVudDMpIi8+CjxkZWZzPgo8bGluZWFyR3JhZGllbnQgaWQ9ImdyYWRpZW50MyIgeDE9IjAiIHkxPSIwIiB4Mj0iNjAiIHkyPSI2MCIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiPgo8c3RvcCBzdG9wLWNvbG9yPSIjZjU5Y2Y3Ii8+CjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iI2Y5NzM3NiIvPgo8L2xpbmVhckdyYWRpZW50Pgo8L2RlZnM+CjxwYXRoIGQ9Ik0xNSAzMEg0NVYzNUgxNVYzMFoiIGZpbGw9IndoaXRlIiBmaWxsLW9wYWNpdHk9IjAuOSIvPgo8cGF0aCBkPSJNMjAgMjVIMzVWMzVIMjBWMjVaIiBmaWxsPSJ3aGl0ZSIvPgo8L3N2Zz4K', stats:'IJRM 特刊', link:'research/generative-engine-optimization.html'},
@@ -903,6 +918,15 @@
       // research cards
       const r = document.getElementById('researchGrid');
       r.innerHTML = t.research.items.map(i=>`<div class="card"><div class="card-icon" style="background-image:url('${i.img}')"></div><h3>${i.t}</h3><p>${i.d}</p><div class="card-stats"><span>${i.stats}</span></div><div class="card-hint">${lang === 'en' ? 'Click to view details' : '点击查看详情'}</div></div>`).join('');
+      
+      // Add research more button functionality
+      const researchMoreBtn = document.getElementById('researchMoreBtn');
+      if (researchMoreBtn) {
+        researchMoreBtn.addEventListener('click', () => {
+          // Create a modal or expand the research section
+          showResearchModal();
+        });
+      }
       // highlights
       const h = document.getElementById('highlightsGrid');
       h.innerHTML = t.highlights.items.map(i=>`<div class="card"><h3>${i.t}</h3><p>${i.d}</p></div>`).join('');
@@ -962,6 +986,94 @@
     
     // Initialize carousel
     initCarousel();
+    
+    // Research Modal Function
+    function showResearchModal() {
+      // Create modal overlay
+      const modal = document.createElement('div');
+      modal.style.cssText = `
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.8);
+        z-index: 1000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 2rem;
+        backdrop-filter: blur(10px);
+      `;
+      
+      // Create modal content
+      const modalContent = document.createElement('div');
+      modalContent.style.cssText = `
+        background: linear-gradient(135deg, rgba(0,8,20,0.95), rgba(0,29,61,0.95));
+        border: 1px solid rgba(255,255,255,0.15);
+        border-radius: 20px;
+        padding: 2rem;
+        max-width: 800px;
+        max-height: 80vh;
+        overflow-y: auto;
+        position: relative;
+        box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+      `;
+      
+      // Add close button
+      const closeBtn = document.createElement('button');
+      closeBtn.innerHTML = '×';
+      closeBtn.style.cssText = `
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        background: none;
+        border: none;
+        color: white;
+        font-size: 2rem;
+        cursor: pointer;
+        z-index: 1001;
+      `;
+      
+      // Add research content
+      const researchContent = document.createElement('div');
+      researchContent.innerHTML = `
+        <h2 style="color: #0ea5e9; margin-bottom: 1.5rem; font-family: 'Orbitron', monospace;">${lang === 'en' ? 'All Research Projects' : '所有研究项目'}</h2>
+        <div style="display: grid; gap: 1.5rem;">
+          ${t.research.items.map(item => `
+            <div style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 1.5rem;">
+              <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+                <div style="width: 60px; height: 60px; border-radius: 8px; background-image: url('${item.img}'); background-size: cover; background-position: center;"></div>
+                <div>
+                  <h3 style="color: #0ea5e9; margin: 0 0 0.5rem 0; font-family: 'Orbitron', monospace;">${item.t}</h3>
+                  <span style="background: rgba(14,165,233,0.2); color: #0ea5e9; padding: 0.2rem 0.5rem; border-radius: 4px; font-size: 0.75rem;">${item.stats}</span>
+                </div>
+              </div>
+              <p style="margin: 0; opacity: 0.9; line-height: 1.6;">${item.d}</p>
+              <a href="${item.link}" target="_blank" style="display: inline-block; margin-top: 1rem; color: #0ea5e9; text-decoration: none; font-weight: 500;">
+                ${lang === 'en' ? 'View Details →' : '查看详情 →'}
+              </a>
+            </div>
+          `).join('')}
+        </div>
+      `;
+      
+      modalContent.appendChild(closeBtn);
+      modalContent.appendChild(researchContent);
+      modal.appendChild(modalContent);
+      document.body.appendChild(modal);
+      
+      // Close modal functionality
+      closeBtn.addEventListener('click', () => {
+        document.body.removeChild(modal);
+      });
+      
+      modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+          document.body.removeChild(modal);
+        }
+      });
+    }
   </script>
 </body>
 </html> 
