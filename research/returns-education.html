@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Returns to Education — A Causal Analysis Using IV - Eliza Tang</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=JetBrains+Mono:wght@300;400;600&family=Orbitron:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root{ --bg:#000814; --bg2:#001d3d; --fg:#0ea5e9; --violet:#6366f1; --text-on-dark:rgba(255,255,255,.92); }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0}
+    body{font-family:"Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; color:var(--text-on-dark); background: radial-gradient(1200px 800px at 10% 90%, rgba(14,165,233,.12), transparent 60%), radial-gradient(1000px 700px at 90% 10%, rgba(99,102,241,.10), transparent 60%), linear-gradient(180deg, var(--bg), var(--bg2)); min-height:100vh;}
+
+    .nav{position:sticky; top:0; z-index:50; backdrop-filter:saturate(140%) blur(12px); -webkit-backdrop-filter:saturate(140%) blur(12px); border-bottom:1px solid rgba(255,255,255,.15);}
+    .nav-inner{max-width:1140px; margin:0 auto; padding:.9rem 1rem; display:flex; align-items:center; justify-content:space-between}
+    .brand{font-weight:800; letter-spacing:.5px; font-family:'Orbitron', monospace}
+    .back-btn{color:var(--text-on-dark); text-decoration:none; font-family:'JetBrains Mono', monospace; opacity:.8; transition:opacity .25s ease}
+    .back-btn:hover{opacity:1}
+
+    .container{max-width:900px; margin:0 auto; padding:2rem 1rem;}
+    h1{font-family:'Orbitron', monospace; font-size:2.5rem; margin:0 0 1rem 0; background:linear-gradient(135deg, #0ea5e9, #6366f1); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text}
+    h2{font-family:'Orbitron', monospace; font-size:1.8rem; margin:2rem 0 1rem 0; color:#0ea5e9}
+    h3{font-family:'JetBrains Mono', monospace; font-size:1.3rem; margin:1.5rem 0 .8rem 0; color:#6366f1}
+    p{font-family:'JetBrains Mono', monospace; line-height:1.7; margin:.8rem 0; opacity:.9}
+    .status{background:rgba(14,165,233,.1); border:1px solid rgba(14,165,233,.3); border-radius:8px; padding:1rem; margin:1rem 0; font-family:'JetBrains Mono', monospace}
+    .course-info{background:rgba(99,102,241,.1); border:1px solid rgba(99,102,241,.3); border-radius:8px; padding:1rem; margin:1rem 0; font-family:'JetBrains Mono', monospace}
+    .abstract{background:rgba(14,165,233,.1); border-left:3px solid #0ea5e9; padding:1rem; margin:1rem 0; border-radius:0 8px 8px 0}
+    .chinese{background:rgba(99,102,241,.1); border:1px solid rgba(99,102,241,.3); border-radius:8px; padding:1rem; margin:1rem 0; font-family:'JetBrains Mono', monospace; font-style:italic}
+    .methods{background:rgba(99,102,241,.1); border:1px solid rgba(99,102,241,.3); border-radius:12px; padding:1.5rem; margin:1.5rem 0}
+    .methods h4{font-family:'JetBrains Mono', monospace; color:#6366f1; margin:0 0 .8rem 0}
+    .results{background:rgba(139,92,246,.1); border:1px solid rgba(139,92,246,.3); border-radius:12px; padding:1.5rem; margin:1.5rem 0}
+    .results h4{font-family:'JetBrains Mono', monospace; color:#8b5cf6; margin:0 0 .8rem 0}
+    .files{background:rgba(34,197,94,.1); border:1px solid rgba(34,197,94,.3); border-radius:12px; padding:1.5rem; margin:1.5rem 0}
+    .files h4{font-family:'JetBrains Mono', monospace; color:#22c55e; margin:0 0 .8rem 0}
+    .files a{color:#22c55e; text-decoration:none; font-family:'JetBrains Mono', monospace; display:inline-block; margin:.5rem 0; padding:.5rem 1rem; background:rgba(34,197,94,.1); border-radius:6px; transition:all .3s ease}
+    .files a:hover{background:rgba(34,197,94,.2); transform:translateY(-2px)}
+    .highlight{background:rgba(251,191,36,.1); border:1px solid rgba(251,191,36,.3); border-radius:8px; padding:1rem; margin:1rem 0; font-family:'JetBrains Mono', monospace}
+    .highlight strong{color:#fbbf24}
+    ul{font-family:'JetBrains Mono', monospace; line-height:1.7; margin:.8rem 0; opacity:.9}
+    li{margin:.5rem 0}
+    .contact{background:rgba(168,85,247,.1); border:1px solid rgba(168,85,247,.3); border-radius:12px; padding:1.5rem; margin:1.5rem 0}
+    .contact h4{font-family:'JetBrains Mono', monospace; color:#a855f7; margin:0 0 .8rem 0}
+  </style>
+</head>
+<body>
+  <header class="nav">
+    <div class="nav-inner">
+      <a href="https://elizatang007.github.io/" class="back-btn">← Back to Home</a>
+      <div class="brand">Eliza Tang</div>
+    </div>
+  </header>
+
+  <main class="container">
+    <h1>Returns to Education — A Causal Analysis Using IV</h1>
+    
+    <div class="status">
+      <strong>Status:</strong> Completed (High Distinction)
+    </div>
+
+    <div class="course-info">
+      <strong>Course:</strong> ECMT3997 Interdisciplinary Impact in Econometrics, University of Sydney<br>
+      <strong>Credits:</strong> 6 CP · <strong>Focus:</strong> Causal inference for real world policy questions
+    </div>
+
+    <h2>Abstract</h2>
+    <div class="abstract">
+      <p>This thesis estimates the causal return to schooling using Australian microdata. Following the proximity to college identification from Card (1993), I use distance to the nearest university at age 17 as an instrument for years of education. The empirical strategy applies two stage least squares to obtain local average treatment effects, with extensive validity checks on instrument strength, monotonicity, and exclusion restrictions. Results demonstrate economically meaningful and statistically significant returns to education that are robust across cohorts, specifications, and sampling windows in the Australian context.</p>
+    </div>
+
+    <div class="chinese">
+      <strong>中文简介：</strong>本论文基于澳大利亚微观数据，采用"距离大学远近"作为工具变量，识别教育对工资的因果回报，结论稳健且具政策启示。
+    </div>
+
+    <h2>Methods</h2>
+    <div class="methods">
+      <ul>
+        <li><strong>Design:</strong> Instrumental Variables with Two Stage Least Squares</li>
+        <li><strong>Instrument:</strong> Distance to nearest university at age 17 (proximity to college)</li>
+        <li><strong>Identification:</strong> Relevance and exogeneity tested via first stage F statistics, over identification where applicable, and cohort specific robustness</li>
+        <li><strong>Controls:</strong> Birth cohort, state fixed effects, parental background proxies, urbanity, and local labour market conditions</li>
+        <li><strong>Estimands:</strong> LATE for compliers, compared with OLS for bias diagnostics</li>
+      </ul>
+    </div>
+
+    <h2>Data</h2>
+    <p>Australian microdata with individual earnings, schooling, demographics, and location</p>
+    <p>Geographic linkage to the nearest university network and historical openings</p>
+    <p>Sample restricted to prime age workers with complete earnings and education records</p>
+
+    <h2>Results (Summary)</h2>
+    <div class="results">
+      <ul>
+        <li><strong>First stage:</strong> Strong instrument, first stage F typically above 20</li>
+        <li><strong>2SLS:</strong> One additional year of schooling increases earnings by <strong>7–10 percent</strong> depending on cohort and specification</li>
+        <li><strong>Robustness:</strong> Stable to alternative distance measures, sample trims, and additional controls</li>
+        <li><strong>Policy Implication:</strong> Access to nearby universities raises educational attainment and yields sizeable wage gains</li>
+      </ul>
+    </div>
+
+    <h2>Figures and Tables (placeholders)</h2>
+    <ul>
+      <li><strong>Table 1:</strong> Summary statistics</li>
+      <li><strong>Table 2:</strong> First stage regressions</li>
+      <li><strong>Table 3:</strong> OLS vs 2SLS estimates</li>
+      <li><strong>Figure 1:</strong> Instrument distribution by cohort</li>
+      <li><strong>Figure 2:</strong> Sensitivity analyses</li>
+    </ul>
+
+    <h2>ECMT3997 Course Snapshot</h2>
+    <p>ECMT3997 trains students to frame causal questions, review literature, build credible identification, analyze data, and communicate findings for interdisciplinary audiences. Core toolkits include OLS, DiD, IV, and RDD, with emphasis on external validity and policy relevance.</p>
+
+    <h2>Files</h2>
+    <div class="files">
+      <h4>Download Materials</h4>
+      <a href="https://elizatang007.github.io/ecmt3997.pdf" target="_blank">📄 Download Full PDF</a><br>
+      <a href="./returns-education-slides.pdf" target="_blank">📊 Slides (optional)</a><br>
+      <a href="./returns-education-appendix.pdf" target="_blank">📋 Appendix (optional)</a>
+    </div>
+
+    <div class="contact">
+      <h4>Contact</h4>
+      <p>For replication materials or questions: <strong>Eliza Yiting Tang</strong> · tangyiting0428@gmail.com</p>
+    </div>
+  </main>
+</body>
+</html>
