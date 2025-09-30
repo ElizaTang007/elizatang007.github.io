@@ -922,6 +922,22 @@
     };
 
     let lang = 'en';
+    
+    // Language-specific quote display
+    function updateQuoteDisplay(lang) {
+      const quoteEn = document.querySelector('.quote-en');
+      const quoteZh = document.querySelector('.quote-zh');
+      if (quoteEn && quoteZh) {
+        if (lang === 'zh') {
+          quoteEn.style.display = 'none';
+          quoteZh.style.display = 'block';
+        } else {
+          quoteEn.style.display = 'block';
+          quoteZh.style.display = 'none';
+        }
+      }
+    }
+    
     function render(){
       const t = i18n[lang];
       document.documentElement.lang = lang === 'en' ? 'en' : 'zh-CN';
@@ -1155,20 +1171,6 @@
         z-index: 1001;
       `;
       
-      // Language-specific quote display
-      function updateQuoteDisplay(lang) {
-        const quoteEn = document.querySelector('.quote-en');
-        const quoteZh = document.querySelector('.quote-zh');
-        if (quoteEn && quoteZh) {
-          if (lang === 'zh') {
-            quoteEn.style.display = 'none';
-            quoteZh.style.display = 'block';
-          } else {
-            quoteEn.style.display = 'block';
-            quoteZh.style.display = 'none';
-          }
-        }
-      }
       
       // Add research content
       const researchContent = document.createElement('div');
