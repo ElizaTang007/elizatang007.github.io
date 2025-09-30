@@ -651,11 +651,6 @@
           description: 'Global perspective and cross-cultural understanding'
         },
         {
-          src: 'images/电影1.jpg',
-          title: 'Cultural Exchange',
-          description: 'International cultural exchange and academic collaboration'
-        },
-        {
           src: 'images/电影2.jpg',
           title: 'Team Collaboration',
           description: 'Working with international research teams and academic partners'
@@ -706,11 +701,6 @@
           src: 'images/jp.JPG',
           title: '国际体验',
           description: '全球视野和跨文化理解'
-        },
-        {
-          src: 'images/电影1.jpg',
-          title: '文化交流',
-          description: '国际文化交流和学术合作'
         },
         {
           src: 'images/电影2.jpg',
@@ -770,7 +760,7 @@
       // Create slides
       track.innerHTML = currentPhotos.map((photo, index) => {
         let slideClass = '';
-        if ([3, 4, 8, 11].includes(index)) {
+        if ([2, 3, 7, 10].includes(index)) {
           slideClass = 'landscape-center'; // 竖屏居中，黑色背景
         }
         
