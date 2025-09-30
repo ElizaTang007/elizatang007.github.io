@@ -1217,6 +1217,101 @@
         }
       });
     }
+
+    // 订阅功能
+    document.addEventListener('DOMContentLoaded', function() {
+      const subBtn = document.getElementById('subBtn');
+      const emailInput = document.querySelector('.sub-box input[type="email"]');
+      const emailLine = document.getElementById('emailLine');
+      const socialLine = document.getElementById('socialLine');
+      
+      // 更新联系信息显示
+      function updateContactInfo() {
+        const t = i18n[lang];
+        if (emailLine) emailLine.innerHTML = t.contact.email;
+        if (socialLine) socialLine.innerHTML = t.contact.social;
+      }
+      
+      // 订阅按钮点击事件
+      if (subBtn && emailInput) {
+        subBtn.addEventListener('click', async function() {
+          const email = emailInput.value.trim();
+          
+          if (!email) {
+            alert(lang === 'en' ? 'Please enter your email address.' : '请输入您的邮箱地址。');
+            return;
+          }
+          
+          if (!isValidEmail(email)) {
+            alert(lang === 'en' ? 'Please enter a valid email address.' : '请输入有效的邮箱地址。');
+            return;
+          }
+          
+          // 显示加载状态
+          subBtn.textContent = lang === 'en' ? 'Subscribing...' : '订阅中...';
+          subBtn.disabled = true;
+          
+          try {
+            // 发送订阅请求到后端API
+            const response = await fetch('/api/subscribe', {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+              },
+              body: JSON.stringify({
+                email: email,
+                interests: ['research', 'projects', 'updates']
+              })
+            });
+            
+            const result = await response.json();
+            
+            if (result.success) {
+              alert(lang === 'en' ? 
+                'Thank you for subscribing! We will keep you updated on our latest research and projects.' : 
+                '感谢您的订阅！我们将及时更新我们的最新研究和项目。'
+              );
+              emailInput.value = '';
+            } else {
+              if (result.message === 'Email already subscribed') {
+                alert(lang === 'en' ? 
+                  'This email is already subscribed.' : 
+                  '该邮箱已经订阅过了。'
+                );
+              } else {
+                throw new Error(result.message || 'Subscription failed');
+              }
+            }
+          } catch (error) {
+            console.error('Subscription error:', error);
+            alert(lang === 'en' ? 
+              'Sorry, there was an error processing your subscription. Please try again later.' : 
+              '抱歉，处理您的订阅时出现错误。请稍后再试。'
+            );
+          } finally {
+            // 恢复按钮状态
+            subBtn.textContent = lang === 'en' ? 'Subscribe' : '订阅';
+            subBtn.disabled = false;
+          }
+        });
+      }
+      
+      // 邮箱验证函数
+      function isValidEmail(email) {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return emailRegex.test(email);
+      }
+      
+      // 初始化联系信息
+      updateContactInfo();
+      
+      // 语言切换时更新联系信息
+      const originalRender = render;
+      render = function() {
+        originalRender();
+        updateContactInfo();
+      };
+    });
   </script>
 
 </body>
