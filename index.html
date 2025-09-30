@@ -1259,16 +1259,19 @@
                   'Content-Type': 'application/json',
                 },
                 body: JSON.stringify({
-                  service_id: 'service_eliza_tang',
+                  service_id: 'service_3d24hje',
                   template_id: 'template_subscription',
                   user_id: 'YOUR_EMAILJS_USER_ID',
                   template_params: {
                     to_email: 'tangyiting007@gmail.com',
                     from_name: document.querySelector('input[name="name"]')?.value || 'Website Subscriber',
                     from_email: email,
-                    subject: 'New Subscription - Eliza Tang Website',
+                    subject: 'New Subscription - Eliza Tang Research',
                     message: `New subscription from website:\nEmail: ${email}\nInterests: research, projects, updates\nDate: ${new Date().toLocaleString()}`,
-                    reply_to: email
+                    reply_to: email,
+                    website_link: 'https://elizatang007.github.io',
+                    company_name: 'Eliza Tang Research',
+                    company_email: 'tangyiting007@gmail.com'
                   }
                 })
               });
