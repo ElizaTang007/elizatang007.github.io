@@ -361,7 +361,7 @@
     <div class="container">
         <div class="header">
             <h1>Projects & Research</h1>
-            <a href="https://elizatang007.github.io/" class="back-btn">
+            <a href="https://elizatang007.github.io/" class="back-btn" id="backButton">
                 <svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
                     <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0zm3.5 6.5L9 4.707V11.5a.5.5 0 0 1-1 0V4.707L4.5 6.5a.5.5 0 0 1-.708-.708l4-4a.5.5 0 0 1 .708 0l4 4a.5.5 0 0 1-.708.708z"/>
                 </svg>
@@ -571,5 +571,45 @@
             </div>
         </div>
     </div>
+
+    <script>
+        // 智能返回功能 - 记住来源并跳转到相应位置
+        document.addEventListener('DOMContentLoaded', function() {
+            const backButton = document.getElementById('backButton');
+            
+            // 检查是否有来源信息
+            const referrer = document.referrer;
+            const urlParams = new URLSearchParams(window.location.search);
+            const source = urlParams.get('from');
+            
+            if (source) {
+                // 如果有明确的来源参数，跳转到相应位置
+                backButton.href = `https://elizatang007.github.io/#${source}`;
+            } else if (referrer && referrer.includes('elizatang007.github.io')) {
+                // 如果是从主页来的，尝试跳转到相应位置
+                // 检查referrer中是否包含锚点信息
+                const hashIndex = referrer.indexOf('#');
+                if (hashIndex !== -1) {
+                    const hash = referrer.substring(hashIndex);
+                    backButton.href = `https://elizatang007.github.io/${hash}`;
+                } else {
+                    // 默认跳转到主页顶部
+                    backButton.href = 'https://elizatang007.github.io/';
+                }
+            } else {
+                // 默认跳转到主页
+                backButton.href = 'https://elizatang007.github.io/';
+            }
+            
+            // 添加点击事件监听器，提供更好的用户体验
+            backButton.addEventListener('click', function(e) {
+                // 如果是从主页的特定部分来的，添加平滑滚动
+                if (backButton.href.includes('#')) {
+                    e.preventDefault();
+                    window.location.href = backButton.href;
+                }
+            });
+        });
+    </script>
 </body>
 </html>
