@@ -997,7 +997,25 @@
       // highlights
       const h = document.getElementById('highlightsGrid');
       h.innerHTML = t.highlights.items.map(i=>`<div class="card"><h3>${i.t}</h3><p>${i.d}</p></div>`).join('');
-      // ventures - content is statically embedded in HTML
+      // ventures
+      const v = document.getElementById('venturesGrid');
+      const ventureImages = ['venture_1.png', 'venture_2.png', 'venture_3.png'];
+      v.innerHTML = t.ventures.items.map((i, index)=>`
+        <div class="venture-card" onclick="window.open('${i.link}', '_blank')">
+          <div class="venture-image">
+            <img src="images/${ventureImages[index] || 'venture_1.png'}" alt="${i.t}" loading="lazy">
+          </div>
+          <div class="venture-content">
+            <h3>${i.t}</h3>
+            <p>${i.d}</p>
+            <div class="venture-meta">
+              <span class="venture-type">${i.type}</span>
+              <span class="venture-status">${i.status}</span>
+            </div>
+            <div class="venture-link">→</div>
+          </div>
+        </div>
+      `).join('');
       // dev
       const d = document.getElementById('devGrid');
       const devImages = ['fp_1.png', 'fp_2.png'];
