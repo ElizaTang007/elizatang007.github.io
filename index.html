@@ -1276,7 +1276,7 @@
               .single();
             
             if (existingData) {
-              // 邮箱已存在，显示友好的提示
+              // 邮箱已存在，直接显示订阅过的提示
               console.log('Email already exists:', email);
               
               // 创建自定义提示框
@@ -1302,7 +1302,7 @@
                   <div style="font-size: 20px;">✅</div>
                   <div>
                     <div style="font-weight: 600; margin-bottom: 4px;">
-                      ${lang === 'en' ? 'Already Subscribed!' : '已订阅！'}
+                      ${lang === 'en' ? 'Already Subscribed!' : '你已经订阅过了！'}
                     </div>
                     <div style="opacity: 0.9; font-size: 13px;">
                       ${lang === 'en' ? 'You will receive our latest updates.' : '您将收到我们的最新动态。'}
