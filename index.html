@@ -143,6 +143,9 @@
     section{min-height:100vh; display:flex; flex-direction:column; justify-content:center; padding:0 1rem; position:relative; opacity:0; transform:translateY(30px); transition:all .8s cubic-bezier(0.4, 0, 0.2, 1)}
     section.in-view{opacity:1; transform:translateY(0)}
     
+    /* Reduce spacing for dev section */
+    section#dev{min-height:auto; padding:2rem 1rem}
+    
     /* Page load animation */
     body{opacity:0; animation:fadeIn 0.8s ease-in-out forwards}
     @keyframes fadeIn{to{opacity:1}}
@@ -978,6 +981,12 @@
       // dev
       const d = document.getElementById('devGrid');
       d.innerHTML = t.dev.items.map(i=>`<div class="card"><h3>${i.t}</h3><p>${i.d}</p><div class="project-status"><span style="color:#0ea5e9;font-size:.85rem">${i.status}</span><span style="opacity:.7;font-size:.85rem">${i.progress}</span></div><div class="progress-bar"><div class="progress-fill" style="width:${i.progress}"></div></div></div>`).join('');
+      
+      // Show dev more button
+      const devMore = document.getElementById('devMore');
+      if (devMore) {
+        devMore.style.display = 'block';
+      }
       
       // Add dev more button functionality
       const devMoreBtn = document.getElementById('devMoreBtn');
