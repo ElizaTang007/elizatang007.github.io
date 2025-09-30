@@ -10,7 +10,29 @@
       ],
       "subscribedAt": "2025-09-30T12:04:46.444Z",
       "status": "active"
+    },
+    {
+      "id": "1759234620692",
+      "email": "newuser@example.com",
+      "name": "New User",
+      "interests": [
+        "research",
+        "projects"
+      ],
+      "subscribedAt": "2025-09-30T12:17:00.692Z",
+      "status": "active"
+    },
+    {
+      "id": "1759234757190",
+      "email": "testuser2@example.com",
+      "name": "Test User 2",
+      "interests": [
+        "research",
+        "projects"
+      ],
+      "subscribedAt": "2025-09-30T12:19:17.191Z",
+      "status": "active"
     }
   ],
-  "lastUpdated": "2025-09-30T12:04:46.444Z"
+  "lastUpdated": "2025-09-30T12:19:17.191Z"
 }

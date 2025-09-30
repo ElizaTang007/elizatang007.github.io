@@ -26,7 +26,7 @@ const EMAIL_CONFIG = {
 };
 
 // 创建邮件传输器
-const transporter = nodemailer.createTransporter(EMAIL_CONFIG);
+const transporter = nodemailer.createTransport(EMAIL_CONFIG);
 
 // 发送订阅成功邮件
 async function sendWelcomeEmail(email, name = '') {
@@ -172,7 +172,7 @@ function saveSubscribers(data) {
 }
 
 // 订阅API端点
-app.post('/api/subscribe', (req, res) => {
+app.post('/api/subscribe', async (req, res) => {
   const { email, name, interests } = req.body;
   
   // 验证邮箱格式
