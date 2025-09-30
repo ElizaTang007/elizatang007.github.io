@@ -1297,13 +1297,17 @@
             if (typeof emailjs !== 'undefined') {
               console.log('EmailJS is available, attempting to send email...');
               
+              // 使用EmailJS标准参数格式
               const templateParams = {
-                to_email: email, // 发送给订阅者
+                to_email: email,
+                to_name: document.querySelector('input[name="name"]')?.value || 'Friend',
                 from_name: 'Eliza Tang',
-                subscriber_name: document.querySelector('input[name="name"]')?.value || 'Friend',
+                from_email: 'tangyiting007@gmail.com',
+                reply_to: email,
+                message: `New subscription from ${email}`,
+                subject: 'Welcome to Eliza Tang\'s Research & Innovation Updates',
                 website_link: 'https://elizatang007.github.io/',
-                company_name: 'Eliza Tang Research',
-                company_email: 'tangyiting007@gmail.com'
+                company_name: 'Eliza Tang Research'
               };
               
               console.log('Template params:', templateParams);
