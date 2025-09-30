@@ -928,8 +928,8 @@
           {t:'🌍 Global Impact', d:'Diversity Member @IEEE WIE · @WERN. × sustainability Volunteer @UNAA · Paper @Preference Externalities'}
         ]},
         dev: { title:'Finished Projects', more:'View More Projects', items:[
-          {t:'Returns to Education — A Causal Analysis Using IV', d:'ECMT3997 Thesis, University of Sydney · PDF: <a href="ecmt3997.pdf" style="color:#7dd3fc">View</a><br/>Implements Card (1993) with proximity‑to‑college as instrument; 2SLS estimation, LATE interpretation, and instrument strength using Australian microdata.', status:'Completed (High Distinction)', progress:'100%'},
-          {t:'AI Art Personification Research', d:'Research on "Examining the Communication Effectiveness of Artificial Intelligence Art Personification". Exploring how AI-generated art affects human communication and perception.', status:'Accepted', progress:'100%'},
+          {t:'Returns to Education — A Causal Analysis Using IV', d:'ECMT3997 Thesis, University of Sydney · PDF: <a href="ecmt3997.pdf" style="color:#7dd3fc">View</a><br/>Implements Card (1993) with proximity‑to‑college as instrument; 2SLS estimation, LATE interpretation, and instrument strength using Australian microdata.', status:'Completed (High Distinction)', progress:'100%', link:'research/returns-education.html'},
+          {t:'AI Art Personification Research', d:'Research on "Examining the Communication Effectiveness of Artificial Intelligence Art Personification". Exploring how AI-generated art affects human communication and perception.', status:'Accepted', progress:'100%', link:'research/ai-art-personification.html'},
         ]},
         edu: { title:'Education', items:[ 
           '2023–2026 · Bachelor of Arts in Econometrics and Software Development · University of Sydney',
@@ -974,8 +974,8 @@
           {t:'🌍 全球影响', d:'多样性成员@IEEE WIE · @WERN. × 可持续性 志愿者@UNAA · 论文@偏好外部性'}
         ]},
         dev: { title:'已完成项目', more:'查看更多项目', items:[
-          {t:'教育回报的因果分析（工具变量）', d:'ECMT3997 毕设 · PDF：<a href="ecmt3997.pdf" style="color:#7dd3fc">查看</a><br/>基于 Card (1993) 的近校工具变量框架，实施 2SLS、解释 LATE，并使用澳大利亚微观数据检验工具变量强度。', status:'已完成（优秀等级）', progress:'100%'},
-          {t:'AI 艺术拟人化研究', d:'研究论文"人工智能艺术拟人化的传播效果研究"。探索 AI 生成艺术如何影响人类传播和认知。', status:'已接收', progress:'100%'},
+          {t:'教育回报的因果分析（工具变量）', d:'ECMT3997 毕设 · PDF：<a href="ecmt3997.pdf" style="color:#7dd3fc">查看</a><br/>基于 Card (1993) 的近校工具变量框架，实施 2SLS、解释 LATE，并使用澳大利亚微观数据检验工具变量强度。', status:'已完成（优秀等级）', progress:'100%', link:'research/returns-education.html'},
+          {t:'AI 艺术拟人化研究', d:'研究论文"人工智能艺术拟人化的传播效果研究"。探索 AI 生成艺术如何影响人类传播和认知。', status:'已接收', progress:'100%', link:'research/ai-art-personification.html'},
         ]},
         edu: { title:'教育经历', items:[ 
           '2023–2026 · 悉尼大学 · 计量经济学与软件开发 本科',
@@ -1082,7 +1082,7 @@
       // dev
       const d = document.getElementById('devGrid');
       const devImages = ['fp_1.png', 'fp_2.png'];
-      d.innerHTML = t.dev.items.map((i, index)=>`<div class="card"><div class="project-image"><img src="images/${devImages[index] || 'card.png'}" alt="${i.t}" loading="lazy"></div><div class="project-content"><h3>${i.t}</h3><p>${i.d}</p><div class="project-status"><span style="color:#0ea5e9;font-size:.85rem">${i.status}</span><span style="opacity:.7;font-size:.85rem">${i.progress}</span></div><div class="progress-bar"><div class="progress-fill" style="width:${i.progress}"></div></div></div></div>`).join('');
+      d.innerHTML = t.dev.items.map((i, index)=>`<div class="card" onclick="window.open('${i.link}', '_blank')"><div class="project-image"><img src="images/${devImages[index] || 'card.png'}" alt="${i.t}" loading="lazy"></div><div class="project-content"><h3>${i.t}</h3><p>${i.d}</p><div class="project-status"><span style="color:#0ea5e9;font-size:.85rem">${i.status}</span><span style="opacity:.7;font-size:.85rem">${i.progress}</span></div><div class="progress-bar"><div class="progress-fill" style="width:${i.progress}"></div></div></div></div>`).join('');
       
       // Show dev more button
       const devMore = document.getElementById('devMore');
