@@ -1141,6 +1141,22 @@
       }
     }
 
+    // Handle URL hash for smooth scrolling to sections
+    function handleHashScroll() {
+      const hash = window.location.hash;
+      if (hash) {
+        const targetElement = document.querySelector(hash);
+        if (targetElement) {
+          setTimeout(() => {
+            targetElement.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+            });
+          }, 100); // Small delay to ensure page is fully loaded
+        }
+      }
+    }
+
     // init with enhanced scroll handling
     resize(); spawn(); tick(); addEventListener('resize', ()=>{resize(); spawn();}); 
     window.addEventListener('scroll', () => {
@@ -1148,6 +1164,12 @@
     });
     render();
     toggleBackToTop();
+    
+    // Handle hash scrolling on page load
+    handleHashScroll();
+    
+    // Handle hash changes (for dynamic navigation)
+    window.addEventListener('hashchange', handleHashScroll);
     
     // Initialize carousel
     initCarousel();
