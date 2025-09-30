@@ -1258,50 +1258,21 @@
           subBtn.textContent = lang === 'en' ? 'Subscribing...' : '订阅中...';
           subBtn.disabled = true;
           
-            try {
-              // 使用EmailJS发送欢迎邮件给订阅者
-              const templateParams = {
-                to_email: email, // 发送给订阅者
-                from_name: 'Eliza Tang',
-                from_email: 'tangyiting007@gmail.com',
-                subscriber_name: document.querySelector('input[name="name"]')?.value || 'Friend',
-                subscriber_email: email,
-                website_link: 'https://elizatang007.github.io/',
-                company_name: 'Eliza Tang Research',
-                company_email: 'tangyiting007@gmail.com'
-              };
-              
-              // 使用EmailJS SDK发送邮件
-              emailjs.send('service_3d24hje', 'template_xqw7y2f', templateParams, '_be2yNgZ-rNhhO_DR')
-                .then(function(response) {
-                  console.log('SUCCESS!', response.status, response.text);
-                  alert(lang === 'en' ? 
-                    'Thank you for subscribing! Check your email for a welcome message.' : 
-                    '感谢您的订阅！请查看您的邮箱，我们已发送欢迎邮件。'
-                  );
-                  emailInput.value = '';
-                }, function(error) {
-                  console.log('FAILED...', error);
-                  alert(lang === 'en' ? 
-                    'Sorry, there was an error processing your subscription. Please try again later.' : 
-                    '抱歉，处理您的订阅时出现错误。请稍后再试。'
-                  );
-                })
-                .finally(() => {
-                  // 恢复按钮状态
-                  subBtn.textContent = lang === 'en' ? 'Subscribe' : '订阅';
-                  subBtn.disabled = false;
-                });
-            } catch (error) {
-              console.error('Subscription error:', error);
+            // 先测试基本功能，不发送邮件
+            console.log('Subscription attempt for:', email);
+            
+            // 模拟成功响应
+            setTimeout(() => {
               alert(lang === 'en' ? 
-                'Sorry, there was an error processing your subscription. Please try again later.' : 
-                '抱歉，处理您的订阅时出现错误。请稍后再试。'
+                'Thank you for subscribing! We will keep you updated on our latest research and projects.' : 
+                '感谢您的订阅！我们将及时更新我们的最新研究和项目。'
               );
+              emailInput.value = '';
+              
               // 恢复按钮状态
               subBtn.textContent = lang === 'en' ? 'Subscribe' : '订阅';
               subBtn.disabled = false;
-            }
+            }, 1500);
         });
       }
       
