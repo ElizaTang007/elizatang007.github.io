@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>唐怡婷 Eliza Tang - 计量经济学研究者 | 悉尼大学 | AI传播研究 | Econometrician | University of Sydney | AI Communication Research</title>
+  <meta name="version" content="2.1.0">
   <meta name="description" content="唐怡婷(Eliza Tang)，悉尼大学计量经济学与软件开发学士，专注于因果推断、教育经济学和AI传播研究。Google数据分析实习，Meritco AI投资研究，VMLY&R客户执行经验。| University of Sydney Econometrics & Software Development graduate, specializing in causal inference, education economics, and AI communication research.">
   <meta name="keywords" content="唐怡婷,Eliza Tang,Yiting Tang,计量经济学,因果推断,教育经济学,AI传播研究,悉尼大学,Google实习,数据分析,机器学习,工具变量,2SLS,econometrics,causal inference,education economics,AI communication research,University of Sydney,Google internship,data analysis,machine learning,instrumental variables,2SLS">
   <meta name="author" content="唐怡婷 Eliza Tang">
@@ -1356,10 +1357,51 @@
             
             if (error) {
               console.error('Database error:', error);
-              alert(lang === 'en' ? 
-                'Sorry, there was an error saving your subscription. Please try again later.' : 
-                '抱歉，保存您的订阅时出现错误。请稍后再试。'
-              );
+              
+              // 创建错误提示
+              const errorNotification = document.createElement('div');
+              errorNotification.style.cssText = `
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%);
+                color: white;
+                padding: 16px 24px;
+                border-radius: 12px;
+                box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+                z-index: 10000;
+                font-family: 'JetBrains Mono', 'Noto Sans SC', monospace;
+                font-size: 14px;
+                max-width: 350px;
+                animation: slideIn 0.3s ease-out;
+              `;
+              
+              errorNotification.innerHTML = `
+                <div style="display: flex; align-items: center; gap: 12px;">
+                  <div style="font-size: 20px;">❌</div>
+                  <div>
+                    <div style="font-weight: 600; margin-bottom: 4px;">
+                      ${lang === 'en' ? 'Error!' : '出错了！'}
+                    </div>
+                    <div style="opacity: 0.9; font-size: 13px;">
+                      ${lang === 'en' ? 'Please try again later.' : '请稍后再试。'}
+                    </div>
+                  </div>
+                </div>
+              `;
+              
+              document.body.appendChild(errorNotification);
+              
+              // 4秒后自动消失
+              setTimeout(() => {
+                errorNotification.style.animation = 'slideOut 0.3s ease-in';
+                setTimeout(() => {
+                  if (errorNotification.parentNode) {
+                    errorNotification.parentNode.removeChild(errorNotification);
+                  }
+                }, 300);
+              }, 4000);
+              
               subBtn.textContent = lang === 'en' ? 'Subscribe' : '订阅';
               subBtn.disabled = false;
               return;
