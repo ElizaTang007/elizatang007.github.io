@@ -162,11 +162,11 @@
     .hero h1{margin:0 0 1.2rem 0; font-size:48px; line-height:1.1; font-family:'Orbitron', 'Noto Sans SC', monospace; font-weight:700; background:linear-gradient(135deg, #0ea5e9, #6366f1); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text}
     .hero p{margin:.6rem 0; opacity:.9; font-family:'JetBrains Mono', 'Noto Sans SC', monospace; line-height:1.7; font-size:1.05rem}
     .meta{margin-top:2rem; display:flex; flex-wrap:wrap; gap:1rem; opacity:.85}
-    .hero-quote{margin-top:2rem; text-align:center; position:fixed; bottom:2rem; left:50%; transform:translateX(-50%); z-index:10}
-    .hero-quote blockquote{morder:none; padding:0; margin:0; position:relative}
-    .hero-quote p{font-size:1rem; line-height:1.4; color:#94a3b8; font-style:italic; margin-bottom:.3rem; font-family:'JetBrains Mono', 'Noto Sans SC', monospace; opacity:.8}
-    .hero-quote cite{font-size:.8rem; color:#64748b; font-family:'JetBrains Mono', 'Noto Sans SC', monospace; opacity:.7}
-    .hero-quote::before{content:'"'; font-size:2rem; color:#0ea5e9; opacity:.2; position:absolute; top:-.5rem; left:50%; transform:translateX(-50%); font-family:serif}
+    .hero-quote{margin-top:2rem; text-align:left; position:relative}
+    .hero-quote blockquote{border:none; padding:0; margin:0; position:relative}
+    .hero-quote p{font-size:1.1rem; line-height:1.5; color:#94a3b8; font-style:italic; margin-bottom:.5rem; font-family:'JetBrains Mono', 'Noto Sans SC', monospace; opacity:.9}
+    .hero-quote cite{font-size:.9rem; color:#64748b; font-family:'JetBrains Mono', 'Noto Sans SC', monospace; opacity:.8}
+    .hero-quote::before{content:'"'; font-size:2.5rem; color:#0ea5e9; opacity:.3; position:absolute; top:-.8rem; left:-.5rem; font-family:serif}
     .button-section{margin-top:2.5rem; display:flex; flex-direction:column; gap:1.5rem}
     .social-links{display:flex; gap:.8rem; align-items:center; justify-content:flex-start}
     .social-links a{display:flex; align-items:center; gap:.3rem; padding:.6rem 1rem; background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.15); border-radius:8px; color:var(--text-on-dark); text-decoration:none; font-family:'JetBrains Mono', 'Noto Sans SC', monospace; font-size:.85rem; transition:all .25s ease; min-width:120px; justify-content:center}
@@ -371,6 +371,7 @@
       .hero-inner{grid-template-columns:1fr; text-align:center; gap:2rem} 
       .avatar{width:220px; height:220px; margin:0 auto} 
       .meta{justify-content:center; flex-wrap:wrap} 
+      .hero-quote{text-align:center; margin-top:1.5rem}
       .button-section{text-align:center}
       .social-links{justify-content:center; flex-wrap:wrap}
       .cta-buttons{justify-content:center; flex-wrap:wrap}
@@ -417,6 +418,12 @@
           <p data-i18n="hero.subtitle">University of Sydney · Econometrics & Software Development</p>
           <p data-i18n="hero.pitch">PhD applicant in Quantitative Marketing, Digital Platform Research, and Algorithmic Behavioral Modeling.</p>
           <div class="meta" id="metaTags"></div>
+          <div class="hero-quote">
+            <blockquote>
+              <p>"We are a way for the cosmos to know itself."</p>
+              <cite>— Carl Sagan</cite>
+            </blockquote>
+          </div>
           <div class="button-section">
             <div class="social-links">
               <a href="mailto:tangyiting007@gmail.com">
