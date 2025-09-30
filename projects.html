@@ -89,8 +89,8 @@
         
         .projects-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
         }
         
         .project-card {
@@ -194,18 +194,45 @@
         
         .research-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
         }
         
         .research-card {
             background: rgba(255,255,255,0.08);
             border: 1px solid rgba(255,255,255,0.15);
             border-radius: 20px;
-            padding: 2rem;
+            padding: 0;
             transition: all 0.4s ease;
             position: relative;
             overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .research-image {
+            width: 100%;
+            height: 180px;
+            overflow: hidden;
+            border-radius: 20px 20px 0 0;
+        }
+        
+        .research-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+        
+        .research-card:hover .research-image img {
+            transform: scale(1.05);
+        }
+        
+        .research-content {
+            padding: 1.5rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
         }
         
         .research-card:hover {
@@ -214,42 +241,46 @@
             border-color: rgba(14,165,233,0.5);
         }
         
-        .research-card h3 {
+        .research-content h3 {
             color: #0ea5e9;
-            font-size: 1.2rem;
-            margin-bottom: 1rem;
+            font-size: 1.1rem;
+            margin-bottom: 0.8rem;
             font-weight: 600;
         }
         
-        .research-card p {
+        .research-content p {
             color: #cbd5e1;
-            margin-bottom: 1.5rem;
-            line-height: 1.7;
+            margin-bottom: 1rem;
+            line-height: 1.6;
+            font-size: 0.9rem;
+            flex: 1;
         }
         
-        .research-status {
+        .research-content .research-status {
             background: rgba(14,165,233,0.2);
             color: #0ea5e9;
-            padding: 0.4rem 0.8rem;
-            border-radius: 8px;
-            font-size: 0.85rem;
+            padding: 0.3rem 0.6rem;
+            border-radius: 6px;
+            font-size: 0.8rem;
             font-weight: 500;
             display: inline-block;
             margin-bottom: 1rem;
+            align-self: flex-start;
         }
         
-        .research-link {
+        .research-content .research-link {
             display: inline-flex;
             align-items: center;
-            gap: 0.5rem;
-            padding: 0.6rem 1.2rem;
+            gap: 0.4rem;
+            padding: 0.5rem 1rem;
             background: rgba(14,165,233,0.1);
             border: 1px solid rgba(14,165,233,0.3);
-            border-radius: 8px;
+            border-radius: 6px;
             color: #0ea5e9;
             text-decoration: none;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             transition: all 0.3s ease;
+            align-self: flex-start;
         }
         
         .research-link:hover {
@@ -272,9 +303,20 @@
                 gap: 1.5rem;
             }
             
-            .project-card,
-            .research-card {
+            .project-card {
                 padding: 1.5rem;
+            }
+            
+            .research-card {
+                padding: 0;
+            }
+            
+            .research-image {
+                height: 150px;
+            }
+            
+            .research-content {
+                padding: 1.2rem;
             }
         }
     </style>
@@ -289,6 +331,83 @@
                 </svg>
                 Back to Home
             </a>
+        </div>
+        
+        <div class="section">
+            <h2>Research & Innovation</h2>
+            <div class="research-grid">
+                <div class="research-card">
+                    <div class="research-image">
+                        <img src="images/1.png" alt="Preference Externalities" loading="lazy">
+                    </div>
+                    <div class="research-content">
+                        <h3>Preference Externalities</h3>
+                        <p>Modeling willingness-to-pay shifts under social information on digital platforms. Developing causal frameworks for peer influence mechanisms.</p>
+                        <span class="research-status">15-25% WTP Shift</span>
+                        <a href="research/preference-externalities.html" class="research-link">
+                            <svg width="14" height="14" fill="currentColor" viewBox="0 0 16 16">
+                                <path d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z"/>
+                                <path d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z"/>
+                            </svg>
+                            Read Abstract
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="research-card">
+                    <div class="research-image">
+                        <img src="images/2.png" alt="Retention Causality" loading="lazy">
+                    </div>
+                    <div class="research-content">
+                        <h3>Retention Causality (INFORMS → Marketing Science)</h3>
+                        <p>Causal modeling of user retention interventions with LLM-based behavioral signals and heterogeneous treatment effect estimation.</p>
+                        <span class="research-status">INFORMS 2025</span>
+                        <a href="research/retention-causality.html" class="research-link">
+                            <svg width="14" height="14" fill="currentColor" viewBox="0 0 16 16">
+                                <path d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z"/>
+                                <path d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z"/>
+                            </svg>
+                            Read Abstract
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="research-card">
+                    <div class="research-image">
+                        <img src="images/3.png" alt="Generative Engine Optimization" loading="lazy">
+                    </div>
+                    <div class="research-content">
+                        <h3>Generative Engine Optimization (IJRM Special Issue)</h3>
+                        <p>Simulating search and marketing strategies via synthetic respondents and causal inference frameworks.</p>
+                        <span class="research-status">IJRM Special Issue</span>
+                        <a href="research/generative-engine-optimization.html" class="research-link">
+                            <svg width="14" height="14" fill="currentColor" viewBox="0 0 16 16">
+                                <path d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z"/>
+                                <path d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z"/>
+                            </svg>
+                            Read Abstract
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="research-card">
+                    <div class="research-image">
+                        <img src="images/4.png" alt="AI for Land Use & Transport Integration" loading="lazy">
+                    </div>
+                    <div class="research-content">
+                        <h3>AI for Land Use & Transport Integration (Special Issue)</h3>
+                        <p>AI-driven causal and interpretable modeling of accessibility for integrated land use and urban air mobility systems.</p>
+                        <span class="research-status">Special Issue Aug 2026</span>
+                        <a href="ai-luti.html" class="research-link">
+                            <svg width="14" height="14" fill="currentColor" viewBox="0 0 16 16">
+                                <path d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z"/>
+                                <path d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z"/>
+                            </svg>
+                            Read Abstract
+                        </a>
+                    </div>
+                </div>
+            </div>
         </div>
         
         <div class="section">
@@ -329,63 +448,6 @@
                             <path d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z"/>
                         </svg>
                         View Details
-                    </a>
-                </div>
-            </div>
-        </div>
-        
-        <div class="section">
-            <h2>Research & Innovation</h2>
-            <div class="research-grid">
-                <div class="research-card">
-                    <h3>Preference Externalities</h3>
-                    <p>Modeling willingness-to-pay shifts under social information on digital platforms. Developing causal frameworks for peer influence mechanisms.</p>
-                    <span class="research-status">15-25% WTP Shift</span>
-                    <a href="research/preference-externalities.html" class="research-link">
-                        <svg width="14" height="14" fill="currentColor" viewBox="0 0 16 16">
-                            <path d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z"/>
-                            <path d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z"/>
-                        </svg>
-                        Read Abstract
-                    </a>
-                </div>
-                
-                <div class="research-card">
-                    <h3>Retention Causality (INFORMS → Marketing Science)</h3>
-                    <p>Causal modeling of user retention interventions with LLM-based behavioral signals and heterogeneous treatment effect estimation.</p>
-                    <span class="research-status">INFORMS 2025</span>
-                    <a href="research/retention-causality.html" class="research-link">
-                        <svg width="14" height="14" fill="currentColor" viewBox="0 0 16 16">
-                            <path d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z"/>
-                            <path d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z"/>
-                        </svg>
-                        Read Abstract
-                    </a>
-                </div>
-                
-                <div class="research-card">
-                    <h3>Generative Engine Optimization (IJRM Special Issue)</h3>
-                    <p>Simulating search and marketing strategies via synthetic respondents and causal inference frameworks.</p>
-                    <span class="research-status">IJRM Special Issue</span>
-                    <a href="research/generative-engine-optimization.html" class="research-link">
-                        <svg width="14" height="14" fill="currentColor" viewBox="0 0 16 16">
-                            <path d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z"/>
-                            <path d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z"/>
-                        </svg>
-                        Read Abstract
-                    </a>
-                </div>
-                
-                <div class="research-card">
-                    <h3>AI for Land Use & Transport Integration (Special Issue)</h3>
-                    <p>AI-driven causal and interpretable modeling of accessibility for integrated land use and urban air mobility systems.</p>
-                    <span class="research-status">Special Issue Aug 2026</span>
-                    <a href="ai-luti.html" class="research-link">
-                        <svg width="14" height="14" fill="currentColor" viewBox="0 0 16 16">
-                            <path d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z"/>
-                            <path d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z"/>
-                        </svg>
-                        Read Abstract
                     </a>
                 </div>
             </div>
