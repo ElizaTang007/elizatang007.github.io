@@ -1295,6 +1295,8 @@
             
             // 发送欢迎邮件给订阅者
             if (typeof emailjs !== 'undefined') {
+              console.log('EmailJS is available, attempting to send email...');
+              
               const templateParams = {
                 to_email: email, // 发送给订阅者
                 from_name: 'Eliza Tang',
@@ -1304,17 +1306,22 @@
                 company_email: 'tangyiting007@gmail.com'
               };
               
-              console.log('Sending welcome email to:', email);
+              console.log('Template params:', templateParams);
+              console.log('Service ID: service_3d24hje');
+              console.log('Template ID: template_xqw7y2f');
+              console.log('User ID: _be2yNgZ-rNhhO_DR');
               
               emailjs.send('service_3d24hje', 'template_xqw7y2f', templateParams, '_be2yNgZ-rNhhO_DR')
                 .then(function(response) {
-                  console.log('Welcome email sent successfully!', response.status, response.text);
+                  console.log('✅ Welcome email sent successfully!', response.status, response.text);
+                  console.log('Response:', response);
                 }, function(error) {
-                  console.log('Welcome email sending failed:', error);
+                  console.log('❌ Welcome email sending failed:', error);
+                  console.log('Error details:', error);
                   // 即使邮件发送失败，订阅仍然成功
                 });
             } else {
-              console.log('EmailJS not available, skipping email send');
+              console.log('❌ EmailJS not available, skipping email send');
             }
             
             // 显示成功消息
