@@ -631,6 +631,7 @@
 
     // Personal Photos Carousel
     let currentSlide = 0;
+    let carouselInterval = null;
     const photos = {
       en: [
         {
@@ -797,8 +798,28 @@
         }
       });
 
-      // Auto-play (optional)
-      setInterval(() => changeSlide(1), 5000);
+      // Auto-play (clear previous interval first)
+      if (carouselInterval) {
+        clearInterval(carouselInterval);
+      }
+      carouselInterval = setInterval(() => changeSlide(1), 5000);
+      
+      // Pause auto-play on hover
+      const carouselContainer = document.querySelector('.carousel-container');
+      if (carouselContainer) {
+        carouselContainer.addEventListener('mouseenter', () => {
+          if (carouselInterval) {
+            clearInterval(carouselInterval);
+          }
+        });
+        
+        carouselContainer.addEventListener('mouseleave', () => {
+          if (carouselInterval) {
+            clearInterval(carouselInterval);
+          }
+          carouselInterval = setInterval(() => changeSlide(1), 5000);
+        });
+      }
     }
 
     function changeSlide(direction) {
@@ -1202,9 +1223,9 @@
         width: 100%;
         height: 100%;
         background: rgba(0, 0, 0, 0.8);
-        display: flex;
-        justify-content: center;
-        align-items: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         z-index: 1000;
         backdrop-filter: blur(10px);
       `;
@@ -1302,7 +1323,7 @@
         right: 1rem;
         background: none;
         border: none;
-        color: white;
+            color: white;
         font-size: 2rem;
         cursor: pointer;
         z-index: 1001;
@@ -1418,7 +1439,7 @@
                 top: 20px;
                 right: 20px;
                 background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-                color: white;
+            color: white;
                 padding: 16px 24px;
                 border-radius: 12px;
                 box-shadow: 0 8px 32px rgba(0,0,0,0.3);
@@ -1502,7 +1523,7 @@
                   <div>
                     <div style="font-weight: 600; margin-bottom: 4px;">
                       ${lang === 'en' ? 'Error!' : '出错了！'}
-                    </div>
+    </div>
                     <div style="opacity: 0.9; font-size: 13px;">
                       ${lang === 'en' ? 'Please try again later.' : '请稍后再试。'}
                     </div>
