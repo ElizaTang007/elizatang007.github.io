@@ -1228,8 +1228,8 @@
         })();
         
         // 初始化Supabase
-        const supabaseUrl = 'https://your-project.supabase.co';
-        const supabaseKey = 'YOUR_SUPABASE_ANON_KEY';
+        const supabaseUrl = 'https://ldmodpcpoyqemecgueha.supabase.co';
+        const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxkbW9kcGNwb3lxZW1lY2d1ZWhhIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTkyNDAyNjgsImV4cCI6MjA3NDgxNjI2OH0.4qKagcnpqdUbh0oFTefX-r72VOGr-1W7tmDnNCnq43g';
         const supabase = window.supabase.createClient(supabaseUrl, supabaseKey);
 
         // 订阅功能
@@ -1266,8 +1266,6 @@
           subBtn.disabled = true;
           
             // 使用Supabase在线数据库保存订阅者
-            const supabaseUrl = 'https://your-project.supabase.co';
-            const supabaseKey = 'YOUR_SUPABASE_ANON_KEY';
             
             // 保存到在线数据库
             const { data, error } = await supabase
