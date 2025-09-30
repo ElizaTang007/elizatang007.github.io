@@ -1421,7 +1421,7 @@
                 from_email: 'tangyiting007@gmail.com',
                 reply_to: email,
                 message: `New subscription from ${email}`,
-                subject: 'Welcome to Eliza Tang\'s Research & Innovation Updates',
+                subject: 'Welcome to Eliza Tang Research Updates - University of Sydney',
                 website_link: 'https://elizatang007.github.io/',
                 company_name: 'Eliza Tang Research'
               };
@@ -1435,10 +1435,21 @@
                 .then(function(response) {
                   console.log('✅ Welcome email sent successfully!', response.status, response.text);
                   console.log('Response:', response);
+                  
+                  // 检查是否是教育邮箱
+                  if (email.includes('.edu')) {
+                    console.log('📧 教育邮箱检测到，邮件可能被过滤');
+                    console.log('💡 建议收件人检查垃圾邮件文件夹');
+                  }
                 }, function(error) {
                   console.log('❌ Welcome email sending failed:', error);
                   console.log('Error details:', error);
-                  // 即使邮件发送失败，订阅仍然成功
+                  
+                  // 如果是教育邮箱，提供特殊提示
+                  if (email.includes('.edu')) {
+                    console.log('📧 教育邮箱发送失败，可能被服务器过滤');
+                    console.log('💡 建议联系邮箱管理员或使用其他邮箱地址');
+                  }
                 });
             } else {
               console.log('❌ EmailJS not available, skipping email send');
