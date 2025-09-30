@@ -1275,12 +1275,67 @@
               .single();
             
             if (existingData) {
-              // 邮箱已存在，显示提示
+              // 邮箱已存在，显示友好的提示
               console.log('Email already exists:', email);
-              alert(lang === 'en' ? 
-                'This email is already registered! You will receive updates.' : 
-                '此邮箱已经注册！您将收到更新通知。'
-              );
+              
+              // 创建自定义提示框
+              const notification = document.createElement('div');
+              notification.style.cssText = `
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                color: white;
+                padding: 16px 24px;
+                border-radius: 12px;
+                box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+                z-index: 10000;
+                font-family: 'JetBrains Mono', 'Noto Sans SC', monospace;
+                font-size: 14px;
+                max-width: 350px;
+                animation: slideIn 0.3s ease-out;
+              `;
+              
+              notification.innerHTML = `
+                <div style="display: flex; align-items: center; gap: 12px;">
+                  <div style="font-size: 20px;">✅</div>
+                  <div>
+                    <div style="font-weight: 600; margin-bottom: 4px;">
+                      ${lang === 'en' ? 'Already Subscribed!' : '已订阅！'}
+                    </div>
+                    <div style="opacity: 0.9; font-size: 13px;">
+                      ${lang === 'en' ? 'You will receive our latest updates.' : '您将收到我们的最新动态。'}
+                    </div>
+                  </div>
+                </div>
+              `;
+              
+              // 添加动画样式
+              const style = document.createElement('style');
+              style.textContent = `
+                @keyframes slideIn {
+                  from { transform: translateX(100%); opacity: 0; }
+                  to { transform: translateX(0); opacity: 1; }
+                }
+                @keyframes slideOut {
+                  from { transform: translateX(0); opacity: 1; }
+                  to { transform: translateX(100%); opacity: 0; }
+                }
+              `;
+              document.head.appendChild(style);
+              
+              document.body.appendChild(notification);
+              
+              // 3秒后自动消失
+              setTimeout(() => {
+                notification.style.animation = 'slideOut 0.3s ease-in';
+                setTimeout(() => {
+                  if (notification.parentNode) {
+                    notification.parentNode.removeChild(notification);
+                  }
+                }, 300);
+              }, 3000);
+              
               subBtn.textContent = lang === 'en' ? 'Subscribe' : '订阅';
               subBtn.disabled = false;
               return;
@@ -1347,11 +1402,49 @@
               console.log('❌ EmailJS not available, skipping email send');
             }
             
-            // 显示成功消息
-            alert(lang === 'en' ? 
-              'Thank you for subscribing! Check your email for a welcome message from Eliza Tang.' : 
-              '感谢您的订阅！请查看您的邮箱，我们已发送欢迎邮件。'
-            );
+              // 显示成功消息
+              const successNotification = document.createElement('div');
+              successNotification.style.cssText = `
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+                color: white;
+                padding: 16px 24px;
+                border-radius: 12px;
+                box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+                z-index: 10000;
+                font-family: 'JetBrains Mono', 'Noto Sans SC', monospace;
+                font-size: 14px;
+                max-width: 350px;
+                animation: slideIn 0.3s ease-out;
+              `;
+              
+              successNotification.innerHTML = `
+                <div style="display: flex; align-items: center; gap: 12px;">
+                  <div style="font-size: 20px;">🎉</div>
+                  <div>
+                    <div style="font-weight: 600; margin-bottom: 4px;">
+                      ${lang === 'en' ? 'Welcome aboard!' : '欢迎订阅！'}
+                    </div>
+                    <div style="opacity: 0.9; font-size: 13px;">
+                      ${lang === 'en' ? 'Check your email for a welcome message.' : '请查看您的邮箱，我们已发送欢迎邮件。'}
+                    </div>
+                  </div>
+                </div>
+              `;
+              
+              document.body.appendChild(successNotification);
+              
+              // 4秒后自动消失
+              setTimeout(() => {
+                successNotification.style.animation = 'slideOut 0.3s ease-in';
+                setTimeout(() => {
+                  if (successNotification.parentNode) {
+                    successNotification.parentNode.removeChild(successNotification);
+                  }
+                }, 300);
+              }, 4000);
             emailInput.value = '';
             
             // 恢复按钮状态
