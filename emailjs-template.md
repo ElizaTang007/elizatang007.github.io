@@ -28,10 +28,6 @@ Welcome to Eliza Tang's Research & Innovation Updates
     <h2 style="color: #0f172a; margin-bottom: 16px; font-size: 24px;">Welcome to Eliza Tang's Research & Innovation Updates</h2>
     
     <p style="color: #475569; line-height: 1.6; margin-bottom: 16px;">
-      Hi {{from_name}},
-    </p>
-    
-    <p style="color: #475569; line-height: 1.6; margin-bottom: 16px;">
       Thank you for subscribing to my website! I'm excited to share my journey with you — spanning causal machine learning, digital platforms, and urban air mobility.
     </p>
 
