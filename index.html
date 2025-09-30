@@ -321,12 +321,16 @@
     
     /* Ventures grid */
     .ventures-grid{display:grid; grid-template-columns:repeat(auto-fit, minmax(300px,1fr)); gap:1.2rem}
-    .venture-card{background:rgba(255,255,255,.08); border:2px solid rgba(255,255,255,.15); border-radius:20px; padding:1.5rem; position:relative; overflow:hidden; cursor:pointer; transition:all .4s cubic-bezier(0.4, 0, 0.2, 1); opacity:1; transform:translateY(0) scale(1)}
+    .venture-card{background:rgba(255,255,255,.08); border:2px solid rgba(255,255,255,.15); border-radius:20px; padding:0; position:relative; overflow:hidden; cursor:pointer; transition:all .4s cubic-bezier(0.4, 0, 0.2, 1); opacity:1; transform:translateY(0) scale(1); display:flex; flex-direction:column}
     .venture-card::before{content:''; position:absolute; top:0; left:-100%; width:100%; height:100%; background:linear-gradient(90deg, transparent, rgba(14,165,233,.2), transparent); transition:left .6s ease}
     .venture-card:hover{transform:translateY(-8px) scale(1.02); border-color:rgba(14,165,233,.6); box-shadow:0 25px 60px rgba(0,0,0,.4)}
     .venture-card:hover::before{left:100%}
-    .venture-card h3{margin:0 0 .8rem 0; font-size:22px; font-family:'Orbitron', 'Noto Sans SC', monospace; font-weight:600; background:linear-gradient(135deg, #0ea5e9, #6366f1); -webkit-background-clip:text; -webkit-text-fill-color:transparent}
-    .venture-card p{margin:0 0 1rem 0; opacity:.9; line-height:1.6; font-family:'JetBrains Mono', 'Noto Sans SC', monospace}
+    .venture-image{width:100%; height:180px; overflow:hidden; border-radius:20px 20px 0 0}
+    .venture-image img{width:100%; height:100%; object-fit:cover; transition:transform .4s ease}
+    .venture-card:hover .venture-image img{transform:scale(1.05)}
+    .venture-content{padding:1.5rem; flex:1; display:flex; flex-direction:column}
+    .venture-content h3{margin:0 0 .8rem 0; font-size:22px; font-family:'Orbitron', 'Noto Sans SC', monospace; font-weight:600; background:linear-gradient(135deg, #0ea5e9, #6366f1); -webkit-background-clip:text; -webkit-text-fill-color:transparent}
+    .venture-content p{margin:0 0 1rem 0; opacity:.9; line-height:1.6; font-family:'JetBrains Mono', 'Noto Sans SC', monospace; flex:1}
     .venture-meta{display:flex; justify-content:space-between; align-items:center; margin-top:1rem}
     .venture-type{background:rgba(14,165,233,.2); color:#0ea5e9; padding:.3rem .8rem; border-radius:20px; font-size:.8rem; font-family:'JetBrains Mono', 'Noto Sans SC', monospace; font-weight:500}
     .venture-status{color:rgba(255,255,255,.7); font-size:.85rem; font-family:'JetBrains Mono', 'Noto Sans SC', monospace}
@@ -524,31 +528,46 @@
         <h2 data-i18n="ventures.title">Ventures & Innovation</h2>
         <div class="ventures-grid" id="venturesGrid">
           <div class="venture-card" onclick="window.open('ventures/yita-aviation.html', '_blank')">
-            <h3>YITA AVIATION</h3>
-            <p>A comprehensive air mobility ecosystem integrating smart eVTOL operations with StratoOS transportation OS for next-generation urban air mobility.</p>
-            <div class="venture-meta">
-              <span class="venture-type">startup</span>
-              <span class="venture-status">Active</span>
+            <div class="venture-image">
+              <img src="images/venture_1.png" alt="YITA AVIATION" loading="lazy">
             </div>
-            <div class="venture-link">→</div>
+            <div class="venture-content">
+              <h3>YITA AVIATION</h3>
+              <p>A comprehensive air mobility ecosystem integrating smart eVTOL operations with StratoOS transportation OS for next-generation urban air mobility.</p>
+              <div class="venture-meta">
+                <span class="venture-type">startup</span>
+                <span class="venture-status">Active</span>
+              </div>
+              <div class="venture-link">→</div>
+            </div>
           </div>
           <div class="venture-card" onclick="window.open('ventures/924-generative-visibility-engine.html', '_blank')">
-            <h3>924 Generative Visibility Engine</h3>
-            <p>AI-powered solution for SEO/GEO growth that bridges academic research with real-world marketing innovation.</p>
-            <div class="venture-meta">
-              <span class="venture-type">platform</span>
-              <span class="venture-status">Active</span>
+            <div class="venture-image">
+              <img src="images/venture_2.png" alt="924 Generative Visibility Engine" loading="lazy">
             </div>
-            <div class="venture-link">→</div>
+            <div class="venture-content">
+              <h3>924 Generative Visibility Engine</h3>
+              <p>AI-powered solution for SEO/GEO growth that bridges academic research with real-world marketing innovation.</p>
+              <div class="venture-meta">
+                <span class="venture-type">platform</span>
+                <span class="venture-status">Active</span>
+              </div>
+              <div class="venture-link">→</div>
+            </div>
           </div>
           <div class="venture-card" onclick="window.open('ventures/primordia.html', '_blank')">
-            <h3>PRIMORDIA</h3>
-            <p>Interplanetary origin asset infrastructure for preserving biological and cultural heritage across civilizations.</p>
-            <div class="venture-meta">
-              <span class="venture-type">research</span>
-              <span class="venture-status">Concept</span>
+            <div class="venture-image">
+              <img src="images/venture_3.png" alt="PRIMORDIA" loading="lazy">
             </div>
-            <div class="venture-link">→</div>
+            <div class="venture-content">
+              <h3>PRIMORDIA</h3>
+              <p>Interplanetary origin asset infrastructure for preserving biological and cultural heritage across civilizations.</p>
+              <div class="venture-meta">
+                <span class="venture-type">research</span>
+                <span class="venture-status">Concept</span>
+              </div>
+              <div class="venture-link">→</div>
+            </div>
           </div>
         </div>
       </div>
