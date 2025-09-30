@@ -206,6 +206,173 @@
             font-size: 1.3rem;
         }
         
+        /* StratoOS Detailed Section */
+        .stratoos-detailed {
+            background: rgba(255,255,255,0.05);
+            padding: 2.5rem;
+            border-radius: 20px;
+            border: 1px solid rgba(255,255,255,0.1);
+            margin: 2rem 0;
+        }
+        
+        .stratoos-detailed h3 {
+            color: #0ea5e9;
+            margin-bottom: 2rem;
+            font-size: 1.5rem;
+            text-align: center;
+        }
+        
+        .stratoos-content {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+        
+        .stratoos-description {
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+        
+        .stratoos-description p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #cbd5e1;
+        }
+        
+        .stratoos-features h4,
+        .stratoos-architecture h4,
+        .stratoos-benefits h4 {
+            color: #0ea5e9;
+            margin-bottom: 1.5rem;
+            font-size: 1.2rem;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .feature-card {
+            background: rgba(14,165,233,0.1);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 1px solid rgba(14,165,233,0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(14,165,233,0.2);
+        }
+        
+        .feature-card h5 {
+            color: #0ea5e9;
+            margin-bottom: 0.8rem;
+            font-size: 1rem;
+        }
+        
+        .feature-card p {
+            color: #94a3b8;
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+        
+        .architecture-details {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+        
+        .plane {
+            background: rgba(255,255,255,0.05);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .plane h5 {
+            color: #0ea5e9;
+            margin-bottom: 0.8rem;
+            font-size: 1.1rem;
+        }
+        
+        .plane p {
+            color: #cbd5e1;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+        }
+        
+        .plane ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .plane li {
+            padding: 0.3rem 0;
+            color: #94a3b8;
+            font-size: 0.85rem;
+            position: relative;
+            padding-left: 1rem;
+        }
+        
+        .plane li:before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: #0ea5e9;
+        }
+        
+        .benefits-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+        
+        .benefit-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            padding: 1.5rem;
+            background: rgba(255,255,255,0.05);
+            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .benefit-item:hover {
+            transform: translateX(5px);
+            border-color: rgba(14,165,233,0.3);
+        }
+        
+        .benefit-icon {
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+        
+        .benefit-item h5 {
+            color: #0ea5e9;
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+        }
+        
+        .benefit-item p {
+            color: #94a3b8;
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+        
+        @media (max-width: 768px) {
+            .architecture-details {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
         .tech-stack {
             margin-bottom: 2rem;
         }
@@ -386,6 +553,88 @@
                         <li>Automated flight path optimization</li>
                         <li>Safety monitoring and emergency response systems</li>
                     </ul>
+                </div>
+                
+                <div class="stratoos-detailed">
+                    <h3>StratoOS: Next-Generation Transportation OS</h3>
+                    <div class="stratoos-content">
+                        <div class="stratoos-description">
+                            <p>StratoOS is a revolutionary transportation operating system specifically designed for the low-altitude economy. Built with dual-plane architecture, it combines real-time operating system (RTOS) capabilities with advanced Linux-based applications to create a comprehensive platform for urban air mobility.</p>
+                        </div>
+                        
+                        <div class="stratoos-features">
+                            <h4>Core Capabilities</h4>
+                            <div class="features-grid">
+                                <div class="feature-card">
+                                    <h5>BVLOS Operations</h5>
+                                    <p>Beyond Visual Line of Sight mission orchestration with advanced conflict detection and resolution algorithms.</p>
+                                </div>
+                                <div class="feature-card">
+                                    <h5>Swarm Intelligence</h5>
+                                    <p>Coordinated multi-vehicle operations with distributed decision-making and adaptive routing.</p>
+                                </div>
+                                <div class="feature-card">
+                                    <h5>Mission Orchestration</h5>
+                                    <p>Intelligent task assignment and resource allocation across complex air mobility networks.</p>
+                                </div>
+                                <div class="feature-card">
+                                    <h5>Safety Certification</h5>
+                                    <p>Built-in safety protocols and compliance monitoring for aviation regulatory requirements.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="stratoos-architecture">
+                            <h4>Dual-Plane Architecture</h4>
+                            <div class="architecture-details">
+                                <div class="plane">
+                                    <h5>Safety Control Plane</h5>
+                                    <p>RTOS + seL4 microkernel for real-time safety-critical operations</p>
+                                    <ul>
+                                        <li>Flight control systems</li>
+                                        <li>Emergency response protocols</li>
+                                        <li>Safety monitoring and alerts</li>
+                                    </ul>
+                                </div>
+                                <div class="plane">
+                                    <h5>Application Experience Plane</h5>
+                                    <p>Linux + SDK for rich applications and user interfaces</p>
+                                    <ul>
+                                        <li>Mission planning interfaces</li>
+                                        <li>Analytics and reporting</li>
+                                        <li>Third-party integrations</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="stratoos-benefits">
+                            <h4>Integration Benefits</h4>
+                            <div class="benefits-list">
+                                <div class="benefit-item">
+                                    <span class="benefit-icon">🚀</span>
+                                    <div>
+                                        <h5>Enhanced Safety</h5>
+                                        <p>Advanced safety protocols and real-time monitoring ensure secure operations</p>
+                                    </div>
+                                </div>
+                                <div class="benefit-item">
+                                    <span class="benefit-icon">⚡</span>
+                                    <div>
+                                        <h5>Operational Efficiency</h5>
+                                        <p>Optimized routing and resource allocation maximize fleet utilization</p>
+                                    </div>
+                                </div>
+                                <div class="benefit-item">
+                                    <span class="benefit-icon">🌐</span>
+                                    <div>
+                                        <h5>Scalable Infrastructure</h5>
+                                        <p>Modular design supports growth from local to metropolitan operations</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 
                 <div class="architecture-diagram">
