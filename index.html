@@ -1267,10 +1267,10 @@
           
             // 使用Supabase在线数据库保存订阅者
             
-            // 保存到在线数据库
+            // 使用upsert操作处理重复邮箱
             const { data, error } = await supabase
               .from('subscribers')
-              .insert([
+              .upsert([
                 {
                   email: email,
                   name: document.querySelector('input[name="name"]')?.value || '',
@@ -1278,14 +1278,27 @@
                   subscribe_date: new Date().toISOString(),
                   status: 'active'
                 }
-              ]);
+              ], {
+                onConflict: 'email'
+              });
             
             if (error) {
               console.error('Database error:', error);
-              alert(lang === 'en' ? 
-                'Sorry, there was an error saving your subscription. Please try again later.' : 
-                '抱歉，保存您的订阅时出现错误。请稍后再试。'
-              );
+              
+              // 检查是否是重复邮箱错误
+              if (error.code === '23505') {
+                console.log('Email already exists, updating subscription...');
+                alert(lang === 'en' ? 
+                  'This email is already subscribed! You will receive updates.' : 
+                  '此邮箱已订阅！您将收到更新通知。'
+                );
+              } else {
+                alert(lang === 'en' ? 
+                  'Sorry, there was an error saving your subscription. Please try again later.' : 
+                  '抱歉，保存您的订阅时出现错误。请稍后再试。'
+                );
+              }
+              
               subBtn.textContent = lang === 'en' ? 'Subscribe' : '订阅';
               subBtn.disabled = false;
               return;
