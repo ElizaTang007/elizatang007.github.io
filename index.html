@@ -756,6 +756,12 @@
       const nextBtn = document.getElementById('nextBtn');
 
       if (!track || !dots) return;
+      
+      // Clear any existing interval first
+      if (carouselInterval) {
+        clearInterval(carouselInterval);
+        carouselInterval = null;
+      }
 
       // Get current language photos
       const currentPhotos = photos[lang] || photos.en;
@@ -787,16 +793,25 @@
         `<div class="carousel-dot ${index === 0 ? 'active' : ''}" data-slide="${index}"></div>`
       ).join('');
 
-      // Event listeners
-      prevBtn?.addEventListener('click', () => changeSlide(-1));
-      nextBtn?.addEventListener('click', () => changeSlide(1));
+      // Event listeners (only add if not already added)
+      if (prevBtn && !prevBtn.hasAttribute('data-listener-added')) {
+        prevBtn.setAttribute('data-listener-added', 'true');
+        prevBtn.addEventListener('click', () => changeSlide(-1));
+      }
+      if (nextBtn && !nextBtn.hasAttribute('data-listener-added')) {
+        nextBtn.setAttribute('data-listener-added', 'true');
+        nextBtn.addEventListener('click', () => changeSlide(1));
+      }
       
-      dots.addEventListener('click', (e) => {
-        if (e.target.classList.contains('carousel-dot')) {
-          const slideIndex = parseInt(e.target.dataset.slide);
-          goToSlide(slideIndex);
-        }
-      });
+      if (!dots.hasAttribute('data-listener-added')) {
+        dots.setAttribute('data-listener-added', 'true');
+        dots.addEventListener('click', (e) => {
+          if (e.target.classList.contains('carousel-dot')) {
+            const slideIndex = parseInt(e.target.dataset.slide);
+            goToSlide(slideIndex);
+          }
+        });
+      }
 
       // Auto-play (clear previous interval first)
       if (carouselInterval) {
@@ -804,12 +819,14 @@
       }
       carouselInterval = setInterval(() => changeSlide(1), 5000);
       
-      // Pause auto-play on hover
+      // Pause auto-play on hover (only add listeners once)
       const carouselContainer = document.querySelector('.carousel-container');
-      if (carouselContainer) {
+      if (carouselContainer && !carouselContainer.hasAttribute('data-listeners-added')) {
+        carouselContainer.setAttribute('data-listeners-added', 'true');
         carouselContainer.addEventListener('mouseenter', () => {
           if (carouselInterval) {
             clearInterval(carouselInterval);
+            carouselInterval = null;
           }
         });
         
