@@ -1362,67 +1362,6 @@
             console.log('✅ 邮箱未重复，继续订阅流程');
             
             // 邮箱不存在，正常插入
-                position: fixed;
-                top: 20px;
-                right: 20px;
-                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-                color: white;
-                padding: 16px 24px;
-                border-radius: 12px;
-                box-shadow: 0 8px 32px rgba(0,0,0,0.3);
-                z-index: 10000;
-                font-family: 'JetBrains Mono', 'Noto Sans SC', monospace;
-                font-size: 14px;
-                max-width: 350px;
-                animation: slideIn 0.3s ease-out;
-              `;
-              
-              notification.innerHTML = `
-                <div style="display: flex; align-items: center; gap: 12px;">
-                  <div style="font-size: 20px;">✅</div>
-                  <div>
-                    <div style="font-weight: 600; margin-bottom: 4px;">
-                      ${lang === 'en' ? 'Already Subscribed!' : '你已经订阅过了！'}
-                    </div>
-                    <div style="opacity: 0.9; font-size: 13px;">
-                      ${lang === 'en' ? 'You will receive our latest updates.' : '您将收到我们的最新动态。'}
-                    </div>
-                  </div>
-                </div>
-              `;
-              
-              // 添加动画样式
-              const style = document.createElement('style');
-              style.textContent = `
-                @keyframes slideIn {
-                  from { transform: translateX(100%); opacity: 0; }
-                  to { transform: translateX(0); opacity: 1; }
-                }
-                @keyframes slideOut {
-                  from { transform: translateX(0); opacity: 1; }
-                  to { transform: translateX(100%); opacity: 0; }
-                }
-              `;
-              document.head.appendChild(style);
-              
-              document.body.appendChild(notification);
-              
-              // 3秒后自动消失
-              setTimeout(() => {
-                notification.style.animation = 'slideOut 0.3s ease-in';
-                setTimeout(() => {
-                  if (notification.parentNode) {
-                    notification.parentNode.removeChild(notification);
-                  }
-                }, 300);
-              }, 3000);
-              
-              subBtn.textContent = lang === 'en' ? 'Subscribe' : '订阅';
-              subBtn.disabled = false;
-              return;
-            }
-            
-            // 邮箱不存在，正常插入
             const { data, error } = await supabase
               .from('subscribers')
               .insert([
