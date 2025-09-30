@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>924 Generative Visibility Engine - Eliza Tang</title>
+    <meta name="description" content="AI-powered solution for SEO/GEO growth that bridges academic research with real-world marketing innovation.">
+    <meta name="keywords" content="AI, SEO, GEO, marketing, visibility, generative AI, Eliza Tang">
+    <meta name="author" content="Eliza Tang">
+    <link rel="canonical" href="https://elizatang007.github.io/ventures/924-generative-visibility-engine.html">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="924 Generative Visibility Engine - Eliza Tang">
+    <meta property="og:description" content="AI-powered solution for SEO/GEO growth that bridges academic research with real-world marketing innovation.">
+    <meta property="og:url" content="https://elizatang007.github.io/ventures/924-generative-visibility-engine.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Eliza Tang Portfolio">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="924 Generative Visibility Engine - Eliza Tang">
+    <meta name="twitter:description" content="AI-powered solution for SEO/GEO growth that bridges academic research with real-world marketing innovation.">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'JetBrains Mono', 'Noto Sans SC', monospace;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+            color: #e2e8f0;
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 3rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .back-btn {
+            background: linear-gradient(135deg, #0ea5e9, #6366f1);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 20px rgba(14,165,233,0.3);
+        }
+        
+        .back-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(14,165,233,0.4);
+        }
+        
+        .project-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #0ea5e9, #6366f1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1rem;
+        }
+        
+        .project-subtitle {
+            font-size: 1.2rem;
+            color: #94a3b8;
+            margin-bottom: 2rem;
+        }
+        
+        .content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+        
+        .main-content {
+            background: rgba(255,255,255,0.05);
+            padding: 2rem;
+            border-radius: 20px;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+        
+        .info-card {
+            background: rgba(255,255,255,0.05);
+            padding: 1.5rem;
+            border-radius: 16px;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .info-card h3 {
+            color: #0ea5e9;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+        
+        .status-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #10b981, #059669);
+            color: white;
+            padding: 0.4rem 0.8rem;
+            border-radius: 8px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        
+        .type-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #8b5cf6, #7c3aed);
+            color: white;
+            padding: 0.4rem 0.8rem;
+            border-radius: 8px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+        
+        .description {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+            color: #cbd5e1;
+        }
+        
+        .features {
+            margin-bottom: 2rem;
+        }
+        
+        .features h3 {
+            color: #0ea5e9;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+        
+        .features ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .features li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        
+        .features li:before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: #0ea5e9;
+            font-weight: bold;
+        }
+        
+        .tech-stack {
+            margin-bottom: 2rem;
+        }
+        
+        .tech-stack h3 {
+            color: #0ea5e9;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+        
+        .tech-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+        
+        .tech-tag {
+            background: rgba(14,165,233,0.2);
+            color: #0ea5e9;
+            padding: 0.3rem 0.6rem;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            border: 1px solid rgba(14,165,233,0.3);
+        }
+        
+        .link-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #0ea5e9, #6366f1);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 20px rgba(14,165,233,0.3);
+            text-align: center;
+            margin-top: 1rem;
+        }
+        
+        .link-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(14,165,233,0.4);
+        }
+        
+        .research-connection {
+            background: linear-gradient(135deg, rgba(14,165,233,0.1), rgba(99,102,241,0.1));
+            padding: 1.5rem;
+            border-radius: 16px;
+            border: 1px solid rgba(14,165,233,0.2);
+            margin-top: 2rem;
+        }
+        
+        .research-connection h3 {
+            color: #0ea5e9;
+            margin-bottom: 1rem;
+        }
+        
+        @media (max-width: 768px) {
+            .content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .project-title {
+                font-size: 2rem;
+            }
+            
+            .container {
+                padding: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <a href="https://elizatang007.github.io/" class="back-btn">← Back to Home</a>
+        </div>
+        
+        <div class="project-title">924 Generative Visibility Engine</div>
+        <div class="project-subtitle">AI-powered solution for SEO/GEO growth that bridges academic research with real-world marketing innovation</div>
+        
+        <div class="content">
+            <div class="main-content">
+                <div class="status-badge">Active</div>
+                <div class="type-badge">Platform</div>
+                
+                <div class="description">
+                    The 924 Generative Visibility Engine is an innovative AI-powered platform that revolutionizes how businesses approach search engine optimization (SEO) and generative engine optimization (GEO). By combining cutting-edge academic research with practical marketing applications, this platform provides intelligent solutions for content visibility and digital growth.
+                </div>
+                
+                <div class="features">
+                    <h3>Key Features</h3>
+                    <ul>
+                        <li>AI-driven content optimization for search engines</li>
+                        <li>Generative engine optimization (GEO) capabilities</li>
+                        <li>Real-time visibility analytics and insights</li>
+                        <li>Automated content generation and optimization</li>
+                        <li>Multi-platform visibility tracking</li>
+                        <li>Predictive analytics for content performance</li>
+                    </ul>
+                </div>
+                
+                <div class="tech-stack">
+                    <h3>Technology Stack</h3>
+                    <div class="tech-tags">
+                        <span class="tech-tag">AI/ML</span>
+                        <span class="tech-tag">Natural Language Processing</span>
+                        <span class="tech-tag">Search Engine Optimization</span>
+                        <span class="tech-tag">Data Analytics</span>
+                        <span class="tech-tag">Cloud Computing</span>
+                        <span class="tech-tag">API Integration</span>
+                    </div>
+                </div>
+                
+                <div class="research-connection">
+                    <h3>Research Connection</h3>
+                    <p>This platform directly connects to my academic research on "Generative Engine Optimization" and "Preference Externalities," bridging theoretical insights with practical marketing applications. The engine implements causal inference frameworks and behavioral modeling techniques developed through academic research.</p>
+                </div>
+                
+                <a href="https://924-rho.vercel.app/" class="link-btn" target="_blank">Visit Platform →</a>
+            </div>
+            
+            <div class="sidebar">
+                <div class="info-card">
+                    <h3>Project Status</h3>
+                    <p><strong>Status:</strong> Active Development</p>
+                    <p><strong>Launch:</strong> 2024</p>
+                    <p><strong>Category:</strong> AI Platform</p>
+                </div>
+                
+                <div class="info-card">
+                    <h3>Impact</h3>
+                    <p>Bridging the gap between academic research and real-world marketing innovation, providing businesses with AI-powered tools for digital visibility and growth.</p>
+                </div>
+                
+                <div class="info-card">
+                    <h3>Research Integration</h3>
+                    <p>Directly implements findings from academic research on generative AI, causal inference, and behavioral modeling to create practical marketing solutions.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
