@@ -1275,6 +1275,72 @@
               .eq('email', email)
               .single();
             
+            console.log('🔍 检查重复邮箱:', email);
+            console.log('📊 查询结果:', existingData);
+            console.log('❌ 查询错误:', checkError);
+            
+            // 如果查询失败，尝试另一种方式检查
+            if (!existingData && !checkError) {
+              console.log('🔍 使用备用查询方法检查重复邮箱');
+              const { data: allSubscribers } = await supabase
+                .from('subscribers')
+                .select('email');
+              
+              const isDuplicate = allSubscribers && allSubscribers.some(sub => sub.email === email);
+              console.log('📊 所有订阅者:', allSubscribers);
+              console.log('🔍 是否重复:', isDuplicate);
+              
+              if (isDuplicate) {
+                console.log('✅ 备用方法检测到重复邮箱:', email);
+                // 显示重复邮箱提示
+                const notification = document.createElement('div');
+                notification.style.cssText = `
+                  position: fixed;
+                  top: 20px;
+                  right: 20px;
+                  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                  color: white;
+                  padding: 16px 24px;
+                  border-radius: 12px;
+                  box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+                  z-index: 10000;
+                  font-family: 'JetBrains Mono', 'Noto Sans SC', monospace;
+                  font-size: 14px;
+                  max-width: 350px;
+                  animation: slideIn 0.3s ease-out;
+                `;
+                
+                notification.innerHTML = `
+                  <div style="display: flex; align-items: center; gap: 12px;">
+                    <div style="font-size: 20px;">✅</div>
+                    <div>
+                      <div style="font-weight: 600; margin-bottom: 4px;">
+                        ${lang === 'en' ? 'Already Subscribed!' : '你已经订阅过了！'}
+                      </div>
+                      <div style="opacity: 0.9; font-size: 13px;">
+                        ${lang === 'en' ? 'You will receive our latest updates.' : '您将收到我们的最新动态。'}
+                      </div>
+                    </div>
+                  </div>
+                `;
+                
+                document.body.appendChild(notification);
+                
+                setTimeout(() => {
+                  notification.style.animation = 'slideOut 0.3s ease-in';
+                  setTimeout(() => {
+                    if (notification.parentNode) {
+                      notification.parentNode.removeChild(notification);
+                    }
+                  }, 300);
+                }, 3000);
+                
+                subBtn.textContent = lang === 'en' ? 'Subscribe' : '订阅';
+                subBtn.disabled = false;
+                return;
+              }
+            }
+            
             if (existingData) {
               // 邮箱已存在，直接显示订阅过的提示
               console.log('Email already exists:', email);
