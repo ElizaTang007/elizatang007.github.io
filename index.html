@@ -631,63 +631,122 @@
 
     // Personal Photos Carousel
     let currentSlide = 0;
-    const photos = [
-      {
-        src: 'images/联合国.jpg',
-        title: 'UN Australia SDG 2024',
-        description: 'Volunteer: Active in the United Nations and IEEE Women in Engineering, passionate about human rights, diversity, and technological progress.'
-      },
-      {
-        src: 'images/晚宴1.jpg',
-        title: 'Academic Networking',
-        description: 'Networking at academic conferences and research events'
-      },
-      {
-        src: 'images/海边.jpg',
-        title: 'Research Retreat',
-        description: 'Academic research retreat and collaborative work sessions'
-      },
-      {
-        src: 'images/电影1.jpg',
-        title: 'Cultural Exchange',
-        description: 'International cultural exchange and academic collaboration'
-      },
-      {
-        src: 'images/电影2.jpg',
-        title: 'Team Collaboration',
-        description: 'Working with international research teams and academic partners'
-      },
-      {
-        src: 'images/我的故乡.jpg',
-        title: 'Personal Journey',
-        description: 'Personal and academic journey across different cultures'
-      },
-      {
-        src: 'images/阿瓦隆航展.jpg',
-        title: 'Avalon Airshow',
-        description: 'Aviation industry exhibition and aerospace technology showcase'
-      },
-      {
-        src: 'images/写书法.jpg',
-        title: 'Cultural Heritage',
-        description: 'Practicing traditional Chinese calligraphy and cultural arts'
-      },
-      {
-        src: 'images/jp.JPG',
-        title: 'International Experience',
-        description: 'Global perspective and cross-cultural understanding'
-      },
-      {
-        src: 'images/悉尼.jpg',
-        title: 'Sydney Observatory',
-        description: 'At Sydney Observatory - exploring astronomy and scientific research in Australia'
-      },
-      {
-        src: 'images/悉尼夜景.jpg',
-        title: 'Sydney Nightscape',
-        description: 'Beautiful Sydney nightscape and urban life experiences'
-      }
-    ];
+    const photos = {
+      en: [
+        {
+          src: 'images/联合国.jpg',
+          title: 'UN Australia SDG 2024',
+          description: 'Volunteer: Active in the United Nations and IEEE Women in Engineering, passionate about human rights, diversity, and technological progress.'
+        },
+        {
+          src: 'images/晚宴1.jpg',
+          title: 'Academic Networking',
+          description: 'Networking at academic conferences and research events'
+        },
+        {
+          src: 'images/海边.jpg',
+          title: 'Research Retreat',
+          description: 'Academic research retreat and collaborative work sessions'
+        },
+        {
+          src: 'images/电影1.jpg',
+          title: 'Cultural Exchange',
+          description: 'International cultural exchange and academic collaboration'
+        },
+        {
+          src: 'images/电影2.jpg',
+          title: 'Team Collaboration',
+          description: 'Working with international research teams and academic partners'
+        },
+        {
+          src: 'images/我的故乡.jpg',
+          title: 'Personal Journey',
+          description: 'Personal and academic journey across different cultures'
+        },
+        {
+          src: 'images/阿瓦隆航展.jpg',
+          title: 'Avalon Airshow',
+          description: 'Aviation industry exhibition and aerospace technology showcase'
+        },
+        {
+          src: 'images/写书法.jpg',
+          title: 'Cultural Heritage',
+          description: 'Practicing traditional Chinese calligraphy and cultural arts'
+        },
+        {
+          src: 'images/jp.JPG',
+          title: 'International Experience',
+          description: 'Global perspective and cross-cultural understanding'
+        },
+        {
+          src: 'images/悉尼.jpg',
+          title: 'Sydney Observatory',
+          description: 'At Sydney Observatory - exploring astronomy and scientific research in Australia'
+        },
+        {
+          src: 'images/悉尼夜景.jpg',
+          title: 'Sydney Nightscape',
+          description: 'Beautiful Sydney nightscape and urban life experiences'
+        }
+      ],
+      zh: [
+        {
+          src: 'images/联合国.jpg',
+          title: '联合国澳大利亚可持续发展目标 2024',
+          description: '志愿者：积极参与联合国和IEEE女性工程师组织，致力于人权、多样性和技术进步。'
+        },
+        {
+          src: 'images/晚宴1.jpg',
+          title: '学术交流',
+          description: '在学术会议和研究活动中的交流合作'
+        },
+        {
+          src: 'images/海边.jpg',
+          title: '研究静修',
+          description: '学术研究静修和协作工作会议'
+        },
+        {
+          src: 'images/电影1.jpg',
+          title: '文化交流',
+          description: '国际文化交流和学术合作'
+        },
+        {
+          src: 'images/电影2.jpg',
+          title: '团队协作',
+          description: '与国际研究团队和学术伙伴的合作'
+        },
+        {
+          src: 'images/我的故乡.jpg',
+          title: '个人历程',
+          description: '跨越不同文化的个人和学术历程'
+        },
+        {
+          src: 'images/阿瓦隆航展.jpg',
+          title: '阿瓦隆航展',
+          description: '航空工业展览和航空航天技术展示'
+        },
+        {
+          src: 'images/写书法.jpg',
+          title: '文化遗产',
+          description: '练习传统中国书法和文化艺术'
+        },
+        {
+          src: 'images/jp.JPG',
+          title: '国际体验',
+          description: '全球视野和跨文化理解'
+        },
+        {
+          src: 'images/悉尼.jpg',
+          title: '悉尼天文台',
+          description: '在悉尼天文台 - 探索澳大利亚的天文学和科学研究'
+        },
+        {
+          src: 'images/悉尼夜景.jpg',
+          title: '悉尼夜景',
+          description: '美丽的悉尼夜景和城市生活体验'
+        }
+      ]
+    };
 
     function initCarousel() {
       const track = document.getElementById('carouselTrack');
@@ -697,8 +756,11 @@
 
       if (!track || !dots) return;
 
+      // Get current language photos
+      const currentPhotos = photos[lang] || photos.en;
+
       // Create slides
-      track.innerHTML = photos.map((photo, index) => {
+      track.innerHTML = currentPhotos.map((photo, index) => {
         // 第4张（索引3）：Research Retreat - 竖屏居中显示
         // 第5张（索引4）：Cultural Exchange - 竖屏居中显示
         // 第9张（索引8）：Avalon Airshow - 竖屏居中显示
@@ -720,7 +782,7 @@
       }).join('');
 
       // Create dots
-      dots.innerHTML = photos.map((_, index) => 
+      dots.innerHTML = currentPhotos.map((_, index) => 
         `<div class="carousel-dot ${index === 0 ? 'active' : ''}" data-slide="${index}"></div>`
       ).join('');
 
@@ -740,9 +802,10 @@
     }
 
     function changeSlide(direction) {
+      const currentPhotos = photos[lang] || photos.en;
       currentSlide += direction;
-      if (currentSlide >= photos.length) currentSlide = 0;
-      if (currentSlide < 0) currentSlide = photos.length - 1;
+      if (currentSlide >= currentPhotos.length) currentSlide = 0;
+      if (currentSlide < 0) currentSlide = currentPhotos.length - 1;
       updateCarousel();
     }
 
@@ -1053,6 +1116,8 @@
       document.getElementById('langToggle').textContent = lang === 'en' ? '中文' : 'EN';
       // update quote display
       updateQuoteDisplay(lang);
+      // reinitialize carousel with current language
+      initCarousel();
     }
 
     document.getElementById('langToggle').addEventListener('click', ()=>{ lang = (lang === 'en') ? 'zh' : 'en'; render(); });
