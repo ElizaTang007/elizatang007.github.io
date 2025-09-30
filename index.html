@@ -162,11 +162,13 @@
     .hero h1{margin:0 0 1.2rem 0; font-size:48px; line-height:1.1; font-family:'Orbitron', 'Noto Sans SC', monospace; font-weight:700; background:linear-gradient(135deg, #0ea5e9, #6366f1); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text}
     .hero p{margin:.6rem 0; opacity:.9; font-family:'JetBrains Mono', 'Noto Sans SC', monospace; line-height:1.7; font-size:1.05rem}
     .meta{margin-top:2rem; display:flex; flex-wrap:wrap; gap:1rem; opacity:.85}
-    .hero-quote{margin-top:2rem; text-align:left; position:relative; padding:1rem 1.2rem; background:rgba(255,255,255,.015); border-left:2px solid rgba(14,165,233,.2); border-radius:0 8px 8px 0; width:100%; margin-left:0}
+    .hero-quote{margin-top:2rem; text-align:left; position:relative; padding:1rem 1.2rem; background:rgba(255,255,255,.015); border-left:2px solid rgba(14,165,233,.2); border-radius:0 8px 8px 0; max-width:calc(100% - 2rem); margin-left:0}
     .hero-quote blockquote{border:none; padding:0; margin:0; position:relative}
     .hero-quote p{font-size:.95rem; line-height:1.5; color:#e2e8f0; font-style:italic; margin-bottom:.4rem; font-family:'JetBrains Mono', 'Noto Sans SC', monospace; opacity:.9; font-weight:300; position:relative; padding-left:1.2rem}
     .hero-quote p::before{content:'❝'; font-size:1.2rem; color:#0ea5e9; opacity:.5; position:absolute; left:0; top:0; font-family:serif}
-    .hero-quote .quote-translation{font-size:.85rem; color:#94a3b8; font-style:normal; margin-bottom:.3rem; opacity:.8; padding-left:1.2rem}
+    .hero-quote .quote-en{display:block}
+    .hero-quote .quote-zh{display:none}
+    .hero-quote .quote-zh{font-size:.95rem; color:#e2e8f0; font-style:italic; margin-bottom:.4rem; opacity:.9; font-weight:300; position:relative; padding-left:1.2rem}
     .hero-quote cite{font-size:.8rem; color:#94a3b8; font-family:'JetBrains Mono', 'Noto Sans SC', monospace; opacity:.8; font-weight:400; text-align:right; display:block; margin-top:.3rem}
     .button-section{margin-top:2.5rem; display:flex; flex-direction:column; gap:1.5rem}
     .social-links{display:flex; gap:.8rem; align-items:center; justify-content:flex-start}
@@ -372,10 +374,10 @@
       .hero-inner{grid-template-columns:1fr; text-align:center; gap:2rem} 
       .avatar{width:220px; height:220px; margin:0 auto} 
       .meta{justify-content:center; flex-wrap:wrap} 
-      .hero-quote{text-align:center; margin-top:1.5rem; padding:.8rem 1rem; border-left:none; border-top:2px solid rgba(14,165,233,.2); border-radius:8px 8px 0 0; width:100%; margin:1.5rem auto 0 auto}
+      .hero-quote{text-align:center; margin-top:1.5rem; padding:.8rem 1rem; border-left:none; border-top:2px solid rgba(14,165,233,.2); border-radius:8px 8px 0 0; max-width:calc(100% - 2rem); margin:1.5rem auto 0 auto}
       .hero-quote p{padding-left:0; text-align:center; font-size:.9rem}
       .hero-quote p::before{left:50%; transform:translateX(-50%); top:-.3rem; font-size:1rem}
-      .hero-quote .quote-translation{padding-left:0; text-align:center; font-size:.8rem}
+      .hero-quote .quote-zh{padding-left:0; text-align:center; font-size:.9rem}
       .hero-quote cite{text-align:center; margin-top:.3rem; font-size:.75rem}
       .button-section{text-align:center}
       .social-links{justify-content:center; flex-wrap:wrap}
@@ -425,8 +427,8 @@
           <div class="meta" id="metaTags"></div>
           <div class="hero-quote">
             <blockquote>
-              <p>We are a way for the cosmos to know itself.</p>
-              <p class="quote-translation">（我们是宇宙认识自己的方式。）</p>
+              <p class="quote-en">We are a way for the cosmos to know itself.</p>
+              <p class="quote-zh">我们是宇宙认识自己的方式。</p>
               <cite>— Carl Sagan</cite>
             </blockquote>
           </div>
@@ -997,6 +999,8 @@
       setTimeout(addCardHandlers, 100);
       // button text
       document.getElementById('langToggle').textContent = lang === 'en' ? '中文' : 'EN';
+      // update quote display
+      updateQuoteDisplay(lang);
     }
 
     document.getElementById('langToggle').addEventListener('click', ()=>{ lang = (lang === 'en') ? 'zh' : 'en'; render(); });
@@ -1150,6 +1154,21 @@
         cursor: pointer;
         z-index: 1001;
       `;
+      
+      // Language-specific quote display
+      function updateQuoteDisplay(lang) {
+        const quoteEn = document.querySelector('.quote-en');
+        const quoteZh = document.querySelector('.quote-zh');
+        if (quoteEn && quoteZh) {
+          if (lang === 'zh') {
+            quoteEn.style.display = 'none';
+            quoteZh.style.display = 'block';
+          } else {
+            quoteEn.style.display = 'block';
+            quoteZh.style.display = 'none';
+          }
+        }
+      }
       
       // Add research content
       const researchContent = document.createElement('div');
