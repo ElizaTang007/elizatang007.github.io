@@ -3,220 +3,332 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>YITA AVIATION — Revolutionizing Urban Air Mobility</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=JetBrains+Mono:wght@300;400;600&family=Orbitron:wght@400;600;800&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;600;700&family=Source+Han+Sans+SC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>YITA AVIATION - Integrated Air Mobility Ecosystem - Eliza Tang</title>
+    <meta name="description" content="A comprehensive air mobility ecosystem integrating smart eVTOL operations with StratoOS transportation OS for next-generation urban air mobility.">
+    <meta name="keywords" content="eVTOL, air mobility, StratoOS, transportation, aviation, Eliza Tang, YITA">
+    <meta name="author" content="Eliza Tang">
+    <link rel="canonical" href="https://elizatang007.github.io/ventures/yita-aviation.html">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="YITA AVIATION - Integrated Air Mobility Ecosystem - Eliza Tang">
+    <meta property="og:description" content="A comprehensive air mobility ecosystem integrating smart eVTOL operations with StratoOS transportation OS for next-generation urban air mobility.">
+    <meta property="og:url" content="https://elizatang007.github.io/ventures/yita-aviation.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Eliza Tang Portfolio">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="YITA AVIATION - Integrated Air Mobility Ecosystem - Eliza Tang">
+    <meta name="twitter:description" content="A comprehensive air mobility ecosystem integrating smart eVTOL operations with StratoOS transportation OS for next-generation urban air mobility.">
+    
     <style>
-        :root {
-            --bg: #0a0a0a;
-            --bg2: #111111;
-            --text-on-dark: #ffffff;
-            --accent: #0ea5e9;
-            --accent2: #6366f1;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
         
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        
         body {
-            font-family: 'Inter', 'Noto Sans SC', 'Source Han Sans SC', -apple-system, BlinkMacSystemFont, sans-serif;
-            background: radial-gradient(1200px 800px at 10% 90%, rgba(14,165,233,.12), transparent 60%),
-                        radial-gradient(1000px 700px at 90% 10%, rgba(99,102,241,.10), transparent 60%),
-                        linear-gradient(180deg, var(--bg), var(--bg2));
-            color: var(--text-on-dark);
+            font-family: 'JetBrains Mono', 'Noto Sans SC', monospace;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+            color: #e2e8f0;
             line-height: 1.6;
             min-height: 100vh;
         }
         
         .container {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
             padding: 2rem;
         }
         
         .header {
             display: flex;
+            justify-content: space-between;
             align-items: center;
-            gap: 1rem;
             margin-bottom: 3rem;
-            padding-bottom: 1rem;
-            border-bottom: 1px solid rgba(255,255,255,.1);
+            padding-bottom: 2rem;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
         }
         
         .back-btn {
-            background: rgba(255,255,255,.1);
-            border: 1px solid rgba(255,255,255,.2);
-            color: var(--text-on-dark);
-            padding: .5rem 1rem;
-            border-radius: 8px;
+            background: linear-gradient(135deg, #0ea5e9, #6366f1);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 12px;
             text-decoration: none;
-            font-family: 'JetBrains Mono', 'Noto Sans SC', monospace;
-            transition: all .3s ease;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 20px rgba(14,165,233,0.3);
         }
         
         .back-btn:hover {
-            background: rgba(14,165,233,.2);
-            border-color: var(--accent);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(14,165,233,0.4);
         }
         
-        .title {
-            font-family: 'Orbitron', 'Noto Sans SC', monospace;
-            font-size: 2.5rem;
-            font-weight: 800;
-            background: linear-gradient(135deg, var(--accent), var(--accent2));
+        .hero-section {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        
+        .project-title {
+            font-size: 3rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #0ea5e9, #6366f1);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            background-clip: text;
             margin-bottom: 1rem;
         }
         
-        .subtitle {
-            font-size: 1.2rem;
-            opacity: .8;
+        .project-subtitle {
+            font-size: 1.3rem;
+            color: #94a3b8;
+            margin-bottom: 2rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .status-badges {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
             margin-bottom: 2rem;
         }
         
-        .hero-image {
-            width: 100%;
-            height: 400px;
-            background: linear-gradient(135deg, rgba(14,165,233,.2), rgba(99,102,241,.2));
-            border-radius: 20px;
-            margin-bottom: 3rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 3rem;
-            position: relative;
-            overflow: hidden;
+        .status-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #10b981, #059669);
+            color: white;
+            padding: 0.6rem 1.2rem;
+            border-radius: 12px;
+            font-size: 0.9rem;
+            font-weight: 600;
         }
         
-        .hero-image::before {
-            content: '🚁';
-            font-size: 8rem;
-            opacity: .3;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
+        .type-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #8b5cf6, #7c3aed);
+            color: white;
+            padding: 0.6rem 1.2rem;
+            border-radius: 12px;
+            font-size: 0.9rem;
+            font-weight: 600;
         }
         
-        .content-grid {
+        .ecosystem-overview {
             display: grid;
-            grid-template-columns: 2fr 1fr;
+            grid-template-columns: 1fr 1fr;
             gap: 3rem;
-            margin-bottom: 3rem;
+            margin-bottom: 4rem;
         }
         
-        .main-content h2 {
-            font-family: 'Orbitron', 'Noto Sans SC', monospace;
-            font-size: 1.8rem;
-            margin-bottom: 1rem;
-            color: var(--accent);
-        }
-        
-        .main-content h3 {
-            font-family: 'JetBrains Mono', 'Noto Sans SC', monospace;
-            font-size: 1.3rem;
-            margin: 2rem 0 1rem 0;
-            color: var(--accent2);
-        }
-        
-        .main-content p {
-            margin-bottom: 1rem;
-            opacity: .9;
-        }
-        
-        .highlight-box {
-            background: rgba(255,255,255,.05);
-            border: 1px solid rgba(255,255,255,.1);
-            border-radius: 12px;
-            padding: 1.5rem;
-            margin: 1.5rem 0;
-        }
-        
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1rem;
-            margin: 2rem 0;
-        }
-        
-        .stat-card {
-            background: rgba(255,255,255,.08);
-            border: 1px solid rgba(255,255,255,.15);
-            border-radius: 12px;
-            padding: 1.5rem;
-            text-align: center;
-        }
-        
-        .stat-number {
-            font-size: 2rem;
-            font-weight: 800;
-            color: var(--accent);
-            display: block;
-        }
-        
-        .stat-label {
-            font-size: .9rem;
-            opacity: .8;
-            margin-top: .5rem;
+        .main-content {
+            background: rgba(255,255,255,0.05);
+            padding: 2.5rem;
+            border-radius: 20px;
+            border: 1px solid rgba(255,255,255,0.1);
         }
         
         .sidebar {
-            background: rgba(255,255,255,.05);
-            border: 1px solid rgba(255,255,255,.1);
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+        
+        .info-card {
+            background: rgba(255,255,255,0.05);
+            padding: 1.5rem;
             border-radius: 16px;
-            padding: 2rem;
-            height: fit-content;
+            border: 1px solid rgba(255,255,255,0.1);
         }
         
-        .sidebar h3 {
-            font-family: 'Orbitron', 'Noto Sans SC', monospace;
+        .info-card h3 {
+            color: #0ea5e9;
             margin-bottom: 1rem;
-            color: var(--accent);
+            font-size: 1.1rem;
         }
         
-        .link-list {
-            list-style: none;
+        .description {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+            color: #cbd5e1;
         }
         
-        .link-list li {
-            margin-bottom: .8rem;
+        .features {
+            margin-bottom: 2rem;
         }
         
-        .link-list a {
-            color: var(--accent);
-            text-decoration: none;
-            font-family: 'JetBrains Mono', 'Noto Sans SC', monospace;
-            transition: all .3s ease;
+        .features h3 {
+            color: #0ea5e9;
+            margin-bottom: 1.5rem;
+            font-size: 1.3rem;
         }
         
-        .link-list a:hover {
-            opacity: .8;
-            text-decoration: underline;
+        .features-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+        
+        .feature-item {
+            background: rgba(14,165,233,0.1);
+            padding: 1rem;
+            border-radius: 12px;
+            border: 1px solid rgba(14,165,233,0.2);
+        }
+        
+        .feature-item h4 {
+            color: #0ea5e9;
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+        }
+        
+        .feature-item p {
+            font-size: 0.9rem;
+            color: #94a3b8;
+        }
+        
+        .stratoos-integration {
+            background: linear-gradient(135deg, rgba(14,165,233,0.1), rgba(99,102,241,0.1));
+            padding: 2rem;
+            border-radius: 20px;
+            border: 1px solid rgba(14,165,233,0.2);
+            margin: 2rem 0;
+        }
+        
+        .stratoos-integration h3 {
+            color: #0ea5e9;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
         }
         
         .tech-stack {
+            margin-bottom: 2rem;
+        }
+        
+        .tech-stack h3 {
+            color: #0ea5e9;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+        
+        .tech-tags {
             display: flex;
             flex-wrap: wrap;
-            gap: .5rem;
-            margin-top: 1rem;
+            gap: 0.5rem;
         }
         
         .tech-tag {
-            background: rgba(14,165,233,.2);
-            color: var(--accent);
-            padding: .3rem .8rem;
-            border-radius: 20px;
-            font-size: .8rem;
-            font-family: 'JetBrains Mono', 'Noto Sans SC', monospace;
+            background: rgba(14,165,233,0.2);
+            color: #0ea5e9;
+            padding: 0.4rem 0.8rem;
+            border-radius: 8px;
+            font-size: 0.8rem;
+            border: 1px solid rgba(14,165,233,0.3);
         }
         
-        @media (max-width: 768px) {
-            .content-grid {
+        .link-buttons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        
+        .link-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #0ea5e9, #6366f1);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 20px rgba(14,165,233,0.3);
+            text-align: center;
+            flex: 1;
+        }
+        
+        .link-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(14,165,233,0.4);
+        }
+        
+        .link-btn.secondary {
+            background: linear-gradient(135deg, #64748b, #475569);
+        }
+        
+        .link-btn.secondary:hover {
+            background: linear-gradient(135deg, #475569, #334155);
+        }
+        
+        .architecture-diagram {
+            background: rgba(255,255,255,0.05);
+            padding: 2rem;
+            border-radius: 16px;
+            border: 1px solid rgba(255,255,255,0.1);
+            margin: 2rem 0;
+        }
+        
+        .architecture-diagram h3 {
+            color: #0ea5e9;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+        
+        .architecture-layers {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .layer {
+            background: rgba(14,165,233,0.1);
+            padding: 1rem;
+            border-radius: 12px;
+            text-align: center;
+            border: 1px solid rgba(14,165,233,0.2);
+        }
+        
+        .layer h4 {
+            color: #0ea5e9;
+            margin-bottom: 0.5rem;
+        }
+        
+        .layer p {
+            font-size: 0.8rem;
+            color: #94a3b8;
+        }
+        
+        @media (max-width: 1024px) {
+            .ecosystem-overview {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .features-grid {
                 grid-template-columns: 1fr;
             }
             
-            .title {
+            .architecture-layers {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .project-title {
                 font-size: 2rem;
+            }
+            
+            .container {
+                padding: 1rem;
+            }
+            
+            .link-buttons {
+                flex-direction: column;
             }
         }
     </style>
@@ -227,112 +339,123 @@
             <a href="https://elizatang007.github.io/" class="back-btn">← Back to Home</a>
         </div>
         
-        <h1 class="title">YITA AVIATION</h1>
-        <p class="subtitle">A New Mobility Paradigm - Shaping the skies with intelligent platforms</p>
-        
-        <div class="hero-image">
-            <div style="text-align: center; z-index: 1; position: relative;">
-                <h2 style="font-size: 2rem; margin-bottom: 1rem;">We don't build aircraft — we build the platform behind them</h2>
-                <p style="font-size: 1.1rem; opacity: .8;">Discover smarter ways to connect flights, optimize routes, and unlock the best price every time</p>
+        <div class="hero-section">
+            <div class="project-title">YITA AVIATION</div>
+            <div class="project-subtitle">Integrated Air Mobility Ecosystem with StratoOS Transportation OS</div>
+            <div class="status-badges">
+                <div class="status-badge">Active</div>
+                <div class="type-badge">Startup</div>
             </div>
         </div>
         
-        <div class="stats-grid">
-            <div class="stat-card">
-                <span class="stat-number">$2M+</span>
-                <div class="stat-label">Funding Raised</div>
-            </div>
-            <div class="stat-card">
-                <span class="stat-number">15+</span>
-                <div class="stat-label">Team Members</div>
-            </div>
-            <div class="stat-card">
-                <span class="stat-number">3</span>
-                <div class="stat-label">Patent Applications</div>
-            </div>
-            <div class="stat-card">
-                <span class="stat-number">2025</span>
-                <div class="stat-label">First Flight</div>
-            </div>
-        </div>
-        
-        <div class="content-grid">
+        <div class="ecosystem-overview">
             <div class="main-content">
-                <h2>Our Vision</h2>
-                <p>YITA AVIATION is building a complete, end-to-end solution for Advanced Air Mobility within our cities. We don't build aircraft — we build the platform behind them, helping users find, book, and optimize their eVTOL journeys from purchasing aircraft to scheduling shared flights, always at the best price.</p>
-                
-                <div class="highlight-box">
-                    <h3>Global Low-Altitude Economy Vision</h3>
-                    <p>China is actively promoting civil low-altitude airspace reform, building a trillion-dollar low-altitude economy. Europe supports UAM legislation with focus on sustainability and urban integration. The US FAA and NASA are advancing the Sky program for commercial point-to-point flights. We're building seamless mobility experiences where eVTOLs coordinate with ground systems for integrated transportation.</p>
+                <div class="description">
+                    YITA AVIATION represents a revolutionary approach to urban air mobility, combining smart eVTOL operations with the advanced StratoOS transportation operating system. This integrated ecosystem provides comprehensive solutions for next-generation air transportation, from aircraft management to mission orchestration.
                 </div>
                 
-                <h3>The YITA Air Mobility Network</h3>
-                <p>A complete, end-to-end solution for Advanced Air Mobility within our cities. Our platform integrates cutting-edge AI, advanced aerodynamics, and intelligent traffic management to create a seamless urban air transportation network. We're not just building flying cars—we're building the digital infrastructure that will make urban air mobility safe, accessible, and sustainable.</p>
+                <div class="features">
+                    <h3>Core Features</h3>
+                    <div class="features-grid">
+                        <div class="feature-item">
+                            <h4>Smart eVTOL Operations</h4>
+                            <p>Intelligent flight planning, booking, and optimization for electric vertical takeoff and landing aircraft</p>
+                        </div>
+                        <div class="feature-item">
+                            <h4>StratoOS Integration</h4>
+                            <p>Advanced transportation OS for low-altitude economy with BVLOS mission orchestration</p>
+                        </div>
+                        <div class="feature-item">
+                            <h4>Digital Command Center</h4>
+                            <p>Real-time monitoring and control of air mobility operations across the ecosystem</p>
+                        </div>
+                        <div class="feature-item">
+                            <h4>Fleet Management</h4>
+                            <p>Comprehensive aircraft lifecycle management from procurement to maintenance</p>
+                        </div>
+                    </div>
+                </div>
                 
-                <h3>Core Technology Stack</h3>
-                <p>YITA AVIATION's platform combines several breakthrough technologies:</p>
-                <ul style="margin-left: 2rem; margin-bottom: 1rem;">
-                    <li><strong>Advanced Battery Systems:</strong> Next-generation solid-state batteries with 3x energy density</li>
-                    <li><strong>AI-Powered Flight Control:</strong> Autonomous navigation with real-time obstacle avoidance</li>
-                    <li><strong>Distributed Electric Propulsion:</strong> Redundant propulsion systems for enhanced safety</li>
-                    <li><strong>Urban Air Traffic Management:</strong> AI-driven traffic coordination and optimization</li>
-                </ul>
+                <div class="stratoos-integration">
+                    <h3>StratoOS Integration</h3>
+                    <p>YITA AVIATION leverages the power of StratoOS, a next-generation transportation operating system designed for the low-altitude economy. This integration provides:</p>
+                    <ul style="margin-top: 1rem; padding-left: 1.5rem;">
+                        <li>BVLOS (Beyond Visual Line of Sight) mission orchestration</li>
+                        <li>Advanced airspace management and conflict resolution</li>
+                        <li>Real-time weather and traffic integration</li>
+                        <li>Automated flight path optimization</li>
+                        <li>Safety monitoring and emergency response systems</li>
+                    </ul>
+                </div>
                 
-                <h3>Revolution - It's a Team Effort</h3>
-                <p>No one can make Advanced Air Mobility a reality alone. It takes vision, trust, and collective ambition. Every great leap in transportation is built on shared progress. At YITA, we forge partnerships that move the sky forward.</p>
+                <div class="architecture-diagram">
+                    <h3>System Architecture</h3>
+                    <div class="architecture-layers">
+                        <div class="layer">
+                            <h4>User Interface</h4>
+                            <p>Mobile & Web Apps</p>
+                        </div>
+                        <div class="layer">
+                            <h4>YITA Platform</h4>
+                            <p>Booking & Fleet Management</p>
+                        </div>
+                        <div class="layer">
+                            <h4>StratoOS Core</h4>
+                            <p>Transportation OS & Mission Control</p>
+                        </div>
+                    </div>
+                </div>
                 
-                <h3>Powered by Strategic Alliances</h3>
-                <p>We're taking a thoughtful approach to developing the market while minimizing disruption. Our platform addresses key market segments:</p>
-                <ul style="margin-left: 2rem; margin-bottom: 1rem;">
-                    <li><strong>Urban Commuting:</strong> 15-30 minute flights replacing 1-2 hour commutes</li>
-                    <li><strong>Emergency Services:</strong> Rapid response for medical and emergency situations</li>
-                    <li><strong>Logistics & Delivery:</strong> Same-day delivery across metropolitan areas</li>
-                    <li><strong>Tourism & Recreation:</strong> Scenic flights and aerial experiences</li>
-                </ul>
+                <div class="tech-stack">
+                    <h3>Technology Stack</h3>
+                    <div class="tech-tags">
+                        <span class="tech-tag">eVTOL Technology</span>
+                        <span class="tech-tag">StratoOS</span>
+                        <span class="tech-tag">BVLOS Operations</span>
+                        <span class="tech-tag">Air Traffic Management</span>
+                        <span class="tech-tag">Real-time Analytics</span>
+                        <span class="tech-tag">Cloud Computing</span>
+                        <span class="tech-tag">IoT Integration</span>
+                        <span class="tech-tag">AI/ML</span>
+                    </div>
+                </div>
                 
-                <h3>Green Low-Carbon Technology</h3>
-                <p>Our eVTOL platforms are designed with sustainability at their core. Electric propulsion eliminates direct emissions, while our intelligent routing algorithms optimize energy consumption. We're committed to making urban air mobility a key component of the sustainable transportation ecosystem.</p>
-                
-                <div class="highlight-box">
-                    <h3>Connecting Cities and Communities</h3>
-                    <p>We're bridging urban edge areas to achieve spatial equity and seamless connectivity. Safety is our highest priority, with redundant systems, advanced collision avoidance, and comprehensive emergency procedures. We're working closely with aviation authorities to establish new safety standards for urban air mobility.</p>
+                <div class="link-buttons">
+                    <a href="https://yita-aviation-site.vercel.app/" class="link-btn" target="_blank">Visit Platform →</a>
+                    <a href="ventures/stratoos.html" class="link-btn secondary">Learn about StratoOS →</a>
                 </div>
             </div>
             
             <div class="sidebar">
-                <h3>Quick Links</h3>
-                <ul class="link-list">
-                    <li><a href="https://www.nature.com/articles/s41586-021-03900-w" target="_blank">Nature: Urban Air Mobility Research</a></li>
-                    <li><a href="https://www.science.org/doi/10.1126/science.abc6284" target="_blank">Science: Electric Aviation Technology</a></li>
-                    <li><a href="https://www.faa.gov/uas/advanced_operations/urban_air_mobility" target="_blank">FAA Urban Air Mobility Initiative</a></li>
-                    <li><a href="https://www.easa.europa.eu/domains/urban-air-mobility" target="_blank">EASA Urban Air Mobility</a></li>
-                </ul>
-                
-                <h3 style="margin-top: 2rem;">Technology Stack</h3>
-                <div class="tech-stack">
-                    <span class="tech-tag">Python</span>
-                    <span class="tech-tag">TensorFlow</span>
-                    <span class="tech-tag">ROS2</span>
-                    <span class="tech-tag">SolidWorks</span>
-                    <span class="tech-tag">ANSYS</span>
-                    <span class="tech-tag">AWS</span>
-                    <span class="tech-tag">Kubernetes</span>
-                    <span class="tech-tag">PostgreSQL</span>
+                <div class="info-card">
+                    <h3>Project Status</h3>
+                    <p><strong>Status:</strong> Active Development</p>
+                    <p><strong>Launch:</strong> 2024</p>
+                    <p><strong>Category:</strong> Air Mobility Platform</p>
+                    <p><strong>Integration:</strong> StratoOS Transportation OS</p>
                 </div>
                 
-                <h3 style="margin-top: 2rem;">Contact</h3>
-                <p style="margin-bottom: .5rem;">Interested in investing or partnering?</p>
-                <p><a href="mailto:eliza@yita-aviation.com" style="color: var(--accent);">eliza@yita-aviation.com</a></p>
+                <div class="info-card">
+                    <h3>Market Impact</h3>
+                    <p>Revolutionizing urban air mobility by combining smart eVTOL operations with advanced transportation OS technology, creating a comprehensive ecosystem for next-generation air transportation.</p>
+                </div>
                 
-                <h3 style="margin-top: 2rem;">Latest News</h3>
-                <ul class="link-list">
-                    <li><a href="https://yita-aviation-site.vercel.app/" target="_blank">Beta Platform Launch for Seamless eVTOL Booking</a></li>
-                    <li><a href="https://yita-aviation-site.vercel.app/" target="_blank">Strategic MoU with Shenzhen Airport Group</a></li>
-                    <li><a href="https://yita-aviation-site.vercel.app/" target="_blank">Joint Research with AVIC on Low-Altitude Mobility</a></li>
-                    <li><a href="https://yita-aviation-site.vercel.app/" target="_blank">Digital Air Mobility Platform Showcase at Singapore Airshow</a></li>
-                </ul>
+                <div class="info-card">
+                    <h3>Key Partnerships</h3>
+                    <p><strong>Technology:</strong> StratoOS Integration</p>
+                    <p><strong>Aviation:</strong> eVTOL Manufacturers</p>
+                    <p><strong>Infrastructure:</strong> Vertiport Networks</p>
+                    <p><strong>Regulatory:</strong> Aviation Authorities</p>
+                </div>
+                
+                <div class="info-card">
+                    <h3>Contact</h3>
+                    <p><strong>Email:</strong> yitaaviation@163.com</p>
+                    <p><strong>Platform:</strong> yita-aviation-site.vercel.app</p>
+                    <p><strong>Status:</strong> Seeking partnerships and investment</p>
+                </div>
             </div>
         </div>
     </div>
 </body>
-</html> 
+</html>
