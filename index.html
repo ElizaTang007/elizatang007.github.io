@@ -162,9 +162,11 @@
     .hero h1{margin:0 0 .6rem 0; font-size:44px; line-height:1.05; font-family:'Orbitron', 'Noto Sans SC', monospace; font-weight:800; background:linear-gradient(135deg, #0ea5e9, #6366f1); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text}
     .hero p{margin:.25rem 0; opacity:.9; font-family:'JetBrains Mono', 'Noto Sans SC', monospace}
     .meta{margin-top:1rem; display:flex; gap:1rem; flex-wrap:wrap; opacity:.85}
-    .hero-stats{margin-top:1.5rem; display:grid; grid-template-columns:repeat(auto-fit, minmax(120px,1fr)); gap:1rem}
-    .stat-item{background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.15); border-radius:8px; padding:.8rem; text-align:center; font-family:'JetBrains Mono', 'Noto Sans SC', monospace; font-size:.85rem}
-    .stat-item strong{display:block; color:#0ea5e9; font-size:1.1rem; margin-bottom:.2rem}
+    .hero-quote{margin-top:2rem; text-align:center}
+    .hero-quote blockquote{morder:none; padding:0; margin:0; position:relative}
+    .hero-quote p{font-size:1.2rem; line-height:1.6; color:#e2e8f0; font-style:italic; margin-bottom:.5rem; font-family:'JetBrains Mono', 'Noto Sans SC', monospace}
+    .hero-quote cite{font-size:.9rem; color:#94a3b8; font-family:'JetBrains Mono', 'Noto Sans SC', monospace; opacity:.8}
+    .hero-quote::before{content:'"'; font-size:4rem; color:#0ea5e9; opacity:.3; position:absolute; top:-1rem; left:50%; transform:translateX(-50%); font-family:serif}
     .social-links{margin-top:1rem; display:flex; gap:.8rem; align-items:center}
     .social-links a{display:flex; align-items:center; gap:.3rem; padding:.5rem .8rem; background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.15); border-radius:8px; color:var(--text-on-dark); text-decoration:none; font-family:'JetBrains Mono', 'Noto Sans SC', monospace; font-size:.85rem; transition:all .25s ease}
     .social-links a:hover{background:rgba(255,255,255,.12); transform:translateY(-1px); box-shadow:0 4px 12px rgba(0,0,0,.2)}
@@ -409,7 +411,12 @@
           <p data-i18n="hero.subtitle">University of Sydney · Econometrics & Software Development</p>
           <p data-i18n="hero.pitch">PhD applicant in Quantitative Marketing, Digital Platform Research, and Algorithmic Behavioral Modeling.</p>
           <div class="meta" id="metaTags"></div>
-          <div class="hero-stats" id="heroStats"></div>
+          <div class="hero-quote">
+            <blockquote>
+              <p>"We are a way for the cosmos to know itself."</p>
+              <cite>— Carl Sagan</cite>
+            </blockquote>
+          </div>
           <div class="social-links">
             <a href="mailto:tangyiting007@gmail.com">
               <svg width="14" height="14" fill="currentColor" viewBox="0 0 16 16"><path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2Zm13 2.383-4.708 2.825L15 11.105V5.383Zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741ZM1 11.105l4.708-2.897L1 5.383v5.722Z"/></svg>
@@ -841,7 +848,6 @@
           tags:['AI & ML','Data Science','NLP','Computer Vision','UAM / eVTOL','ESG'],
           cv:'Download CV',
           venture:'Visit YITA AVIATION',
-          stats:['2+ Years Research','4+ Publications','1 Patent Pending','$50K+ Funding Raised']
         },
         research: { title:'Research & Innovation', more:'View More Research', items:[
           {t:'Preference Externalities', d:'Modeling willingness-to-pay shifts under social information on digital platforms. Developing causal frameworks for peer influence mechanisms.', img:'images/1.png', stats:'15-25% WTP Shift', link:'research/preference-externalities.html'},
@@ -888,7 +894,6 @@
           tags:['人工智能','数据科学','自然语言处理','计算机视觉','UAM / eVTOL','ESG'],
           cv:'下载简历',
           venture:'访问 YITA AVIATION',
-          stats:['2+ 年研究','4+ 篇论文','1 项专利','5万+ 融资']
         },
         research: { title:'研究与创新', more:'查看更多研究', items:[
           {t:'偏好外部性', d:'在数字平台的社会信息线索下，建模支付意愿迁移与行为调整。开发同伴影响机制的因果框架。', img:'images/1.png', stats:'15-25% 支付意愿变化', link:'research/preference-externalities.html'},
@@ -945,9 +950,7 @@
       // meta tags
       const meta = document.getElementById('metaTags');
       meta.innerHTML = t.hero.tags.map(x=>`<span>${x}</span>`).join('');
-      // hero stats
-      const stats = document.getElementById('heroStats');
-      stats.innerHTML = t.hero.stats.map(x=>`<div class="stat-item"><strong>${x.split(' ')[0]}</strong>${x.split(' ').slice(1).join(' ')}</div>`).join('');
+      // hero quote - no JavaScript needed as it's static
       // research cards
       const r = document.getElementById('researchGrid');
       r.innerHTML = t.research.items.map((i, index)=>`
