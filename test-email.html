@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EmailJS测试</title>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+</head>
+<body>
+    <h1>EmailJS邮件发送测试</h1>
+    
+    <div>
+        <label>收件人邮箱：</label>
+        <input type="email" id="testEmail" placeholder="输入测试邮箱" value="tangyiting007@gmail.com">
+    </div>
+    
+    <div>
+        <label>收件人姓名：</label>
+        <input type="text" id="testName" placeholder="输入姓名" value="Eliza Tang">
+    </div>
+    
+    <button onclick="sendTestEmail()">发送测试邮件</button>
+    
+    <div id="result"></div>
+
+    <script>
+        // 初始化EmailJS
+        (function() {
+            emailjs.init('_be2yNgZ-rNhhO_DR');
+        })();
+
+        function sendTestEmail() {
+            const email = document.getElementById('testEmail').value;
+            const name = document.getElementById('testName').value;
+            const resultDiv = document.getElementById('result');
+            
+            if (!email) {
+                resultDiv.innerHTML = '<p style="color: red;">请输入邮箱地址</p>';
+                return;
+            }
+            
+            resultDiv.innerHTML = '<p>正在发送测试邮件...</p>';
+            
+            const templateParams = {
+                email: email,
+                to_name: name,
+                from_name: 'Eliza Tang',
+                from_email: 'tangyiting007@gmail.com',
+                reply_to: email,
+                message: '这是一封测试邮件',
+                subject: 'EmailJS测试邮件',
+                website_link: 'https://elizatang007.github.io/',
+                company_name: 'Eliza Tang Research'
+            };
+            
+            console.log('发送参数：', templateParams);
+            
+            emailjs.send('service_jdzpias', 'template_xqw7y2f', templateParams, '_be2yNgZ-rNhhO_DR')
+                .then(function(response) {
+                    console.log('✅ 邮件发送成功！', response);
+                    resultDiv.innerHTML = '<p style="color: green;">✅ 邮件发送成功！请检查收件箱。</p>';
+                }, function(error) {
+                    console.log('❌ 邮件发送失败：', error);
+                    resultDiv.innerHTML = '<p style="color: red;">❌ 邮件发送失败：' + error.text + '</p>';
+                });
+        }
+    </script>
+</body>
+</html>
