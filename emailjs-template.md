@@ -6,7 +6,7 @@
 
 ### 主题 (Subject)
 ```
-New Subscription - Eliza Tang Research
+Welcome to Eliza Tang's Research & Innovation Updates
 ```
 
 ### 邮件内容 (Message)
@@ -25,45 +25,51 @@ New Subscription - Eliza Tang Research
 
   <!-- Main Content -->
   <div style="background-color: white; padding: 24px; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
-    <h2 style="color: #0f172a; margin-bottom: 16px; font-size: 24px;">New Subscription Notification</h2>
+    <h2 style="color: #0f172a; margin-bottom: 16px; font-size: 24px;">Welcome to Eliza Tang's Research & Innovation Updates</h2>
     
     <p style="color: #475569; line-height: 1.6; margin-bottom: 16px;">
-      A new subscriber has joined the Eliza Tang Research community!
+      Hi {{from_name}},
+    </p>
+    
+    <p style="color: #475569; line-height: 1.6; margin-bottom: 16px;">
+      Thank you for subscribing to my website! I'm excited to share my journey with you — spanning causal machine learning, digital platforms, and urban air mobility.
     </p>
 
-    <!-- Subscription Details -->
-    <div style="background-color: #f8fafc; padding: 16px; border-radius: 8px; border-left: 4px solid #0ea5e9; margin: 20px 0;">
-      <h3 style="color: #0f172a; margin-bottom: 12px; font-size: 18px;">Subscription Details</h3>
-      <p style="margin: 8px 0; color: #475569;"><strong>Email:</strong> {{from_email}}</p>
-      <p style="margin: 8px 0; color: #475569;"><strong>Name:</strong> {{from_name}}</p>
-      <p style="margin: 8px 0; color: #475569;"><strong>Date:</strong> {{date}}</p>
-      <p style="margin: 8px 0; color: #475569;"><strong>Interests:</strong> Research, Projects, Updates</p>
+    <p style="color: #475569; line-height: 1.6; margin-bottom: 16px;">
+      As a subscriber, you'll get:
+    </p>
+
+    <!-- Benefits List -->
+    <div style="background-color: #f8fafc; padding: 20px; border-radius: 8px; border-left: 4px solid #0ea5e9; margin: 20px 0;">
+      <p style="margin: 8px 0; color: #475569; font-size: 16px;">✦ Updates on my latest research papers and conference talks</p>
+      <p style="margin: 8px 0; color: #475569; font-size: 16px;">✦ Insights from ongoing projects (INFORMS, IJRM, AI & UAM)</p>
+      <p style="margin: 8px 0; color: #475569; font-size: 16px;">✦ Occasional notes on entrepreneurship and global initiatives (YITA Aviation, UNAA, IEEE WIE)</p>
     </div>
+
+    <p style="color: #475569; line-height: 1.6; margin-bottom: 24px;">
+      I believe in building bridges between academic rigor, entrepreneurial innovation, and global collaboration — and I look forward to keeping you part of that journey.
+    </p>
 
     <!-- Action Button -->
     <div style="text-align: center; margin: 24px 0;">
       <a style="display: inline-block; text-decoration: none; outline: none; color: #fff; background: linear-gradient(135deg, #0ea5e9, #3b82f6); padding: 12px 24px; border-radius: 8px; font-weight: 600; box-shadow: 0 4px 12px rgba(14,165,233,0.3);" 
          href="{{website_link}}" target="_blank">
-        Visit Website
+        🔗 Visit Website
       </a>
     </div>
 
-    <!-- Support Information -->
-    <div style="background-color: #f1f5f9; padding: 16px; border-radius: 8px; margin-top: 20px;">
-      <p style="color: #475569; margin-bottom: 8px;">
-        <strong>Need to contact the subscriber?</strong>
-      </p>
-      <p style="color: #475569; margin: 0;">
-        Reply to this email or contact: 
-        <a href="mailto:{{company_email}}" style="color: #0ea5e9; text-decoration: none;">{{company_email}}</a>
+    <!-- Signature -->
+    <div style="margin-top: 24px; padding-top: 20px; border-top: 1px solid #e2e8f0;">
+      <p style="color: #475569; margin: 0; font-style: italic;">
+        Warmly,<br />
+        <strong style="color: #0f172a;">Eliza Yiting Tang</strong>
       </p>
     </div>
   </div>
 
   <!-- Footer -->
   <div style="text-align: center; margin-top: 24px; padding: 16px; color: #64748b; font-size: 14px;">
-    <p style="margin: 0;">Best regards,<br />The {{company_name}} Team</p>
-    <p style="margin: 8px 0 0 0;">
+    <p style="margin: 0;">
       <a href="{{website_link}}" style="color: #0ea5e9; text-decoration: none;">{{website_link}}</a>
     </p>
   </div>
