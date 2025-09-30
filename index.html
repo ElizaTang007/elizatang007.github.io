@@ -1293,27 +1293,34 @@
             
             console.log('Subscriber saved to database:', data);
             
-            // 发送欢迎邮件
+            // 发送欢迎邮件给订阅者
             if (typeof emailjs !== 'undefined') {
               const templateParams = {
-                to_email: email,
+                to_email: email, // 发送给订阅者
                 from_name: 'Eliza Tang',
                 subscriber_name: document.querySelector('input[name="name"]')?.value || 'Friend',
-                website_link: 'https://elizatang007.github.io/'
+                website_link: 'https://elizatang007.github.io/',
+                company_name: 'Eliza Tang Research',
+                company_email: 'tangyiting007@gmail.com'
               };
+              
+              console.log('Sending welcome email to:', email);
               
               emailjs.send('service_3d24hje', 'template_xqw7y2f', templateParams, '_be2yNgZ-rNhhO_DR')
                 .then(function(response) {
-                  console.log('Email sent successfully!', response.status, response.text);
+                  console.log('Welcome email sent successfully!', response.status, response.text);
                 }, function(error) {
-                  console.log('Email sending failed:', error);
+                  console.log('Welcome email sending failed:', error);
+                  // 即使邮件发送失败，订阅仍然成功
                 });
+            } else {
+              console.log('EmailJS not available, skipping email send');
             }
             
             // 显示成功消息
             alert(lang === 'en' ? 
-              'Thank you for subscribing! We will keep you updated on our latest research and projects.' : 
-              '感谢您的订阅！我们将及时更新我们的最新研究和项目。'
+              'Thank you for subscribing! Check your email for a welcome message from Eliza Tang.' : 
+              '感谢您的订阅！请查看您的邮箱，我们已发送欢迎邮件。'
             );
             emailInput.value = '';
             
