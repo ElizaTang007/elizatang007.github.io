@@ -779,6 +779,9 @@
       dots.innerHTML = currentPhotos.map((_, index) => 
         `<div class="carousel-dot ${index === 0 ? 'active' : ''}" data-slide="${index}"></div>`
       ).join('');
+      
+      // Debug: log the dots to console
+      console.log('Created dots:', dots.innerHTML);
 
       // Reset to first slide
       currentSlide = 0;
@@ -844,7 +847,10 @@
       }
       
       dots.forEach((dot, index) => {
-        dot.classList.toggle('active', index === currentSlide);
+        const isActive = index === currentSlide;
+        dot.classList.toggle('active', isActive);
+        // Debug: log dot states
+        console.log(`Dot ${index}: active=${isActive}, currentSlide=${currentSlide}`);
       });
     }
 
