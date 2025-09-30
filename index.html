@@ -1436,10 +1436,28 @@
                   console.log('✅ Welcome email sent successfully!', response.status, response.text);
                   console.log('Response:', response);
                   
+                  // 详细调试信息
+                  console.log('📧 邮件发送详情:');
+                  console.log('- 收件人:', email);
+                  console.log('- 发件人:', 'tangyiting007@gmail.com');
+                  console.log('- 服务ID:', 'service_jdzpias');
+                  console.log('- 模板ID:', 'template_xqw7y2f');
+                  console.log('- 响应状态:', response.status);
+                  console.log('- 响应文本:', response.text);
+                  
                   // 检查是否是教育邮箱
                   if (email.includes('.edu')) {
                     console.log('📧 教育邮箱检测到，邮件可能被过滤');
                     console.log('💡 建议收件人检查垃圾邮件文件夹');
+                  }
+                  
+                  // 检查邮件是否真的发送成功
+                  if (response.status === 200) {
+                    console.log('✅ 邮件API调用成功，但可能被邮件服务器过滤');
+                    console.log('💡 请检查：');
+                    console.log('1. 垃圾邮件文件夹');
+                    console.log('2. 邮件服务器是否阻止了邮件');
+                    console.log('3. 发件人是否被标记为垃圾邮件');
                   }
                 }, function(error) {
                   console.log('❌ Welcome email sending failed:', error);
@@ -1455,7 +1473,7 @@
               console.log('❌ EmailJS not available, skipping email send');
             }
             
-              // 显示成功消息
+              // 显示成功消息（包含邮件发送状态）
               const successNotification = document.createElement('div');
               successNotification.style.cssText = `
                 position: fixed;
@@ -1473,6 +1491,12 @@
                 animation: slideIn 0.3s ease-out;
               `;
               
+              // 检查是否是教育邮箱，提供特殊提示
+              const isEduEmail = email.includes('.edu');
+              const emailTip = isEduEmail ? 
+                (lang === 'en' ? 'Check spam folder if not received.' : '如未收到，请检查垃圾邮件文件夹。') :
+                (lang === 'en' ? 'Check your email for a welcome message.' : '请查看您的邮箱，我们已发送欢迎邮件。');
+              
               successNotification.innerHTML = `
                 <div style="display: flex; align-items: center; gap: 12px;">
                   <div style="font-size: 20px;">🎉</div>
@@ -1481,8 +1505,9 @@
                       ${lang === 'en' ? 'Welcome aboard!' : '欢迎订阅！'}
                     </div>
                     <div style="opacity: 0.9; font-size: 13px;">
-                      ${lang === 'en' ? 'Check your email for a welcome message.' : '请查看您的邮箱，我们已发送欢迎邮件。'}
+                      ${emailTip}
                     </div>
+                    ${isEduEmail ? '<div style="opacity: 0.8; font-size: 12px; margin-top: 4px; color: #ffd700;">📧 教育邮箱检测到</div>' : ''}
                   </div>
                 </div>
               `;
