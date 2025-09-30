@@ -49,7 +49,7 @@ Welcome to Eliza Tang's Research & Innovation Updates
     <!-- Action Button -->
     <div style="text-align: center; margin: 24px 0;">
       <a style="display: inline-block; text-decoration: none; outline: none; color: #fff; background: linear-gradient(135deg, #0ea5e9, #3b82f6); padding: 12px 24px; border-radius: 8px; font-weight: 600; box-shadow: 0 4px 12px rgba(14,165,233,0.3);" 
-         href="{{website_link}}" target="_blank">
+         href="https://elizatang007.github.io/" target="_blank">
         🔗 Visit Website
       </a>
     </div>
@@ -66,7 +66,7 @@ Welcome to Eliza Tang's Research & Innovation Updates
   <!-- Footer -->
   <div style="text-align: center; margin-top: 24px; padding: 16px; color: #64748b; font-size: 14px;">
     <p style="margin: 0;">
-      <a href="{{website_link}}" style="color: #0ea5e9; text-decoration: none;">{{website_link}}</a>
+      <a href="https://elizatang007.github.io/" style="color: #0ea5e9; text-decoration: none;">https://elizatang007.github.io/</a>
     </p>
   </div>
 </div>
