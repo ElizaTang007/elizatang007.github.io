@@ -1297,9 +1297,9 @@
             if (typeof emailjs !== 'undefined') {
               console.log('EmailJS is available, attempting to send email...');
               
-              // 使用EmailJS标准参数格式
+              // 使用EmailJS模板中定义的参数名
               const templateParams = {
-                to_email: email,
+                email: email, // 对应模板中的 {{email}}
                 to_name: document.querySelector('input[name="name"]')?.value || 'Friend',
                 from_name: 'Eliza Tang',
                 from_email: 'tangyiting007@gmail.com',
