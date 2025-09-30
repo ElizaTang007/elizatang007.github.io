@@ -192,7 +192,7 @@
     
     /* Research Card Styles - All Vertical Layout */
     .research-card{display:flex; flex-direction:column; height:100%; overflow:hidden; border-radius:20px; margin-bottom:2rem; background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.15); box-shadow:0 8px 32px rgba(0,0,0,0.3); transition:all .4s ease; min-height:400px}
-    .research-card:hover{transform:translateY(-6px); box-shadow:0 16px 48px rgba(0,0,0,0.4); border-color:rgba(14,165,233,0.4)}
+    .research-card:hover{transform:translateY(-8px) scale(1.02); box-shadow:0 20px 60px rgba(0,0,0,0.5); border-color:rgba(14,165,233,0.6)}
     .research-image-container{position:relative; overflow:hidden; width:100%; height:220px; border-radius:20px 20px 0 0}
     .research-image{width:100%; height:100%; object-fit:cover; transition:transform .4s ease; background:rgba(255,255,255,0.05); display:block}
     .research-card:hover .research-image{transform:scale(1.05)}
@@ -202,8 +202,8 @@
     .research-content{padding:2rem; flex:1; display:flex; flex-direction:column; background:rgba(255,255,255,0.02); border-radius:0 0 20px 20px}
     .research-content h3{margin:0 0 1rem 0; font-size:22px; font-family:'JetBrains Mono', 'Noto Sans SC', monospace; font-weight:700; color:#0ea5e9; line-height:1.3}
     .research-content p{margin:0 0 1.5rem 0; opacity:.9; line-height:1.7; flex:1; font-size:15px}
-    .research-hint{background:linear-gradient(135deg, rgba(14,165,233,0.15), rgba(99,102,241,0.1)); color:#0ea5e9; padding:.6rem 1rem; border-radius:10px; font-size:.85rem; font-family:'JetBrains Mono', 'Noto Sans SC', monospace; text-align:center; opacity:0; transform:translateY(8px); transition:all .4s ease; border:1px solid rgba(14,165,233,0.2)}
-    .research-card:hover .research-hint{opacity:1; transform:translateY(0); background:linear-gradient(135deg, rgba(14,165,233,0.2), rgba(99,102,241,0.15))}
+    .research-hint{background:linear-gradient(135deg, rgba(14,165,233,0.15), rgba(99,102,241,0.1)); color:#0ea5e9; padding:.6rem 1rem; border-radius:10px; font-size:.85rem; font-family:'JetBrains Mono', 'Noto Sans SC', monospace; text-align:center; opacity:1; transform:translateY(0); transition:all .4s ease; border:1px solid rgba(14,165,233,0.2)}
+    .research-card:hover .research-hint{opacity:1; transform:translateY(-2px); background:linear-gradient(135deg, rgba(14,165,233,0.25), rgba(99,102,241,0.2)); box-shadow:0 4px 12px rgba(14,165,233,0.3)}
     
     /* Responsive adjustments */
     @media (max-width: 1200px) {
