@@ -565,11 +565,6 @@
         description: 'Networking at academic conferences and research events'
       },
       {
-        src: 'images/埃菲尔铁塔.jpg',
-        title: 'Paris Research Conference',
-        description: 'Academic research presentation in Paris, France'
-      },
-      {
         src: 'images/海边.jpg',
         title: 'Research Retreat',
         description: 'Academic research retreat and collaborative work sessions'
@@ -631,12 +626,12 @@
 
       // Create slides
       track.innerHTML = photos.map((photo, index) => {
-        // 第5张（索引4）：Research Retreat - 竖屏居中显示
-        // 第6张（索引5）：Cultural Exchange - 竖屏居中显示
-        // 第10张（索引9）：Avalon Airshow - 竖屏居中显示
-        // 第13张（索引12）：Sydney Nightscape - 竖屏居中显示
+        // 第4张（索引3）：Research Retreat - 竖屏居中显示
+        // 第5张（索引4）：Cultural Exchange - 竖屏居中显示
+        // 第9张（索引8）：Avalon Airshow - 竖屏居中显示
+        // 第12张（索引11）：Sydney Nightscape - 竖屏居中显示
         let slideClass = '';
-        if ([4, 5, 9, 12].includes(index)) {
+        if ([3, 4, 8, 11].includes(index)) {
           slideClass = 'landscape-center'; // 竖屏居中，黑色背景
         }
         
