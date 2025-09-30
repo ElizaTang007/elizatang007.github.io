@@ -226,6 +226,11 @@
     .research-more{text-align:center; margin-top:2rem}
     .research-more-btn{display:inline-flex; align-items:center; gap:.5rem; background:linear-gradient(135deg, rgba(14,165,233,.9), rgba(99,102,241,.85)); border:none; color:white; padding:.8rem 1.5rem; border-radius:12px; font-family:'JetBrains Mono', 'Noto Sans SC', monospace; font-weight:500; cursor:pointer; transition:all .3s ease; box-shadow:0 4px 20px rgba(14,165,233,.3)}
     .research-more-btn:hover{transform:translateY(-2px); box-shadow:0 8px 30px rgba(14,165,233,.4); background:linear-gradient(135deg, #0ea5e9, #6366f1)}
+    
+    /* Dev More Button */
+    .dev-more{text-align:center; margin-top:2rem}
+    .dev-more-btn{display:inline-flex; align-items:center; gap:.5rem; background:linear-gradient(135deg, rgba(14,165,233,.9), rgba(99,102,241,.85)); border:none; color:white; padding:.8rem 1.5rem; border-radius:12px; font-family:'JetBrains Mono', 'Noto Sans SC', monospace; font-weight:500; cursor:pointer; transition:all .3s ease; box-shadow:0 4px 20px rgba(14,165,233,.3)}
+    .dev-more-btn:hover{transform:translateY(-2px); box-shadow:0 8px 30px rgba(14,165,233,.4); background:linear-gradient(135deg, #0ea5e9, #6366f1)}
     .research-more-btn svg{transition:transform .3s ease}
     .research-more-btn:hover svg{transform:translateX(3px)}
     .project-status{display:flex; justify-content:space-between; align-items:center; margin-top:.8rem}
@@ -485,6 +490,12 @@
       <div class="section-inner">
         <h2 data-i18n="dev.title">Under Development</h2>
         <div class="grid reveal" id="devGrid"></div>
+        <div class="dev-more" id="devMore" style="text-align:center; margin-top:2rem; display:none">
+          <button class="dev-more-btn" id="devMoreBtn" style="display:inline-flex; align-items:center; gap:.5rem; background:linear-gradient(135deg, rgba(14,165,233,.9), rgba(99,102,241,.85)); border:none; color:white; padding:.8rem 1.5rem; border-radius:12px; font-family:'JetBrains Mono', 'Noto Sans SC', monospace; font-weight:500; cursor:pointer; transition:all .3s ease; box-shadow:0 4px 20px rgba(14,165,233,.3)">
+            <span data-i18n="dev.more">View More Projects</span>
+            <span>→</span>
+          </button>
+        </div>
       </div>
     </section>
 
@@ -842,7 +853,7 @@
           {t:'🚀 UAM Entrepreneur', d:'Co‑founder @YITA AVIATION — eVTOL platform design; low‑altitude mobility infrastructure; tech‑policy & urban air innovation.'},
           {t:'🌍 Global Citizen', d:'Lived and worked across Sydney, Shanghai, and international conferences. Embracing diverse perspectives and building bridges between cultures.'}
         ]},
-        dev: { title:'Finished Projects', items:[
+        dev: { title:'Finished Projects', more:'View More Projects', items:[
           {t:'Returns to Education — A Causal Analysis Using IV', d:'ECMT3997 Thesis, University of Sydney · PDF: <a href="ecmt3997.pdf" style="color:#7dd3fc">View</a><br/>Implements Card (1993) with proximity‑to‑college as instrument; 2SLS estimation, LATE interpretation, and instrument strength using Australian microdata.', status:'Completed (High Distinction)', progress:'100%'},
           {t:'AI Art Personification Research', d:'Research on "Examining the Communication Effectiveness of Artificial Intelligence Art Personification". Exploring how AI-generated art affects human communication and perception.', status:'Published', progress:'100%'},
         ]},
@@ -889,7 +900,7 @@
           {t:'🚀 UAM 创业者', d:'YITA AVIATION 联合创始人；eVTOL 平台设计与低空出行基础设施；科技政策与城市空中创新。'},
           {t:'🌍 全球公民', d:'在悉尼、上海和国际会议间生活工作。拥抱多元视角，搭建文化桥梁。'}
         ]},
-        dev: { title:'已完成项目', items:[
+        dev: { title:'已完成项目', more:'查看更多项目', items:[
           {t:'教育回报的因果分析（工具变量）', d:'ECMT3997 毕设 · PDF：<a href="ecmt3997.pdf" style="color:#7dd3fc">查看</a><br/>基于 Card (1993) 的近校工具变量框架，实施 2SLS、解释 LATE，并使用澳大利亚微观数据检验工具变量强度。', status:'已完成（优秀等级）', progress:'100%'},
           {t:'AI 艺术拟人化研究', d:'研究论文"人工智能艺术拟人化的传播效果研究"。探索 AI 生成艺术如何影响人类传播和认知。', status:'已发表', progress:'100%'},
         ]},
@@ -967,6 +978,14 @@
       // dev
       const d = document.getElementById('devGrid');
       d.innerHTML = t.dev.items.map(i=>`<div class="card"><h3>${i.t}</h3><p>${i.d}</p><div class="project-status"><span style="color:#0ea5e9;font-size:.85rem">${i.status}</span><span style="opacity:.7;font-size:.85rem">${i.progress}</span></div><div class="progress-bar"><div class="progress-fill" style="width:${i.progress}"></div></div></div>`).join('');
+      
+      // Add dev more button functionality
+      const devMoreBtn = document.getElementById('devMoreBtn');
+      if (devMoreBtn) {
+        devMoreBtn.addEventListener('click', () => {
+          showDevModal();
+        });
+      }
       // edu
       const el = document.getElementById('eduList');
       el.innerHTML = t.edu.items.map(i=>`<div class="item">${i}</div>`).join('');
@@ -1022,6 +1041,75 @@
     
     // All research cards now use vertical layout
     // No orientation detection needed
+    
+    // Dev Modal Function
+    function showDevModal() {
+      // Create modal overlay
+      const modal = document.createElement('div');
+      modal.style.cssText = `
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.8);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+        backdrop-filter: blur(10px);
+      `;
+      
+      // Create modal content
+      const modalContent = document.createElement('div');
+      modalContent.style.cssText = `
+        background: linear-gradient(135deg, rgba(15, 23, 42, 0.95), rgba(30, 41, 59, 0.95));
+        border: 1px solid rgba(14, 165, 233, 0.3);
+        border-radius: 20px;
+        padding: 2rem;
+        max-width: 90%;
+        max-height: 80%;
+        overflow-y: auto;
+        box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+      `;
+      
+      // Get current language
+      const t = i18n[lang];
+      
+      // Create modal HTML
+      modalContent.innerHTML = `
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
+          <h2 style="color: #0ea5e9; font-size: 1.5rem; margin: 0;">${t.dev.title}</h2>
+          <button onclick="this.closest('.modal-overlay').remove()" style="background: none; border: none; color: #94a3b8; font-size: 1.5rem; cursor: pointer; padding: 0.5rem;">×</button>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 1.5rem;">
+          ${t.dev.items.map(item => `
+            <div style="background: rgba(255, 255, 255, 0.05); padding: 1.5rem; border-radius: 12px; border: 1px solid rgba(255, 255, 255, 0.1);">
+              <h3 style="color: #0ea5e9; margin-bottom: 1rem;">${item.t}</h3>
+              <p style="color: #cbd5e1; margin-bottom: 1rem; line-height: 1.6;">${item.d}</p>
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 1rem;">
+                <span style="color: #0ea5e9; font-size: 0.85rem;">${item.status}</span>
+                <span style="opacity: 0.7; font-size: 0.85rem;">${item.progress}</span>
+              </div>
+              <div style="width: 100%; height: 4px; background: rgba(255, 255, 255, 0.1); border-radius: 2px; overflow: hidden; margin-top: 0.5rem;">
+                <div style="height: 100%; background: linear-gradient(90deg, #0ea5e9, #6366f1); width: ${item.progress}; transition: width 0.5s ease;"></div>
+              </div>
+            </div>
+          `).join('')}
+        </div>
+      `;
+      
+      modal.appendChild(modalContent);
+      modal.className = 'modal-overlay';
+      document.body.appendChild(modal);
+      
+      // Close modal when clicking outside
+      modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+          modal.remove();
+        }
+      });
+    }
     
     // Research Modal Function
     function showResearchModal() {
