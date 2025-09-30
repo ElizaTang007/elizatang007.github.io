@@ -164,7 +164,8 @@
     .meta{margin-top:2rem; display:flex; flex-wrap:wrap; gap:1rem; opacity:.85}
     .hero-quote{margin-top:2.5rem; text-align:left; position:relative; padding:1.5rem 1.8rem; background:rgba(255,255,255,.02); border-left:3px solid rgba(14,165,233,.3); border-radius:0 12px 12px 0}
     .hero-quote blockquote{border:none; padding:0; margin:0; position:relative}
-    .hero-quote p{font-size:1.1rem; line-height:1.6; color:#f1f5f9; font-style:italic; margin-bottom:.6rem; font-family:'JetBrains Mono', 'Noto Sans SC', monospace; opacity:.95; font-weight:300}
+    .hero-quote p{font-size:1.1rem; line-height:1.6; color:#f1f5f9; font-style:italic; margin-bottom:.6rem; font-family:'JetBrains Mono', 'Noto Sans SC', monospace; opacity:.95; font-weight:300; position:relative; padding-left:1.5rem}
+    .hero-quote p::before{content:'❝'; font-size:1.5rem; color:#0ea5e9; opacity:.6; position:absolute; left:0; top:0; font-family:serif}
     .hero-quote cite{font-size:.9rem; color:#94a3b8; font-family:'JetBrains Mono', 'Noto Sans SC', monospace; opacity:.85; font-weight:400; text-align:right; display:block; margin-top:.4rem}
     .button-section{margin-top:2.5rem; display:flex; flex-direction:column; gap:1.5rem}
     .social-links{display:flex; gap:.8rem; align-items:center; justify-content:flex-start}
@@ -371,6 +372,8 @@
       .avatar{width:220px; height:220px; margin:0 auto} 
       .meta{justify-content:center; flex-wrap:wrap} 
       .hero-quote{text-align:center; margin-top:2rem; padding:1.2rem 1.5rem; border-left:none; border-top:3px solid rgba(14,165,233,.3); border-radius:12px 12px 0 0}
+      .hero-quote p{padding-left:0; text-align:center}
+      .hero-quote p::before{left:50%; transform:translateX(-50%); top:-.5rem}
       .hero-quote cite{text-align:center; margin-top:.5rem}
       .button-section{text-align:center}
       .social-links{justify-content:center; flex-wrap:wrap}
