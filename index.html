@@ -935,7 +935,7 @@
       // hero quote - no JavaScript needed as it's static
       // research cards
       const r = document.getElementById('researchGrid');
-      r.innerHTML = t.research.items.map((i, index)=>`
+      r.innerHTML = t.research.items.slice(0, 3).map((i, index)=>`
         <div class="card research-card" data-index="${index}">
           <div class="research-image-container">
             <img src="${i.img}" alt="${i.t}" class="research-image" loading="lazy">
