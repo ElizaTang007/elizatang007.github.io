@@ -106,5 +106,24 @@
       <a href="https://docs.google.com/presentation/d/1G6bhj8GhagBnJbmcb4hwdfusJfDqeawr/edit?usp=sharing&ouid=116047035109851875759&rtpof=true&sd=true" target="_blank">📊 Slides (Google Drive)</a>
     </div>
   </main>
+  
+  <script>
+    // 读取URL参数中的语言设置
+    const urlParams = new URLSearchParams(window.location.search);
+    const lang = urlParams.get('lang') || 'en';
+    
+    // 如果有语言参数，保存到localStorage
+    if (urlParams.get('lang')) {
+      localStorage.setItem('language', lang);
+    }
+    
+    // 修改返回链接以保持语言状态
+    document.addEventListener('DOMContentLoaded', function() {
+      const backBtn = document.querySelector('.back-btn');
+      if (backBtn && lang === 'zh') {
+        backBtn.href = 'https://elizatang007.github.io/#dev&lang=zh';
+      }
+    });
+  </script>
 </body>
 </html>

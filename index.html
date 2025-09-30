@@ -885,17 +885,17 @@
           // Add your detail page links here
           const title = card.querySelector('h3')?.textContent;
           if (title?.includes('Preference Externalities')) {
-            window.open('research/preference-externalities.html', '_blank');
+            window.open(`research/preference-externalities.html?lang=${lang}`, '_blank');
           } else if (title?.includes('Retention Causality')) {
-            window.open('research/retention-causality.html', '_blank');
+            window.open(`research/retention-causality.html?lang=${lang}`, '_blank');
           } else if (title?.includes('Generative Engine Optimization')) {
-            window.open('research/generative-engine-optimization.html', '_blank');
+            window.open(`research/generative-engine-optimization.html?lang=${lang}`, '_blank');
           } else if (title?.includes('AI for Land Use')) {
             window.open('ai-luti.html', '_blank');
           } else if (title?.includes('Returns to Education')) {
-            window.open('research/returns-education.html', '_blank');
+            window.open(`research/returns-education.html?lang=${lang}`, '_blank');
           } else if (title?.includes('AI Art Personification Research')) {
-            window.open('research/ai-art-personification.html', '_blank');
+            window.open(`research/ai-art-personification.html?lang=${lang}`, '_blank');
           }
         });
       });
@@ -1002,7 +1002,7 @@
       }
     };
 
-    let lang = 'en';
+    let lang = localStorage.getItem('language') || 'en';
     
     // Language-specific quote display
     function updateQuoteDisplay(lang) {
@@ -1054,7 +1054,7 @@
       const researchMoreBtn = document.getElementById('researchMoreBtn');
       if (researchMoreBtn) {
         researchMoreBtn.addEventListener('click', () => {
-          window.open('projects.html?from=research', '_blank');
+          window.open(`projects.html?from=research&lang=${lang}`, '_blank');
         });
       }
       // highlights
@@ -1064,7 +1064,7 @@
       const v = document.getElementById('venturesGrid');
       const ventureImages = ['venture_1.png', 'venture_2.png', 'venture_3.png'];
       v.innerHTML = t.ventures.items.map((i, index)=>`
-        <div class="venture-card" onclick="window.open('${i.link}', '_blank')">
+        <div class="venture-card" onclick="window.open('${i.link}?lang=${lang}', '_blank')">
           <div class="venture-image">
             <img src="images/${ventureImages[index] || 'venture_1.png'}" alt="${i.t}" loading="lazy">
           </div>
@@ -1094,7 +1094,7 @@
       const devMoreBtn = document.getElementById('devMoreBtn');
       if (devMoreBtn) {
         devMoreBtn.addEventListener('click', () => {
-          window.open('projects.html?from=dev#finished-projects', '_blank');
+          window.open(`projects.html?from=dev&lang=${lang}#finished-projects`, '_blank');
         });
       }
       // edu
@@ -1120,7 +1120,11 @@
       initCarousel();
     }
 
-    document.getElementById('langToggle').addEventListener('click', ()=>{ lang = (lang === 'en') ? 'zh' : 'en'; render(); });
+    document.getElementById('langToggle').addEventListener('click', ()=>{ 
+      lang = (lang === 'en') ? 'zh' : 'en'; 
+      localStorage.setItem('language', lang);
+      render(); 
+    });
 
     // Back to top button functionality
     const backToTopBtn = document.getElementById('backToTop');
@@ -1144,6 +1148,16 @@
     // Handle URL hash for smooth scrolling to sections
     function handleHashScroll() {
       const hash = window.location.hash;
+      const urlParams = new URLSearchParams(window.location.search);
+      const urlLang = urlParams.get('lang');
+      
+      // 如果URL中有语言参数，设置语言状态
+      if (urlLang && (urlLang === 'en' || urlLang === 'zh')) {
+        lang = urlLang;
+        localStorage.setItem('language', lang);
+        render(); // 重新渲染页面以应用语言设置
+      }
+      
       if (hash) {
         const targetElement = document.querySelector(hash);
         if (targetElement) {

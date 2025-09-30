@@ -1,48 +1,1615 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eliza Yiting Tang - Redirecting...</title>
-    <meta http-equiv="refresh" content="0; url=bing-style.html">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>唐怡婷 Eliza Tang - 计量经济学研究者 | 悉尼大学 | AI传播研究 | Econometrician | University of Sydney | AI Communication Research</title>
+  <meta name="version" content="2.1.0">
+  <meta name="description" content="唐怡婷(Eliza Tang)，悉尼大学计量经济学与软件开发学士，专注于因果推断、教育经济学和AI传播研究。Google数据分析实习，Meritco AI投资研究，VMLY&R客户执行经验。| University of Sydney Econometrics & Software Development graduate, specializing in causal inference, education economics, and AI communication research.">
+  <meta name="keywords" content="唐怡婷,Eliza Tang,Yiting Tang,计量经济学,因果推断,教育经济学,AI传播研究,悉尼大学,Google实习,数据分析,机器学习,工具变量,2SLS,econometrics,causal inference,education economics,AI communication research,University of Sydney,Google internship,data analysis,machine learning,instrumental variables,2SLS">
+  <meta name="author" content="唐怡婷 Eliza Tang">
+  <meta name="robots" content="index, follow">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+  <link rel="manifest" href="/images/site.webmanifest">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://elizatang007.github.io/">
+  <meta property="og:title" content="唐怡婷 Eliza Tang - 计量经济学研究者 | Econometrician">
+  <meta property="og:description" content="悉尼大学计量经济学与软件开发学士，专注于因果推断、教育经济学和AI传播研究。| University of Sydney Econometrics & Software Development graduate, specializing in causal inference, education economics, and AI communication research.">
+  <meta property="og:image" content="https://elizatang007.github.io/images/profile.png">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="og:locale:alternate" content="en_US">
+  
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://elizatang007.github.io/">
+  <meta property="twitter:title" content="唐怡婷 Eliza Tang - 计量经济学研究者 | Econometrician">
+  <meta property="twitter:description" content="悉尼大学计量经济学与软件开发学士，专注于因果推断、教育经济学和AI传播研究。| University of Sydney Econometrics & Software Development graduate, specializing in causal inference, education economics, and AI communication research.">
+  <meta property="twitter:image" content="https://elizatang007.github.io/images/profile.png">
+  
+  <!-- Additional SEO -->
+  <meta name="google-site-verification" content="YOUR_GOOGLE_VERIFICATION_CODE">
+  <link rel="canonical" href="https://elizatang007.github.io/">
+  <link rel="alternate" hreflang="zh" href="https://elizatang007.github.io/">
+  <link rel="alternate" hreflang="en" href="https://elizatang007.github.io/">
+  
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "唐怡婷",
+    "alternateName": ["Eliza Tang", "Yiting Tang"],
+    "url": "https://elizatang007.github.io/",
+    "image": "https://elizatang007.github.io/images/profile.png",
+    "description": "悉尼大学计量经济学与软件开发学士，专注于因果推断、教育经济学和AI传播研究 | University of Sydney Econometrics & Software Development graduate, specializing in causal inference, education economics, and AI communication research",
+    "jobTitle": "计量经济学研究者 | Econometrician",
+    "worksFor": {
+      "@type": "Organization",
+      "name": "悉尼大学 | University of Sydney",
+      "url": "https://www.sydney.edu.au/"
+    },
+    "alumniOf": {
+      "@type": "Organization",
+      "name": "悉尼大学 | University of Sydney",
+      "url": "https://www.sydney.edu.au/"
+    },
+    "knowsAbout": [
+      "计量经济学 | Econometrics",
+      "因果推断 | Causal Inference",
+      "教育经济学 | Education Economics",
+      "AI传播研究 | AI Communication Research",
+      "数据分析 | Data Analysis",
+      "机器学习 | Machine Learning",
+      "工具变量 | Instrumental Variables",
+      "2SLS"
+    ],
+    "hasOccupation": [
+      {
+        "@type": "Occupation",
+        "name": "数据分析师 | Data Analyst",
+        "occupationLocation": {
+          "@type": "Place",
+          "name": "Google"
+        }
+      },
+      {
+        "@type": "Occupation", 
+        "name": "AI投资研究",
+        "occupationLocation": {
+          "@type": "Place",
+          "name": "Meritco"
+        }
+      }
+    ],
+    "sameAs": [
+      "https://github.com/ElizaTang007",
+      "https://linkedin.com/in/eliza-tang"
+    ]
+  }
+  </script>
+  
+  <!-- Additional Structured Data for Research -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ScholarlyArticle",
+    "name": "Returns to Education — A Causal Analysis Using IV",
+    "author": {
+      "@type": "Person",
+      "name": "唐怡婷",
+      "alternateName": "Eliza Tang"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "悉尼大学"
+    },
+    "datePublished": "2024",
+    "description": "ECMT3997 Thesis implementing Card (1993) with proximity-to-college as instrument; 2SLS estimation, LATE interpretation, and instrument strength using Australian microdata.",
+    "url": "https://elizatang007.github.io/ecmt3997.pdf",
+    "keywords": ["教育回报", "工具变量", "因果推断", "2SLS", "LATE"]
+  }
+  </script>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=JetBrains+Mono:wght@300;400;600&family=Orbitron:wght@400;600;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;600;700&family=Source+Han+Sans+SC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            background: linear-gradient(135deg, #0ea5e9, #6366f1);
-            color: white;
-        }
-        .container {
-            text-align: center;
-        }
-        .spinner {
-            border: 3px solid rgba(255,255,255,0.3);
-            border-top: 3px solid white;
-            border-radius: 50%;
-            width: 40px;
-            height: 40px;
-            animation: spin 1s linear infinite;
-            margin: 0 auto 20px;
-        }
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-        a {
-            color: white;
-            text-decoration: underline;
+    :root{ --bg:#000814; --bg2:#001d3d; --fg:#0ea5e9; --violet:#6366f1; --text-on-dark:rgba(255,255,255,.92); --mx:50%; --my:50%; }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0}
+    body{font-family:"Inter", "Noto Sans SC", "Source Han Sans SC", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; color:var(--text-on-dark); background: radial-gradient(1200px 800px at 10% 90%, rgba(14,165,233,.12), transparent 60%), radial-gradient(1000px 700px at 90% 10%, rgba(99,102,241,.10), transparent 60%), linear-gradient(180deg, var(--bg), var(--bg2));}
+
+    .orbs{position:fixed; inset:0; z-index:-1; overflow:hidden; pointer-events:none}
+    .orb{position:absolute; width:42vw; height:42vw; border-radius:50%; filter:blur(50px); opacity:.18; background:radial-gradient(circle at 30% 30%, rgba(14,165,233,.9), rgba(14,165,233,0) 60%); mix-blend-mode:screen; animation:float 28s ease-in-out infinite;}
+    .orb.v2{width:36vw; height:36vw; background:radial-gradient(circle at 60% 60%, rgba(99,102,241,.9), rgba(99,102,241,0) 60%); animation-duration:34s}
+    .orb.v3{width:50vw; height:50vw; background:radial-gradient(circle at 40% 40%, rgba(56,189,248,.8), rgba(56,189,248,0) 60%); animation-duration:40s}
+    @keyframes float{0%,100%{transform:translate(0,0)}50%{transform:translate(4vw,-3vw)}}
+
+    .mouse-spot{position:fixed; inset:0; pointer-events:none; background:radial-gradient(600px 600px at var(--mx) var(--my), rgba(255,255,255,.10), transparent 60%)}
+
+    .nav{position:sticky; top:0; z-index:50; backdrop-filter:saturate(140%) blur(12px); -webkit-backdrop-filter:saturate(140%) blur(12px); border-bottom:1px solid rgba(255,255,255,.15);}
+    .nav-inner{max-width:1140px; margin:0 auto; padding:.9rem 1rem; display:flex; align-items:center; justify-content:space-between}
+    .brand{font-weight:800; letter-spacing:.5px; font-family:'Orbitron', 'Noto Sans SC', monospace}
+    .links{display:flex; align-items:center}
+    .links a{color:var(--text-on-dark); text-decoration:none; margin-left:1rem; opacity:.85; position:relative; font-family:'JetBrains Mono', monospace; font-size:.9rem}
+    .links a:hover{opacity:1}
+    .links a::after{content:""; position:absolute; left:0; right:0; bottom:-6px; height:2px; background:linear-gradient(90deg, rgba(14,165,233,.8), rgba(99,102,241,.8)); transform:scaleX(0); transform-origin:left; transition:transform .25s ease}
+    .links a:hover::after{transform:scaleX(1)}
+    .links a.active::after{transform:scaleX(1); background:linear-gradient(90deg, #0ea5e9, #6366f1)}
+    .links a.active{color:#0ea5e9; font-weight:600}
+    .lang-toggle{margin-left:1rem; padding:.4rem .6rem; border:1px solid rgba(255,255,255,.25); border-radius:10px; background:rgba(0,0,0,.25); color:#fff; cursor:pointer; font-family:'JetBrains Mono', 'Noto Sans SC', monospace}
+
+    /* Full-screen sections with smooth transitions */
+    section{min-height:100vh; display:flex; flex-direction:column; justify-content:center; padding:0 1rem; position:relative; opacity:0; transform:translateY(30px); transition:all .8s cubic-bezier(0.4, 0, 0.2, 1)}
+    section.in-view{opacity:1; transform:translateY(0)}
+    
+    /* Reduce spacing for dev section */
+    section#dev{min-height:auto; padding:2rem 1rem}
+    
+    /* Page load animation */
+    body{opacity:0; animation:fadeIn 0.8s ease-in-out forwards}
+    @keyframes fadeIn{to{opacity:1}}
+    
+    /* Smooth scroll behavior */
+    html{scroll-behavior:smooth}
+    .section-inner{max-width:1140px; margin:0 auto; width:100%; transform:translateY(20px); transition:transform .6s cubic-bezier(0.4, 0, 0.2, 1)}
+    section.in-view .section-inner{transform:translateY(0)}
+
+    .hero{min-height:100vh; display:flex; flex-direction:column; justify-content:center; padding:0 1rem}
+    .hero-inner{max-width:1140px; margin:0 auto; display:grid; grid-template-columns: 300px 1fr; gap:4rem; align-items:center}
+    .avatar{width:280px; height:280px; border-radius:50%; overflow:hidden; box-shadow:0 20px 60px rgba(0,0,0,.45), 0 0 0 1px rgba(255,255,255,.12) inset, 0 0 30px rgba(14,165,233,0.3)}
+    .avatar img{width:100%; height:100%; object-fit:cover}
+    .hero h1{margin:0 0 1.2rem 0; font-size:48px; line-height:1.1; font-family:'Orbitron', 'Noto Sans SC', monospace; font-weight:700; background:linear-gradient(135deg, #0ea5e9, #6366f1); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text}
+    .hero p{margin:.6rem 0; opacity:.9; font-family:'JetBrains Mono', 'Noto Sans SC', monospace; line-height:1.7; font-size:1.05rem}
+    .meta{margin-top:2rem; display:flex; flex-wrap:wrap; gap:1rem; opacity:.85}
+    .hero-quote{margin-top:2rem; text-align:left; position:relative; padding:1rem 1.2rem; background:rgba(255,255,255,.015); border-left:2px solid rgba(14,165,233,.2); border-radius:0 8px 8px 0; max-width:500px; margin-left:0}
+    .hero-quote blockquote{border:none; padding:0; margin:0; position:relative}
+    .hero-quote p{font-size:.95rem; line-height:1.5; color:#e2e8f0; font-style:italic; margin-bottom:.4rem; font-family:'JetBrains Mono', 'Noto Sans SC', monospace; opacity:.9; font-weight:300; position:relative; padding-left:1.2rem}
+    .hero-quote p::before{content:'❝'; font-size:1.2rem; color:#0ea5e9; opacity:.5; position:absolute; left:0; top:0; font-family:serif}
+    .hero-quote .quote-en{display:block}
+    .hero-quote .quote-zh{display:none}
+    .hero-quote .quote-zh{font-size:.95rem; color:#e2e8f0; font-style:italic; margin-bottom:.4rem; opacity:.9; font-weight:300; position:relative; padding-left:1.2rem}
+    .hero-quote cite{font-size:.8rem; color:#94a3b8; font-family:'JetBrains Mono', 'Noto Sans SC', monospace; opacity:.8; font-weight:400; text-align:right; display:block; margin-top:.3rem}
+    .button-section{margin-top:2.5rem; display:flex; flex-direction:column; gap:1.5rem}
+    .social-links{display:flex; gap:.8rem; align-items:center; justify-content:flex-start}
+    .social-links a{display:flex; align-items:center; gap:.3rem; padding:.6rem 1rem; background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.15); border-radius:8px; color:var(--text-on-dark); text-decoration:none; font-family:'JetBrains Mono', 'Noto Sans SC', monospace; font-size:.85rem; transition:all .25s ease; min-width:120px; justify-content:center}
+    .social-links a:hover{background:rgba(255,255,255,.12); transform:translateY(-1px); box-shadow:0 4px 12px rgba(0,0,0,.2)}
+    .cta-buttons{display:flex; gap:1rem; align-items:center; justify-content:flex-start}
+    .cv-btn{display:inline-flex; align-items:center; gap:.5rem; padding:.8rem 1.5rem; background:linear-gradient(135deg, rgba(14,165,233,.9), rgba(99,102,241,.85)); border:1px solid rgba(255,255,255,.25); border-radius:12px; color:white; text-decoration:none; font-weight:500; transition:all .25s ease; font-family:'JetBrains Mono', 'Noto Sans SC', monospace; min-width:160px; justify-content:center}
+    .cv-btn:hover{transform:translateY(-2px); box-shadow:0 8px 25px rgba(14,165,233,.3)}
+
+    /* Typewriter effect with cursor fade */
+    .typewriter{overflow:hidden; border-right:2px solid #0ea5e9; white-space:nowrap; animation:typing 3s steps(40, end), blink-caret .75s step-end 4, hide-cursor 0s 3s forwards}
+    @keyframes typing{from{width:0}to{width:100%}}
+    @keyframes blink-caret{from,to{border-color:transparent}50%{border-color:#0ea5e9}}
+    @keyframes hide-cursor{to{border-color:transparent; border-right:none}}
+
+    section h2{font-size:28px; margin:0 0 1.2rem 0; font-family:'Orbitron', 'Noto Sans SC', monospace; font-weight:600}
+    .grid{display:grid; grid-template-columns: repeat(auto-fit, minmax(260px,1fr)); gap:1rem}
+    #researchGrid{display:grid; grid-template-columns:repeat(3, 1fr); gap:2rem; margin:3rem 0; padding:0 2rem; max-width:100%; width:100%}
+    .card{background: rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.12); border-radius:16px; padding:1.2rem; box-shadow:0 10px 30px rgba(0,0,0,.25); opacity:1; transform:translateY(0) scale(1); transition:all .6s cubic-bezier(0.4, 0, 0.2, 1); cursor:pointer; position:relative; overflow:hidden}
+    .card::before{content:''; position:absolute; top:0; left:-100%; width:100%; height:100%; background:linear-gradient(90deg, transparent, rgba(255,255,255,.1), transparent); transition:left .6s ease}
+    .card:hover{transform:translateY(-6px) scale(1.02); box-shadow:0 20px 50px rgba(0,0,0,.4); border-color:rgba(14,165,233,.5)}
+    .card:hover::before{left:100%}
+    .card.is-visible{opacity:1; transform:translateY(0) scale(1)}
+    .card h3{margin:.2rem 0 .5rem 0; font-size:18px; font-family:'JetBrains Mono', 'Noto Sans SC', monospace; font-weight:600}
+    .card p{margin:0; opacity:.9; line-height:1.6}
+    .card-icon{width:60px; height:60px; border-radius:8px; margin-bottom:.8rem; background-size:cover; background-position:center}
+    .card-stats{display:flex; align-items:center; gap:.5rem; margin-top:.8rem; padding-top:.8rem; border-top:1px solid rgba(255,255,255,.1)}
+    .card-stats span{background:rgba(14,165,233,.2); color:#0ea5e9; padding:.2rem .5rem; border-radius:4px; font-size:.75rem; font-family:'JetBrains Mono', 'Noto Sans SC', monospace}
+    .card-hint{position:absolute; bottom:1rem; right:1rem; background:rgba(14,165,233,.8); color:white; padding:.3rem .6rem; border-radius:12px; font-size:.7rem; font-family:'JetBrains Mono', 'Noto Sans SC', monospace; opacity:0; transform:translateY(10px); transition:all .3s ease; pointer-events:none}
+    
+    /* Project images for dev section */
+    .project-image{width:100%; height:160px; overflow:hidden; border-radius:16px 16px 0 0}
+    .project-image img{width:100%; height:100%; object-fit:cover; transition:transform .4s ease}
+    .card:hover .project-image img{transform:scale(1.05)}
+    .project-content{padding:1.2rem; flex:1; display:flex; flex-direction:column}
+    .project-content h3{margin:.2rem 0 .5rem 0; font-size:18px; font-family:'JetBrains Mono', 'Noto Sans SC', monospace; font-weight:600}
+    .project-content p{margin:0; opacity:.9; line-height:1.6; flex:1}
+    .card:hover .card-hint{opacity:1; transform:translateY(0)}
+    
+    /* Research Card Styles - Optimized Layout */
+    .research-card{display:flex; flex-direction:column; height:100%; overflow:hidden; border-radius:20px; margin-bottom:2rem; background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.15); box-shadow:0 8px 32px rgba(0,0,0,0.3); transition:all .4s ease; min-height:420px; position:relative}
+    .research-card:hover{transform:translateY(-8px) scale(1.02); box-shadow:0 20px 60px rgba(0,0,0,0.5); border-color:rgba(14,165,233,0.6)}
+    .research-image-container{position:relative; overflow:hidden; width:100%; height:200px; border-radius:20px 20px 0 0; flex-shrink:0}
+    .research-image{width:100%; height:100%; object-fit:cover; transition:transform .4s ease; background:rgba(255,255,255,0.05); display:block}
+    .research-card:hover .research-image{transform:scale(1.05)}
+    .research-overlay{position:absolute; top:0; left:0; right:0; bottom:0; background:linear-gradient(135deg, rgba(0,0,0,0.3), rgba(0,0,0,0.1)); display:flex; align-items:flex-end; justify-content:flex-end; padding:1rem; opacity:0; transition:opacity .4s ease}
+    .research-card:hover .research-overlay{opacity:1}
+    .research-status{background:rgba(14,165,233,0.95); color:white; padding:.4rem .8rem; border-radius:8px; font-size:.8rem; font-family:'JetBrains Mono', 'Noto Sans SC', monospace; font-weight:600; box-shadow:0 4px 12px rgba(14,165,233,0.3)}
+    .research-content{padding:1.8rem; flex:1; display:flex; flex-direction:column; background:rgba(255,255,255,0.02); border-radius:0 0 20px 20px; justify-content:space-between}
+    .research-content h3{margin:0 0 .8rem 0; font-size:20px; font-family:'JetBrains Mono', 'Noto Sans SC', monospace; font-weight:700; color:#0ea5e9; line-height:1.3}
+    .research-content p{margin:0 0 1.2rem 0; opacity:.9; line-height:1.6; flex:1; font-size:14px; min-height:60px}
+    .research-hint{background:linear-gradient(135deg, rgba(14,165,233,0.15), rgba(99,102,241,0.1)); color:#0ea5e9; padding:.5rem .8rem; border-radius:8px; font-size:.8rem; font-family:'JetBrains Mono', 'Noto Sans SC', monospace; text-align:center; opacity:1; transform:translateY(0); transition:all .4s ease; border:1px solid rgba(14,165,233,0.2); margin-top:auto}
+    .research-card:hover .research-hint{opacity:1; transform:translateY(-2px); background:linear-gradient(135deg, rgba(14,165,233,0.25), rgba(99,102,241,0.2)); box-shadow:0 4px 12px rgba(14,165,233,0.3)}
+    
+    /* Responsive adjustments */
+    @media (max-width: 1200px) {
+      #researchGrid{grid-template-columns:repeat(3, 1fr); gap:1.5rem; padding:0 1.5rem}
+      .research-card{min-height:400px}
+      .research-image-container{height:180px}
+      .research-content{padding:1.5rem}
+      .research-content h3{font-size:18px}
+      .research-content p{font-size:13px; min-height:50px}
+    }
+    
+    @media (max-width: 900px) {
+      #researchGrid{grid-template-columns:repeat(2, 1fr); gap:1.5rem; padding:0 1rem}
+      .research-card{min-height:380px}
+      .research-image-container{height:170px}
+      .research-content{padding:1.3rem}
+      .research-content h3{font-size:17px}
+      .research-content p{font-size:12px; min-height:45px}
+    }
+    
+    @media (max-width: 768px) {
+      #researchGrid{grid-template-columns:1fr; gap:1.5rem; padding:0 1rem; margin:2rem 0}
+      .research-card{min-height:360px; margin-bottom:1.5rem}
+      .research-image-container{height:160px}
+      .research-content{padding:1.2rem}
+      .research-content h3{font-size:18px; margin-bottom:.6rem}
+      .research-content p{font-size:13px; margin-bottom:1rem; min-height:45px}
+      .research-hint{padding:.4rem .6rem; font-size:.75rem}
+    }
+    
+    /* Research More Button */
+    .research-more{text-align:center; margin-top:2rem}
+    .research-more-btn{display:inline-flex; align-items:center; gap:.5rem; background:linear-gradient(135deg, rgba(14,165,233,.9), rgba(99,102,241,.85)); border:none; color:white; padding:.8rem 1.5rem; border-radius:12px; font-family:'JetBrains Mono', 'Noto Sans SC', monospace; font-weight:500; cursor:pointer; transition:all .3s ease; box-shadow:0 4px 20px rgba(14,165,233,.3)}
+    .research-more-btn:hover{transform:translateY(-2px); box-shadow:0 8px 30px rgba(14,165,233,.4); background:linear-gradient(135deg, #0ea5e9, #6366f1)}
+    
+    /* Dev More Button */
+    .dev-more{text-align:center; margin-top:2rem}
+    .dev-more-btn{display:inline-flex; align-items:center; gap:.5rem; background:linear-gradient(135deg, rgba(14,165,233,.9), rgba(99,102,241,.85)); border:none; color:white; padding:.8rem 1.5rem; border-radius:12px; font-family:'JetBrains Mono', 'Noto Sans SC', monospace; font-weight:500; cursor:pointer; transition:all .3s ease; box-shadow:0 4px 20px rgba(14,165,233,.3)}
+    .dev-more-btn:hover{transform:translateY(-2px); box-shadow:0 8px 30px rgba(14,165,233,.4); background:linear-gradient(135deg, #0ea5e9, #6366f1)}
+    .research-more-btn svg{transition:transform .3s ease}
+    .research-more-btn:hover svg{transform:translateX(3px)}
+    .project-status{display:flex; justify-content:space-between; align-items:center; margin-top:.8rem}
+    .progress-bar{width:100%; height:4px; background:rgba(255,255,255,.1); border-radius:2px; overflow:hidden; margin-top:.5rem}
+    .progress-fill{height:100%; background:linear-gradient(90deg, #0ea5e9, #6366f1); transition:width .5s ease}
+    .list{display:grid; gap:.6rem}
+    .list .item{background: rgba(255,255,255,.05); border:1px solid rgba(255,255,255,.12); border-radius:12px; padding:.8rem 1rem; opacity:0; transform:translateY(15px) scale(0.98); transition:all .5s cubic-bezier(0.4, 0, 0.2, 1); font-family:'JetBrains Mono', 'Noto Sans SC', monospace; position:relative; overflow:hidden}
+    .list .item::before{content:''; position:absolute; left:0; top:0; width:3px; height:100%; background:linear-gradient(180deg, #0ea5e9, #6366f1); transform:scaleY(0); transition:transform .3s ease}
+    .list .item:hover{transform:translateY(-2px) scale(1.01); background:rgba(255,255,255,.08); border-color:rgba(14,165,233,.3)}
+    .list .item:hover::before{transform:scaleY(1)}
+    .list .item.is-visible{opacity:1; transform:translateY(0) scale(1)}
+
+    /* New Highlights Layout */
+    .highlights-layout{display:grid; grid-template-columns:1fr 0.8fr; gap:3rem; align-items:start; margin:2rem 0 3rem 0; padding-top:1rem}
+    
+    /* Personal Photos Carousel (Left Side) */
+    .photos-carousel{position:sticky; top:2rem; max-width:500px}
+    .carousel-container{position:relative; overflow:hidden; border-radius:20px; box-shadow:0 20px 60px rgba(0,0,0,.3); background:rgba(255,255,255,.05); border:1px solid rgba(255,255,255,.1)}
+    .carousel-track{display:flex; transition:transform 0.5s cubic-bezier(0.4, 0, 0.2, 1); height:750px}
+    .carousel-slide.landscape{height:400px; display:flex; align-items:center; justify-content:center; background:#000}
+    .carousel-slide.landscape img{object-fit:contain; max-width:100%; max-height:100%; width:auto; height:auto}
+    .carousel-slide.landscape-center{height:750px; display:flex; align-items:center; justify-content:center; background:#000}
+    .carousel-slide.landscape-center img{object-fit:contain; max-width:100%; max-height:100%; width:auto; height:auto}
+    .carousel-slide{min-width:100%; height:100%; position:relative; overflow:hidden}
+    .carousel-slide img{width:100%; height:100%; object-fit:cover; transition:transform 0.3s ease}
+    .carousel-slide:hover img{transform:scale(1.05)}
+    .carousel-caption{position:absolute; bottom:0; left:0; right:0; background:linear-gradient(transparent, rgba(0,0,0,.8)); color:white; padding:2rem 1.5rem 1.5rem; font-family:'JetBrains Mono', 'Noto Sans SC', monospace}
+    .carousel-caption h3{font-size:1.2rem; margin:0 0 .5rem 0; font-weight:600; color:#0ea5e9}
+    .carousel-caption p{font-size:.9rem; opacity:.9; margin:0; line-height:1.4}
+    
+    .carousel-btn{position:absolute; top:50%; transform:translateY(-50%); background:rgba(0,0,0,.6); border:none; color:white; width:50px; height:50px; border-radius:50%; cursor:pointer; font-size:1.5rem; font-weight:bold; transition:all 0.3s ease; z-index:10; backdrop-filter:blur(10px); border:1px solid rgba(255,255,255,.2)}
+    .carousel-btn:hover{background:rgba(14,165,233,.8); transform:translateY(-50%) scale(1.1); box-shadow:0 5px 20px rgba(14,165,233,.4)}
+    .carousel-btn.prev{left:1rem}
+    .carousel-btn.next{right:1rem}
+    
+    .carousel-dots{display:flex; justify-content:center; gap:.8rem; margin-top:1.5rem}
+    .carousel-dot{width:12px; height:12px; border-radius:50%; background:rgba(255,255,255,.3); cursor:pointer; transition:all 0.3s ease; border:2px solid transparent}
+    .carousel-dot:hover{background:rgba(14,165,233,.6); transform:scale(1.2)}
+    .carousel-dot.active{background:linear-gradient(45deg, #0ea5e9, #6366f1); transform:scale(1.3); box-shadow:0 0 15px rgba(14,165,233,.6)}
+    
+    /* Identity Cards (Right Side) */
+    .identity-cards{display:flex; flex-direction:column; gap:1.5rem}
+    .identity-cards .grid{display:grid; grid-template-columns:1fr; gap:1.5rem}
+    .identity-cards .card{background:rgba(255,255,255,.08); border:2px solid rgba(255,255,255,.15); border-radius:20px; padding:1.5rem; position:relative; overflow:hidden; cursor:pointer; transition:all .4s cubic-bezier(0.4, 0, 0.2, 1); opacity:1; transform:translateY(0) scale(1)}
+    .identity-cards .card::before{content:''; position:absolute; top:0; left:-100%; width:100%; height:100%; background:linear-gradient(90deg, transparent, rgba(14,165,233,.2), transparent); transition:left .6s ease}
+    .identity-cards .card:hover{transform:translateY(-8px) scale(1.02); border-color:rgba(14,165,233,.6); box-shadow:0 25px 60px rgba(0,0,0,.4)}
+    .identity-cards .card:hover::before{left:100%}
+    .identity-cards .card h3{margin:0 0 .8rem 0; font-size:18px; font-family:'Orbitron', 'Noto Sans SC', monospace; font-weight:600; background:linear-gradient(135deg, #0ea5e9, #6366f1); -webkit-background-clip:text; -webkit-text-fill-color:transparent}
+    .identity-cards .card p{margin:0; opacity:.9; line-height:1.6; font-family:'JetBrains Mono', 'Noto Sans SC', monospace; font-size:.9rem}
+    
+    @media (max-width: 1024px){
+      .highlights-layout{grid-template-columns:1fr; gap:2rem}
+      .photos-carousel{position:static; margin-bottom:2rem}
+      .carousel-track{height:600px}
+      .carousel-slide.landscape{height:350px; display:flex; align-items:center; justify-content:center; background:#000}
+      .carousel-slide.landscape-center{height:600px; display:flex; align-items:center; justify-content:center; background:#000}
+    }
+    
+    @media (max-width: 768px){
+      .carousel-track{height:300px}
+      .carousel-btn{width:40px; height:40px; font-size:1.2rem}
+      .carousel-btn.prev{left:.5rem}
+      .carousel-btn.next{right:.5rem}
+      .carousel-caption{padding:1.5rem 1rem 1rem}
+      .carousel-caption h3{font-size:1rem}
+      .carousel-caption p{font-size:.8rem}
+      .identity-cards .card{padding:1.2rem}
+      .identity-cards .card h3{font-size:16px}
+      .identity-cards .card p{font-size:.85rem}
+    }
+    
+    /* Lifestyle grid */
+    
+    /* Ventures grid */
+    .ventures-grid{display:grid; grid-template-columns:repeat(auto-fit, minmax(300px,1fr)); gap:1.2rem}
+    .venture-card{background:rgba(255,255,255,.08); border:2px solid rgba(255,255,255,.15); border-radius:20px; padding:0; position:relative; overflow:hidden; cursor:pointer; transition:all .4s cubic-bezier(0.4, 0, 0.2, 1); opacity:1; transform:translateY(0) scale(1); display:flex; flex-direction:column}
+    .venture-card::before{content:''; position:absolute; top:0; left:-100%; width:100%; height:100%; background:linear-gradient(90deg, transparent, rgba(14,165,233,.2), transparent); transition:left .6s ease}
+    .venture-card:hover{transform:translateY(-8px) scale(1.02); border-color:rgba(14,165,233,.6); box-shadow:0 25px 60px rgba(0,0,0,.4)}
+    .venture-card:hover::before{left:100%}
+    .venture-image{width:100%; height:180px; overflow:hidden; border-radius:20px 20px 0 0}
+    .venture-image img{width:100%; height:100%; object-fit:cover; transition:transform .4s ease}
+    .venture-card:hover .venture-image img{transform:scale(1.05)}
+    .venture-content{padding:1.5rem; flex:1; display:flex; flex-direction:column}
+    .venture-content h3{margin:0 0 .8rem 0; font-size:22px; font-family:'Orbitron', 'Noto Sans SC', monospace; font-weight:600; background:linear-gradient(135deg, #0ea5e9, #6366f1); -webkit-background-clip:text; -webkit-text-fill-color:transparent}
+    .venture-content p{margin:0 0 1rem 0; opacity:.9; line-height:1.6; font-family:'JetBrains Mono', 'Noto Sans SC', monospace; flex:1}
+    .venture-meta{display:flex; justify-content:space-between; align-items:center; margin-top:1rem}
+    .venture-type{background:rgba(14,165,233,.2); color:#0ea5e9; padding:.3rem .8rem; border-radius:20px; font-size:.8rem; font-family:'JetBrains Mono', 'Noto Sans SC', monospace; font-weight:500}
+    .venture-status{color:rgba(255,255,255,.7); font-size:.85rem; font-family:'JetBrains Mono', 'Noto Sans SC', monospace}
+    .venture-link{position:absolute; top:1rem; right:1rem; opacity:0; transform:translateX(10px); transition:all .3s ease; color:#0ea5e9; font-size:1.2rem}
+    .venture-card:hover .venture-link{opacity:1; transform:translateX(0)}
+
+    /* Projects grid */
+    .projects-grid{display:grid; grid-template-columns:repeat(auto-fit, minmax(350px,1fr)); gap:1.5rem}
+    .project-card{background:rgba(255,255,255,.08); border:2px solid rgba(255,255,255,.15); border-radius:20px; padding:2rem; position:relative; overflow:hidden; cursor:pointer; transition:all .4s cubic-bezier(0.4, 0, 0.2, 1); opacity:1; transform:translateY(0) scale(1)}
+    .project-card::before{content:''; position:absolute; top:0; left:-100%; width:100%; height:100%; background:linear-gradient(90deg, transparent, rgba(14,165,233,.2), transparent); transition:left .6s ease}
+    .project-card:hover{transform:translateY(-8px) scale(1.02); border-color:rgba(14,165,233,.6); box-shadow:0 25px 60px rgba(0,0,0,.4)}
+    .project-card:hover::before{left:100%}
+    .project-card h3{margin:0 0 1rem 0; font-size:24px; font-family:'Orbitron', 'Noto Sans SC', monospace; font-weight:600; background:linear-gradient(135deg, #0ea5e9, #6366f1); -webkit-background-clip:text; -webkit-text-fill-color:transparent}
+    .project-card p{margin:0 0 1.5rem 0; opacity:.9; line-height:1.6; font-family:'JetBrains Mono', 'Noto Sans SC', monospace}
+    .project-meta{display:flex; justify-content:space-between; align-items:center; margin-top:1.5rem}
+    .project-type{background:rgba(14,165,233,.2); color:#0ea5e9; padding:.4rem 1rem; border-radius:20px; font-size:.85rem; font-family:'JetBrains Mono', 'Noto Sans SC', monospace; font-weight:500}
+    .project-status{color:rgba(255,255,255,.7); font-size:.9rem; font-family:'JetBrains Mono', 'Noto Sans SC', monospace}
+    .project-link{position:absolute; top:1.5rem; right:1.5rem; opacity:0; transform:translateX(10px); transition:all .3s ease; color:#0ea5e9; font-size:1.3rem}
+    .project-card:hover .project-link{opacity:1; transform:translateX(0)}
+    .project-features{display:flex; flex-wrap:wrap; gap:.5rem; margin-top:1rem}
+    .project-feature{background:rgba(255,255,255,.1); color:rgba(255,255,255,.8); padding:.3rem .6rem; border-radius:12px; font-size:.75rem; font-family:'JetBrains Mono', 'Noto Sans SC', monospace}
+
+    .subscribe{max-width:900px; text-align:center; margin:0 auto}
+    .sub-box{margin-top:1rem; display:flex; gap:.6rem; justify-content:center}
+    .sub-box input{width:280px; padding:.75rem .9rem; border-radius:10px; border:1px solid rgba(255,255,255,.25); background:rgba(0,0,0,.25); color:var(--text-on-dark); font-family:'JetBrains Mono', 'Noto Sans SC', monospace}
+    .sub-box button{padding:.78rem 1.1rem; border-radius:10px; border:1px solid rgba(255,255,255,.25); background:linear-gradient(135deg, rgba(14,165,233,.9), rgba(99,102,241,.85)); color:white; cursor:pointer; font-family:'JetBrains Mono', 'Noto Sans SC', monospace}
+    .footer{max-width:1140px; margin:0 auto; padding:3rem 1rem 4rem 1rem; opacity:.7; text-align:center; font-family:'JetBrains Mono', 'Noto Sans SC', monospace}
+
+
+    /* Back to top button */
+    .back-to-top{position:fixed; bottom:2rem; right:2rem; width:50px; height:50px; border-radius:50%; background:linear-gradient(135deg, rgba(14,165,233,.9), rgba(99,102,241,.85)); border:1px solid rgba(255,255,255,.25); color:white; cursor:pointer; display:flex; align-items:center; justify-content:center; opacity:0; transform:translateY(20px); transition:all .3s cubic-bezier(0.4, 0, 0.2, 1); z-index:50; box-shadow:0 4px 20px rgba(0,0,0,.3)}
+    .back-to-top:hover{transform:translateY(-2px); box-shadow:0 8px 30px rgba(14,165,233,.4); background:linear-gradient(135deg, #0ea5e9, #6366f1)}
+    .back-to-top.visible{opacity:1; transform:translateY(0)}
+    .back-to-top svg{transition:transform .3s ease}
+    .back-to-top:hover svg{transform:translateY(-2px)}
+
+    @media (max-width: 860px){ 
+      .hero-inner{grid-template-columns:1fr; text-align:center; gap:2rem} 
+      .avatar{width:220px; height:220px; margin:0 auto} 
+      .meta{justify-content:center; flex-wrap:wrap} 
+      .hero-quote{text-align:center; margin-top:1.5rem; padding:.8rem 1rem; border-left:none; border-top:2px solid rgba(14,165,233,.2); border-radius:8px 8px 0 0; max-width:350px; margin:1.5rem auto 0 auto}
+      .hero-quote p{padding-left:0; text-align:center; font-size:.9rem}
+      .hero-quote p::before{left:50%; transform:translateX(-50%); top:-.3rem; font-size:1rem}
+      .hero-quote .quote-zh{padding-left:0; text-align:center; font-size:.9rem}
+      .hero-quote cite{text-align:center; margin-top:.3rem; font-size:.75rem}
+      .button-section{text-align:center}
+      .social-links{justify-content:center; flex-wrap:wrap}
+      .cta-buttons{justify-content:center; flex-wrap:wrap}
+      .links a{margin-left:.8rem}
+      .back-to-top{bottom:1rem; right:1rem; width:45px; height:45px}
+      .nav-inner{padding:.7rem 1rem}
+      .links{flex-wrap:wrap; gap:.5rem}
         }
     </style>
+    <!-- EmailJS SDK -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <!-- Supabase SDK -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </head>
 <body>
-    <div class="container">
-        <div class="spinner"></div>
-        <h2>Redirecting to Eliza's Homepage...</h2>
-        <p>If you're not redirected automatically, <a href="bing-style.html">click here</a></p>
+  <div class="orbs"><div class="orb" style="top:55%; left:-12%"></div><div class="orb v2" style="top:-8%; right:-14%"></div><div class="orb v3" style="bottom:-20%; left:30%"></div></div>
+  <div class="mouse-spot"></div>
+
+  <header class="nav">
+    <div class="nav-inner">
+      <div class="brand" data-i18n="brand">Eliza Tang</div>
+      <nav class="links">
+        <a href="#about" data-i18n="nav.about">About</a>
+        <a href="#research" data-i18n="nav.research">Research</a>
+        <a href="#highlights" data-i18n="nav.highlights">Highlights</a>
+        <a href="#ventures" data-i18n="nav.ventures">Ventures</a>
+        <a href="#edu" data-i18n="nav.edu">Education</a>
+        <a href="#contact" data-i18n="nav.contact">Contact</a>
+        <button class="lang-toggle" id="langToggle">中文</button>
+      </nav>
     </div>
+  </header>
+
+  
+  <!-- Back to top button -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M18 15l-6-6-6 6"/>
+    </svg>
+  </button>
+
+  <main>
+    <section class="hero" id="about">
+      <div class="hero-inner">
+        <div class="avatar"><img src="images/profile.png" alt="Eliza avatar" /></div>
+        <div>
+          <h1 class="typewriter" data-i18n="hero.name">Eliza Yiting Tang</h1>
+          <p data-i18n="hero.subtitle">University of Sydney · Econometrics & Software Development</p>
+          <p data-i18n="hero.pitch">PhD applicant in Quantitative Marketing, Digital Platform Research, and Algorithmic Behavioral Modeling.</p>
+          <div class="meta" id="metaTags"></div>
+          <div class="hero-quote">
+            <blockquote>
+              <p class="quote-en">We are a way for the cosmos to know itself.</p>
+              <p class="quote-zh">我们是宇宙认识自己的方式。</p>
+              <cite>— Carl Sagan</cite>
+            </blockquote>
+          </div>
+          <div class="button-section">
+            <div class="social-links">
+              <a href="mailto:tangyiting007@gmail.com">
+                <svg width="14" height="14" fill="currentColor" viewBox="0 0 16 16"><path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2Zm13 2.383-4.708 2.825L15 11.105V5.383Zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741ZM1 11.105l4.708-2.897L1 5.383v5.722Z"/></svg>
+                Email
+              </a>
+              <a href="https://www.linkedin.com/in/yitingtang007/?locale=zh_CN" target="_blank">
+                <svg width="14" height="14" fill="currentColor" viewBox="0 0 16 16"><path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"/></svg>
+                LinkedIn
+              </a>
+              <a href="https://scholar.google.com/citations?user=YOUR_GOOGLE_SCHOLAR_ID" target="_blank">
+                <svg width="14" height="14" fill="currentColor" viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+                Scholar
+              </a>
+              <a href="https://github.com/ElizaTang007" target="_blank">
+                <svg width="14" height="14" fill="currentColor" viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+                GitHub
+              </a>
+            </div>
+            <div class="cta-buttons">
+              <a href="Eliza_Tang_CV.pdf" class="cv-btn" download>
+                <svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/><path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"/></svg>
+                <span data-i18n="hero.cv">Download CV</span>
+              </a>
+              <a href="https://yita-aviation-site.vercel.app/" class="cv-btn" target="_blank">
+                <svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+                <span data-i18n="hero.venture">Visit YITA AVIATION</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="research">
+      <div class="section-inner">
+        <h2 data-i18n="research.title">Research Interests</h2>
+        <div class="grid reveal" id="researchGrid"></div>
+        <div class="research-more">
+          <button class="research-more-btn" id="researchMoreBtn">
+            <span data-i18n="research.more">查看更多研究</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M9 18l6-6-6-6"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section id="highlights">
+      <div class="section-inner">
+        <h2 data-i18n="highlights.title">Highlights</h2>
+        
+        <!-- New Layout: Photos on left, Cards on right -->
+        <div class="highlights-layout">
+          <!-- Personal Photos Carousel (Left Side) -->
+          <div class="photos-carousel">
+            <div class="carousel-container">
+              <div class="carousel-track" id="carouselTrack">
+                <!-- Photos will be dynamically added here -->
+              </div>
+              <button class="carousel-btn prev" id="prevBtn">‹</button>
+              <button class="carousel-btn next" id="nextBtn">›</button>
+            </div>
+            <div class="carousel-dots" id="carouselDots"></div>
+          </div>
+          
+          <!-- Identity Cards (Right Side) -->
+          <div class="identity-cards">
+            <div class="grid reveal" id="highlightsGrid"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+    <section id="dev">
+      <div class="section-inner">
+        <h2 data-i18n="dev.title">Under Development</h2>
+        <div class="grid reveal" id="devGrid"></div>
+        <div class="dev-more" id="devMore" style="text-align:center; margin-top:2rem; display:none">
+          <button class="dev-more-btn" id="devMoreBtn" style="display:inline-flex; align-items:center; gap:.5rem; background:linear-gradient(135deg, rgba(14,165,233,.9), rgba(99,102,241,.85)); border:none; color:white; padding:.8rem 1.5rem; border-radius:12px; font-family:'JetBrains Mono', 'Noto Sans SC', monospace; font-weight:500; cursor:pointer; transition:all .3s ease; box-shadow:0 4px 20px rgba(14,165,233,.3)">
+            <span data-i18n="dev.more">View More Projects</span>
+            <span>→</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+
+    <section id="edu">
+      <div class="section-inner">
+        <h2 data-i18n="edu.title">Education</h2>
+        <div class="list reveal" id="eduList"></div>
+        <h2 style="margin-top:1.6rem" data-i18n="intern.title">Internships</h2>
+        <div class="list reveal" id="internList"></div>
+      </div>
+    </section>
+
+    <section id="ventures">
+      <div class="section-inner">
+        <h2 data-i18n="ventures.title">Ventures & Innovation</h2>
+        <div class="ventures-grid" id="venturesGrid">
+          <div class="venture-card" onclick="window.open('ventures/yita-aviation.html', '_blank')">
+            <div class="venture-image">
+              <img src="images/venture_1.png" alt="YITA AVIATION" loading="lazy">
+            </div>
+            <div class="venture-content">
+              <h3>YITA AVIATION</h3>
+              <p>A comprehensive air mobility ecosystem integrating smart eVTOL operations with StratoOS transportation OS for next-generation urban air mobility.</p>
+              <div class="venture-meta">
+                <span class="venture-type">startup</span>
+                <span class="venture-status">Active</span>
+              </div>
+              <div class="venture-link">→</div>
+            </div>
+          </div>
+          <div class="venture-card" onclick="window.open('ventures/924-generative-visibility-engine.html', '_blank')">
+            <div class="venture-image">
+              <img src="images/venture_2.png" alt="924 Generative Visibility Engine" loading="lazy">
+            </div>
+            <div class="venture-content">
+              <h3>924 Generative Visibility Engine</h3>
+              <p>AI-powered solution for SEO/GEO growth that bridges academic research with real-world marketing innovation.</p>
+              <div class="venture-meta">
+                <span class="venture-type">platform</span>
+                <span class="venture-status">Active</span>
+              </div>
+              <div class="venture-link">→</div>
+            </div>
+          </div>
+          <div class="venture-card" onclick="window.open('ventures/primordia.html', '_blank')">
+            <div class="venture-image">
+              <img src="images/venture_3.png" alt="PRIMORDIA" loading="lazy">
+            </div>
+            <div class="venture-content">
+              <h3>PRIMORDIA</h3>
+              <p>Interplanetary origin asset infrastructure for preserving biological and cultural heritage across civilizations.</p>
+              <div class="venture-meta">
+                <span class="venture-type">research</span>
+                <span class="venture-status">Concept</span>
+              </div>
+              <div class="venture-link">→</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="subscribe" id="contact">
+      <div class="section-inner">
+        <h2 data-i18n="contact.title">Let's Connect</h2>
+        <p data-i18n="contact.desc">Interested in collaboration, research opportunities, or investment? Let's discuss how we can work together.</p>
+        <div class="sub-box">
+          <input type="email" placeholder="Email Address" />
+          <button type="button" id="subBtn" data-i18n="contact.btn">Subscribe</button>
+        </div>
+        <p style="margin-top:.8rem;opacity:.8" id="emailLine"></p>
+        <p style="margin-top:1.5rem;opacity:.8;font-size:.9rem" id="socialLine"></p>
+      </div>
+    </section>
+
+    <footer class="footer" id="footerText">© 2025 Eliza Tang. All rights reserved.</footer>
+  </main>
+
+  <canvas id="particles" style="position:fixed; inset:0; z-index:-1; pointer-events:none"></canvas>
+
+  <script>
+    // Mouse spotlight
+    window.addEventListener('mousemove', (e)=>{ document.documentElement.style.setProperty('--mx', e.clientX + 'px'); document.documentElement.style.setProperty('--my', e.clientY + 'px'); });
+
+    // Personal Photos Carousel
+    let currentSlide = 0;
+    const photos = [
+      {
+        src: 'images/联合国.jpg',
+        title: 'UN Australia SDG 2024',
+        description: 'Volunteer: Active in the United Nations and IEEE Women in Engineering, passionate about human rights, diversity, and technological progress.'
+      },
+      {
+        src: 'images/晚宴1.jpg',
+        title: 'Academic Networking',
+        description: 'Networking at academic conferences and research events'
+      },
+      {
+        src: 'images/海边.jpg',
+        title: 'Research Retreat',
+        description: 'Academic research retreat and collaborative work sessions'
+      },
+      {
+        src: 'images/电影1.jpg',
+        title: 'Cultural Exchange',
+        description: 'International cultural exchange and academic collaboration'
+      },
+      {
+        src: 'images/电影2.jpg',
+        title: 'Team Collaboration',
+        description: 'Working with international research teams and academic partners'
+      },
+      {
+        src: 'images/我的故乡.jpg',
+        title: 'Personal Journey',
+        description: 'Personal and academic journey across different cultures'
+      },
+      {
+        src: 'images/阿瓦隆航展.jpg',
+        title: 'Avalon Airshow',
+        description: 'Aviation industry exhibition and aerospace technology showcase'
+      },
+      {
+        src: 'images/写书法.jpg',
+        title: 'Cultural Heritage',
+        description: 'Practicing traditional Chinese calligraphy and cultural arts'
+      },
+      {
+        src: 'images/jp.JPG',
+        title: 'International Experience',
+        description: 'Global perspective and cross-cultural understanding'
+      },
+      {
+        src: 'images/悉尼.jpg',
+        title: 'Sydney Observatory',
+        description: 'At Sydney Observatory - exploring astronomy and scientific research in Australia'
+      },
+      {
+        src: 'images/悉尼夜景.jpg',
+        title: 'Sydney Nightscape',
+        description: 'Beautiful Sydney nightscape and urban life experiences'
+      }
+    ];
+
+    function initCarousel() {
+      const track = document.getElementById('carouselTrack');
+      const dots = document.getElementById('carouselDots');
+      const prevBtn = document.getElementById('prevBtn');
+      const nextBtn = document.getElementById('nextBtn');
+
+      if (!track || !dots) return;
+
+      // Create slides
+      track.innerHTML = photos.map((photo, index) => {
+        // 第4张（索引3）：Research Retreat - 竖屏居中显示
+        // 第5张（索引4）：Cultural Exchange - 竖屏居中显示
+        // 第9张（索引8）：Avalon Airshow - 竖屏居中显示
+        // 第12张（索引11）：Sydney Nightscape - 竖屏居中显示
+        let slideClass = '';
+        if ([3, 4, 8, 11].includes(index)) {
+          slideClass = 'landscape-center'; // 竖屏居中，黑色背景
+        }
+        
+        return `
+          <div class="carousel-slide ${slideClass}">
+            <img src="${photo.src}" alt="${photo.title}" loading="lazy">
+            <div class="carousel-caption">
+              <h3>${photo.title}</h3>
+              <p>${photo.description}</p>
+            </div>
+          </div>
+        `;
+      }).join('');
+
+      // Create dots
+      dots.innerHTML = photos.map((_, index) => 
+        `<div class="carousel-dot ${index === 0 ? 'active' : ''}" data-slide="${index}"></div>`
+      ).join('');
+
+      // Event listeners
+      prevBtn?.addEventListener('click', () => changeSlide(-1));
+      nextBtn?.addEventListener('click', () => changeSlide(1));
+      
+      dots.addEventListener('click', (e) => {
+        if (e.target.classList.contains('carousel-dot')) {
+          const slideIndex = parseInt(e.target.dataset.slide);
+          goToSlide(slideIndex);
+        }
+      });
+
+      // Auto-play (optional)
+      setInterval(() => changeSlide(1), 5000);
+    }
+
+    function changeSlide(direction) {
+      currentSlide += direction;
+      if (currentSlide >= photos.length) currentSlide = 0;
+      if (currentSlide < 0) currentSlide = photos.length - 1;
+      updateCarousel();
+    }
+
+    function goToSlide(index) {
+      currentSlide = index;
+      updateCarousel();
+    }
+
+    function updateCarousel() {
+      const track = document.getElementById('carouselTrack');
+      const dots = document.querySelectorAll('.carousel-dot');
+      
+      if (track) {
+        track.style.transform = `translateX(-${currentSlide * 100}%)`;
+      }
+      
+      dots.forEach((dot, index) => {
+        dot.classList.toggle('active', index === currentSlide);
+      });
+    }
+
+    // Enhanced scroll reveal with section animations
+    const sectionObserver = new IntersectionObserver((entries)=>{
+      entries.forEach(entry=>{
+        if(entry.isIntersecting){
+          entry.target.classList.add('in-view');
+          entry.target.querySelectorAll('.card, .item').forEach((el,i)=>{
+            setTimeout(()=>el.classList.add('is-visible'), i*80);
+          });
+        }
+      });
+    }, {threshold:.2, rootMargin:'-50px'});
+
+    const cardObserver = new IntersectionObserver((entries)=>{
+      entries.forEach(entry=>{
+        if(entry.isIntersecting){
+          entry.target.classList.add('is-visible');
+        }
+      });
+    }, {threshold:.1});
+
+    // Particles
+    const canvas = document.getElementById('particles'); const ctx = canvas.getContext('2d'); let w,h,dpr; const particles=[];
+    function resize(){ dpr=Math.min(devicePixelRatio||1,2); w=canvas.width=Math.floor(innerWidth*dpr); h=canvas.height=Math.floor(innerHeight*dpr); canvas.style.width=innerWidth+'px'; canvas.style.height=innerHeight+'px'; }
+    function spawn(n=60){ particles.length=0; for(let i=0;i<n;i++){ particles.push({ x:Math.random()*w, y:Math.random()*h, r:Math.random()*2*dpr+.5, a:Math.random()*Math.PI*2, s:.2+Math.random()*.6 }); } }
+    function tick(){ ctx.clearRect(0,0,w,h); for(const p of particles){ p.x+=Math.cos(p.a)*p.s; p.y+=Math.sin(p.a)*p.s; if(p.x<0)p.x=w; if(p.x>w)p.x=0; if(p.y<0)p.y=h; if(p.y>h)p.y=0; ctx.beginPath(); const g=ctx.createRadialGradient(p.x,p.y,0,p.x,p.y,p.r*3); g.addColorStop(0,'rgba(125,211,252,.35)'); g.addColorStop(1,'rgba(125,211,252,0)'); ctx.fillStyle=g; ctx.arc(p.x,p.y,p.r,0,Math.PI*2); ctx.fill(); } requestAnimationFrame(tick); }
+
+
+
+    // Enhanced smooth scroll for nav links with offset
+    document.querySelectorAll('a[href^="#"]').forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const target = document.querySelector(link.getAttribute('href'));
+        if (target) {
+          const headerHeight = 80; // Account for fixed header
+          const targetPosition = target.offsetTop - headerHeight;
+          
+          window.scrollTo({
+            top: targetPosition,
+            behavior: 'smooth'
+          });
+          
+          // Update active nav link
+          document.querySelectorAll('.links a').forEach(navLink => {
+            navLink.classList.remove('active');
+          });
+          link.classList.add('active');
+        }
+      });
+    });
+
+    // Card click handlers
+    function addCardHandlers() {
+      document.querySelectorAll('.card').forEach(card => {
+        card.addEventListener('click', () => {
+          // Add your detail page links here
+          const title = card.querySelector('h3')?.textContent;
+          if (title?.includes('Preference Externalities')) {
+            window.open('research/preference-externalities.html', '_blank');
+          } else if (title?.includes('Retention Causality')) {
+            window.open('research/retention-causality.html', '_blank');
+          } else if (title?.includes('Generative Engine Optimization')) {
+            window.open('research/generative-engine-optimization.html', '_blank');
+          } else if (title?.includes('AI for Land Use')) {
+            window.open('ai-luti.html', '_blank');
+          } else if (title?.includes('Returns to Education')) {
+            window.open('research/returns-education.html', '_blank');
+          } else if (title?.includes('AI Art Personification Research')) {
+            window.open('research/ai-art-personification.html', '_blank');
+          }
+        });
+      });
+    }
+
+    // i18n content
+    const i18n = {
+      en: {
+        brand: 'Eliza Tang',
+        nav: {about:'About', research:'Research', highlights:'About Me', ventures:'Ventures', edu:'Education', contact:'Contact'},
+        hero: {
+          name:'Eliza Yiting Tang',
+          subtitle:'University of Sydney · Econometrics & Software Development',
+          pitch:'PhD applicant in Quantitative Marketing, Digital Platform Research, and Algorithmic Behavioral Modeling.',
+          tags:['AI & ML','Data Science','NLP','Computer Vision','UAM / eVTOL','ESG'],
+          cv:'Download CV',
+          venture:'Visit YITA AVIATION',
+        },
+        research: { title:'Research & Innovation', more:'View More Research', items:[
+          {t:'Preference Externalities', d:'Modeling willingness-to-pay shifts under social information on digital platforms. Developing causal frameworks for peer influence mechanisms.', img:'images/1.png', stats:'15-25% WTP Shift', link:'research/preference-externalities.html'},
+          {t:'Retention Causality (INFORMS → Marketing Science)', d:'Causal modeling of user retention interventions with LLM-based behavioral signals and heterogeneous treatment effect estimation.', img:'images/2.png', stats:'INFORMS 2025', link:'research/retention-causality.html'},
+          {t:'Generative Engine Optimization (IJRM Special Issue)', d:'Simulating search and marketing strategies via synthetic respondents and causal inference frameworks.', img:'images/3.png', stats:'IJRM Special Issue', link:'research/generative-engine-optimization.html'},
+          {t:'AI for Land Use & Transport Integration (Special Issue)', d:'Using multimodal data, land use maps, population density, economic activity, and simulated UAM networks, we estimate how eVTOL-based mobility alters residential and employment location choices.', img:'images/4.png', stats:'Special Issue Aug 2026', link:'ai-luti.html'}
+        ]},
+        highlights: { title:'About Me', items:[
+          {t:'📊 AI量化研究者', d:'Causal inference × decision-driven AI. Paper @INFORMS2025 · Data Analyst @Google · RA @Penn State · stock research @ NYU'},
+          {t:'📡 Media Dynamics', d:'Digital platforms × identity framing Paper @IAMCR2023 AE @VLMY&R'},
+          {t:'🧠 Generative Marketing', d:'Synthetic respondents × GEO sim-to-real Paper @IJRM SI (In progress)· startup @924 Generative Visibility Engine'},
+          {t:'🚀 UAM Innovation', d:'eVTOL adoption × LUTI integration Founder @YITA Aviation'},
+          {t:'🌍 Global Impact', d:'Diversity Member @IEEE WIE · @WERN. × sustainability Volunteer @UNAA · Paper @Preference Externalities'}
+        ]},
+        dev: { title:'Finished Projects', more:'View More Projects', items:[
+          {t:'Returns to Education — A Causal Analysis Using IV', d:'ECMT3997 Thesis, University of Sydney · PDF: <a href="ecmt3997.pdf" style="color:#7dd3fc">View</a><br/>Implements Card (1993) with proximity‑to‑college as instrument; 2SLS estimation, LATE interpretation, and instrument strength using Australian microdata.', status:'Completed (High Distinction)', progress:'100%'},
+          {t:'AI Art Personification Research', d:'Research on "Examining the Communication Effectiveness of Artificial Intelligence Art Personification". Exploring how AI-generated art affects human communication and perception.', status:'Accepted', progress:'100%'},
+        ]},
+        edu: { title:'Education', items:[ 
+          '2023–2026 · Bachelor of Arts in Econometrics and Software Development · University of Sydney',
+          'Relevant Coursework: Advanced Econometrics, Machine Learning, Data Structures & Algorithms, Financial Modeling',
+          'Research Focus: Causal Inference, Education Economics, AI Communication Studies'
+        ] },
+        intern: { title:'Internships', items:[
+          '2024.12–2025.02 · Google — Data Analyst Intern · Analyzed user behavior patterns and developed predictive models for platform optimization. Worked with large-scale datasets using SQL, Python, and machine learning frameworks.',
+          '2023.12–2024.01 · Meritco — AI Investment Research Intern · Conducted quantitative research on market trends and developed AI-driven investment strategies. Created automated trading algorithms and risk assessment models.',
+          '2022.12–2023.01 · VMLY&R — Account Executive Intern (Merck, J&J) · Managed client relationships and coordinated marketing campaigns for pharmaceutical clients. Developed data-driven insights for brand positioning and market analysis.'
+        ]},
+        contact: { title:'Let\'s Connect', desc:'Interested in collaboration, research opportunities, or investment? Let\'s discuss how we can work together.', btn:'Subscribe', email:'Or email: <a href="mailto:tangyiting007@gmail.com" style="color:#7dd3fc">tangyiting007@gmail.com</a>', social:'Connect with me on <a href="https://www.linkedin.com/in/elizayitingtang" style="color:#7dd3fc">LinkedIn</a> · <a href="https://scholar.google.com/citations?user=-MrQAMAAAAAJ" style="color:#7dd3fc">Google Scholar</a> · <a href="https://github.com/ElizaTang007" style="color:#7dd3fc">GitHub</a>' },
+        ventures: { title:'Ventures & Innovation', items:[
+          {t:'YITA AVIATION', d:'A comprehensive air mobility ecosystem integrating smart eVTOL operations with StratoOS transportation OS for next-generation urban air mobility.', type:'startup', status:'Active', link:'ventures/yita-aviation.html'},
+          {t:'924 Generative Visibility Engine', d:'AI-powered solution for SEO/GEO growth that bridges academic research with real-world marketing innovation.', type:'platform', status:'Active', link:'ventures/924-generative-visibility-engine.html'},
+          {t:'PRIMORDIA', d:'Interplanetary origin asset infrastructure for preserving biological and cultural heritage across civilizations.', type:'research', status:'Concept', link:'ventures/primordia.html'}
+        ]},
+        footer:'© 2025 Eliza Tang. All rights reserved.'
+      },
+      zh: {
+        brand: '唐怡婷 Eliza',
+        nav: {about:'关于', research:'研究', highlights:'关于我', ventures:'创业', edu:'教育', contact:'联系'},
+        hero: {
+          name:'唐怡婷（Eliza Yiting Tang）',
+          subtitle:'悉尼大学 · 计量经济学与软件开发',
+          pitch:'博士申请方向：量化营销、数字平台研究、算法行为建模。',
+          tags:['人工智能','数据科学','自然语言处理','计算机视觉','UAM / eVTOL','ESG'],
+          cv:'下载简历',
+          venture:'访问 依塔智行',
+        },
+        research: { title:'研究与创新', more:'查看更多研究', items:[
+          {t:'偏好外部性', d:'在数字平台的社会信息线索下，建模支付意愿迁移与行为调整。开发同伴影响机制的因果框架。', img:'images/1.png', stats:'15-25% 支付意愿变化', link:'research/preference-externalities.html'},
+          {t:'留存因果 (INFORMS → Marketing Science)', d:'基于LLM行为信号和异质性处理效应估计的用户保留干预因果建模。', img:'images/2.png', stats:'INFORMS 2025', link:'research/retention-causality.html'},
+          {t:'生成引擎优化 (IJRM 特刊)', d:'通过合成受访者和因果推断框架模拟搜索和营销策略。', img:'images/3.png', stats:'IJRM 特刊', link:'research/generative-engine-optimization.html'},
+          {t:'土地利用与交通一体化AI (特刊)', d:'使用多模态数据、土地利用地图、人口密度、经济活动和模拟UAM网络，我们估计eVTOL出行如何改变居住和就业地点选择。', img:'images/4.png', stats:'特刊 2026年8月', link:'ai-luti.html'}
+        ]},
+        highlights: { title:'关于我', items:[
+          {t:'📊 AI quant researcher', d:'因果推断 × 决策驱动AI。论文@INFORMS2025 · 数据分析师@Google · 研究助理@宾州州立 · 股票研究@NYU'},
+          {t:'📡 媒体动态', d:'数字平台 × 身份框架 论文@IAMCR2023 客户执行@VLMY&R'},
+          {t:'🧠 生成式营销', d:'合成受访者 × GEO仿真到现实 论文@IJRM特刊(进行中)· 创业@924生成式可见性引擎'},
+          {t:'🚀 UAM创新', d:'eVTOL采用 × LUTI一体化 创始人@YITA Aviation'},
+          {t:'🌍 全球影响', d:'多样性成员@IEEE WIE · @WERN. × 可持续性 志愿者@UNAA · 论文@偏好外部性'}
+        ]},
+        dev: { title:'已完成项目', more:'查看更多项目', items:[
+          {t:'教育回报的因果分析（工具变量）', d:'ECMT3997 毕设 · PDF：<a href="ecmt3997.pdf" style="color:#7dd3fc">查看</a><br/>基于 Card (1993) 的近校工具变量框架，实施 2SLS、解释 LATE，并使用澳大利亚微观数据检验工具变量强度。', status:'已完成（优秀等级）', progress:'100%'},
+          {t:'AI 艺术拟人化研究', d:'研究论文"人工智能艺术拟人化的传播效果研究"。探索 AI 生成艺术如何影响人类传播和认知。', status:'已接收', progress:'100%'},
+        ]},
+        edu: { title:'教育经历', items:[ 
+          '2023–2026 · 悉尼大学 · 计量经济学与软件开发 本科',
+          '相关课程：高级计量经济学、机器学习、数据结构与算法、金融建模',
+          '研究方向：因果推断、教育经济学、AI 传播研究'
+        ] },
+        intern: { title:'实习经历', items:[
+          '2024.12–2025.02 · Google · 数据分析实习 · 分析用户行为模式并开发平台优化预测模型。使用 SQL、Python 和机器学习框架处理大规模数据集。',
+          '2023.12–2024.01 · Meritco · AI 投资研究实习 · 进行市场趋势定量研究并开发 AI 驱动的投资策略。创建自动化交易算法和风险评估模型。',
+          '2022.12–2023.01 · VMLY&R · 客户执行实习（默沙东、强生） · 管理客户关系并协调制药客户的营销活动。为品牌定位和市场分析开发数据驱动洞察。'
+        ]},
+        contact: { title:'让我们连接', desc:'对合作、研究机会或投资感兴趣？让我们讨论如何一起工作。', btn:'订阅', email:'或发送邮件：<a href="mailto:tangyiting007@gmail.com" style="color:#7dd3fc">tangyiting007@gmail.com</a>', social:'在 <a href="https://www.linkedin.com/in/elizayitingtang" style="color:#7dd3fc">LinkedIn</a> · <a href="https://scholar.google.com/citations?user=-MrQAMAAAAAJ" style="color:#7dd3fc">Google Scholar</a> · <a href="https://github.com/ElizaTang007" style="color:#7dd3fc">GitHub</a> 上与我联系' },
+        ventures: { title:'创业与创新', items:[
+          {t:'依塔智行', d:'综合空中出行生态系统，集成智能eVTOL运营与StratoOS交通操作系统，打造下一代城市空中出行。', type:'startup', status:'活跃', link:'ventures/yita-aviation.html'},
+          {t:'924 生成式可见性引擎', d:'AI驱动的SEO/GEO增长解决方案，将学术研究与现实世界营销创新相结合。', type:'platform', status:'活跃', link:'ventures/924-generative-visibility-engine.html'},
+          {t:'PRIMORDIA', d:'跨行星起源资产基础设施，用于保护跨文明的生物和文化遗产。', type:'research', status:'概念', link:'ventures/primordia.html'}
+        ]},
+        projects: { title:'精选项目', items:[
+          {t:'StratoOS', d:'面向低空经济的下一代交通操作系统。采用双平面架构，包括安全控制平面（RTOS + seL4）和应用体验平面（Linux + SDK）。', type:'平台', status:'开发中', link:'ventures/stratoos.html', features:['BVLOS 支持', '群体智能', '任务编排', '安全认证']},
+          {t:'PRIMORDIA', d:'跨行星起源资产基础设施，用于保护跨文明的生物和文化遗产。使用 OAI 核心协议和分布式存储网格，覆盖地球、月球、火星和小行星节点。', type:'研究', status:'概念', link:'ventures/primordia.html', features:['DNA 测序', '加密验证', '多行星存储', '文化保护']},
+          {t:'偏好外部性', d:'用于测量和缓解数字平台中偏好操纵的综合框架。采用因果推断方法研究同伴影响机制。', type:'研究', status:'活跃', link:'research/preference-externalities.html', features:['因果推断', '行为建模', '平台经济学', '社交网络']}
+        ]},
+        footer:'© 2025 唐怡婷（Eliza Tang）保留所有权利。'
+      }
+    };
+
+    let lang = 'en';
+    
+    // Language-specific quote display
+    function updateQuoteDisplay(lang) {
+      const quoteEn = document.querySelector('.quote-en');
+      const quoteZh = document.querySelector('.quote-zh');
+      if (quoteEn && quoteZh) {
+        if (lang === 'zh') {
+          quoteEn.style.display = 'none';
+          quoteZh.style.display = 'block';
+        } else {
+          quoteEn.style.display = 'block';
+          quoteZh.style.display = 'none';
+        }
+      }
+    }
+    
+    function render(){
+      const t = i18n[lang];
+      document.documentElement.lang = lang === 'en' ? 'en' : 'zh-CN';
+      // simple text
+      document.querySelectorAll('[data-i18n]').forEach(el=>{
+        const path = el.getAttribute('data-i18n').split('.');
+        let cur = t; for(const k of path){ cur = cur?.[k]; }
+        if(typeof cur === 'string') el.innerHTML = cur;
+      });
+      // meta tags
+      const meta = document.getElementById('metaTags');
+      meta.innerHTML = t.hero.tags.map(x=>`<span>${x}</span>`).join('');
+      // hero quote - no JavaScript needed as it's static
+      // research cards
+      const r = document.getElementById('researchGrid');
+      r.innerHTML = t.research.items.slice(0, 3).map((i, index)=>`
+        <div class="card research-card" data-index="${index}">
+          <div class="research-image-container">
+            <img src="${i.img}" alt="${i.t}" class="research-image" loading="lazy">
+            <div class="research-overlay">
+              <div class="research-status">${i.stats}</div>
+            </div>
+          </div>
+          <div class="research-content">
+            <h3>${i.t}</h3>
+            <p>${i.d}</p>
+            <div class="research-hint">${lang === 'en' ? 'Click to view details' : '点击查看详情'}</div>
+          </div>
+        </div>
+      `).join('');
+      
+      // Add research more button functionality
+      const researchMoreBtn = document.getElementById('researchMoreBtn');
+      if (researchMoreBtn) {
+        researchMoreBtn.addEventListener('click', () => {
+          window.open('projects.html?from=research', '_blank');
+        });
+      }
+      // highlights
+      const h = document.getElementById('highlightsGrid');
+      h.innerHTML = t.highlights.items.map(i=>`<div class="card"><h3>${i.t}</h3><p>${i.d}</p></div>`).join('');
+      // ventures - content is statically embedded in HTML
+      // dev
+      const d = document.getElementById('devGrid');
+      const devImages = ['fp_1.png', 'fp_2.png'];
+      d.innerHTML = t.dev.items.map((i, index)=>`<div class="card"><div class="project-image"><img src="images/${devImages[index] || 'card.png'}" alt="${i.t}" loading="lazy"></div><div class="project-content"><h3>${i.t}</h3><p>${i.d}</p><div class="project-status"><span style="color:#0ea5e9;font-size:.85rem">${i.status}</span><span style="opacity:.7;font-size:.85rem">${i.progress}</span></div><div class="progress-bar"><div class="progress-fill" style="width:${i.progress}"></div></div></div></div>`).join('');
+      
+      // Show dev more button
+      const devMore = document.getElementById('devMore');
+      if (devMore) {
+        devMore.style.display = 'block';
+      }
+      
+      // Add dev more button functionality
+      const devMoreBtn = document.getElementById('devMoreBtn');
+      if (devMoreBtn) {
+        devMoreBtn.addEventListener('click', () => {
+          window.open('projects.html#finished-projects', '_blank');
+        });
+      }
+      // edu
+      const el = document.getElementById('eduList');
+      el.innerHTML = t.edu.items.map(i=>`<div class="item">${i}</div>`).join('');
+      // intern
+      const il = document.getElementById('internList');
+      il.innerHTML = t.intern.items.map(i=>`<div class="item">${i}</div>`).join('');
+      // contact email line, social links & footer
+      document.getElementById('emailLine').innerHTML = t.contact.email;
+      document.getElementById('socialLine').innerHTML = t.contact.social;
+      document.getElementById('footerText').innerHTML = t.footer;
+
+      // hook up enhanced observers
+      document.querySelectorAll('section').forEach(el => sectionObserver.observe(el));
+      document.querySelectorAll('.card, .item, .venture-card, .project-card').forEach(el => cardObserver.observe(el));
+      setTimeout(addCardHandlers, 100);
+      // button text
+      document.getElementById('langToggle').textContent = lang === 'en' ? '中文' : 'EN';
+      // update quote display
+      updateQuoteDisplay(lang);
+    }
+
+    document.getElementById('langToggle').addEventListener('click', ()=>{ lang = (lang === 'en') ? 'zh' : 'en'; render(); });
+
+    // Back to top button functionality
+    const backToTopBtn = document.getElementById('backToTop');
+    
+    backToTopBtn.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+    
+    // Show/hide back to top button based on scroll position
+    function toggleBackToTop() {
+      if (window.scrollY > 300) {
+        backToTopBtn.classList.add('visible');
+      } else {
+        backToTopBtn.classList.remove('visible');
+      }
+    }
+
+    // init with enhanced scroll handling
+    resize(); spawn(); tick(); addEventListener('resize', ()=>{resize(); spawn();}); 
+    window.addEventListener('scroll', () => {
+      requestAnimationFrame(toggleBackToTop);
+    });
+    render();
+    toggleBackToTop();
+    
+    // Initialize carousel
+    initCarousel();
+    
+    // All research cards now use vertical layout
+    // No orientation detection needed
+    
+    // Dev Modal Function
+    function showDevModal() {
+      // Create modal overlay
+      const modal = document.createElement('div');
+      modal.style.cssText = `
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.8);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+        backdrop-filter: blur(10px);
+      `;
+      
+      // Create modal content
+      const modalContent = document.createElement('div');
+      modalContent.style.cssText = `
+        background: linear-gradient(135deg, rgba(15, 23, 42, 0.95), rgba(30, 41, 59, 0.95));
+        border: 1px solid rgba(14, 165, 233, 0.3);
+        border-radius: 20px;
+        padding: 2rem;
+        max-width: 90%;
+        max-height: 80%;
+        overflow-y: auto;
+        box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+      `;
+      
+      // Get current language
+      const t = i18n[lang];
+      
+      // Create modal HTML
+      modalContent.innerHTML = `
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
+          <h2 style="color: #0ea5e9; font-size: 1.5rem; margin: 0;">${t.dev.title}</h2>
+          <button onclick="this.closest('.modal-overlay').remove()" style="background: none; border: none; color: #94a3b8; font-size: 1.5rem; cursor: pointer; padding: 0.5rem;">×</button>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 1.5rem;">
+          ${t.dev.items.map(item => `
+            <div style="background: rgba(255, 255, 255, 0.05); padding: 1.5rem; border-radius: 12px; border: 1px solid rgba(255, 255, 255, 0.1);">
+              <h3 style="color: #0ea5e9; margin-bottom: 1rem;">${item.t}</h3>
+              <p style="color: #cbd5e1; margin-bottom: 1rem; line-height: 1.6;">${item.d}</p>
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 1rem;">
+                <span style="color: #0ea5e9; font-size: 0.85rem;">${item.status}</span>
+                <span style="opacity: 0.7; font-size: 0.85rem;">${item.progress}</span>
+              </div>
+              <div style="width: 100%; height: 4px; background: rgba(255, 255, 255, 0.1); border-radius: 2px; overflow: hidden; margin-top: 0.5rem;">
+                <div style="height: 100%; background: linear-gradient(90deg, #0ea5e9, #6366f1); width: ${item.progress}; transition: width 0.5s ease;"></div>
+              </div>
+            </div>
+          `).join('')}
+        </div>
+      `;
+      
+      modal.appendChild(modalContent);
+      modal.className = 'modal-overlay';
+      document.body.appendChild(modal);
+      
+      // Close modal when clicking outside
+      modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+          modal.remove();
+        }
+      });
+    }
+    
+    // Research Modal Function
+    function showResearchModal() {
+      // Create modal overlay
+      const modal = document.createElement('div');
+      modal.style.cssText = `
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.8);
+        z-index: 1000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 2rem;
+        backdrop-filter: blur(10px);
+      `;
+      
+      // Create modal content
+      const modalContent = document.createElement('div');
+      modalContent.style.cssText = `
+        background: linear-gradient(135deg, rgba(0,8,20,0.95), rgba(0,29,61,0.95));
+        border: 1px solid rgba(255,255,255,0.15);
+        border-radius: 20px;
+        padding: 2rem;
+        max-width: 800px;
+        max-height: 80vh;
+        overflow-y: auto;
+        position: relative;
+        box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+      `;
+      
+      // Add close button
+      const closeBtn = document.createElement('button');
+      closeBtn.innerHTML = '×';
+      closeBtn.style.cssText = `
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        background: none;
+        border: none;
+        color: white;
+        font-size: 2rem;
+        cursor: pointer;
+        z-index: 1001;
+      `;
+      
+      
+      // Add research content
+      const researchContent = document.createElement('div');
+      researchContent.innerHTML = `
+        <h2 style="color: #0ea5e9; margin-bottom: 1.5rem; font-family: 'Orbitron', monospace;">${lang === 'en' ? 'All Research Projects' : '所有研究项目'}</h2>
+        <div style="display: grid; gap: 1.5rem;">
+          ${t.research.items.map(item => `
+            <div style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 1.5rem;">
+              <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+                <div style="width: 60px; height: 60px; border-radius: 8px; background-image: url('${item.img}'); background-size: cover; background-position: center;"></div>
+                <div>
+                  <h3 style="color: #0ea5e9; margin: 0 0 0.5rem 0; font-family: 'Orbitron', monospace;">${item.t}</h3>
+                  <span style="background: rgba(14,165,233,0.2); color: #0ea5e9; padding: 0.2rem 0.5rem; border-radius: 4px; font-size: 0.75rem;">${item.stats}</span>
+                </div>
+              </div>
+              <p style="margin: 0; opacity: 0.9; line-height: 1.6;">${item.d}</p>
+              <a href="${item.link}" target="_blank" style="display: inline-block; margin-top: 1rem; color: #0ea5e9; text-decoration: none; font-weight: 500;">
+                ${lang === 'en' ? 'View Details →' : '查看详情 →'}
+              </a>
+            </div>
+          `).join('')}
+        </div>
+      `;
+      
+      modalContent.appendChild(closeBtn);
+      modalContent.appendChild(researchContent);
+      modal.appendChild(modalContent);
+      document.body.appendChild(modal);
+      
+      // Close modal functionality
+      closeBtn.addEventListener('click', () => {
+        document.body.removeChild(modal);
+      });
+      
+      modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+          document.body.removeChild(modal);
+        }
+      });
+    }
+
+        // 初始化EmailJS
+        (function() {
+          emailjs.init('_be2yNgZ-rNhhO_DR');
+        })();
+        
+        // 初始化Supabase
+        const supabaseUrl = 'https://ldmodpcpoyqemecgueha.supabase.co';
+        const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxkbW9kcGNwb3lxZW1lY2d1ZWhhIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTkyNDAyNjgsImV4cCI6MjA3NDgxNjI2OH0.4qKagcnpqdUbh0oFTefX-r72VOGr-1W7tmDnNCnq43g';
+        const supabase = window.supabase.createClient(supabaseUrl, supabaseKey);
+
+        // 订阅功能
+        document.addEventListener('DOMContentLoaded', function() {
+      const subBtn = document.getElementById('subBtn');
+      const emailInput = document.querySelector('.sub-box input[type="email"]');
+      const emailLine = document.getElementById('emailLine');
+      const socialLine = document.getElementById('socialLine');
+      
+      // 更新联系信息显示
+      function updateContactInfo() {
+        const t = i18n[lang];
+        if (emailLine) emailLine.innerHTML = t.contact.email;
+        if (socialLine) socialLine.innerHTML = t.contact.social;
+      }
+      
+      // 订阅按钮点击事件
+      if (subBtn && emailInput) {
+        subBtn.addEventListener('click', async function() {
+          const email = emailInput.value.trim();
+          
+          if (!email) {
+            alert(lang === 'en' ? 'Please enter your email address.' : '请输入您的邮箱地址。');
+            return;
+          }
+          
+          if (!isValidEmail(email)) {
+            alert(lang === 'en' ? 'Please enter a valid email address.' : '请输入有效的邮箱地址。');
+            return;
+          }
+          
+          // 显示加载状态
+          subBtn.textContent = lang === 'en' ? 'Subscribing...' : '订阅中...';
+          subBtn.disabled = true;
+          
+            // 使用Supabase在线数据库保存订阅者
+            
+            // 简化重复邮箱检测逻辑
+            console.log('🔍 检查重复邮箱:', email);
+            
+            // 直接查询所有订阅者，然后检查是否重复
+            const { data: allSubscribers, error: fetchError } = await supabase
+              .from('subscribers')
+              .select('email');
+            
+            console.log('📊 所有订阅者:', allSubscribers);
+            console.log('❌ 查询错误:', fetchError);
+            
+            // 检查是否有重复邮箱
+            const isDuplicate = allSubscribers && allSubscribers.some(sub => sub.email === email);
+            console.log('🔍 是否重复:', isDuplicate);
+            
+            if (isDuplicate) {
+              console.log('✅ 检测到重复邮箱:', email);
+              // 显示重复邮箱提示
+              const notification = document.createElement('div');
+              notification.style.cssText = `
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                color: white;
+                padding: 16px 24px;
+                border-radius: 12px;
+                box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+                z-index: 10000;
+                font-family: 'JetBrains Mono', 'Noto Sans SC', monospace;
+                font-size: 14px;
+                max-width: 350px;
+                animation: slideIn 0.3s ease-out;
+              `;
+              
+              notification.innerHTML = `
+                <div style="display: flex; align-items: center; gap: 12px;">
+                  <div style="font-size: 20px;">✅</div>
+                  <div>
+                    <div style="font-weight: 600; margin-bottom: 4px;">
+                      ${lang === 'en' ? 'Already Subscribed!' : '你已经订阅过了！'}
+                    </div>
+                    <div style="opacity: 0.9; font-size: 13px;">
+                      ${lang === 'en' ? 'You will receive our latest updates.' : '您将收到我们的最新动态。'}
+                    </div>
+                  </div>
+                </div>
+              `;
+              
+              document.body.appendChild(notification);
+              
+              setTimeout(() => {
+                notification.style.animation = 'slideOut 0.3s ease-in';
+                setTimeout(() => {
+                  if (notification.parentNode) {
+                    notification.parentNode.removeChild(notification);
+                  }
+                }, 300);
+              }, 3000);
+              
+              subBtn.textContent = lang === 'en' ? 'Subscribe' : '订阅';
+              subBtn.disabled = false;
+              return;
+            }
+            
+            // 如果邮箱不存在，继续正常流程
+            console.log('✅ 邮箱未重复，继续订阅流程');
+            
+            // 邮箱不存在，正常插入
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                color: white;
+                padding: 16px 24px;
+                border-radius: 12px;
+                box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+                z-index: 10000;
+                font-family: 'JetBrains Mono', 'Noto Sans SC', monospace;
+                font-size: 14px;
+                max-width: 350px;
+                animation: slideIn 0.3s ease-out;
+              `;
+              
+              notification.innerHTML = `
+                <div style="display: flex; align-items: center; gap: 12px;">
+                  <div style="font-size: 20px;">✅</div>
+                  <div>
+                    <div style="font-weight: 600; margin-bottom: 4px;">
+                      ${lang === 'en' ? 'Already Subscribed!' : '你已经订阅过了！'}
+                    </div>
+                    <div style="opacity: 0.9; font-size: 13px;">
+                      ${lang === 'en' ? 'You will receive our latest updates.' : '您将收到我们的最新动态。'}
+                    </div>
+                  </div>
+                </div>
+              `;
+              
+              // 添加动画样式
+              const style = document.createElement('style');
+              style.textContent = `
+                @keyframes slideIn {
+                  from { transform: translateX(100%); opacity: 0; }
+                  to { transform: translateX(0); opacity: 1; }
+                }
+                @keyframes slideOut {
+                  from { transform: translateX(0); opacity: 1; }
+                  to { transform: translateX(100%); opacity: 0; }
+                }
+              `;
+              document.head.appendChild(style);
+              
+              document.body.appendChild(notification);
+              
+              // 3秒后自动消失
+              setTimeout(() => {
+                notification.style.animation = 'slideOut 0.3s ease-in';
+                setTimeout(() => {
+                  if (notification.parentNode) {
+                    notification.parentNode.removeChild(notification);
+                  }
+                }, 300);
+              }, 3000);
+              
+              subBtn.textContent = lang === 'en' ? 'Subscribe' : '订阅';
+              subBtn.disabled = false;
+              return;
+            }
+            
+            // 邮箱不存在，正常插入
+            const { data, error } = await supabase
+              .from('subscribers')
+              .insert([
+                {
+                  email: email,
+                  name: document.querySelector('input[name="name"]')?.value || '',
+                  interests: ['research', 'projects', 'updates'],
+                  subscribe_date: new Date().toISOString(),
+                  status: 'active'
+                }
+              ]);
+            
+            if (error) {
+              console.error('Database error:', error);
+              
+              // 创建错误提示
+              const errorNotification = document.createElement('div');
+              errorNotification.style.cssText = `
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%);
+                color: white;
+                padding: 16px 24px;
+                border-radius: 12px;
+                box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+                z-index: 10000;
+                font-family: 'JetBrains Mono', 'Noto Sans SC', monospace;
+                font-size: 14px;
+                max-width: 350px;
+                animation: slideIn 0.3s ease-out;
+              `;
+              
+              errorNotification.innerHTML = `
+                <div style="display: flex; align-items: center; gap: 12px;">
+                  <div style="font-size: 20px;">❌</div>
+                  <div>
+                    <div style="font-weight: 600; margin-bottom: 4px;">
+                      ${lang === 'en' ? 'Error!' : '出错了！'}
+                    </div>
+                    <div style="opacity: 0.9; font-size: 13px;">
+                      ${lang === 'en' ? 'Please try again later.' : '请稍后再试。'}
+                    </div>
+                  </div>
+                </div>
+              `;
+              
+              document.body.appendChild(errorNotification);
+              
+              // 4秒后自动消失
+              setTimeout(() => {
+                errorNotification.style.animation = 'slideOut 0.3s ease-in';
+                setTimeout(() => {
+                  if (errorNotification.parentNode) {
+                    errorNotification.parentNode.removeChild(errorNotification);
+                  }
+                }, 300);
+              }, 4000);
+              
+              subBtn.textContent = lang === 'en' ? 'Subscribe' : '订阅';
+              subBtn.disabled = false;
+              return;
+            }
+            
+            console.log('Subscriber saved to database:', data);
+            
+            // 发送欢迎邮件给订阅者
+            if (typeof emailjs !== 'undefined') {
+              console.log('EmailJS is available, attempting to send email...');
+              
+              // 使用EmailJS模板中定义的参数名
+              const templateParams = {
+                email: email, // 对应模板中的 {{email}}
+                to_name: document.querySelector('input[name="name"]')?.value || 'Friend',
+                from_name: 'Eliza Tang',
+                from_email: 'tangyiting007@gmail.com',
+                reply_to: email,
+                message: `New subscription from ${email}`,
+                subject: 'Welcome to Eliza Tang Research Updates - University of Sydney',
+                website_link: 'https://elizatang007.github.io/',
+                company_name: 'Eliza Tang Research'
+              };
+              
+              console.log('Template params:', templateParams);
+              console.log('Service ID: service_jdzpias (updated)');
+              console.log('Template ID: template_xqw7y2f');
+              console.log('User ID: _be2yNgZ-rNhhO_DR');
+              
+              emailjs.send('service_jdzpias', 'template_xqw7y2f', templateParams, '_be2yNgZ-rNhhO_DR')
+                .then(function(response) {
+                  console.log('✅ Welcome email sent successfully!', response.status, response.text);
+                  console.log('Response:', response);
+                  
+                  // 详细调试信息
+                  console.log('📧 邮件发送详情:');
+                  console.log('- 收件人:', email);
+                  console.log('- 发件人:', 'tangyiting007@gmail.com');
+                  console.log('- 服务ID:', 'service_jdzpias');
+                  console.log('- 模板ID:', 'template_xqw7y2f');
+                  console.log('- 响应状态:', response.status);
+                  console.log('- 响应文本:', response.text);
+                  
+                  // 检查是否是教育邮箱
+                  if (email.includes('.edu')) {
+                    console.log('📧 教育邮箱检测到，邮件可能被过滤');
+                    console.log('💡 建议收件人检查垃圾邮件文件夹');
+                  }
+                  
+                  // 检查邮件是否真的发送成功
+                  if (response.status === 200) {
+                    console.log('✅ 邮件API调用成功，但可能被邮件服务器过滤');
+                    console.log('💡 请检查：');
+                    console.log('1. 垃圾邮件文件夹');
+                    console.log('2. 邮件服务器是否阻止了邮件');
+                    console.log('3. 发件人是否被标记为垃圾邮件');
+                  }
+                }, function(error) {
+                  console.log('❌ Welcome email sending failed:', error);
+                  console.log('Error details:', error);
+                  
+                  // 如果是教育邮箱，提供特殊提示
+                  if (email.includes('.edu')) {
+                    console.log('📧 教育邮箱发送失败，可能被服务器过滤');
+                    console.log('💡 建议联系邮箱管理员或使用其他邮箱地址');
+                  }
+                });
+            } else {
+              console.log('❌ EmailJS not available, skipping email send');
+            }
+            
+              // 显示成功消息（包含邮件发送状态）
+              const successNotification = document.createElement('div');
+              successNotification.style.cssText = `
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+                color: white;
+                padding: 16px 24px;
+                border-radius: 12px;
+                box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+                z-index: 10000;
+                font-family: 'JetBrains Mono', 'Noto Sans SC', monospace;
+                font-size: 14px;
+                max-width: 350px;
+                animation: slideIn 0.3s ease-out;
+              `;
+              
+              // 检查是否是教育邮箱，提供特殊提示
+              const isEduEmail = email.includes('.edu');
+              const emailTip = isEduEmail ? 
+                (lang === 'en' ? 'Check spam folder if not received.' : '如未收到，请检查垃圾邮件文件夹。') :
+                (lang === 'en' ? 'Check your email for a welcome message.' : '请查看您的邮箱，我们已发送欢迎邮件。');
+              
+              successNotification.innerHTML = `
+                <div style="display: flex; align-items: center; gap: 12px;">
+                  <div style="font-size: 20px;">🎉</div>
+                  <div>
+                    <div style="font-weight: 600; margin-bottom: 4px;">
+                      ${lang === 'en' ? 'Welcome aboard!' : '欢迎订阅！'}
+                    </div>
+                    <div style="opacity: 0.9; font-size: 13px;">
+                      ${emailTip}
+                    </div>
+                    ${isEduEmail ? '<div style="opacity: 0.8; font-size: 12px; margin-top: 4px; color: #ffd700;">📧 教育邮箱检测到</div>' : ''}
+                  </div>
+                </div>
+              `;
+              
+              document.body.appendChild(successNotification);
+              
+              // 4秒后自动消失
+              setTimeout(() => {
+                successNotification.style.animation = 'slideOut 0.3s ease-in';
+                setTimeout(() => {
+                  if (successNotification.parentNode) {
+                    successNotification.parentNode.removeChild(successNotification);
+                  }
+                }, 300);
+              }, 4000);
+            emailInput.value = '';
+            
+            // 恢复按钮状态
+            subBtn.textContent = lang === 'en' ? 'Subscribe' : '订阅';
+            subBtn.disabled = false;
+        });
+      }
+      
+      // 邮箱验证函数
+      function isValidEmail(email) {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return emailRegex.test(email);
+      }
+      
+      // 初始化联系信息
+      updateContactInfo();
+      
+      // 语言切换时更新联系信息
+      const originalRender = render;
+      render = function() {
+        originalRender();
+        updateContactInfo();
+      };
+    });
+  </script>
+
 </body>
 </html> 
