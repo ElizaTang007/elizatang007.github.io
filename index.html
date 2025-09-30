@@ -972,7 +972,7 @@
       // research cards
       const r = document.getElementById('researchGrid');
       r.innerHTML = t.research.items.slice(0, 3).map((i, index)=>`
-        <div class="card research-card" data-index="${index}">
+        <div class="card research-card" data-index="${index}" onclick="window.open('${i.link}', '_blank')">
           <div class="research-image-container">
             <img src="${i.img}" alt="${i.t}" class="research-image" loading="lazy">
             <div class="research-overlay">
