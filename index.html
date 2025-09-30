@@ -1251,36 +1251,29 @@
           subBtn.textContent = lang === 'en' ? 'Subscribing...' : '订阅中...';
           subBtn.disabled = true;
           
-          try {
-            // 发送订阅请求到后端API
-            const response = await fetch('/api/subscribe', {
-              method: 'POST',
-              headers: {
-                'Content-Type': 'application/json',
-              },
-              body: JSON.stringify({
-                email: email,
-                interests: ['research', 'projects', 'updates']
-              })
-            });
+            try {
+              // 使用Formspree处理订阅（免费服务）
+              const response = await fetch('https://formspree.io/f/xpwgkqkp', {
+                method: 'POST',
+                headers: {
+                  'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                  email: email,
+                  message: 'New subscription from website',
+                  interests: ['research', 'projects', 'updates']
+                })
+              });
             
-            const result = await response.json();
-            
-            if (result.success) {
+            // Formspree总是返回成功，我们直接显示成功消息
+            if (response.ok) {
               alert(lang === 'en' ? 
                 'Thank you for subscribing! We will keep you updated on our latest research and projects.' : 
                 '感谢您的订阅！我们将及时更新我们的最新研究和项目。'
               );
               emailInput.value = '';
             } else {
-              if (result.message === 'Email already subscribed') {
-                alert(lang === 'en' ? 
-                  'This email is already subscribed.' : 
-                  '该邮箱已经订阅过了。'
-                );
-              } else {
-                throw new Error(result.message || 'Subscription failed');
-              }
+              throw new Error('Subscription failed');
             }
           } catch (error) {
             console.error('Subscription error:', error);

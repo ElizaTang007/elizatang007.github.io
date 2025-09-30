@@ -367,11 +367,287 @@ app.post('/api/send-newsletter', async (req, res) => {
 
 // 健康检查端点
 app.get('/api/health', (req, res) => {
-  res.json({ 
-    success: true, 
+  res.json({
+    success: true,
     message: 'Server is running',
     timestamp: new Date().toISOString()
   });
+});
+
+// 管理界面 - 只有本地访问
+app.get('/admin', (req, res) => {
+  // 检查是否为本地访问
+  const clientIP = req.ip || req.connection.remoteAddress;
+  const isLocalhost = clientIP === '127.0.0.1' || clientIP === '::1' || clientIP === '::ffff:127.0.0.1';
+  
+  if (!isLocalhost) {
+    return res.status(403).send('Access denied. This page is only available locally.');
+  }
+  
+  // 返回管理界面HTML
+  const adminHTML = `
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>订阅者管理 - Eliza Tang</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'JetBrains Mono', 'Noto Sans SC', monospace;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+            color: #e2e8f0;
+            line-height: 1.6;
+            min-height: 100vh;
+            padding: 2rem;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .header h1 {
+            color: #0ea5e9;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+        
+        .stat-card {
+            background: rgba(255,255,255,0.08);
+            border: 1px solid rgba(255,255,255,0.15);
+            border-radius: 16px;
+            padding: 2rem;
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #0ea5e9;
+            margin-bottom: 0.5rem;
+        }
+        
+        .stat-label {
+            color: #94a3b8;
+            font-size: 0.9rem;
+        }
+        
+        .subscribers-table {
+            background: rgba(255,255,255,0.08);
+            border: 1px solid rgba(255,255,255,0.15);
+            border-radius: 16px;
+            overflow: hidden;
+        }
+        
+        .table-header {
+            background: rgba(14,165,233,0.1);
+            padding: 1.5rem;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .table-header h2 {
+            color: #0ea5e9;
+            font-size: 1.5rem;
+        }
+        
+        .subscriber-item {
+            padding: 1.5rem;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr auto;
+            gap: 1rem;
+            align-items: center;
+        }
+        
+        .subscriber-item:last-child {
+            border-bottom: none;
+        }
+        
+        .subscriber-email {
+            font-weight: 600;
+            color: #e2e8f0;
+        }
+        
+        .subscriber-name {
+            color: #94a3b8;
+        }
+        
+        .subscriber-date {
+            color: #64748b;
+            font-size: 0.9rem;
+        }
+        
+        .subscriber-status {
+            background: rgba(34,197,94,0.2);
+            color: #22c55e;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+        
+        .refresh-btn {
+            background: linear-gradient(135deg, rgba(14,165,233,.9), rgba(99,102,241,.85));
+            border: none;
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 12px;
+            font-family: 'JetBrains Mono', 'Noto Sans SC', monospace;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-bottom: 2rem;
+        }
+        
+        .refresh-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(14,165,233,.4);
+        }
+        
+        .loading {
+            text-align: center;
+            padding: 2rem;
+            color: #94a3b8;
+        }
+        
+        .error {
+            background: rgba(239,68,68,0.1);
+            border: 1px solid rgba(239,68,68,0.3);
+            color: #fca5a5;
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📧 订阅者管理</h1>
+            <p>Eliza Tang 个人网站订阅者数据</p>
+        </div>
+        
+        <button class="refresh-btn" onclick="loadSubscribers()">🔄 刷新数据</button>
+        
+        <div id="loading" class="loading">
+            <p>正在加载订阅者数据...</p>
+        </div>
+        
+        <div id="error" class="error" style="display: none;">
+            <p>❌ 加载数据失败，请检查服务器是否运行</p>
+        </div>
+        
+        <div id="stats" class="stats" style="display: none;">
+            <div class="stat-card">
+                <div class="stat-number" id="totalSubscribers">0</div>
+                <div class="stat-label">总订阅者</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" id="activeSubscribers">0</div>
+                <div class="stat-label">活跃订阅者</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" id="todaySubscribers">0</div>
+                <div class="stat-label">今日新增</div>
+            </div>
+        </div>
+        
+        <div id="subscribers" class="subscribers-table" style="display: none;">
+            <div class="table-header">
+                <h2>📋 订阅者列表</h2>
+            </div>
+            <div id="subscribersList"></div>
+        </div>
+    </div>
+
+    <script>
+        async function loadSubscribers() {
+            const loading = document.getElementById('loading');
+            const error = document.getElementById('error');
+            const stats = document.getElementById('stats');
+            const subscribers = document.getElementById('subscribers');
+            
+            loading.style.display = 'block';
+            error.style.display = 'none';
+            stats.style.display = 'none';
+            subscribers.style.display = 'none';
+            
+            try {
+                const response = await fetch('/api/subscribers');
+                const data = await response.json();
+                
+                if (data.success) {
+                    displaySubscribers(data);
+                } else {
+                    throw new Error(data.message);
+                }
+            } catch (err) {
+                console.error('Error loading subscribers:', err);
+                loading.style.display = 'none';
+                error.style.display = 'block';
+            }
+        }
+        
+        function displaySubscribers(data) {
+            const loading = document.getElementById('loading');
+            const stats = document.getElementById('stats');
+            const subscribers = document.getElementById('subscribers');
+            const subscribersList = document.getElementById('subscribersList');
+            
+            loading.style.display = 'none';
+            stats.style.display = 'grid';
+            subscribers.style.display = 'block';
+            
+            // 更新统计信息
+            document.getElementById('totalSubscribers').textContent = data.count;
+            document.getElementById('activeSubscribers').textContent = 
+                data.subscribers.filter(sub => sub.status === 'active').length;
+            
+            // 计算今日新增
+            const today = new Date().toDateString();
+            const todaySubscribers = data.subscribers.filter(sub => 
+                new Date(sub.subscribedAt).toDateString() === today
+            ).length;
+            document.getElementById('todaySubscribers').textContent = todaySubscribers;
+            
+            // 显示订阅者列表
+            subscribersList.innerHTML = data.subscribers.map(subscriber => \`
+                <div class="subscriber-item">
+                    <div class="subscriber-email">\${subscriber.email}</div>
+                    <div class="subscriber-name">\${subscriber.name || '未填写姓名'}</div>
+                    <div class="subscriber-date">\${new Date(subscriber.subscribedAt).toLocaleString('zh-CN')}</div>
+                    <div class="subscriber-status">\${subscriber.status === 'active' ? '活跃' : '已取消'}</div>
+                </div>
+            \`).join('');
+        }
+        
+        // 页面加载时自动获取数据
+        document.addEventListener('DOMContentLoaded', loadSubscribers);
+    </script>
+</body>
+</html>
+  `;
+  
+  res.send(adminHTML);
 });
 
 // 启动服务器

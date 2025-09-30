@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>订阅表单 - Eliza Tang</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .form-container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #555;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        button {
+            background: #007bff;
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            width: 100%;
+        }
+        button:hover {
+            background: #0056b3;
+        }
+        .success {
+            background: #d4edda;
+            color: #155724;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h1>📧 订阅 Eliza Tang 的研究动态</h1>
+        
+        <div class="success" id="successMessage">
+            感谢您的订阅！我们将及时更新我们的最新研究和项目。
+        </div>
+        
+        <form id="subscriptionForm" action="https://formspree.io/f/xpwgkqkp" method="POST">
+            <div class="form-group">
+                <label for="email">邮箱地址 *</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="name">姓名（可选）</label>
+                <input type="text" id="name" name="name">
+            </div>
+            
+            <div class="form-group">
+                <label for="interests">感兴趣的领域</label>
+                <textarea id="interests" name="interests" rows="3" placeholder="例如：研究动态、项目更新、学术交流等"></textarea>
+            </div>
+            
+            <input type="hidden" name="_subject" value="新订阅 - Eliza Tang 网站">
+            <input type="hidden" name="_replyto" value="">
+            <input type="hidden" name="_next" value="https://elizatang007.github.io/subscription-success.html">
+            
+            <button type="submit">订阅</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('subscriptionForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(this);
+            const email = document.getElementById('email').value;
+            
+            // 显示加载状态
+            const button = document.querySelector('button');
+            const originalText = button.textContent;
+            button.textContent = '订阅中...';
+            button.disabled = true;
+            
+            fetch('https://formspree.io/f/xpwgkqkp', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    email: email,
+                    name: document.getElementById('name').value,
+                    interests: document.getElementById('interests').value,
+                    message: 'New subscription from website'
+                })
+            })
+            .then(response => {
+                if (response.ok) {
+                    document.getElementById('successMessage').style.display = 'block';
+                    document.getElementById('subscriptionForm').style.display = 'none';
+                } else {
+                    throw new Error('Subscription failed');
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('抱歉，处理您的订阅时出现错误。请稍后再试。');
+                button.textContent = originalText;
+                button.disabled = false;
+            });
+        });
+    </script>
+</body>
+</html>
