@@ -97,10 +97,37 @@
             background: rgba(255,255,255,0.08);
             border: 1px solid rgba(255,255,255,0.15);
             border-radius: 20px;
-            padding: 2rem;
+            padding: 0; /* No padding on the card itself, content has padding */
             transition: all 0.4s ease;
             position: relative;
             overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .project-image {
+            width: 100%;
+            height: 180px; /* Fixed height for the image container */
+            overflow: hidden;
+            border-radius: 20px 20px 0 0; /* Rounded top corners */
+        }
+        
+        .project-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Cover the container, cropping if necessary */
+            transition: transform 0.4s ease;
+        }
+        
+        .project-card:hover .project-image img {
+            transform: scale(1.05); /* Zoom effect on hover */
+        }
+        
+        .project-content {
+            padding: 1.5rem; /* Padding for the text content */
+            flex: 1; /* Allows content to take available space */
+            display: flex;
+            flex-direction: column;
         }
         
         .project-card::before {
@@ -124,17 +151,18 @@
             left: 100%;
         }
         
-        .project-card h3 {
+        .project-content h3 {
             color: #0ea5e9;
             font-size: 1.3rem;
             margin-bottom: 1rem;
             font-weight: 600;
         }
         
-        .project-card p {
+        .project-content p {
             color: #cbd5e1;
             margin-bottom: 1.5rem;
             line-height: 1.7;
+            flex: 1; /* Allows paragraph to take available space */
         }
         
         .project-meta {
@@ -304,7 +332,15 @@
             }
             
             .project-card {
-                padding: 1.5rem;
+                padding: 0;
+            }
+            
+            .project-image {
+                height: 150px; /* Smaller image height on mobile */
+            }
+            
+            .project-content {
+                padding: 1.2rem; /* Smaller padding on mobile */
             }
             
             .research-card {
@@ -414,98 +450,123 @@
             <h2>Finished Projects</h2>
             <div class="projects-grid">
                 <div class="project-card">
-                    <h3>Returns to Education — A Causal Analysis Using IV</h3>
-                    <p>ECMT3997 Thesis, University of Sydney · Implements Card (1993) with proximity‑to‑college as instrument; 2SLS estimation, LATE interpretation, and instrument strength using Australian microdata.</p>
-                    <div class="project-meta">
-                        <span class="project-status">Completed (High Distinction)</span>
-                        <span class="project-progress">100%</span>
+                    <div class="project-image">
+                        <img src="images/fp_1.png" alt="Returns to Education" loading="lazy">
                     </div>
-                    <div class="progress-bar">
-                        <div class="progress-fill" style="width: 100%"></div>
+                    <div class="project-content">
+                        <h3>Returns to Education — A Causal Analysis Using IV</h3>
+                        <p>ECMT3997 Thesis, University of Sydney · Implements Card (1993) with proximity‑to‑college as instrument; 2SLS estimation, LATE interpretation, and instrument strength using Australian microdata.</p>
+                        <div class="project-meta">
+                            <span class="project-status">Completed (High Distinction)</span>
+                            <span class="project-progress">100%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 100%"></div>
+                        </div>
+                        <a href="research/returns-education.html" class="project-link">
+                            <svg width="14" height="14" fill="currentColor" viewBox="0 0 16 16">
+                                <path d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z"/>
+                                <path d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z"/>
+                            </svg>
+                            View Details
+                        </a>
                     </div>
-                    <a href="research/returns-education.html" class="project-link">
-                        <svg width="14" height="14" fill="currentColor" viewBox="0 0 16 16">
-                            <path d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z"/>
-                            <path d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z"/>
-                        </svg>
-                        View Details
-                    </a>
                 </div>
                 
                 <div class="project-card">
-                    <h3>AI Art Personification Research</h3>
-                    <p>Research on "Examining the Communication Effectiveness of Artificial Intelligence Art Personification". Exploring how AI-generated art affects human communication and perception.</p>
-                    <div class="project-meta">
-                        <span class="project-status">Accepted</span>
-                        <span class="project-progress">100%</span>
+                    <div class="project-image">
+                        <img src="images/fp_2.png" alt="AI Art Personification Research" loading="lazy">
                     </div>
-                    <div class="progress-bar">
-                        <div class="progress-fill" style="width: 100%"></div>
+                    <div class="project-content">
+                        <h3>AI Art Personification Research</h3>
+                        <p>Research on "Examining the Communication Effectiveness of Artificial Intelligence Art Personification". Exploring how AI-generated art affects human communication and perception.</p>
+                        <div class="project-meta">
+                            <span class="project-status">Accepted</span>
+                            <span class="project-progress">100%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 100%"></div>
+                        </div>
+                        <a href="research/ai-art-personification.html" class="project-link">
+                            <svg width="14" height="14" fill="currentColor" viewBox="0 0 16 16">
+                                <path d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z"/>
+                                <path d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z"/>
+                            </svg>
+                            View Details
+                        </a>
                     </div>
-                    <a href="research/ai-art-personification.html" class="project-link">
-                        <svg width="14" height="14" fill="currentColor" viewBox="0 0 16 16">
-                            <path d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z"/>
-                            <path d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z"/>
-                        </svg>
-                        View Details
-                    </a>
                 </div>
                 
                 <div class="project-card">
-                    <h3>Econ&Me Educational Video — Confidence Intervals</h3>
-                    <p>Explains the concept of confidence intervals in econometrics using intuitive visuals and examples. Published educational video series for econometrics learning.</p>
-                    <div class="project-meta">
-                        <span class="project-status">Published</span>
-                        <span class="project-progress">100%</span>
+                    <div class="project-image">
+                        <img src="images/fp_3.png" alt="Econ&Me Educational Video" loading="lazy">
                     </div>
-                    <div class="progress-bar">
-                        <div class="progress-fill" style="width: 100%"></div>
+                    <div class="project-content">
+                        <h3>Econ&Me Educational Video — Confidence Intervals</h3>
+                        <p>Explains the concept of confidence intervals in econometrics using intuitive visuals and examples. Published educational video series for econometrics learning.</p>
+                        <div class="project-meta">
+                            <span class="project-status">Published</span>
+                            <span class="project-progress">100%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 100%"></div>
+                        </div>
+                        <a href="#" class="project-link">
+                            <svg width="14" height="14" fill="currentColor" viewBox="0 0 16 16">
+                                <path d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z"/>
+                                <path d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z"/>
+                            </svg>
+                            View Video
+                        </a>
                     </div>
-                    <a href="#" class="project-link">
-                        <svg width="14" height="14" fill="currentColor" viewBox="0 0 16 16">
-                            <path d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z"/>
-                            <path d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z"/>
-                        </svg>
-                        View Video
-                    </a>
                 </div>
                 
                 <div class="project-card">
-                    <h3>Sentiment-Driven Financial Market Trend Prediction</h3>
-                    <p>ConvLSTM + VADER model for investor sentiment and stock price forecasting; proposed SCONV framework validated on Tesla, Microsoft, P&G, Apple, TSMC.</p>
-                    <div class="project-meta">
-                        <span class="project-status">Completed</span>
-                        <span class="project-progress">100%</span>
+                    <div class="project-image">
+                        <img src="images/fp_4.png" alt="Sentiment-Driven Financial Market Trend Prediction" loading="lazy">
                     </div>
-                    <div class="progress-bar">
-                        <div class="progress-fill" style="width: 100%"></div>
+                    <div class="project-content">
+                        <h3>Sentiment-Driven Financial Market Trend Prediction</h3>
+                        <p>ConvLSTM + VADER model for investor sentiment and stock price forecasting; proposed SCONV framework validated on Tesla, Microsoft, P&G, Apple, TSMC.</p>
+                        <div class="project-meta">
+                            <span class="project-status">Completed</span>
+                            <span class="project-progress">100%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 100%"></div>
+                        </div>
+                        <a href="#" class="project-link">
+                            <svg width="14" height="14" fill="currentColor" viewBox="0 0 16 16">
+                                <path d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z"/>
+                                <path d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z"/>
+                            </svg>
+                            View Details
+                        </a>
                     </div>
-                    <a href="#" class="project-link">
-                        <svg width="14" height="14" fill="currentColor" viewBox="0 0 16 16">
-                            <path d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z"/>
-                            <path d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z"/>
-                        </svg>
-                        View Details
-                    </a>
                 </div>
                 
                 <div class="project-card">
-                    <h3>Impact of Deep Learning Models Based on Random Matrix Theory in Asset Pricing</h3>
-                    <p>Investigates spectral properties of large random matrices in deep learning weight/Hessian matrices; links heavy-tailed phenomena to self-regularization in financial asset pricing.</p>
-                    <div class="project-meta">
-                        <span class="project-status">Published @ICEMGD2024</span>
-                        <span class="project-progress">100%</span>
+                    <div class="project-image">
+                        <img src="images/fp_5.png" alt="Impact of Deep Learning Models Based on Random Matrix Theory in Asset Pricing" loading="lazy">
                     </div>
-                    <div class="progress-bar">
-                        <div class="progress-fill" style="width: 100%"></div>
+                    <div class="project-content">
+                        <h3>Impact of Deep Learning Models Based on Random Matrix Theory in Asset Pricing</h3>
+                        <p>Investigates spectral properties of large random matrices in deep learning weight/Hessian matrices; links heavy-tailed phenomena to self-regularization in financial asset pricing.</p>
+                        <div class="project-meta">
+                            <span class="project-status">Published @ICEMGD2024</span>
+                            <span class="project-progress">100%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 100%"></div>
+                        </div>
+                        <a href="#" class="project-link">
+                            <svg width="14" height="14" fill="currentColor" viewBox="0 0 16 16">
+                                <path d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z"/>
+                                <path d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z"/>
+                            </svg>
+                            View Paper
+                        </a>
                     </div>
-                    <a href="#" class="project-link">
-                        <svg width="14" height="14" fill="currentColor" viewBox="0 0 16 16">
-                            <path d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z"/>
-                            <path d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z"/>
-                        </svg>
-                        View Paper
-                    </a>
                 </div>
             </div>
         </div>
