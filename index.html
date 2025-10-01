@@ -1185,22 +1185,25 @@
         render(); // 重新渲染页面以应用语言设置
       }
       
-      // 只有在有明确的hash且不是从其他页面跳转时才自动滚动
+      // 检查是否是页面刷新（没有referrer或referrer是同一页面）
+      const isPageRefresh = !document.referrer || document.referrer.includes(window.location.href.split('#')[0]);
+      
+      // 如果是页面刷新，确保回到顶部
+      if (isPageRefresh) {
+        window.scrollTo(0, 0);
+        return;
+      }
+      
+      // 只有在有明确的hash且不是页面刷新时才自动滚动
       if (hash && hash !== '#') {
         const targetElement = document.querySelector(hash);
         if (targetElement) {
-          // 检查是否是从其他页面跳转过来的
-          const isFromExternalPage = document.referrer && !document.referrer.includes('elizatang007.github.io');
-          
-          // 如果不是从外部页面跳转，或者有明确的hash，才滚动
-          if (!isFromExternalPage || hash.length > 1) {
-            setTimeout(() => {
-              targetElement.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-              });
-            }, 100); // Small delay to ensure page is fully loaded
-          }
+          setTimeout(() => {
+            targetElement.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+            });
+          }, 100); // Small delay to ensure page is fully loaded
         }
       }
     }
