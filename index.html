@@ -1185,15 +1185,22 @@
         render(); // 重新渲染页面以应用语言设置
       }
       
-      if (hash) {
+      // 只有在有明确的hash且不是从其他页面跳转时才自动滚动
+      if (hash && hash !== '#') {
         const targetElement = document.querySelector(hash);
         if (targetElement) {
-          setTimeout(() => {
-            targetElement.scrollIntoView({
-              behavior: 'smooth',
-              block: 'start'
-            });
-          }, 100); // Small delay to ensure page is fully loaded
+          // 检查是否是从其他页面跳转过来的
+          const isFromExternalPage = document.referrer && !document.referrer.includes('elizatang007.github.io');
+          
+          // 如果不是从外部页面跳转，或者有明确的hash，才滚动
+          if (!isFromExternalPage || hash.length > 1) {
+            setTimeout(() => {
+              targetElement.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+              });
+            }, 100); // Small delay to ensure page is fully loaded
+          }
         }
       }
     }
