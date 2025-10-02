@@ -680,11 +680,6 @@
           title: 'Sydney Observatory',
           description: 'At Sydney Observatory - exploring astronomy and scientific research in Australia'
         },
-        {
-          src: 'images/悉尼夜景.jpg',
-          title: 'Sydney Nightscape',
-          description: 'Beautiful Sydney nightscape and urban life experiences'
-        }
       ],
       zh: [
         {
@@ -732,11 +727,6 @@
           title: '悉尼天文台',
           description: '在悉尼天文台 - 探索澳大利亚的天文学和科学研究'
         },
-        {
-          src: 'images/悉尼夜景.jpg',
-          title: '悉尼夜景',
-          description: '美丽的悉尼夜景和城市生活体验'
-        }
       ]
     };
 
@@ -760,7 +750,7 @@
       // Create slides
       track.innerHTML = currentPhotos.map((photo, index) => {
         let slideClass = '';
-        if ([2, 3, 6, 7, 9, 10].includes(index)) {
+        if ([2, 3, 6, 7, 9].includes(index)) {
           slideClass = 'landscape-center'; // 竖屏居中，黑色背景
         }
         
