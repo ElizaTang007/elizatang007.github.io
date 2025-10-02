@@ -656,11 +656,6 @@
           description: 'Exploratory Spirit: A brief pause that reflects how curiosity drives me to cross boundaries—whether in research, entrepreneurship, or everyday life.'
         },
         {
-          src: 'images/我的故乡.jpg',
-          title: 'My Hometown Shanghai',
-          description: 'Born and raised in Shanghai, the vibrant international metropolis that shaped my global perspective and growth journey'
-        },
-        {
           src: 'images/阿瓦隆航展.jpg',
           title: 'UAM Innovation',
           description: 'Collaborative Vision: Engaging with urban air mobility pioneers, exchanging ideas on how emerging technologies can transform transport and build more connected, sustainable cities.'
@@ -691,11 +686,6 @@
           src: 'images/电影1.jpg',
           title: '好奇心',
           description: '探索精神：一个短暂的停顿，反映了好奇心如何驱使我跨越边界——无论是在研究、创业还是日常生活中。'
-        },
-        {
-          src: 'images/我的故乡.jpg',
-          title: '我的家乡上海',
-          description: '在上海出生和成长，这座充满活力的国际大都市塑造了我的全球视野和成长历程'
         },
         {
           src: 'images/阿瓦隆航展.jpg',
@@ -730,7 +720,7 @@
       // Create slides
       track.innerHTML = currentPhotos.map((photo, index) => {
         let slideClass = '';
-        if ([2, 3, 6, 7].includes(index)) {
+        if ([2, 3, 5, 6].includes(index)) {
           slideClass = 'landscape-center'; // 竖屏居中，黑色背景
         }
         
