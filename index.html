@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>唐怡婷 Eliza Tang - 计量经济学研究者 | 悉尼大学 | AI传播研究 | Econometrician | University of Sydney | AI Communication Research</title>
-  <meta name="version" content="5.2.0-20250127">
+  <meta name="version" content="5.3.0-20250127">
   <meta name="description" content="唐怡婷(Eliza Tang)，悉尼大学计量经济学与软件开发学士，专注于因果推断、教育经济学和AI传播研究。Google数据分析实习，Meritco AI投资研究，VMLY&R客户执行经验。| University of Sydney Econometrics & Software Development graduate, specializing in causal inference, education economics, and AI communication research.">
   <meta name="keywords" content="唐怡婷,Eliza Tang,Yiting Tang,计量经济学,因果推断,教育经济学,AI传播研究,悉尼大学,Google实习,数据分析,机器学习,工具变量,2SLS,econometrics,causal inference,education economics,AI communication research,University of Sydney,Google internship,data analysis,machine learning,instrumental variables,2SLS">
   <meta name="author" content="唐怡婷 Eliza Tang">
@@ -16,6 +16,18 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
   <link rel="manifest" href="/images/site.webmanifest">
+  
+  <!-- Preload critical resources -->
+  <link rel="preload" href="images/profile.png" as="image" type="image/png">
+  <link rel="preload" href="images/晚宴1.jpg" as="image" type="image/jpeg">
+  <link rel="preload" href="images/联合国.jpg" as="image" type="image/jpeg">
+  <link rel="preload" href="images/海边.jpg" as="image" type="image/jpeg">
+  <link rel="preload" href="images/阿瓦隆航展.jpg" as="image" type="image/jpeg">
+  
+  <!-- DNS prefetch for external resources -->
+  <link rel="dns-prefetch" href="//fonts.googleapis.com">
+  <link rel="dns-prefetch" href="//fonts.gstatic.com">
+  <link rel="dns-prefetch" href="//cdn.jsdelivr.net">
   
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
@@ -125,7 +137,7 @@
     :root{ --bg:#000814; --bg2:#001d3d; --fg:#0ea5e9; --violet:#6366f1; --text-on-dark:rgba(255,255,255,.92); --mx:50%; --my:50%; }
     *{box-sizing:border-box}
     html,body{margin:0;padding:0}
-    body{font-family:"Inter", "Noto Sans SC", "Source Han Sans SC", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; color:var(--text-on-dark); background: radial-gradient(1200px 800px at 10% 90%, rgba(14,165,233,.12), transparent 60%), radial-gradient(1000px 700px at 90% 10%, rgba(99,102,241,.10), transparent 60%), linear-gradient(180deg, var(--bg), var(--bg2));}
+    body{font-family:"Inter", "Noto Sans SC", "Source Han Sans SC", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; color:var(--text-on-dark); background: radial-gradient(1200px 800px at 10% 90%, rgba(14,165,233,.12), transparent 60%), radial-gradient(1000px 700px at 90% 10%, rgba(99,102,241,.10), transparent 60%), linear-gradient(180deg, var(--bg), var(--bg2)); will-change:auto; contain:layout style paint;}
 
     .orbs{position:fixed; inset:0; z-index:-1; overflow:hidden; pointer-events:none}
     .orb{position:absolute; width:42vw; height:42vw; border-radius:50%; filter:blur(50px); opacity:.18; background:radial-gradient(circle at 30% 30%, rgba(14,165,233,.9), rgba(14,165,233,0) 60%); mix-blend-mode:screen; animation:float 28s ease-in-out infinite;}
@@ -165,7 +177,7 @@
 
     .hero{min-height:100vh; display:flex; flex-direction:column; justify-content:center; padding:0 1rem}
     .hero-inner{max-width:1200px; margin:0 auto 0 12rem; display:grid; grid-template-columns: 300px 1fr; gap:4rem; align-items:center}
-    .avatar{width:280px; height:280px; border-radius:50%; overflow:hidden; box-shadow:0 20px 60px rgba(0,0,0,.45), 0 0 0 1px rgba(255,255,255,.12) inset, 0 0 30px rgba(14,165,233,0.3)}
+    .avatar{width:280px; height:280px; border-radius:50%; overflow:hidden; box-shadow:0 20px 60px rgba(0,0,0,.45), 0 0 0 1px rgba(255,255,255,.12) inset, 0 0 30px rgba(14,165,233,0.3); will-change:transform; contain:layout style paint;}
     .avatar img{width:100%; height:100%; object-fit:cover}
     .hero h1{margin:0 0 1.2rem 0; font-size:48px; line-height:1.1; font-family:'Orbitron', 'Noto Sans SC', monospace; font-weight:700; background:linear-gradient(135deg, #0ea5e9, #6366f1); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text}
     .hero p{margin:.6rem 0; opacity:.9; font-family:'JetBrains Mono', 'Noto Sans SC', monospace; line-height:1.7; font-size:1.05rem}
@@ -409,10 +421,6 @@
       .links{flex-wrap:wrap; gap:.5rem}
         }
     </style>
-    <!-- EmailJS SDK -->
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-    <!-- Supabase SDK -->
-    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </head>
 <body>
   <div class="orbs"><div class="orb" style="top:55%; left:-12%"></div><div class="orb v2" style="top:-8%; right:-14%"></div><div class="orb v3" style="bottom:-20%; left:30%"></div></div>
@@ -444,7 +452,7 @@
   <main>
     <section class="hero" id="about">
       <div class="hero-inner">
-        <div class="avatar"><img src="images/profile.png" alt="Eliza avatar" /></div>
+        <div class="avatar"><img src="images/profile.png" alt="Eliza avatar" loading="eager" decoding="async" /></div>
         <div>
           <h1 class="typewriter" data-i18n="hero.name">Eliza Yiting Tang</h1>
           <p data-i18n="hero.subtitle" class="hero-subtitle">University of Sydney · Econometrics & Software Development</p>
@@ -1652,5 +1660,20 @@
     });
   </script>
 
+  <!-- Load third-party scripts at the bottom for better performance -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2" defer></script>
+  
+  <!-- Performance monitoring -->
+  <script>
+    // Simple performance monitoring
+    window.addEventListener('load', function() {
+      if ('performance' in window) {
+        const perfData = performance.getEntriesByType('navigation')[0];
+        const loadTime = perfData.loadEventEnd - perfData.loadEventStart;
+        console.log('Page load time:', loadTime + 'ms');
+      }
+    });
+  </script>
 </body>
 </html> 
