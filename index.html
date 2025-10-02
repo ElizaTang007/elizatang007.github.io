@@ -670,16 +670,6 @@
           title: 'Cultural Heritage',
           description: 'Practicing traditional Chinese calligraphy and cultural arts'
         },
-        {
-          src: 'images/海边.jpg',
-          title: 'Research Retreat',
-          description: 'Academic research retreat and collaborative work sessions'
-        },
-        {
-          src: 'images/悉尼.jpg',
-          title: 'Sydney Observatory',
-          description: 'At Sydney Observatory - exploring astronomy and scientific research in Australia'
-        },
       ],
       zh: [
         {
@@ -717,16 +707,6 @@
           title: '文化遗产',
           description: '练习传统中国书法和文化艺术'
         },
-        {
-          src: 'images/海边.jpg',
-          title: '研究静修',
-          description: '学术研究静修和协作工作会议'
-        },
-        {
-          src: 'images/悉尼.jpg',
-          title: '悉尼天文台',
-          description: '在悉尼天文台 - 探索澳大利亚的天文学和科学研究'
-        },
       ]
     };
 
@@ -750,7 +730,7 @@
       // Create slides
       track.innerHTML = currentPhotos.map((photo, index) => {
         let slideClass = '';
-        if ([2, 3, 6, 7, 9].includes(index)) {
+        if ([2, 3, 6, 7].includes(index)) {
           slideClass = 'landscape-center'; // 竖屏居中，黑色背景
         }
         
