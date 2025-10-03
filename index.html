@@ -1443,6 +1443,8 @@
             if (error && error.code === '23505') {
               // 重复邮箱，显示提示
               console.log('⚠️ 检测到重复邮箱，显示提示');
+              alert(lang === 'en' ? 'Already Subscribed!' : '你已经订阅过了！');
+              
               const notification = document.createElement('div');
               notification.style.cssText = `
                 position: fixed;
@@ -1475,6 +1477,7 @@
               `;
               
               document.body.appendChild(notification);
+              console.log('📱 重复订阅提示框已添加到页面');
               
               setTimeout(() => {
                 notification.style.animation = 'slideOut 0.3s ease-in';
@@ -1569,6 +1572,8 @@
             
             // 显示成功消息
             console.log('🎉 显示成功提示消息');
+            alert(lang === 'en' ? 'Welcome aboard!' : '欢迎订阅！');
+            
             const successNotification = document.createElement('div');
             successNotification.style.cssText = `
               position: fixed;
