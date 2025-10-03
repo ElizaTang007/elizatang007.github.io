@@ -399,6 +399,17 @@
     .sub-box{margin-top:1rem; display:flex; gap:.6rem; justify-content:center}
     .sub-box input{width:280px; padding:.75rem .9rem; border-radius:10px; border:1px solid rgba(255,255,255,.25); background:rgba(0,0,0,.25); color:var(--text-on-dark); font-family:'JetBrains Mono', 'Noto Sans SC', monospace}
     .sub-box button{padding:.78rem 1.1rem; border-radius:10px; border:1px solid rgba(255,255,255,.25); background:linear-gradient(135deg, rgba(14,165,233,.9), rgba(99,102,241,.85)); color:white; cursor:pointer; font-family:'JetBrains Mono', 'Noto Sans SC', monospace}
+    
+    /* 通知动画 */
+    @keyframes slideIn {
+      from { transform: translateX(100%); opacity: 0; }
+      to { transform: translateX(0); opacity: 1; }
+    }
+    
+    @keyframes slideOut {
+      from { transform: translateX(0); opacity: 1; }
+      to { transform: translateX(100%); opacity: 0; }
+    }
     .footer{max-width:1140px; margin:0 auto; padding:3rem 1rem 4rem 1rem; opacity:.7; text-align:center; font-family:'JetBrains Mono', 'Noto Sans SC', monospace}
 
 
@@ -630,6 +641,7 @@
           <input type="email" placeholder="Email Address" />
           <button type="button" id="subBtn" data-i18n="contact.btn">Subscribe</button>
         </div>
+        <button type="button" id="testSubscribe" style="margin-top: 10px; padding: 8px 16px; background: #4CAF50; color: white; border: none; border-radius: 5px; cursor: pointer; font-size: 12px;">Test Subscribe</button>
         <p style="margin-top:.8rem;opacity:.8" id="emailLine"></p>
         <p style="margin-top:1.5rem;opacity:.8;font-size:.9rem" id="socialLine"></p>
       </div>
@@ -1403,6 +1415,16 @@
         if (socialLine) socialLine.innerHTML = t.contact.social;
       }
       
+      // 测试按钮
+      const testBtn = document.getElementById('testSubscribe');
+      if (testBtn) {
+        testBtn.addEventListener('click', function() {
+          console.log('🧪 测试按钮被点击');
+          emailInput.value = 'test@example.com';
+          subBtn.click();
+        });
+      }
+      
       // 订阅按钮点击事件
       if (subBtn && emailInput) {
         console.log('✅ 订阅按钮和邮箱输入框找到，添加事件监听器');
@@ -1580,55 +1602,56 @@
             }
             
             // 显示成功消息
-              const successNotification = document.createElement('div');
-              successNotification.style.cssText = `
-                position: fixed;
-                top: 20px;
-                right: 20px;
-                background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-                color: white;
-                padding: 16px 24px;
-                border-radius: 12px;
-                box-shadow: 0 8px 32px rgba(0,0,0,0.3);
-                z-index: 10000;
-                font-family: 'JetBrains Mono', 'Noto Sans SC', monospace;
-                font-size: 14px;
-                max-width: 350px;
-                animation: slideIn 0.3s ease-out;
-              `;
-              
-              // 检查是否是教育邮箱，提供特殊提示
-              const isEduEmail = email.includes('.edu');
-              const emailTip = isEduEmail ? 
-                (lang === 'en' ? 'Check spam folder if not received.' : '如未收到，请检查垃圾邮件文件夹。') :
-                (lang === 'en' ? 'Check your email for a welcome message.' : '请查看您的邮箱，我们已发送欢迎邮件。');
-              
-              successNotification.innerHTML = `
-                <div style="display: flex; align-items: center; gap: 12px;">
-                  <div style="font-size: 20px;">🎉</div>
-                  <div>
-                    <div style="font-weight: 600; margin-bottom: 4px;">
-                      ${lang === 'en' ? 'Welcome aboard!' : '欢迎订阅！'}
-                    </div>
-                    <div style="opacity: 0.9; font-size: 13px;">
-                      ${emailTip}
-                    </div>
-                    ${isEduEmail ? '<div style="opacity: 0.8; font-size: 12px; margin-top: 4px; color: #ffd700;">📧 教育邮箱检测到</div>' : ''}
+            const successNotification = document.createElement('div');
+            successNotification.style.cssText = `
+              position: fixed;
+              top: 20px;
+              right: 20px;
+              background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+              color: white;
+              padding: 16px 24px;
+              border-radius: 12px;
+              box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+              z-index: 10000;
+              font-family: 'JetBrains Mono', 'Noto Sans SC', monospace;
+              font-size: 14px;
+              max-width: 350px;
+              animation: slideIn 0.3s ease-out;
+            `;
+            
+            // 检查是否是教育邮箱，提供特殊提示
+            const isEduEmail = email.includes('.edu');
+            const emailTip = isEduEmail ? 
+              (lang === 'en' ? 'Check spam folder if not received.' : '如未收到，请检查垃圾邮件文件夹。') :
+              (lang === 'en' ? 'Check your email for a welcome message.' : '请查看您的邮箱，我们已发送欢迎邮件。');
+            
+            successNotification.innerHTML = `
+              <div style="display: flex; align-items: center; gap: 12px;">
+                <div style="font-size: 20px;">🎉</div>
+                <div>
+                  <div style="font-weight: 600; margin-bottom: 4px;">
+                    ${lang === 'en' ? 'Welcome aboard!' : '欢迎订阅！'}
                   </div>
+                  <div style="opacity: 0.9; font-size: 13px;">
+                    ${emailTip}
+                  </div>
+                  ${isEduEmail ? '<div style="opacity: 0.8; font-size: 12px; margin-top: 4px; color: #ffd700;">📧 教育邮箱检测到</div>' : ''}
                 </div>
-              `;
-              
-              document.body.appendChild(successNotification);
-              
-              // 4秒后自动消失
+              </div>
+            `;
+            
+            document.body.appendChild(successNotification);
+            
+            // 4秒后自动消失
+            setTimeout(() => {
+              successNotification.style.animation = 'slideOut 0.3s ease-in';
               setTimeout(() => {
-                successNotification.style.animation = 'slideOut 0.3s ease-in';
-                setTimeout(() => {
-                  if (successNotification.parentNode) {
-                    successNotification.parentNode.removeChild(successNotification);
-                  }
-                }, 300);
-              }, 4000);
+                if (successNotification.parentNode) {
+                  successNotification.parentNode.removeChild(successNotification);
+                }
+              }, 300);
+            }, 4000);
+            
             emailInput.value = '';
             
             // 恢复按钮状态
