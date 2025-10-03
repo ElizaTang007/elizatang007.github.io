@@ -630,7 +630,6 @@
           <input type="email" placeholder="Email Address" />
           <button type="button" id="subBtn" data-i18n="contact.btn">Subscribe</button>
         </div>
-        <button type="button" id="testBtn" style="margin-top: 10px; padding: 8px 16px; background: #4CAF50; color: white; border: none; border-radius: 5px; cursor: pointer;">Test Subscribe</button>
         <p style="margin-top:.8rem;opacity:.8" id="emailLine"></p>
         <p style="margin-top:1.5rem;opacity:.8;font-size:.9rem" id="socialLine"></p>
       </div>
@@ -1350,9 +1349,7 @@
         function initEmailJS() {
           if (typeof emailjs !== 'undefined') {
             emailjs.init('_be2yNgZ-rNhhO_DR');
-            console.log('✅ EmailJS 初始化成功');
           } else {
-            console.log('⏳ EmailJS 尚未加载，等待中...');
             setTimeout(initEmailJS, 100);
           }
         }
@@ -1367,19 +1364,10 @@
 
         // 订阅功能
         function initSubscribeFeature() {
-          console.log('🚀 初始化邮箱订阅功能...');
-          
           const subBtn = document.getElementById('subBtn');
           const emailInput = document.querySelector('.sub-box input[type="email"]');
           const emailLine = document.getElementById('emailLine');
           const socialLine = document.getElementById('socialLine');
-          
-          console.log('📧 订阅元素检查:', {
-            subBtn: !!subBtn,
-            emailInput: !!emailInput,
-            emailLine: !!emailLine,
-            socialLine: !!socialLine
-          });
       
       // 更新联系信息显示
       function updateContactInfo() {
@@ -1388,21 +1376,9 @@
         if (socialLine) socialLine.innerHTML = t.contact.social;
       }
       
-      // 测试按钮
-      const testBtn = document.getElementById('testBtn');
-      if (testBtn) {
-        testBtn.addEventListener('click', function() {
-          console.log('🧪 测试按钮被点击');
-          emailInput.value = 'test@example.com';
-          subBtn.click();
-        });
-      }
-      
       // 订阅按钮点击事件
       if (subBtn && emailInput) {
-        console.log('✅ 订阅按钮和邮箱输入框找到，添加事件监听器');
         subBtn.addEventListener('click', async function() {
-          console.log('🖱️ 订阅按钮被点击');
           const email = emailInput.value.trim();
           
           if (!email) {
@@ -1421,23 +1397,15 @@
           
             // 使用Supabase在线数据库保存订阅者
             
-            // 简化重复邮箱检测逻辑
-            console.log('🔍 检查重复邮箱:', email);
-            
-            // 直接查询所有订阅者，然后检查是否重复
+            // 检查重复邮箱
             const { data: allSubscribers, error: fetchError } = await supabase
               .from('subscribers')
               .select('email');
             
-            console.log('📊 所有订阅者:', allSubscribers);
-            console.log('❌ 查询错误:', fetchError);
-            
             // 检查是否有重复邮箱
             const isDuplicate = allSubscribers && allSubscribers.some(sub => sub.email === email);
-            console.log('🔍 是否重复:', isDuplicate);
             
             if (isDuplicate) {
-              console.log('✅ 检测到重复邮箱:', email);
               // 显示重复邮箱提示
               const notification = document.createElement('div');
               notification.style.cssText = `
@@ -1485,9 +1453,6 @@
               subBtn.disabled = false;
               return;
             }
-            
-            // 如果邮箱不存在，继续正常流程
-            console.log('✅ 邮箱未重复，继续订阅流程');
             
             // 邮箱不存在，正常插入
             const { data, error } = await supabase
@@ -1554,12 +1519,9 @@
               return;
             }
             
-            console.log('Subscriber saved to database:', data);
             
             // 发送欢迎邮件给订阅者
             if (typeof emailjs !== 'undefined' && emailjs) {
-              console.log('✅ EmailJS is available, attempting to send email...');
-              
               // 使用EmailJS模板中定义的参数名
               const templateParams = {
                 email: email, // 对应模板中的 {{email}}
@@ -1573,54 +1535,15 @@
                 company_name: 'Eliza Tang Research'
               };
               
-              console.log('Template params:', templateParams);
-              console.log('Service ID: service_jdzpias (updated)');
-              console.log('Template ID: template_xqw7y2f');
-              console.log('User ID: _be2yNgZ-rNhhO_DR');
-              
               emailjs.send('service_jdzpias', 'template_xqw7y2f', templateParams, '_be2yNgZ-rNhhO_DR')
                 .then(function(response) {
-                  console.log('✅ Welcome email sent successfully!', response.status, response.text);
-                  console.log('Response:', response);
-                  
-                  // 详细调试信息
-                  console.log('📧 邮件发送详情:');
-                  console.log('- 收件人:', email);
-                  console.log('- 发件人:', 'tangyiting007@gmail.com');
-                  console.log('- 服务ID:', 'service_jdzpias');
-                  console.log('- 模板ID:', 'template_xqw7y2f');
-                  console.log('- 响应状态:', response.status);
-                  console.log('- 响应文本:', response.text);
-                  
-                  // 检查是否是教育邮箱
-                  if (email.includes('.edu')) {
-                    console.log('📧 教育邮箱检测到，邮件可能被过滤');
-                    console.log('💡 建议收件人检查垃圾邮件文件夹');
-                  }
-                  
-                  // 检查邮件是否真的发送成功
-                  if (response.status === 200) {
-                    console.log('✅ 邮件API调用成功，但可能被邮件服务器过滤');
-                    console.log('💡 请检查：');
-                    console.log('1. 垃圾邮件文件夹');
-                    console.log('2. 邮件服务器是否阻止了邮件');
-                    console.log('3. 发件人是否被标记为垃圾邮件');
-                  }
+                  console.log('✅ Welcome email sent successfully!', response.status);
                 }, function(error) {
                   console.log('❌ Welcome email sending failed:', error);
-                  console.log('Error details:', error);
-                  
-                  // 如果是教育邮箱，提供特殊提示
-                  if (email.includes('.edu')) {
-                    console.log('📧 教育邮箱发送失败，可能被服务器过滤');
-                    console.log('💡 建议联系邮箱管理员或使用其他邮箱地址');
-                  }
                 });
-            } else {
-              console.log('❌ EmailJS not available, skipping email send');
             }
             
-              // 显示成功消息（包含邮件发送状态）
+            // 显示成功消息
               const successNotification = document.createElement('div');
               successNotification.style.cssText = `
                 position: fixed;
@@ -1698,13 +1621,8 @@
     // 等待所有脚本加载完成后初始化订阅功能
     function waitForScripts() {
       if (typeof emailjs !== 'undefined' && typeof supabase !== 'undefined') {
-        console.log('✅ 所有脚本已加载，初始化订阅功能');
         initSubscribeFeature();
       } else {
-        console.log('⏳ 等待脚本加载...', {
-          emailjs: typeof emailjs !== 'undefined',
-          supabase: typeof supabase !== 'undefined'
-        });
         setTimeout(waitForScripts, 100);
       }
     }
