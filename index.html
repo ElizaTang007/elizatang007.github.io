@@ -1490,24 +1490,11 @@
               console.log('当前语言:', currentLang);
               
               const notification = document.createElement('div');
-              // 获取social元素的位置
-              const socialElement = document.getElementById('socialLine');
-              let topPosition = '20px';
-              let leftPosition = '50%';
-              let transformValue = 'translate(-50%, 0)';
-              
-              if (socialElement) {
-                const rect = socialElement.getBoundingClientRect();
-                topPosition = (rect.bottom + 20) + 'px';
-                leftPosition = '50%';
-                transformValue = 'translate(-50%, 0)';
-              }
-              
               notification.style.cssText = `
                 position: fixed !important;
-                top: ${topPosition} !important;
-                left: ${leftPosition} !important;
-                transform: ${transformValue} !important;
+                bottom: 100px !important;
+                left: 50% !important;
+                transform: translate(-50%, 0) !important;
                 background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
                 color: white !important;
                 padding: 20px 28px !important;
@@ -1629,24 +1616,11 @@
             console.log('当前语言:', currentLang);
             
             const successNotification = document.createElement('div');
-            // 获取social元素的位置
-            const socialElement = document.getElementById('socialLine');
-            let topPosition = '20px';
-            let leftPosition = '50%';
-            let transformValue = 'translate(-50%, 0)';
-            
-            if (socialElement) {
-              const rect = socialElement.getBoundingClientRect();
-              topPosition = (rect.bottom + 20) + 'px';
-              leftPosition = '50%';
-              transformValue = 'translate(-50%, 0)';
-            }
-            
             successNotification.style.cssText = `
               position: fixed !important;
-              top: ${topPosition} !important;
-              left: ${leftPosition} !important;
-              transform: ${transformValue} !important;
+              bottom: 100px !important;
+              left: 50% !important;
+              transform: translate(-50%, 0) !important;
               background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%) !important;
               color: white !important;
               padding: 20px 28px !important;
