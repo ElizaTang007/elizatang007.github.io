@@ -1346,10 +1346,19 @@
       });
     }
 
-        // 初始化EmailJS
-        (function() {
-          emailjs.init('_be2yNgZ-rNhhO_DR');
-        })();
+        // 初始化EmailJS - 等待脚本加载完成
+        function initEmailJS() {
+          if (typeof emailjs !== 'undefined') {
+            emailjs.init('_be2yNgZ-rNhhO_DR');
+            console.log('✅ EmailJS 初始化成功');
+          } else {
+            console.log('⏳ EmailJS 尚未加载，等待中...');
+            setTimeout(initEmailJS, 100);
+          }
+        }
+        
+        // 启动EmailJS初始化
+        initEmailJS();
         
         // 初始化Supabase
         const supabaseUrl = 'https://ldmodpcpoyqemecgueha.supabase.co';
@@ -1548,8 +1557,8 @@
             console.log('Subscriber saved to database:', data);
             
             // 发送欢迎邮件给订阅者
-            if (typeof emailjs !== 'undefined') {
-              console.log('EmailJS is available, attempting to send email...');
+            if (typeof emailjs !== 'undefined' && emailjs) {
+              console.log('✅ EmailJS is available, attempting to send email...');
               
               // 使用EmailJS模板中定义的参数名
               const templateParams = {
@@ -1686,15 +1695,29 @@
       };
     }
     
-    // 在DOM加载完成后初始化订阅功能
+    // 等待所有脚本加载完成后初始化订阅功能
+    function waitForScripts() {
+      if (typeof emailjs !== 'undefined' && typeof supabase !== 'undefined') {
+        console.log('✅ 所有脚本已加载，初始化订阅功能');
+        initSubscribeFeature();
+      } else {
+        console.log('⏳ 等待脚本加载...', {
+          emailjs: typeof emailjs !== 'undefined',
+          supabase: typeof supabase !== 'undefined'
+        });
+        setTimeout(waitForScripts, 100);
+      }
+    }
+    
+    // 在DOM加载完成后开始等待脚本
     document.addEventListener('DOMContentLoaded', function() {
-      initSubscribeFeature();
+      waitForScripts();
     });
   </script>
 
   <!-- Load third-party scripts at the bottom for better performance -->
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js" defer></script>
-  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2" defer></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   
   <!-- Performance monitoring -->
   <script>
