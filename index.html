@@ -1400,28 +1400,32 @@
       // 订阅按钮点击事件
       if (subBtn && emailInput) {
         subBtn.addEventListener('click', async function() {
+          // 获取当前语言设置
+          const currentLang = localStorage.getItem('language') || 'en';
+          console.log('订阅功能当前语言:', currentLang);
+          
           const email = emailInput.value.trim();
           
           if (!email) {
-            alert(lang === 'en' ? 'Please enter your email address.' : '请输入您的邮箱地址。');
+            alert(currentLang === 'en' ? 'Please enter your email address.' : '请输入您的邮箱地址。');
             return;
           }
           
           if (!isValidEmail(email)) {
-            alert(lang === 'en' ? 'Please enter a valid email address.' : '请输入有效的邮箱地址。');
+            alert(currentLang === 'en' ? 'Please enter a valid email address.' : '请输入有效的邮箱地址。');
             return;
           }
           
           // 显示加载状态
-          subBtn.textContent = lang === 'en' ? 'Subscribing...' : '订阅中...';
+          subBtn.textContent = currentLang === 'en' ? 'Subscribing...' : '订阅中...';
           subBtn.disabled = true;
           
             // 使用Supabase在线数据库保存订阅者
             
             // 检查重复邮箱
             if (!supabase) {
-              alert(lang === 'en' ? 'Database not ready. Please try again.' : '数据库未就绪，请重试。');
-              subBtn.textContent = lang === 'en' ? 'Subscribe' : '订阅';
+              alert(currentLang === 'en' ? 'Database not ready. Please try again.' : '数据库未就绪，请重试。');
+              subBtn.textContent = currentLang === 'en' ? 'Subscribe' : '订阅';
               subBtn.disabled = false;
               return;
             }
@@ -1443,7 +1447,8 @@
             if (error && error.code === '23505') {
               // 重复邮箱，显示提示
               console.log('⚠️ 检测到重复邮箱，显示提示');
-              alert(lang === 'en' ? 'Already Subscribed!' : '你已经订阅过了！');
+              console.log('当前语言:', currentLang);
+              alert(currentLang === 'en' ? 'Already Subscribed!' : '你已经订阅过了！');
               
               const notification = document.createElement('div');
               notification.style.cssText = `
@@ -1467,10 +1472,10 @@
                   <div style="font-size: 20px;">✅</div>
                   <div>
                     <div style="font-weight: 600; margin-bottom: 4px;">
-                      ${lang === 'en' ? 'Already Subscribed!' : '你已经订阅过了！'}
+                      ${currentLang === 'en' ? 'Already Subscribed!' : '你已经订阅过了！'}
                     </div>
                     <div style="opacity: 0.9; font-size: 13px;">
-                      ${lang === 'en' ? 'You will receive our latest updates.' : '您将收到我们的最新动态。'}
+                      ${currentLang === 'en' ? 'You will receive our latest updates.' : '您将收到我们的最新动态。'}
                     </div>
                   </div>
                 </div>
@@ -1488,7 +1493,7 @@
                 }, 300);
               }, 3000);
               
-              subBtn.textContent = lang === 'en' ? 'Subscribe' : '订阅';
+              subBtn.textContent = currentLang === 'en' ? 'Subscribe' : '订阅';
               subBtn.disabled = false;
               return;
             }
@@ -1496,8 +1501,8 @@
             // 检查其他错误
             if (error) {
               console.error('Database error:', error);
-              alert(lang === 'en' ? 'Error! Please try again later.' : '出错了！请稍后再试。');
-              subBtn.textContent = lang === 'en' ? 'Subscribe' : '订阅';
+              alert(currentLang === 'en' ? 'Error! Please try again later.' : '出错了！请稍后再试。');
+              subBtn.textContent = currentLang === 'en' ? 'Subscribe' : '订阅';
               subBtn.disabled = false;
               return;
             }
@@ -1527,7 +1532,8 @@
             
             // 显示成功消息
             console.log('🎉 显示成功提示消息');
-            alert(lang === 'en' ? 'Welcome aboard!' : '欢迎订阅！');
+            console.log('当前语言:', currentLang);
+            alert(currentLang === 'en' ? 'Welcome aboard!' : '欢迎订阅！');
             
             const successNotification = document.createElement('div');
             successNotification.style.cssText = `
@@ -1549,22 +1555,22 @@
             // 检查是否是教育邮箱，提供特殊提示
             const isEduEmail = email.includes('.edu');
             const emailTip = isEduEmail ? 
-              (lang === 'en' ? 'Check spam folder if not received.' : '如未收到，请检查垃圾邮件文件夹。') :
-              (lang === 'en' ? 'Check your email for a welcome message.' : '请查看您的邮箱，我们已发送欢迎邮件。');
+              (currentLang === 'en' ? 'Check spam folder if not received.' : '如未收到，请检查垃圾邮件文件夹。') :
+              (currentLang === 'en' ? 'Check your email for a welcome message.' : '请查看您的邮箱，我们已发送欢迎邮件。');
             
             successNotification.innerHTML = `
               <div style="display: flex; align-items: center; gap: 12px;">
                 <div style="font-size: 20px;">🎉</div>
                 <div>
                   <div style="font-weight: 600; margin-bottom: 4px;">
-                    ${lang === 'en' ? 'Welcome aboard!' : '欢迎订阅！'}
+                    ${currentLang === 'en' ? 'Welcome aboard!' : '欢迎订阅！'}
                   </div>
                   <div style="opacity: 0.9; font-size: 13px;">
                     ${emailTip}
                   </div>
                   ${isEduEmail ? '<div style="opacity: 0.8; font-size: 12px; margin-top: 4px; color: #ffd700;">📧 教育邮箱检测到</div>' : ''}
                 </div>
-              </div>
+    </div>
             `;
             
             document.body.appendChild(successNotification);
@@ -1582,7 +1588,7 @@
             emailInput.value = '';
             
             // 恢复按钮状态
-            subBtn.textContent = lang === 'en' ? 'Subscribe' : '订阅';
+            subBtn.textContent = currentLang === 'en' ? 'Subscribe' : '订阅';
             subBtn.disabled = false;
         });
       }
