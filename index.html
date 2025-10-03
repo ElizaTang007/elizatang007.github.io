@@ -641,7 +641,6 @@
           <input type="email" placeholder="Email Address" />
           <button type="button" id="subBtn" data-i18n="contact.btn">Subscribe</button>
         </div>
-        <button type="button" id="testSubscribe" style="margin-top: 10px; padding: 8px 16px; background: #4CAF50; color: white; border: none; border-radius: 5px; cursor: pointer; font-size: 12px;">Test Subscribe</button>
         <p style="margin-top:.8rem;opacity:.8" id="emailLine"></p>
         <p style="margin-top:1.5rem;opacity:.8;font-size:.9rem" id="socialLine"></p>
       </div>
@@ -1372,18 +1371,11 @@
         // 初始化Supabase - 等待脚本加载完成
         let supabase = null;
         function initSupabase() {
-          console.log('🔍 检查Supabase加载状态:', {
-            windowSupabase: typeof window.supabase !== 'undefined',
-            createClient: typeof window.supabase !== 'undefined' && !!window.supabase.createClient
-          });
-          
           if (typeof window.supabase !== 'undefined' && window.supabase.createClient) {
             const supabaseUrl = 'https://ldmodpcpoyqemecgueha.supabase.co';
             const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxkbW9kcGNwb3lxZW1lY2d1ZWhhIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTkyNDAyNjgsImV4cCI6MjA3NDgxNjI2OH0.4qKagcnpqdUbh0oFTefX-r72VOGr-1W7tmDnNCnq43g';
             supabase = window.supabase.createClient(supabaseUrl, supabaseKey);
-            console.log('✅ Supabase 初始化成功');
           } else {
-            console.log('⏳ Supabase 尚未加载，等待中...');
             setTimeout(initSupabase, 100);
           }
         }
@@ -1393,20 +1385,10 @@
 
         // 订阅功能
         function initSubscribeFeature() {
-          console.log('🚀 开始初始化订阅功能...');
-          
           const subBtn = document.getElementById('subBtn');
           const emailInput = document.querySelector('.sub-box input[type="email"]');
           const emailLine = document.getElementById('emailLine');
           const socialLine = document.getElementById('socialLine');
-          
-          console.log('📧 订阅元素检查:', {
-            subBtn: !!subBtn,
-            emailInput: !!emailInput,
-            emailLine: !!emailLine,
-            socialLine: !!socialLine,
-            supabase: !!supabase
-          });
       
       // 更新联系信息显示
       function updateContactInfo() {
@@ -1415,21 +1397,9 @@
         if (socialLine) socialLine.innerHTML = t.contact.social;
       }
       
-      // 测试按钮
-      const testBtn = document.getElementById('testSubscribe');
-      if (testBtn) {
-        testBtn.addEventListener('click', function() {
-          console.log('🧪 测试按钮被点击');
-          emailInput.value = 'test@example.com';
-          subBtn.click();
-        });
-      }
-      
       // 订阅按钮点击事件
       if (subBtn && emailInput) {
-        console.log('✅ 订阅按钮和邮箱输入框找到，添加事件监听器');
         subBtn.addEventListener('click', async function() {
-          console.log('🖱️ 订阅按钮被点击');
           const email = emailInput.value.trim();
           
           if (!email) {
@@ -1679,13 +1649,7 @@
     
     // 等待所有脚本加载完成后初始化订阅功能
     function waitForScripts() {
-      console.log('⏳ 检查脚本加载状态:', {
-        emailjs: typeof emailjs !== 'undefined',
-        supabase: supabase !== null
-      });
-      
       if (typeof emailjs !== 'undefined' && supabase !== null) {
-        console.log('✅ 所有脚本已加载，初始化订阅功能');
         initSubscribeFeature();
       } else {
         setTimeout(waitForScripts, 100);
