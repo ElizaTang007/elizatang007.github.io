@@ -630,6 +630,7 @@
           <input type="email" placeholder="Email Address" />
           <button type="button" id="subBtn" data-i18n="contact.btn">Subscribe</button>
         </div>
+        <button type="button" id="testBtn" style="margin-top: 10px; padding: 8px 16px; background: #4CAF50; color: white; border: none; border-radius: 5px; cursor: pointer;">Test Subscribe</button>
         <p style="margin-top:.8rem;opacity:.8" id="emailLine"></p>
         <p style="margin-top:1.5rem;opacity:.8;font-size:.9rem" id="socialLine"></p>
       </div>
@@ -1356,11 +1357,20 @@
         const supabase = window.supabase.createClient(supabaseUrl, supabaseKey);
 
         // 订阅功能
-        document.addEventListener('DOMContentLoaded', function() {
-      const subBtn = document.getElementById('subBtn');
-      const emailInput = document.querySelector('.sub-box input[type="email"]');
-      const emailLine = document.getElementById('emailLine');
-      const socialLine = document.getElementById('socialLine');
+        function initSubscribeFeature() {
+          console.log('🚀 初始化邮箱订阅功能...');
+          
+          const subBtn = document.getElementById('subBtn');
+          const emailInput = document.querySelector('.sub-box input[type="email"]');
+          const emailLine = document.getElementById('emailLine');
+          const socialLine = document.getElementById('socialLine');
+          
+          console.log('📧 订阅元素检查:', {
+            subBtn: !!subBtn,
+            emailInput: !!emailInput,
+            emailLine: !!emailLine,
+            socialLine: !!socialLine
+          });
       
       // 更新联系信息显示
       function updateContactInfo() {
@@ -1369,9 +1379,21 @@
         if (socialLine) socialLine.innerHTML = t.contact.social;
       }
       
+      // 测试按钮
+      const testBtn = document.getElementById('testBtn');
+      if (testBtn) {
+        testBtn.addEventListener('click', function() {
+          console.log('🧪 测试按钮被点击');
+          emailInput.value = 'test@example.com';
+          subBtn.click();
+        });
+      }
+      
       // 订阅按钮点击事件
       if (subBtn && emailInput) {
+        console.log('✅ 订阅按钮和邮箱输入框找到，添加事件监听器');
         subBtn.addEventListener('click', async function() {
+          console.log('🖱️ 订阅按钮被点击');
           const email = emailInput.value.trim();
           
           if (!email) {
@@ -1662,6 +1684,11 @@
         originalRender();
         updateContactInfo();
       };
+    }
+    
+    // 在DOM加载完成后初始化订阅功能
+    document.addEventListener('DOMContentLoaded', function() {
+      initSubscribeFeature();
     });
   </script>
 
