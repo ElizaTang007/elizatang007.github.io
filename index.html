@@ -1479,23 +1479,26 @@
               
               const notification = document.createElement('div');
               notification.style.cssText = `
-                position: fixed;
-                top: 24px;
-                right: 24px;
-                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-                padding: 20px 28px;
-                border-radius: 16px;
-                box-shadow: 0 20px 40px rgba(102, 126, 234, 0.4), 0 8px 16px rgba(0,0,0,0.2);
-                z-index: 99999;
-                font-family: 'JetBrains Mono', 'Noto Sans SC', monospace;
-                font-size: 15px;
-                max-width: 380px;
-                animation: slideIn 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-                backdrop-filter: blur(10px);
-                border: 1px solid rgba(255,255,255,0.2);
-                position: relative;
-                overflow: hidden;
+                position: fixed !important;
+                top: 24px !important;
+                right: 24px !important;
+                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+                color: white !important;
+                padding: 20px 28px !important;
+                border-radius: 16px !important;
+                box-shadow: 0 20px 40px rgba(102, 126, 234, 0.4), 0 8px 16px rgba(0,0,0,0.2) !important;
+                z-index: 999999 !important;
+                font-family: 'JetBrains Mono', 'Noto Sans SC', monospace !important;
+                font-size: 15px !important;
+                max-width: 380px !important;
+                animation: slideIn 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
+                backdrop-filter: blur(10px) !important;
+                border: 1px solid rgba(255,255,255,0.2) !important;
+                position: relative !important;
+                overflow: hidden !important;
+                display: block !important;
+                visibility: visible !important;
+                opacity: 1 !important;
               `;
               
               // 添加背景光效
@@ -1537,6 +1540,17 @@
               
               document.body.appendChild(notification);
               console.log('📱 重复订阅提示框已添加到页面');
+              console.log('弹窗元素:', notification);
+              console.log('弹窗位置:', notification.getBoundingClientRect());
+              console.log('弹窗样式:', window.getComputedStyle(notification));
+              
+              // 强制显示弹窗
+              setTimeout(() => {
+                notification.style.display = 'block';
+                notification.style.visibility = 'visible';
+                notification.style.opacity = '1';
+                console.log('强制显示弹窗后的位置:', notification.getBoundingClientRect());
+              }, 100);
               
               setTimeout(() => {
                 notification.style.animation = 'slideOut 0.3s ease-in';
@@ -1590,23 +1604,26 @@
             
             const successNotification = document.createElement('div');
             successNotification.style.cssText = `
-              position: fixed;
-              top: 24px;
-              right: 24px;
-              background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-              color: white;
-              padding: 20px 28px;
-              border-radius: 16px;
-              box-shadow: 0 20px 40px rgba(79, 172, 254, 0.4), 0 8px 16px rgba(0,0,0,0.2);
-              z-index: 99999;
-              font-family: 'JetBrains Mono', 'Noto Sans SC', monospace;
-              font-size: 15px;
-              max-width: 380px;
-              animation: slideIn 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-              backdrop-filter: blur(10px);
-              border: 1px solid rgba(255,255,255,0.2);
-              position: relative;
-              overflow: hidden;
+              position: fixed !important;
+              top: 24px !important;
+              right: 24px !important;
+              background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%) !important;
+              color: white !important;
+              padding: 20px 28px !important;
+              border-radius: 16px !important;
+              box-shadow: 0 20px 40px rgba(79, 172, 254, 0.4), 0 8px 16px rgba(0,0,0,0.2) !important;
+              z-index: 999999 !important;
+              font-family: 'JetBrains Mono', 'Noto Sans SC', monospace !important;
+              font-size: 15px !important;
+              max-width: 380px !important;
+              animation: slideIn 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
+              backdrop-filter: blur(10px) !important;
+              border: 1px solid rgba(255,255,255,0.2) !important;
+              position: relative !important;
+              overflow: hidden !important;
+              display: block !important;
+              visibility: visible !important;
+              opacity: 1 !important;
             `;
             
             // 添加背景光效
