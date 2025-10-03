@@ -1426,15 +1426,23 @@
               return;
             }
             
-            const { data: allSubscribers, error: fetchError } = await supabase
+            // 先尝试插入，如果失败则检查是否是重复邮箱
+            const { data, error } = await supabase
               .from('subscribers')
-              .select('email');
+              .insert([
+                {
+                  email: email,
+                  name: document.querySelector('input[name="name"]')?.value || '',
+                  interests: ['research', 'projects', 'updates'],
+                  subscribe_date: new Date().toISOString(),
+                  status: 'active'
+                }
+              ]);
             
-            // 检查是否有重复邮箱
-            const isDuplicate = allSubscribers && allSubscribers.some(sub => sub.email === email);
-            
-            if (isDuplicate) {
-              // 显示重复邮箱提示
+            // 检查是否是重复邮箱错误
+            if (error && error.code === '23505') {
+              // 重复邮箱，显示提示
+              console.log('⚠️ 检测到重复邮箱，显示提示');
               const notification = document.createElement('div');
               notification.style.cssText = `
                 position: fixed;
@@ -1445,7 +1453,7 @@
                 padding: 16px 24px;
                 border-radius: 12px;
                 box-shadow: 0 8px 32px rgba(0,0,0,0.3);
-                z-index: 10000;
+                z-index: 99999;
                 font-family: 'JetBrains Mono', 'Noto Sans SC', monospace;
                 font-size: 14px;
                 max-width: 350px;
@@ -1482,19 +1490,7 @@
               return;
             }
             
-            // 邮箱不存在，正常插入
-            const { data, error } = await supabase
-              .from('subscribers')
-              .insert([
-                {
-                  email: email,
-                  name: document.querySelector('input[name="name"]')?.value || '',
-                  interests: ['research', 'projects', 'updates'],
-                  subscribe_date: new Date().toISOString(),
-                  status: 'active'
-                }
-              ]);
-            
+            // 检查其他错误
             if (error) {
               console.error('Database error:', error);
               
@@ -1572,6 +1568,7 @@
             }
             
             // 显示成功消息
+            console.log('🎉 显示成功提示消息');
             const successNotification = document.createElement('div');
             successNotification.style.cssText = `
               position: fixed;
@@ -1582,7 +1579,7 @@
               padding: 16px 24px;
               border-radius: 12px;
               box-shadow: 0 8px 32px rgba(0,0,0,0.3);
-              z-index: 10000;
+              z-index: 99999;
               font-family: 'JetBrains Mono', 'Noto Sans SC', monospace;
               font-size: 14px;
               max-width: 350px;
