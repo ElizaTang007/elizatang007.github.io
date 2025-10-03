@@ -403,22 +403,22 @@
     /* 通知动画 */
     @keyframes slideIn {
       from { 
-        transform: translateX(100%) scale(0.5); 
+        transform: translate(-50%, 20px) scale(0.5); 
         opacity: 0; 
       }
       to { 
-        transform: translateX(0) scale(1); 
+        transform: translate(-50%, 0) scale(1); 
         opacity: 1; 
       }
     }
     
     @keyframes slideOut {
       from { 
-        transform: translateX(0) scale(1); 
+        transform: translate(-50%, 0) scale(1); 
         opacity: 1; 
       }
       to { 
-        transform: translateX(100%) scale(0.5); 
+        transform: translate(-50%, -20px) scale(0.5); 
         opacity: 0; 
       }
     }
@@ -1490,10 +1490,24 @@
               console.log('当前语言:', currentLang);
               
               const notification = document.createElement('div');
+              // 获取social元素的位置
+              const socialElement = document.getElementById('socialLine');
+              let topPosition = '20px';
+              let leftPosition = '50%';
+              let transformValue = 'translate(-50%, 0)';
+              
+              if (socialElement) {
+                const rect = socialElement.getBoundingClientRect();
+                topPosition = (rect.bottom + 20) + 'px';
+                leftPosition = '50%';
+                transformValue = 'translate(-50%, 0)';
+              }
+              
               notification.style.cssText = `
                 position: fixed !important;
-                top: 20px !important;
-                right: 20px !important;
+                top: ${topPosition} !important;
+                left: ${leftPosition} !important;
+                transform: ${transformValue} !important;
                 background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
                 color: white !important;
                 padding: 20px 28px !important;
@@ -1615,10 +1629,24 @@
             console.log('当前语言:', currentLang);
             
             const successNotification = document.createElement('div');
+            // 获取social元素的位置
+            const socialElement = document.getElementById('socialLine');
+            let topPosition = '20px';
+            let leftPosition = '50%';
+            let transformValue = 'translate(-50%, 0)';
+            
+            if (socialElement) {
+              const rect = socialElement.getBoundingClientRect();
+              topPosition = (rect.bottom + 20) + 'px';
+              leftPosition = '50%';
+              transformValue = 'translate(-50%, 0)';
+            }
+            
             successNotification.style.cssText = `
               position: fixed !important;
-              top: 20px !important;
-              right: 20px !important;
+              top: ${topPosition} !important;
+              left: ${leftPosition} !important;
+              transform: ${transformValue} !important;
               background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%) !important;
               color: white !important;
               padding: 20px 28px !important;
