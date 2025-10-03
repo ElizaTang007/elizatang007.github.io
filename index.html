@@ -1357,10 +1357,20 @@
         // 启动EmailJS初始化
         initEmailJS();
         
-        // 初始化Supabase
-        const supabaseUrl = 'https://ldmodpcpoyqemecgueha.supabase.co';
-        const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxkbW9kcGNwb3lxZW1lY2d1ZWhhIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTkyNDAyNjgsImV4cCI6MjA3NDgxNjI2OH0.4qKagcnpqdUbh0oFTefX-r72VOGr-1W7tmDnNCnq43g';
-        const supabase = window.supabase.createClient(supabaseUrl, supabaseKey);
+        // 初始化Supabase - 等待脚本加载完成
+        let supabase = null;
+        function initSupabase() {
+          if (typeof window.supabase !== 'undefined' && window.supabase.createClient) {
+            const supabaseUrl = 'https://ldmodpcpoyqemecgueha.supabase.co';
+            const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxkbW9kcGNwb3lxZW1lY2d1ZWhhIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTkyNDAyNjgsImV4cCI6MjA3NDgxNjI2OH0.4qKagcnpqdUbh0oFTefX-r72VOGr-1W7tmDnNCnq43g';
+            supabase = window.supabase.createClient(supabaseUrl, supabaseKey);
+          } else {
+            setTimeout(initSupabase, 100);
+          }
+        }
+        
+        // 启动Supabase初始化
+        initSupabase();
 
         // 订阅功能
         function initSubscribeFeature() {
@@ -1398,6 +1408,13 @@
             // 使用Supabase在线数据库保存订阅者
             
             // 检查重复邮箱
+            if (!supabase) {
+              alert(lang === 'en' ? 'Database not ready. Please try again.' : '数据库未就绪，请重试。');
+              subBtn.textContent = lang === 'en' ? 'Subscribe' : '订阅';
+              subBtn.disabled = false;
+              return;
+            }
+            
             const { data: allSubscribers, error: fetchError } = await supabase
               .from('subscribers')
               .select('email');
@@ -1620,7 +1637,7 @@
     
     // 等待所有脚本加载完成后初始化订阅功能
     function waitForScripts() {
-      if (typeof emailjs !== 'undefined' && typeof supabase !== 'undefined') {
+      if (typeof emailjs !== 'undefined' && supabase !== null) {
         initSubscribeFeature();
       } else {
         setTimeout(waitForScripts, 100);
@@ -1635,7 +1652,7 @@
 
   <!-- Load third-party scripts at the bottom for better performance -->
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2" onload="console.log('Supabase loaded')"></script>
   
   <!-- Performance monitoring -->
   <script>
