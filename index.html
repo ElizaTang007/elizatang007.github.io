@@ -1423,10 +1423,22 @@
         const t = i18n[lang];
         if (emailLine) emailLine.innerHTML = t.contact.email;
         if (socialLine) socialLine.innerHTML = t.contact.social;
+        
+        // 确保订阅按钮文本正确显示
+        const subBtn = document.getElementById('subBtn');
+        if (subBtn) {
+          subBtn.textContent = t.contact.btn;
+          console.log('render函数更新按钮文本:', subBtn.textContent);
+        }
       }
       
       // 订阅按钮点击事件
       if (subBtn && emailInput) {
+        // 确保按钮文本正确显示
+        const currentLang = localStorage.getItem('language') || 'en';
+        subBtn.textContent = currentLang === 'en' ? 'Subscribe' : '订阅';
+        console.log('按钮文本已设置:', subBtn.textContent);
+        
         subBtn.addEventListener('click', async function() {
           // 获取当前语言设置
           const currentLang = localStorage.getItem('language') || 'en';
@@ -1715,6 +1727,20 @@
         setTimeout(waitForScripts, 100);
       }
     }
+    
+    // 立即设置按钮文本，不等待脚本加载
+    function initButtonText() {
+      const subBtn = document.getElementById('subBtn');
+      if (subBtn) {
+        const currentLang = localStorage.getItem('language') || 'en';
+        const t = i18n[currentLang];
+        subBtn.textContent = t.contact.btn;
+        console.log('立即设置按钮文本:', subBtn.textContent);
+      }
+    }
+    
+    // 页面加载时立即设置按钮文本
+    initButtonText();
     
     // 在DOM加载完成后开始等待脚本
     document.addEventListener('DOMContentLoaded', function() {
