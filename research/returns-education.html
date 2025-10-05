@@ -53,7 +53,7 @@
   </header>
 
   <main class="container">
-    <h1>Returns to Education — A Causal Analysis Using IV</h1>
+    <h1>Returns to Education — A Causal Analysis Using Instrumental Variables (Methodological Review)</h1>
     
     <div class="status">
       <strong>Status:</strong> Completed (High Distinction)
@@ -61,56 +61,80 @@
 
     <div class="course-info">
       <strong>Course:</strong> ECMT3997 Interdisciplinary Impact in Econometrics, University of Sydney<br>
-      <strong>Credits:</strong> 6 CP · <strong>Focus:</strong> Causal inference for real world policy questions
+      <strong>Credit:</strong> 6 CP · <strong>Focus:</strong> Causal Inference for Real-World Policy Problems
     </div>
 
     <h2>Abstract</h2>
     <div class="abstract">
-      <p>This thesis estimates the causal return to schooling using Australian microdata. Following the proximity to college identification from Card (1993), I use distance to the nearest university at age 17 as an instrument for years of education. The empirical strategy applies two stage least squares to obtain local average treatment effects, with extensive validity checks on instrument strength, monotonicity, and exclusion restrictions. Results demonstrate economically meaningful and statistically significant returns to education that are robust across cohorts, specifications, and sampling windows in the Australian context.</p>
+      <p>This study conducts a methodological review and replication of Card (1993)'s instrumental-variables framework for estimating the causal returns to schooling. Following Card's original identification strategy, the instrument is a binary indicator for whether an individual lived near a four-year college (nearc4) during adolescence. Using a two-stage least squares (2SLS) design, the analysis compares ordinary least squares (OLS) and IV estimates, assesses instrument validity, and discusses the implications for local average treatment effects (LATE). The replication finds an OLS estimate of 7.47%, an IV estimate of 13.15%, and a strong first stage (F ≈ 182). The findings suggest that OLS underestimates the true causal return to education, though external validity and exclusion-restriction assumptions remain important caveats.</p>
     </div>
 
 
-    <h2>Methods</h2>
+    <h2>Methodology</h2>
     <div class="methods">
+      <h4>Design: Two-Stage Least Squares (2SLS) Instrumental Variables</h4>
+      <p><strong>Instrument:</strong> nearc4 — whether an individual lived near a four-year college at age 17; interaction with parental education used as an alternative instrument</p>
+      
+      <h4>Identification and Validity Checks:</h4>
       <ul>
-        <li><strong>Design:</strong> Instrumental Variables with Two Stage Least Squares</li>
-        <li><strong>Instrument:</strong> Distance to nearest university at age 17 (proximity to college)</li>
-        <li><strong>Identification:</strong> Relevance and exogeneity tested via first stage F statistics, over identification where applicable, and cohort specific robustness</li>
-        <li><strong>Controls:</strong> Birth cohort, state fixed effects, parental background proxies, urbanity, and local labour market conditions</li>
-        <li><strong>Estimands:</strong> LATE for compliers, compared with OLS for bias diagnostics</li>
+        <li><strong>Relevance:</strong> First-stage F-statistic ≈ 182, well above the conventional threshold of 10</li>
+        <li><strong>Exclusion Restriction:</strong> Evaluated through reduced-form regressions and augmented controls; potential threats include residential sorting and local externalities</li>
+        <li><strong>Monotonicity:</strong> Reasonable under the assumption that college proximity lowers educational costs</li>
+        <li><strong>Weak Instrument Concern:</strong> Addressed using Staiger–Stock rule-of-thumb and over-identification tests when applicable</li>
+      </ul>
+      
+      <h4>Estimators:</h4>
+      <ul>
+        <li>LATE (Local Average Treatment Effect) as the causal target of the 2SLS estimator</li>
+        <li>OLS as a benchmark for bias diagnosis</li>
+        <li><strong>Controls:</strong> Gender, race, region, urbanization, experience (and its square), and proxies for family background</li>
       </ul>
     </div>
 
     <h2>Data</h2>
-    <p>Australian microdata with individual earnings, schooling, demographics, and location</p>
-    <p>Geographic linkage to the nearest university network and historical openings</p>
-    <p>Sample restricted to prime age workers with complete earnings and education records</p>
+    <p><strong>Context:</strong> Conceptual replication of Card (1993) using the U.S. NLS Young Men data structure, not Australian microdata</p>
+    <p><strong>Variables:</strong> Log wage, years of schooling, nearc4 indicator, demographic and regional characteristics</p>
 
     <h2>Results (Summary)</h2>
     <div class="results">
       <ul>
-        <li><strong>First stage:</strong> Strong instrument, first stage F typically above 20</li>
-        <li><strong>2SLS:</strong> One additional year of schooling increases earnings by <strong>7–10 percent</strong> depending on cohort and specification</li>
-        <li><strong>Robustness:</strong> Stable to alternative distance measures, sample trims, and additional controls</li>
-        <li><strong>Policy Implication:</strong> Access to nearby universities raises educational attainment and yields sizeable wage gains</li>
+        <li><strong>First Stage:</strong> Strong instrument (F ≈ 182)</li>
+        <li><strong>Reduced Form:</strong> nearc4 coefficient ≈ 0.0421, significant but modest in magnitude</li>
+        <li><strong>2SLS Estimate:</strong> Return to an additional year of education ≈ 13.15%</li>
+        <li><strong>OLS Estimate:</strong> ≈ 7.47%</li>
+        <li><strong>Alternative Instrument:</strong> nearc4 × parental education yields ≈ 10.06%, confirming robustness</li>
+        <li><strong>Interpretation:</strong> The IV estimate represents the LATE for compliers—individuals whose education decisions are affected by college accessibility—rather than the overall average treatment effect (ATE)</li>
       </ul>
     </div>
 
-    <h2>Figures and Tables (placeholders)</h2>
+    <h2>Discussion and Policy Implications</h2>
+    <div class="methods">
+      <h4>External Validity and Exclusion Risk:</h4>
+      <p>Residential sorting and spatial spillovers may weaken the exclusion restriction; local urbanization and educational clustering require additional controls</p>
+      
+      <h4>Methodological Considerations:</h4>
+      <p>With heterogeneous treatment effects, 2SLS estimates are variance-weighted averages, potentially overstating returns for marginal compliers; semi-parametric or machine-learning extensions can improve robustness</p>
+      
+      <h4>Policy Insight:</h4>
+      <p>Enhancing college accessibility can increase educational attainment and earnings potential, but LATE should not be over-extrapolated to the general population</p>
+    </div>
+
+    <h2>Figures and Tables (Aligned with PDF)</h2>
     <ul>
-      <li><strong>Table 1:</strong> Summary statistics</li>
-      <li><strong>Table 2:</strong> First stage regressions</li>
-      <li><strong>Table 3:</strong> OLS vs 2SLS estimates</li>
-      <li><strong>Figure 1:</strong> Instrument distribution by cohort</li>
-      <li><strong>Figure 2:</strong> Sensitivity analyses</li>
+      <li><strong>Table 1:</strong> OLS regression results</li>
+      <li><strong>Table 2:</strong> First-stage regression (nearc4 → years of education)</li>
+      <li><strong>Table 3:</strong> Reduced-form regression (nearc4 → log wage)</li>
+      <li><strong>Table 4:</strong> Comparison of OLS and 2SLS estimates</li>
+      <li><strong>Figure 1:</strong> DAG of Card's IV design</li>
+      <li><strong>Figure 2:</strong> Comparison of estimated returns across methods</li>
+      <li><strong>Figures 3–6:</strong> Relationships between instrument and covariates (urbanization, parental education, own schooling)</li>
     </ul>
 
     <h2>ECMT3997 Course Snapshot</h2>
-    <p>ECMT3997 trains students to frame causal questions, review literature, build credible identification, analyze data, and communicate findings for interdisciplinary audiences. Core toolkits include OLS, DiD, IV, and RDD, with emphasis on external validity and policy relevance.</p>
+    <p>ECMT3997 trains students to formulate testable causal questions, review relevant literature, build credible identification strategies, analyze data, and communicate research findings to interdisciplinary audiences. The core toolkit includes OLS, DiD, IV, and RDD, with emphasis on external validity and policy relevance.</p>
 
     <h2>Files</h2>
     <div class="files">
-      <h4>Download Materials</h4>
       <a href="https://elizatang007.github.io/ecmt3997.pdf" target="_blank">📄 Download Full PDF</a><br>
       <a href="https://drive.google.com/file/d/1jm5pNbI9gfpQ9P30a-JGreX2R9viQMzu/view?usp=sharing" target="_blank">📊 Slides</a><br>
       <a href="https://drive.google.com/file/d/1NJ7FzUatnTjUhR8iO-5BqRqewuHAY0Ox/view?usp=sharing" target="_blank">🎤 Presentation</a>
@@ -118,7 +142,8 @@
 
     <div class="contact">
       <h4>Contact</h4>
-      <p>For replication materials or questions: <strong>Eliza Yiting Tang</strong> · tangyiting007@gmail.com</p>
+      <p>For replication materials or further inquiries, please contact:<br>
+      <strong>Eliza Yiting Tang</strong> · tangyiting007@gmail.com</p>
     </div>
   </main>
   
