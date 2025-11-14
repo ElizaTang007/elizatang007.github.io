@@ -182,13 +182,18 @@
     section.in-view .section-inner{transform:translateY(0)}
 
     .hero{min-height:100vh; display:flex; flex-direction:column; justify-content:center; padding:0 1rem}
-    .hero-inner{max-width:1200px; margin:0 auto 0 12rem; display:grid; grid-template-columns: 300px 1fr; gap:4rem; align-items:center}
-    .avatar{width:280px; height:280px; border-radius:50%; overflow:hidden; box-shadow:0 20px 60px rgba(0,0,0,.45), 0 0 0 1px rgba(255,255,255,.12) inset, 0 0 30px rgba(14,165,233,0.3); will-change:transform; contain:layout style paint;}
+    .hero-inner{max-width:1200px; margin:0 auto 0 12rem; display:grid; grid-template-columns: 320px 1fr; gap:5rem; align-items:start; padding-top:2rem}
+    .avatar{width:300px; height:300px; border-radius:50%; overflow:hidden; box-shadow:0 20px 60px rgba(0,0,0,.45), 0 0 0 1px rgba(255,255,255,.12) inset, 0 0 30px rgba(14,165,233,0.3); will-change:transform; contain:layout style paint; transition:transform 0.3s ease}
+    .avatar:hover{transform:scale(1.02)}
     .avatar img{width:100%; height:100%; object-fit:cover}
-    .hero h1{margin:0 0 1.2rem 0; font-size:48px; line-height:1.1; font-family:'Orbitron', 'Noto Sans SC', monospace; font-weight:700; background:linear-gradient(135deg, #0ea5e9, #6366f1); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text}
-    .hero p{margin:.6rem 0; opacity:.9; font-family:'JetBrains Mono', 'Noto Sans SC', monospace; line-height:1.7; font-size:1.05rem}
-    .hero-subtitle[lang="zh"], .hero-pitch[lang="zh"]{font-size:1.2rem}
-    .meta{margin-top:2rem; display:flex; flex-wrap:wrap; gap:1rem; opacity:.85}
+    .hero h1{margin:0 0 1.5rem 0; font-size:52px; line-height:1.15; font-family:'Orbitron', 'Noto Sans SC', monospace; font-weight:700; background:linear-gradient(135deg, #0ea5e9, #6366f1); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; letter-spacing:-0.5px}
+    .hero p{margin:.8rem 0; opacity:.92; font-family:'JetBrains Mono', 'Noto Sans SC', monospace; line-height:1.8; font-size:1.05rem}
+    .hero-subtitle{font-size:1.1rem; opacity:.95; margin-bottom:1rem}
+    .hero-pitch{font-size:1rem; line-height:1.9; opacity:.9; margin-top:1.2rem}
+    .hero-pitch br{margin-bottom:0.4rem}
+    .hero-subtitle[lang="zh"], .hero-pitch[lang="zh"]{font-size:1.15rem}
+    .hero-pitch .keywords{display:block; margin-top:1rem; padding-top:1rem; border-top:1px solid rgba(255,255,255,.1); color:#0ea5e9; font-weight:500; font-size:0.95rem}
+    .meta{margin-top:2.5rem; display:flex; flex-wrap:wrap; gap:1rem; opacity:.85}
     .hero-quote{margin-top:2rem; text-align:left; position:relative; padding:1rem 1.2rem; background:rgba(255,255,255,.015); border-left:2px solid rgba(14,165,233,.2); border-radius:0 8px 8px 0; max-width:500px; margin-left:0}
     .hero-quote blockquote{border:none; padding:0; margin:0; position:relative}
     .hero-quote p{font-size:.95rem; line-height:1.5; color:#e2e8f0; font-style:italic; margin-bottom:.4rem; font-family:'JetBrains Mono', 'Noto Sans SC', monospace; opacity:.9; font-weight:300; position:relative; padding-left:1.2rem}
@@ -211,7 +216,7 @@
     @keyframes blink-caret{from,to{border-color:transparent}50%{border-color:#0ea5e9}}
     @keyframes hide-cursor{to{border-color:transparent; border-right:none}}
 
-    section h2{font-size:28px; margin:0 0 1.2rem 0; font-family:'Orbitron', 'Noto Sans SC', monospace; font-weight:600}
+    section h2{font-size:32px; margin:0 0 2rem 0; font-family:'Orbitron', 'Noto Sans SC', monospace; font-weight:600; background:linear-gradient(135deg, #0ea5e9, #6366f1); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; letter-spacing:-0.3px}
     .grid{display:grid; grid-template-columns: repeat(auto-fit, minmax(260px,1fr)); gap:1rem}
     #researchGrid{display:grid; grid-template-columns:repeat(3, 1fr); gap:2rem; margin:3rem 0; padding:0 2rem; max-width:100%; width:100%}
     .card{background: rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.12); border-radius:16px; padding:1.2rem; box-shadow:0 10px 30px rgba(0,0,0,.25); opacity:1; transform:translateY(0) scale(1); transition:all .6s cubic-bezier(0.4, 0, 0.2, 1); cursor:pointer; position:relative; overflow:hidden}
@@ -449,9 +454,13 @@
     .back-to-top:hover svg{transform:translateY(-2px)}
 
     @media (max-width: 860px){ 
-      .hero-inner{grid-template-columns:1fr; text-align:center; gap:2rem; margin:0 auto} 
-      .avatar{width:220px; height:220px; margin:0 auto} 
-      .meta{justify-content:center; flex-wrap:wrap} 
+      .hero-inner{grid-template-columns:1fr; text-align:center; gap:2.5rem; margin:0 auto; padding-top:1rem} 
+      .avatar{width:240px; height:240px; margin:0 auto} 
+      .hero h1{font-size:42px; margin-bottom:1.2rem}
+      .hero-subtitle{font-size:1rem}
+      .hero-pitch{font-size:0.95rem; line-height:1.7}
+      .hero-pitch[lang="zh"]{font-size:1.05rem}
+      .meta{justify-content:center; flex-wrap:wrap; margin-top:2rem} 
       .hero-quote{text-align:center; margin-top:1.5rem; padding:.8rem 1rem; border-left:none; border-top:2px solid rgba(14,165,233,.2); border-radius:8px 8px 0 0; max-width:350px; margin:1.5rem auto 0 auto}
       .hero-quote p{padding-left:0; text-align:center; font-size:.9rem}
       .hero-quote p::before{left:50%; transform:translateX(-50%); top:-.3rem; font-size:1rem}
@@ -930,7 +939,7 @@
         hero: {
           name:'Eliza Yiting Tang',
           subtitle:'University of Sydney · Econometrics & Software Development',
-          pitch:'Research Interests<br>Causal inference for dynamic platforms · Behavioral models under policy dependence ·<br>Causal representation learning · Dynamic structural econometrics ·<br>AI/LLM-driven mechanism design for digital and urban-air mobility systems.<br><br>Keywords: Causal Inference · LLM/AI · Dynamic Platforms · Mechanism Design · UAM/eVTOL',
+          pitch:'Research Interests<br><br>Causal inference for dynamic platforms · Behavioral models under policy dependence ·<br>Causal representation learning · Dynamic structural econometrics ·<br>AI/LLM-driven mechanism design for digital and urban-air mobility systems.<br><span class="keywords">Keywords: Causal Inference · LLM/AI · Dynamic Platforms · Mechanism Design · UAM/eVTOL</span>',
           tags:['Causal Inference','LLM/AI','Dynamic Platforms','Mechanism Design','UAM/eVTOL'],
           cv:'Download CV',
           venture:'Visit YITA AVIATION',
@@ -978,7 +987,7 @@
         hero: {
           name:'唐怡婷（Eliza Yiting Tang）',
           subtitle:'悉尼大学 · 计量经济学与软件开发',
-          pitch:'研究兴趣<br>动态平台的因果推断 · 政策依赖下的行为模型 ·<br>因果表征学习 · 动态结构计量经济学 ·<br>数字和城市空中出行系统的AI/LLM驱动机制设计。<br><br>关键词：因果推断 · LLM/AI · 动态平台 · 机制设计 · UAM/eVTOL',
+          pitch:'研究兴趣<br><br>动态平台的因果推断 · 政策依赖下的行为模型 ·<br>因果表征学习 · 动态结构计量经济学 ·<br>数字和城市空中出行系统的AI/LLM驱动机制设计。<br><span class="keywords">关键词：因果推断 · LLM/AI · 动态平台 · 机制设计 · UAM/eVTOL</span>',
           tags:['因果推断','LLM/AI','动态平台','机制设计','UAM/eVTOL'],
           cv:'下载简历',
           venture:'访问 依塔智行',
