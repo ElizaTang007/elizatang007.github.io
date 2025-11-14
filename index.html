@@ -1070,7 +1070,7 @@
       // hero quote - no JavaScript needed as it's static
       // research interests description
       const researchDesc = document.getElementById('researchInterestsDesc');
-      if (researchDesc) {
+      if (researchDesc && t.research && t.research.description && t.research.keywords) {
         researchDesc.innerHTML = `
           <p style="margin: 0 0 1rem 0; opacity: 0.9; line-height: 1.8; font-family: 'JetBrains Mono', 'Noto Sans SC', monospace; font-size: 0.95rem;">
             ${t.research.description}
@@ -1079,6 +1079,8 @@
             ${t.research.keywords}
           </p>
         `;
+      } else if (researchDesc) {
+        console.warn('Research interests description not found in i18n config');
       }
       // research cards
       const r = document.getElementById('researchGrid');
