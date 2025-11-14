@@ -194,8 +194,11 @@
     .hero-subtitle[lang="zh"], .hero-pitch[lang="zh"]{font-size:1.15rem}
     .hero-pitch .research-title{font-weight:700; background:linear-gradient(135deg, #0ea5e9, #6366f1); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; display:inline-block; margin-right:0.5rem; font-size:1.05rem; letter-spacing:0.3px}
     .hero-pitch .keywords{display:block; margin-top:1rem; padding-top:1rem; border-top:1px solid rgba(255,255,255,.1); background:linear-gradient(135deg, #0ea5e9, #6366f1); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; font-weight:500; font-size:0.95rem}
-    .meta{margin-top:2.5rem; display:flex; flex-wrap:wrap; gap:1rem; opacity:.85}
-    .meta span{background:linear-gradient(135deg, #0ea5e9, #6366f1); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; font-weight:500}
+    .meta{margin-top:2.5rem; display:flex; flex-wrap:wrap; gap:0.8rem; opacity:1}
+    .meta span{background:linear-gradient(135deg, rgba(14,165,233,0.15), rgba(99,102,241,0.15)); border:1px solid rgba(14,165,233,0.3); border-radius:8px; padding:0.5rem 1rem; font-weight:500; color:#0ea5e9; transition:all 0.3s ease; font-size:0.9rem; backdrop-filter:blur(10px); position:relative; overflow:hidden}
+    .meta span::before{content:''; position:absolute; top:0; left:-100%; width:100%; height:100%; background:linear-gradient(90deg, transparent, rgba(14,165,233,0.2), transparent); transition:left 0.5s ease}
+    .meta span:hover{background:linear-gradient(135deg, rgba(14,165,233,0.25), rgba(99,102,241,0.25)); border-color:rgba(14,165,233,0.5); transform:translateY(-2px); box-shadow:0 4px 12px rgba(14,165,233,0.3)}
+    .meta span:hover::before{left:100%}
     .hero-quote{margin-top:2rem; text-align:left; position:relative; padding:1rem 1.2rem; background:rgba(255,255,255,.015); border-left:2px solid rgba(14,165,233,.2); border-radius:0 8px 8px 0; max-width:500px; margin-left:0}
     .hero-quote blockquote{border:none; padding:0; margin:0; position:relative}
     .hero-quote p{font-size:.95rem; line-height:1.5; color:#e2e8f0; font-style:italic; margin-bottom:.4rem; font-family:'JetBrains Mono', 'Noto Sans SC', monospace; opacity:.9; font-weight:300; position:relative; padding-left:1.2rem}
