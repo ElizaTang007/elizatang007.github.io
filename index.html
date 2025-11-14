@@ -194,9 +194,7 @@
     .hero-subtitle[lang="zh"], .hero-pitch[lang="zh"]{font-size:1.15rem}
     .hero-pitch .research-title{font-weight:700; background:linear-gradient(135deg, #0ea5e9, #6366f1); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; display:inline-block; margin-right:0.5rem; font-size:1.05rem; letter-spacing:0.3px}
     .hero-pitch .keywords{display:block; margin-top:1rem; padding-top:1rem; border-top:1px solid rgba(255,255,255,.1); background:linear-gradient(135deg, #0ea5e9, #6366f1); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; font-weight:500; font-size:0.95rem}
-    .meta{margin-top:2.5rem; display:flex; flex-wrap:wrap; gap:0.8rem; opacity:1}
-    .meta span{background:linear-gradient(135deg, #0ea5e9, #6366f1); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; font-weight:500; font-size:0.9rem; transition:opacity 0.2s ease}
-    .meta span:hover{opacity:0.8}
+    .meta{margin-top:2.5rem; opacity:1; font-size:0.9rem; line-height:1.6; background:linear-gradient(135deg, #0ea5e9, #6366f1); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; font-weight:500}
     .hero-quote{margin-top:2rem; text-align:left; position:relative; padding:1rem 1.2rem; background:rgba(255,255,255,.015); border-left:2px solid rgba(14,165,233,.2); border-radius:0 8px 8px 0; max-width:500px; margin-left:0}
     .hero-quote blockquote{border:none; padding:0; margin:0; position:relative}
     .hero-quote p{font-size:.95rem; line-height:1.5; color:#e2e8f0; font-style:italic; margin-bottom:.4rem; font-family:'JetBrains Mono', 'Noto Sans SC', monospace; opacity:.9; font-weight:300; position:relative; padding-left:1.2rem}
@@ -1073,7 +1071,7 @@
       
       // meta tags
       const meta = document.getElementById('metaTags');
-      meta.innerHTML = t.hero.tags.map(x=>`<span>${x}</span>`).join('');
+      meta.innerHTML = t.hero.tags.join(' · ');
       // hero quote - no JavaScript needed as it's static
       // research cards
       const r = document.getElementById('researchGrid');
