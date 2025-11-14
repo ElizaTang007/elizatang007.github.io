@@ -547,6 +547,7 @@
     <section id="research">
       <div class="section-inner">
         <h2 data-i18n="research.title">Research Interests</h2>
+        <div class="research-interests-desc" id="researchInterestsDesc"></div>
         <div class="grid reveal" id="researchGrid"></div>
         <div class="research-more">
           <button class="research-more-btn" id="researchMoreBtn">
@@ -935,7 +936,12 @@
           cv:'Download CV',
           venture:'Visit YITA AVIATION',
         },
-        research: { title:'Research & Innovation', more:'View More Research', items:[
+        research: { 
+          title:'Research Interests',
+          description:'Causal inference for dynamic platforms · Behavioral models under policy dependence ·<br>Causal representation learning · Dynamic structural econometrics ·<br>AI/LLM-driven mechanism design for digital and urban-air mobility systems.',
+          keywords:'Keywords: Causal Inference · LLM/AI · Dynamic Platforms · Mechanism Design · UAM/eVTOL',
+          more:'View More Research', 
+          items:[
           {t:'Sustainable Preference Externalities', d:'Causal modeling of willingness-to-pay dynamics on digital platforms, revealing peer and algorithmic effects and guiding fair, sustainable interventions.', img:'images/1.png', stats:'15-25% WTP Shift', link:'research/preference-externalities.html'},
           {t:'Retention Causality (INFORMS → Marketing Science)', d:'Causal modeling of user retention interventions with LLM-based behavioral signals and heterogeneous treatment effect estimation.', img:'images/2.png', stats:'INFORMS 2025', link:'research/retention-causality.html'},
           {t:'Generative Engine Optimization (IJRM Special Issue)', d:'Simulating search and marketing strategies via synthetic respondents and causal inference frameworks.', img:'images/3.png', stats:'IJRM Special Issue', link:'research/generative-engine-optimization.html'},
@@ -980,7 +986,12 @@
           cv:'下载简历',
           venture:'访问 依塔智行',
         },
-        research: { title:'研究与创新', more:'查看更多研究', items:[
+        research: { 
+          title:'研究兴趣',
+          description:'动态平台的因果推断 · 政策依赖下的行为模型 ·<br>因果表征学习 · 动态结构计量经济学 ·<br>数字和城市空中出行系统的AI/LLM驱动机制设计。',
+          keywords:'关键词：因果推断 · LLM/AI · 动态平台 · 机制设计 · UAM/eVTOL',
+          more:'查看更多研究', 
+          items:[
           {t:'可持续偏好外部性', d:'数字平台支付意愿动态的因果建模，揭示同伴与算法效应，指导公平可持续的干预措施。', img:'images/1.png', stats:'15-25% 支付意愿变化', link:'research/preference-externalities.html'},
           {t:'留存因果 (INFORMS → Marketing Science)', d:'基于LLM行为信号和异质性处理效应估计的用户保留干预因果建模。', img:'images/2.png', stats:'INFORMS 2025', link:'research/retention-causality.html'},
           {t:'生成引擎优化 (IJRM 特刊)', d:'通过合成受访者和因果推断框架模拟搜索和营销策略。', img:'images/3.png', stats:'IJRM 特刊', link:'research/generative-engine-optimization.html'},
@@ -1057,6 +1068,18 @@
       const meta = document.getElementById('metaTags');
       meta.innerHTML = t.hero.tags.map(x=>`<span>${x}</span>`).join('');
       // hero quote - no JavaScript needed as it's static
+      // research interests description
+      const researchDesc = document.getElementById('researchInterestsDesc');
+      if (researchDesc) {
+        researchDesc.innerHTML = `
+          <p style="margin: 0 0 1rem 0; opacity: 0.9; line-height: 1.8; font-family: 'JetBrains Mono', 'Noto Sans SC', monospace; font-size: 0.95rem;">
+            ${t.research.description}
+          </p>
+          <p style="margin: 0 0 2rem 0; opacity: 0.85; line-height: 1.6; font-family: 'JetBrains Mono', 'Noto Sans SC', monospace; font-size: 0.9rem; color: #0ea5e9;">
+            ${t.research.keywords}
+          </p>
+        `;
+      }
       // research cards
       const r = document.getElementById('researchGrid');
       r.innerHTML = t.research.items.slice(0, 3).map((i, index)=>`
