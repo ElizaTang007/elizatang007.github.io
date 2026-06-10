@@ -1,8 +1,8 @@
 ---
 permalink: /
 title: ""
-excerpt: "唐怡婷（Eliza Yiting Tang），悉尼大学计量经济学与软件开发专业，因果推断与数字平台经济学研究者，专注偏好外部性、用户留存建模与城市空中出行（UAM）创新。"
-description: "唐怡婷（Eliza Yiting Tang），悉尼大学因果推断与数字平台经济学研究者，专注偏好外部性、用户留存建模与城市空中出行（UAM）创新。"
+excerpt: "唐怡婷（Eliza Yiting Tang），悉尼大学计量经济学与软件开发专业，专注偏好外部性、用户留存建模与城市空中出行（UAM）创新。"
+description: "唐怡婷（Eliza Yiting Tang），悉尼大学，专注偏好外部性、用户留存建模与城市空中出行（UAM）创新。"
 author_profile: true
 redirect_from: 
   - /about/

@@ -7,7 +7,7 @@
 
 # Site Settings
 title                    : "Eliza Yiting Tang"
-description              : "唐怡婷（Eliza Yiting Tang），悉尼大学因果推断与数字平台经济学研究者，专注偏好外部性、用户留存建模与城市空中出行（UAM）创新。"
+description              : "唐怡婷（Eliza Yiting Tang），悉尼大学，专注偏好外部性、用户留存建模与城市空中出行（UAM）创新。"
 repository               : "ElizaTang007/elizatang007.github.io"
 url                      : "https://elizatang007.github.io"
 baseurl                  : ""
@@ -29,7 +29,7 @@ twitter:
 author:
   name             : "Eliza Yiting Tang"
   avatar           : "images/profile.png"  # 上传头像命名为 profile.jpg
-  bio              : "悉尼大学 · 因果推断与数字平台经济学研究者"
+  bio              : "悉尼大学"
   location         : "Sydney & Shanghai"
   employer         :
   pubmed           : 
