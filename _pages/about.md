@@ -1,7 +1,8 @@
 ---
 permalink: /
 title: ""
-excerpt: ""
+excerpt: "唐怡婷（Eliza Yiting Tang），悉尼大学计量经济学与软件开发专业，因果推断与数字平台经济学研究者，专注偏好外部性、用户留存建模与城市空中出行（UAM）创新。"
+description: "唐怡婷（Eliza Yiting Tang），悉尼大学因果推断与数字平台经济学研究者，专注偏好外部性、用户留存建模与城市空中出行（UAM）创新。"
 author_profile: true
 redirect_from: 
   - /about/
@@ -10,7 +11,9 @@ redirect_from:
 
 <span class='anchor' id='about-me'></span>
 
-I’m **Eliza Yiting Tang**, an undergraduate at the University of Sydney majoring in **Econometrics and Software Development**, currently applying for PhD programs in **Quantitative Marketing**, **Digital Platform Research**, and **Algorithmic Behavioral Modeling**.
+我是 **唐怡婷（Eliza Yiting Tang）**，悉尼大学 **计量经济学与软件开发** 专业本科生，**因果推断与数字平台经济学** 研究者，研究兴趣包括偏好外部性、用户留存因果建模与城市空中出行（UAM）创新。
+
+I’m **Eliza Yiting Tang**, an undergraduate at the University of Sydney majoring in **Econometrics and Software Development**, a **causal inference and digital platform economics** researcher focusing on preference externalities, user retention modeling, and Urban Air Mobility (UAM) innovation.
 
 My research explores how **user preferences and platform behaviors co-evolve** through social information, algorithmic interventions, and policy incentives. I focus on **preference externalities** — where individuals adjust their decisions based on peer behavior and platform signals — and seek to **causally identify** these mechanisms using a combination of *quasi-experimental designs*, *causal machine learning*, and *structural behavioral models*.
 
