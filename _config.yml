@@ -7,7 +7,7 @@
 
 # Site Settings
 title                    : "Eliza Yiting Tang"
-description              : "唐怡婷（Eliza Yiting Tang），悉尼大学，专注偏好外部性、用户留存建模与城市空中出行（UAM）创新。"
+description              : "唐怡婷（Eliza Yiting Tang），UIUC 预测分析与风险管理硕士在读；研究兴趣为具身智能与机器人学习。"
 repository               : "ElizaTang007/elizatang007.github.io"
 url                      : "https://elizatang007.github.io"
 baseurl                  : ""
@@ -29,11 +29,11 @@ twitter:
 author:
   name             : "Eliza Yiting Tang"
   avatar           : "images/profile.png"  # 上传头像命名为 profile.jpg
-  bio              : "悉尼大学"
-  location         : "Sydney & Shanghai"
+  bio              : "UIUC · Master’s student in Predictive Analytics & Risk Management"
+  location         : "Urbana-Champaign, Illinois"
   employer         :
   pubmed           : 
-  googlescholar    : "https://scholar.google.com/citations?user=YOUR_GOOGLE_SCHOLAR_ID"
+  googlescholar    :
   email            : "tangyiting007@gmail.com"
   researchgate     :  # e.g., "https://www.researchgate.net/profile/yourprofile"
   uri              :
@@ -146,7 +146,7 @@ sass:
 
 # Outputting
 permalink: /:categories/:title/
-timezone: Asia/Shanghai # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+timezone: America/Chicago # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 
 # Plugins
 plugins:

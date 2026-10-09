@@ -1,5 +1,5 @@
 /**
- * Site maintenance gate — redirects all pages to the construction homepage.
+ * Site maintenance gate — keeps legacy pages behind the gate while current academic pages are public.
  *
  * To disable: set MAINTENANCE to false below, then redeploy.
  * To preview the full site while maintenance is on, run in browser console:
@@ -14,6 +14,7 @@
   var allowed = [
     '/',
     '/index.html',
+    '/research.html',
     '/google-site-verification.html',
     '/googlee0d4ea2fab0beb3c.html'
   ];
